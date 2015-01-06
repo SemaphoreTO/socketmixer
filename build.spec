@@ -20,7 +20,7 @@ def extra_datas(mydir):
     return extra_datas
 ###########################################
 # -*- mode: python -*-
-a = Analysis(['awesomeStart.py'],
+a = Analysis(['SocketmixerStart.py'],
              pathex=['meshController',
              'extensionController',
              'meshController/mm',
@@ -45,7 +45,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='Wizard.exe',
+          name='Socketmixer.exe',
           debug=False,
           strip=None,
           upx=True,
@@ -59,5 +59,5 @@ coll = COLLECT(exe,
                Tree('socket',prefix='socket'),
                strip=None,
                upx=True,
-               name='awsomeStart')
+               name='SocketmixerStart')
 

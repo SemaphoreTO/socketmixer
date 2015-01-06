@@ -114,7 +114,7 @@ if web == False:
     startUp()
 
 
-print 'Semaphore MeshMixer Controller is now working at' 
+print 'Semaphore Socketmixer Controller is now working at' 
 print str(url)
 print "Please don't close this window"
 run(server='cherrypy',host='localhost', quiet=True,port=myport,debug=False)

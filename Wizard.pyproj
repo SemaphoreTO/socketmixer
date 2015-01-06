@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{b5971490-ce38-4ad9-94f9-5748b03f4321}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>awesomeStart.py</StartupFile>
+    <StartupFile>SocketmixerStart.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -144,7 +144,7 @@
     <Content Include="static\video-js\video.js" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="awesomeStart.py" />
+    <Compile Include="SocketmixerStart.py" />
     <Compile Include="extensionController\extensionController.py" />
     <Compile Include="extensions\extraFunctions.py" />
     <Compile Include="meshController\connector.py" />
@@ -175,9 +175,11 @@
     <Folder Include="static" />
     <Folder Include="static\css" />
     <Folder Include="static\css\images" />
+    <Folder Include="static\font-awesome\" />
     <Folder Include="static\font-awesome\css" />
     <Folder Include="static\font-awesome\font" />
     <Folder Include="static\fonts" />
+    <Folder Include="static\html\" />
     <Folder Include="static\html\modeling" />
     <Folder Include="static\html\modeling\helpPages" />
     <Folder Include="static\html\printing" />
@@ -186,6 +188,7 @@
     <Folder Include="static\img" />
     <Folder Include="static\img\scanning" />
     <Folder Include="static\js" />
+    <Folder Include="static\lib\" />
     <Folder Include="static\lib\css" />
     <Folder Include="static\lib\img" />
     <Folder Include="static\lib\js" />
