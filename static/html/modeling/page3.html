@@ -1,0 +1,156 @@
+<div id="instructionSection">
+	<div style ="margin:20px">
+		<p>
+			In step 3... 
+			<br>
+			...you will align the distal end of the residual limb, making the residual limb roughly perpendicular to the plane.</p>
+			<p>Checklist:</p>
+			<ul>
+				<li>Use the automatic alignment tool to do a rough alignment of the model</li>
+				<li>Use the manual alignment tool to make fine changes to the model alignment</li>
+			</ul>
+
+		
+			<div class ="subControl">
+	<!-- 			step 1 -->
+				<div  id="wellText" class="panel panel-default" style="display: none;">
+					<div class="panel-body">
+						<div  id="subText1"   class="subText" acceptDisabled=1>
+							<h3>Start Alignment Process </h3>
+							<hr>
+                            <p>In this step, the model will be automatically aligned to be perpendicular to the ground plane.<p>
+						</div>
+						<div  id="subText2"  
+						apiFunc=" orientModel()"
+						class="subText"  style="display: none;">
+							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+							<h3>Auto Align </h3>
+							<hr>
+                            <p>Click the "Accept" button to automatically align the model.<p>
+						</div>
+                        <div id="subText3" apifuncstart="$.post('api/cancel()',apiReturnParser); "
+                             apifunc=" $.post('api/alignZCam(1)',apiReturnParser);"  class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Reset Camera View</h3>
+                            <hr>
+                            <p>Click the "Accept" button to centre the camera view on the model.<p>
+                        </div>
+	                    <div id="subText4" apifunc=" $.post('api/accept()',apiReturnParser);"
+	                     apiFuncStart= "$.post('api/alignTransform()',apiReturnParser); "
+	                     class="subText" style="display: none;">
+	                    	<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+	                        <h3>Manual Align</h3>
+	                        <hr>
+                            <p> Use the alignment arrows to make any desired modifications to the position of the model.<p>
+	                    </div>
+	                   
+						<div id="subText5" apiFuncStart= "$.post('api/cancel()',apiReturnParser); "
+						class="subText" style="display: none;" acceptDisabled=1>
+							<h3>Finished </h3>
+							
+						</div>
+					</div>
+					<div class="panel-footer "> 
+						<div id="page5TemplateControls"> </div>
+					</div>
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page5TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage5));
+                    });
+                    </script>
+				</div>
+
+				<a id = "activateButton" class="btn btn-info " role="button">
+					 <span class="glyphicon glyphicon-wrench"></span> Align
+				</a>
+				
+			</div> <!-- subcontrol div -->
+
+        <br />
+        <div class="subControl">
+            <!-- 			step 1 -->
+            <div id="wellText" class="panel panel-default" style="display: none;">
+                <div class="panel-body">
+                    <div id="subText1" class="subText" acceptdisabled=1>
+                        <h3>Start Duplication Process </h3>
+                        <hr>
+                        <p><p>
+                    </div>
+                    <div id="subText2"
+                         apifunc="createDuplicate()"
+                         class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                        <h3>Duplicate Model </h3>
+                        <hr>
+                        <p>Meshmixer will automatically create a duplicate of the model for use in comparison and fit.<p>
+                    </div>
+                    <div id="subText3"
+                         class="subText" style="display: none;" acceptdisabled=1 apifuncstart="$.post('api/saveLatest()',apiReturnParser);">
+                        <h3>Finished </h3>
+
+                    </div>
+                </div>
+                <div class="panel-footer ">
+                    <div id="page32TemplateControls"> </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('#page32TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage32));
+                    });
+                </script>
+            </div>
+
+            <a id="activateButton" class="btn btn-info " role="button">
+                <span class="glyphicon glyphicon-wrench"></span> Duplicate Model
+            </a>
+
+        </div> <!-- subcontrol div -->
+		</p>
+	</div>
+
+</div>
+
+<script>
+
+
+    function hideOrig(data) {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else {
+            $.post("api/hideObjectByName('scan')", apiReturnParser);
+        }
+    }
+    function renameDuplicate(data) {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else {
+            $.post("api/renameObjectByName('scan (copy)','residualLimb')", hideOrig);
+        }
+    }
+    function createDuplicate(data) {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else {
+            $.post("api/duplicate('scan')", renameDuplicate);
+        }
+    }
+
+
+
+    function reOrientModel(data)
+    {
+        $.post('api/reOrientModel()', apiReturnParser);
+        
+    }
+
+    function orientModel()
+    {
+        $.post('api/exportTempModel()', reOrientModel);
+    }
+
+
+  
+</script>

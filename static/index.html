@@ -1,0 +1,642 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta content=
+    "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" name=
+    "generator">
+    <meta content="IE=EmulateIE9" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel=
+    'stylesheet' type='text/css'>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="js/bootstrap-progressbar.min.js" type="text/javascript"></script>
+    <link href="css/bootstrap-progressbar-3.2.0.min.css" rel="stylesheet" type=
+    "text/css">
+    <link href="css/wowControlBar.css" rel="stylesheet" type="text/css">
+    <script src="js/subControl.js" type="text/javascript"></script>
+    <script src="js/alert.js" type="text/javascript"></script>
+    <script src="js/mustache.js" type="text/javascript"></script>
+    <script src="js/sliderControl.js" type="text/javascript"></script>
+    <link href="video-js/video-js.css" rel="stylesheet" type="text/css">
+    <script src="video-js/video.js" type="text/javascript"></script>
+    <script src="js/notify.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
+    <style type="text/css">
+/*<![CDATA[*/
+      .panel-footer {
+      background-color: #E1EFFB;
+      }
+      section { 
+      -moz-box-shadow: 0 0 5px #888;
+      -webkit-box-shadow: 0 0 5px#888;
+      box-shadow: 0 0 5px #888;
+      background: white;
+      }
+      #instructionSection
+      {
+      margin: 30px;
+      }
+      .breadcrumb
+      {
+      background-color: #F0F7FF;
+      }
+      .page{
+      background-color: #F0F7FF;
+      }
+      .well{
+      background-color: #E8E8E8;
+      }
+      
+      #bookControls {
+      z-index: 9999;
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+      }
+      #importBT,
+    #activateButton {
+        width:200px;
+    }
+    /*]]>*/
+    </style>
+</head>
+
+<body id="body">
+    <div id="sampleArea"></div><!-- Fixed navbar -->
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <button class="btn btn-info btn-sm" onclick=
+                        "gotoSection(1)"  type=
+                        "button">Scanning</button> <button class=
+                        "btn btn-info btn-sm" onclick="gotoSection(2)"  type="button">Modeling</button>
+                        <button class="btn btn-info btn-sm" onclick=
+                        "gotoSection(3)"  type=
+                        "button">Printing</button>
+                    </div>
+                    <div class="btn-group">
+                        <div class="dropdown">
+                            <button class=
+                            "btn btn-warning dropdown-toggle btn-sm"
+                            data-toggle="dropdown" id="dropdownMenu1" type=
+                            "button"><span class="caret"></span>Tools</button>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a onclick="loadReference()"
+                                       tabindex="-1">Load Reference</a>
+                                </li>
+                                <li role="presentation" class="divider"></li>
+                                <li>
+                                    <a 
+                                    tabindex="-1">Reset View 
+                                        <span>
+                                        
+                                        <button class="btn  btn-xs" onclick="$.post('api/alignZCam(1)');"
+                                                type="button">
+                                            Front
+                                        </button>
+                                        <button class="btn  btn-xs" onclick="$.post('api/alignZCam(2)');"
+                                                type="button">
+                                            Back
+                                        </button>
+                                        <button class="btn  btn-xs" onclick="$.post('api/alignZCam(0)');"
+                                                type="button">
+                                            Left
+                                        </button>
+                                        <button class="btn  btn-xs" onclick="$.post('api/alignZCam(3)');"
+                                                type="button">
+                                            Right
+                                        </button>
+                                        <button class="btn  btn-xs" onclick="$.post('api/alignZCam(4)');"
+                                                type="button">
+                                            top
+                                        </button>
+                                        
+                                        
+                                        
+                                        </span></a>
+                                </li>
+
+                                <li>
+                                    <a data-toggle="modal" data-target="#myModal" onclick="getAllHistory()"
+
+                                       tabindex=" -1">Load Latest Save action</a>
+                                </li>
+                                <!--                         <li role="presentation" class="divider"></li> -->
+                                <!--                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <div class="dropdown">
+                            <button class=
+                            "btn btn-warning dropdown-toggle btn-sm"
+                            data-toggle="dropdown" id="dropdownMenu1" onclick=
+                            "getAllObjects()" type="button"><span class=
+                            "caret"></span>Objects</button>
+
+                            <ul class="dropdown-menu pull-right" id="activeObjects">
+                                <li>
+                                    <a tabindex="-1">No Objects</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <img src="./icons/uot.jpg" alt="Smiley face" height="42" width="42"> -->
+            <a class="navbar-brand" href="#1" style="font-weight: bold">SEMAPHORE WIZARD</a>
+        </div>
+    </div><br><br><br>
+    
+
+    <div id="Modeling" style=" margin-top: 20px;">
+        <!--Scanning-->
+
+        <div class="myPage" id="p1"></div>
+
+        <div class="myPage" id="p2" style="display: none;"></div>
+
+        <div class="myPage" id="p3" style="display: none;"></div>
+
+        <div class="myPage" id="p4" style="display: none;"></div>
+
+        <div class="myPage" id="p5" style="display: none;"></div>
+
+        <div class="myPage" id="p6" style="display: none;"></div>
+        <!--Modeling-->
+
+        <div class="myPage" id="p7" style="display: none;"></div>
+
+        <div class="myPage" id="p8" style="display: none;"></div>
+
+        <div class="myPage" id="p9" style="display: none;"></div>
+
+        <div class="myPage" id="p10" style="display: none;"></div>
+
+        <div class="myPage" id="p11" style="display: none;"></div>
+
+        <div class="myPage" id="p12" style="display: none;"></div>
+
+        <div class="myPage" id="p13" style="display: none;"></div>
+
+        <div class="myPage" id="p14" style="display: none;"></div>
+
+        <div class="myPage" id="p15" style="display: none;"></div>
+        <!--Printings-->
+
+        <div class="myPage" id="p16" style="display: none;"></div>
+
+        <div class="myPage" id="p17" style="display: none;"></div>
+    </div><br>
+    <nav id ="bookControls">
+        <ul>
+            <li>
+                <a class="" id="first" onclick="goToFirstPageOfSection()" title=
+                "go first page of section">First page of section</a>
+            </li>
+
+            <li>
+                <a class="" id="back" onclick="prevPage()" title=
+                "go back one page">Back</a>
+            </li>
+
+            <li>
+                <a id="next" onclick="nextPage()" title=
+                "go foward one page">Next</a>
+            </li>
+
+            <li>
+                <a id="last" onclick="goToLastPageOfSection()" title=
+                "goto last page of section">last page of section</a>
+            </li>
+        </ul><!-- <div class="navbar navbar-bottom">fdasfds</div> -->
+      </nav>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div  class="modal-body">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                            Previous Mix
+                            <span class="caret"></span>
+                        </button>
+                        <ul id="historyObjects"  class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"></ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <script type="text/javascript">
+//<![CDATA[
+         String.format = function() {
+           // The string containing the format items (e.g. "{0}")
+           // will and always has to be the first argument.
+           var theString = arguments[0];
+           
+           // start with the second argument (i = 1)
+           for (var i = 1; i < arguments.length; i++) {
+               // "gm" = RegEx options for Global search (more than one instance)
+               // and for Multiline search
+               var regEx = new RegExp("\\{" + (i - 1) + "\\}", "gm");
+               theString = theString.replace(regEx, arguments[i]);
+           }
+           
+           return theString;
+         }
+         var selectedObjects = ''
+         function selectObjects(data)
+         {
+             if (data == false) {
+                 apiReturnParser(data)
+             }
+             else {
+                 $.post("api/selectObjects(" + selectedObjects + ")", apiReturnParser);
+             }
+         }
+
+         function alignReference(data)
+         {
+             if (data == false) {
+                 apiReturnParser(data)
+             }
+             else
+             {
+                 $.post("api/centerModel()", selectObjects);
+             }
+         }
+         function exportReference(data)
+         {
+             if (data == false) {
+                 apiReturnParser(data)
+             }
+             else {
+                 $.post("api/exportTempModel()", alignReference);
+             }
+         }
+
+         
+         function loadReferenceObject(data)
+         {
+             debugger;
+             if (data == false) {
+                 apiReturnParser(data)
+             }
+             else {
+                 selectedObjects = data;
+                 $.post("api/importFile('alignmentObject.STL','reference')", exportReference);
+             }
+         }
+
+         function loadReference()
+         {
+             $.post("api/getSelectedObject()", loadReferenceObject);
+
+         }
+
+         function pauseAllVideo()
+         {
+           $(".video-js").trigger("pause");
+
+         }
+
+         $(window).on('hashchange', function () {
+             var pageNumber = location.hash;
+             length = pageNumber.length
+             pageWithoutHash = pageNumber.substr(1, length - 1)
+             goToPage(pageWithoutHash)
+         });
+         function deleteModel(event)
+         {
+             objectName = $(event.target).parent().find('#name').text()
+             if (confirm("Delete "+objectName+"?") == true) {
+                 $.post("api/deleteObjectByName('" + objectName + "')")
+             }
+             
+            
+         }
+
+         function renameModel(event) {
+             objectName = $(event.target).parent().find('#name').text()
+             $.post("api/renameObjectByName('" + objectName + "')")
+
+         }
+
+         function hideModel(event)
+         {
+             debugger;
+             objectName = $(event.target).parent().find('#name').text()
+             $.post("api/hideObjectByName('" + objectName + "')")
+
+         }
+
+         function showModel(event) {
+             objectName = $(event.target).parent().find('#name').text()
+             console.log(objectName)
+             $.post("api/showObjectByName('" + objectName + "')")
+
+         }
+
+         function selectModel(event)
+         {
+             objectName = $(event.target).parent().find('#name').text()
+             console.log(objectName)
+            $.post("api/selectObjectByName('"+objectName+"')")
+         }
+
+         function LoadMix()
+         {
+             var a = event.target;
+             var mixFile = a.innerText
+             $.post("api/importFigure('" + mixFile+"')")
+             
+         }
+         
+         function getAllHistory()
+         {
+             $.post('history/check', function (data) {
+                 json = $.parseJSON(data);
+                 $('#historyObjects').empty()
+                 $.each(json, function (index, value) {
+                     
+                     insert = "<li role='presentation'><a role='menuitem' tabindex='-1' onclick=LoadMix(this)>" + value + "</a></li>"
+                     $('#historyObjects').append(insert)
+                 })
+                                           
+             })
+         }
+         
+         function getAllObjects()
+         {
+             $("#activeObjects").empty();
+             $("#activeObjects").append("<li>\
+                                    <a tabindex='-1'>No Objects</a>\
+                                </li>")
+          $.post("api/getAllObjects()" , function( data ) {
+             try {
+                     if (data =="false")
+                     {
+                         apiReturnParser(data)
+                         return
+                     }
+                      
+                     json = $.parseJSON(data);
+                     $("#activeObjects").empty();
+                     console.log(json)
+                     $.each(json, function (index, data) {
+                         buttonSelect = "<button type='button' class='btn btn-default btn-xs' onclick='selectModel(event)'>\
+                                       Select\
+                                    </button>"
+                         buttonHide = "<button type='button' class='btn btn-default btn-xs' onclick='hideModel(event)'>\
+                                       Hide\
+                                    </button>"
+
+                         buttonShow = "<button type='button' class='btn btn-default btn-xs' onclick='showModel(event)'>\
+                                       Show\
+                                    </button>"
+
+                         deleteShow = "<button type='button' class='btn btn-default btn-xs' onclick='deleteModel(event)'>\
+                                       delete\
+                                    </button>"
+
+                         renameButton = ''
+                         if (data.indexOf("alignmentObject") >= 0)
+                         {
+                             selectObjectString = String.format("<li><a> {2} {3} {4} {5} {6} <span id='name'><b>{1}</b></span><\/a><\/li>", data, data, buttonSelect, buttonShow, buttonHide, renameButton, deleteShow)
+                         }
+                         else
+                         {
+                             selectObjectString = String.format("<li><a> {2} {3} {4} {5} {6} <span id= 'name'>{1}</span><\/a><\/li>", data, data, buttonSelect, buttonShow, buttonHide, renameButton, deleteShow)
+                         }
+                         console.log(selectObjectString) 
+                        $("#activeObjects").append(selectObjectString)
+                         console.log('index', data)
+                     })
+                 } catch (e) {
+                     // not json
+                 }
+         
+         
+           });
+         }
+         
+         function gotoSection(section)
+         {
+         switch (section) {
+             case 1:
+                 goToPage(1)
+                 break;
+             case 2:
+                 goToPage(7)
+                 break;
+             case 3:
+                 goToPage(15)
+                 break;
+         }
+         }
+         
+         function goToLastPageOfSection()
+         {
+         var pageToGo = 1;
+         if(currentPage<=6 )
+         {
+           pageToGo= 6;
+         }
+         else if(currentPage <=14)
+         {
+           pageToGo = 14;
+         }
+         else
+         {
+           pageToGo = 15;
+         }
+         goToPage(pageToGo)
+         }
+         function goToFirstPageOfSection()
+         {
+         var pageToGo = 1;
+         if(currentPage<=6 )
+         {
+           pageToGo= 1;
+         }
+         else if(currentPage <=14)
+         {
+           pageToGo = 7;
+         }
+         else
+         {
+           pageToGo = 15;
+         }
+         goToPage(pageToGo)
+         }
+         
+         function goToPage(page)
+         {
+
+             if (currentPage == page) {
+                 hideShowModelingTools(currentPage)
+                 return;
+             }
+             if(subStepCheck() == true)
+             {
+               return
+             }
+         
+         
+             $( ".myPage" ).each(function(  ) {
+               $(this).hide('fast');
+             });
+             findID = "#p"+String(page)
+             $(findID).show('fast')
+             currentPage = page
+             location.hash = "#"+currentPage;  
+             hideShowModelingTools(currentPage)
+             }
+         
+         // $.post("history/check", function (data) {
+         //     $(".result").html(data);
+         // });
+         function subStepCheck()
+         {
+         if (typeof inSubStep === 'undefined') {
+           return false
+         }
+         else
+         {
+           if(inSubStep == false)
+           {
+             return false
+           }
+           else
+           {
+             var r = confirm("Do you really want to switch pages?");
+             if (r == true) {
+                 inSubStep = false
+                 return false
+             } else {
+                 return true
+             }
+           }
+         }
+         }
+         
+         function hideShowModelingTools(pageNumber)
+         {
+         if (pageNumber<14 && pageNumber>=7)
+         {
+            $('.dropdown').show()
+         }
+         else
+         {
+           $('.dropdown').hide()
+         }
+         
+         
+         
+         }
+         
+         var currentPage = 1;
+         function nextPage()
+         {
+         if(subStepCheck() == true)
+         {
+           return
+         }
+         var numberOfPages = $('.myPage').length
+         if(currentPage<numberOfPages)
+         {
+           currentPage = parseInt(currentPage)+1;
+           findID = "#p"+String(currentPage)
+           hideId = "#p"+String(currentPage-1)
+           $(findID).show('slow')
+           $(hideId).hide()
+           location.hash = "#"+currentPage;  
+         }
+         hideShowModelingTools(currentPage)
+         
+         
+         }
+         function prevPage()
+         {
+         if(subStepCheck() == true)
+         {
+           return
+         }
+         if(currentPage>1)
+         {
+           currentPage = currentPage-1;
+           findID = "#p"+String(currentPage)
+           hideId = "#p"+String(currentPage+1)
+           $(findID).show('slow')
+           $(hideId).hide()
+           location.hash = "#"+currentPage;  
+         }
+         hideShowModelingTools(currentPage)
+         }
+         
+         
+         $(document).ready(function () {
+         $( "#p1" ).load( "html/scanning/cover.html" );
+         $( "#p2" ).load( "html/scanning/page1.html" );
+         $( "#p3" ).load( "html/scanning/page2.html" );
+         $( "#p4" ).load( "html/scanning/page3.html" );
+         $( "#p5" ).load( "html/scanning/page4.html" );
+         $( "#p6" ).load( "html/scanning/end.html" );
+         // modeling
+         $( "#p7" ).load( "html/modeling/cover.html" );
+         $( "#p8" ).load( "html/modeling/page1.html" );
+         $( "#p9" ).load( "html/modeling/page2.html" );
+         $( "#p10" ).load( "html/modeling/page3.html" );
+         $( "#p11" ).load( "html/modeling/page4.html" );
+         $( "#p12" ).load( "html/modeling/page5.html" );
+         $( "#p13" ).load( "html/modeling/page6.html" );
+         $( "#p14" ).load( "html/modeling/end.html" );
+         // printing
+         $( "#p15" ).load( "html/printing/cover.html" );
+         $( "#p16" ).load( "html/printing/end.html" );
+         var pageNumber = location.hash;
+         if(pageNumber)
+         {
+           length = pageNumber.length
+           pageWithoutHash = pageNumber.substr(1,length-1)
+           goToPage(pageWithoutHash)
+         }
+         else
+        {
+          hideShowModelingTools(1)
+        }
+         $.getScript('js/questionControl.js');
+         
+         });
+         
+    //]]>
+    </script>
+</body>
+</html>

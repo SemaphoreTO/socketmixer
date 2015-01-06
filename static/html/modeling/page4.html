@@ -1,0 +1,206 @@
+<div id="instructionSection">
+	<div style ="margin:20px">
+		<p>
+            <p>In step 4...
+            <br>
+        ...you will rectify the model of the residual limb, making all adjustments that you would perform on a plaster positive. When you complete a step, click the "Accept" button and then use the ">" button to move to the next step.
+            <br><br>
+            <p>Checklist (steps for each rectification):</p>
+            <ul>
+                <li>Select area requiring relief or recessing</li>
+                <li>Offset selected area</li>
+                <li>Smooth the newly-offset area</li>
+                <li>Do additional, localized smoothing if desired</li> 
+            </ul>
+
+            <br>
+            Checklist (rectifications):
+            <ul>
+                <li>Patellar relief</li>
+                <li>Indent on patellar tendon</li>
+                <li>Fibular head relief </li>
+                <li>Tibial crest relief </li>
+                <li>Distal end of the fibula relief</li>
+                <li>Indent on medial border of the tibia</li>
+                <li>Distal end of the tibia relief</li>
+                <li>Inferior border of the medial flare of the tibial condyle relief</li>
+                <li>Inferior border of the lateral flare of the tibial condyle relief</li>
+                <li>Any other rectification steps you find necessary</li>
+            </ul>
+
+            <br>
+        <div class="subControl">
+            <!-- 			step 1 -->
+            <div id="wellText" class="panel panel-default" style="display: none;">
+                <div class="panel-body">
+                    <div id="subText1" class="subText" acceptdisabled=1>
+                        <h3>Start Duplication Process </h3>
+                        <hr>
+                        <p><p>
+                    </div>
+                    <div id="subText2"
+                         apifunc="createDuplicate4()"
+                         class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                        <h3>Duplicate Model </h3>
+                        <hr>
+                        <p>Meshmixer will automatically create a duplicate of the model for use in comparison and fit.<p>
+                    </div>
+                    <div id="subText3"
+                         class="subText" style="display: none;" acceptdisabled=1>
+                        <h3>Finished </h3>
+
+                    </div>
+                </div>
+                <div class="panel-footer ">
+                    <div id="page41TemplateControls"> </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('#page41TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage32));
+                    });
+                </script>
+            </div>
+
+            <a id="activateButton" class="btn btn-info " role="button">
+                <span class="glyphicon glyphicon-wrench"></span> Duplicate Model
+            </a>
+
+        </div> <!-- subcontrol div -->
+        <br />
+
+			<div class ="subControl">
+	<!-- 			step 1 -->
+				<div  id="wellText" class="panel panel-default" style="display: none;">
+                    <div class="panel-body">
+                        <div id="subText1" class="subText" acceptDisabled=1>
+                            <h3>Start Rectification Process</h3>
+                            <hr>
+                            <p>In the following steps, you will select an area on the model and perform a rectification on it.<p>
+                        </div>
+                        <div id="subText2" apifuncstart="shownElement.find('input[type=range]').each(function() { $(this).change()})" class="subText" style="display: none;" acceptdisabled=1>
+                            <div class='questionMarkPlaceHolder' align='right' helppage='helpContainer.html'> </div>
+                            <h3>Select Brush Size</h3>
+                            <hr>
+                            <p>Use the slider to modify the size of your brush. An appropriate brush size should allow you to select a particular area of the model conveniently, without also selecting other areas by mistake.</p>
+                            
+                            <div id="page4SelectTool"> </div>
+                            <script>
+                                $(document).ready(function () {
+                                    $('#page4SelectTool').html(Mustache.to_html(template, SelectValues));
+                                });
+
+                            </script>
+                        </div>
+                        <div id="subText3" class="subText" acceptDisabled=1 style="display: none;">
+                            <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+                            <h3>Select Area to Rectify</h3>
+                            <hr>
+                            <p>Now use the Brush tool to colour in the area you would like to rectify.<p>
+                        </div>
+    					<div id="subText4" 
+                         apiFunc=" $.post('api/smoothBoundary()',apiReturnParser);"
+                         class="subText" style="display: none;">
+                            <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+    						<h3>Smooth Boundary</h3>
+                            <hr>
+                            <p>In this step, the boundary of your selected area will be smoothed, removing sharp edges or inconsistencies. Press the "Accept" button to view the change.<p>
+    					</div>
+                        <div id="subText5" apifunc=" callAccept()" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right'> </div>
+                            <h3>Offset </h3>
+                            <hr>
+                            <p>Offset allows you to choose the distance of your relief or indent. For relief, either use the slider or the number entry box to select an appropriate offset, 
+                                measured in millimetres. For an indent, use the same method, but ensure that the number is negative. 
+                                The "Soft Transition" slider allows you to ajust the sharpness of the indent or relief. 
+                                As always, press the "Accept" button to apply your changes.<p>
+
+                                <div id="page4Offset"> </div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#page4Offset').html(Mustache.to_html(template, OffsetValuesAllowNegative));
+                                    });
+
+                                </script>
+
+                                <div class='checkbox'>
+                                    <label>
+                                        <input disabled='disabled' type='checkbox' checked> connected
+                                    </label>
+                                </div>
+                        </div>
+
+                 
+                        <div id="subText6" apifunc=" callAccept()" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right'> </div>
+                            <h3>Smooth</h3>
+                            <hr>
+                            <p>This tool will refine your offset, giving it a smoother transition. Adjust the slider or number entry box to change the level of smoothness. Changes you make in these fields will appear on your model, but will not be saved until you click the "Accept" button.<p>
+
+                                <div id="page5Smooth"> </div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#page5Smooth').html(Mustache.to_html(template, SmoothValues));
+                                    });
+
+                                </script>
+
+                        </div>
+
+    					
+                        <div id="subText7" apifuncstart="$.post('api/saveLatest()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Finished </h3>
+                            <hr>
+                            <p>If you need to rectify other areas, simply click the "Rectify" button to continue.</p>
+                        </div>
+                    </div>
+                    <div class="panel-footer "> 
+					   <div id="page4TemplateControls"> </div>
+                    </div>
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page4TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage4));
+                    });
+                    </script>
+				</div>
+
+				<a id = "activateButton" class="btn btn-info " role="button">
+					 <span class="glyphicon glyphicon-wrench"></span> Rectify
+				</a>
+				
+			</div> <!-- subcontrol div -->
+		</p>
+	</div>
+
+</div>
+
+<script>
+
+
+    function hideOrig4(data) {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else {
+            $.post("api/hideObjectByName('residualLimb')", apiReturnParser);
+        }
+    }
+    function renameDuplicate4(data) {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else {
+            $.post("api/renameObjectByName('residualLimb (copy)','rectifiedLimb')", hideOrig4);
+        }
+    }
+    function createDuplicate4(data) {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else {
+            $.post("api/duplicate('residualLimb')", renameDuplicate4);
+        }
+    }
+
+</script>

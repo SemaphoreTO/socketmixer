@@ -1,0 +1,259 @@
+<div id="instructionSection">
+	<div style ="margin:20px">
+			
+	    In step 5 ...
+        <p>
+            ...you will generate the socket from the now rectified positive model. Start by using the selection tool to trace the trim line for the socket as marked during the sca nning process, Make sure to trace above the line rather than directly on the line and verify that the line is continuous and that there are no gaps.
+            </p>
+            <div class="subControl">
+                <!-- 			step 1 -->
+                <div id="wellText" class="panel panel-default" style="display: none;">
+                    <div class="panel-body">
+                        <div id="subText1" class="subText" acceptdisabled=1>
+                            <h3>Start Trim Line Process</h3>
+                            <hr>
+<p> In the following steps, you will select an area on the model and use it to form a trim line. <p>
+                        </div>
+                        <div id="subText2" apiFuncStart= "shownElement.find('input[type=range]').each(function() { $(this).change()})" class="subText" style="display: none;" acceptDisabled=1>
+                            <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+                            <h3>Select Brush Size</h3>
+                            <hr>
+                            <p> Use the slider to select an appropriate brush size. It shouldn't be too large, but should be large enough to create a smooth, consistent selection with no breaks. <p>
+                            <div id="page6SelectTool"> </div>
+                            <script>
+                            $( document ).ready(function() {
+                              $('#page6SelectTool').html(Mustache.to_html(template, SelectValues));
+                            });
+                            </script>
+                        </div>
+    					<div  id="subText3"  apiFunc=" $.post('api/smoothBoundary()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+    						<h3>Draw Trim Line and Smooth Boundary </h3>
+                            <hr>
+    						<p> Use the brush to draw a trim line on the model, starting at the bottom of the patella, rising higher on the sides of the leg, 
+                                and meeting in a straight line on the back of the model. To erase unwanted selections, hold down the "Ctrl" button on your keyboard while drawing. 
+                                Pressing the "Accept" button will smooth your trim line. 
+                                <br />
+                                <br />
+                                To generate a socket, double-click anywhere below the trim line. The area on which you've double clicked should turn orange. 
+                            If an area does not turn orange, simply double-click in it as well. When the entire area below the trim line is selected, press "Generate Socket" to create the socket.
+                            
+                            
+                            <p>
+    					</div>
+    					
+    					<div id="subText4" class="subText" style="display: none;" acceptDisabled=1>
+    						<h3>Finished </h3>
+    					</div>
+					</div>
+                    <div class="panel-footer "> 
+					   <div id="page61TemplateControls"> </div>
+                    </div>
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page61TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage61));
+                    });
+                    </script>
+				</div>
+
+				<a id = "activateButton" class="btn btn-info " role="button">
+					 <span class="glyphicon glyphicon-wrench"></span>Trim Line
+				</a>
+				
+			</div> <!-- subcontrol div -->
+			<br>
+			<p>
+				To generate a socket, double-click anywhere below the trim line to select the appropriate part of the model. Then, press  generate socket
+				to create the socket. You can set the space between the residual limb and the socket using the ‘inner dimension’ slider and the thickness of the socket wall using the ‘outer dimension’ slider.
+			</p>
+			<div class ="subControl">
+	<!-- 			step 1 -->
+				<div  id="wellText"  class="panel panel-default" style="display: none;">
+                    <div class="panel-body">
+                        <div id="subText1"  class="subText" acceptDisabled=1 >
+                            <h3>Start Socket Generation Process</h3>
+                            <hr>
+                            <p> In the following steps, you will create a socket, set its distance from the limb, and determine its thickness. <p>
+                        </div>
+                        <div id="subText2" apifunc="callAccept()" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Offset Socket  </h3>
+                            <hr>
+                            <p> Use the "Distance" slider to choose how much space there will be between the limb and the inside of the socket. Measurements are in millimetres. Press "Accept" to generate the socket. <p>
+                                <div id="page6_1Offset"> </div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#page6_1Offset').html(Mustache.to_html(template, OffsetValues2));
+                                    });
+
+                                </script>
+                        </div>
+
+                        <div id="subText3" apifunc=" $.post('api/separate()',seperateAndRename);" class="subText" style="display: none;">
+                            <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+                            <h3>Make New Object</h3>
+                            <hr />
+                            <p> choose the selected area <p>
+                        </div>
+                        <div id="subText4" apifunc=" $.post('api/selectAll()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+                            <h3>Select All</h3>
+                            <hr>
+                            <p> Press the "Accept" button to select the socket. <p>
+                        </div>
+
+                        <div id="subText5" apiFunc="callAccept()" class="subText" style="display: none;">
+                            <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+                            <h3>Create Socket Thickness </h3>
+                            <hr>
+                            <p>Using the "Distance" slider, set the thickness of the socket, in millimetres. Press "Accept" to apply the change. <p>
+                            <div id="page6_2Offset"> </div>
+                            <script>
+                            $( document ).ready(function() {
+                              $('#page6_2Offset').html(Mustache.to_html(template, OffsetValues));
+                            });
+                             
+                            </script>
+                            <div class='checkbox'>
+                                <label>
+                                    <input disabled='disabled' type='checkbox' checked> connected
+                                </label>
+                            </div>
+
+                        </div>
+    					
+    					<div id="subText6" class="subText" style="display: none;" acceptDisabled=1>
+    						<h3>Finished </h3>
+    					</div>
+                    </div>
+					<div class="panel-footer "> 
+					   <div id="page62TemplateControls"> </div>
+                    </div>
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page62TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage62));
+                    });
+                    </script>
+				</div>
+
+				<a id = "activateButton" class="btn btn-info " role="button">
+					 <span class="glyphicon glyphicon-wrench"></span> Generate Socket
+				</a>
+				
+			</div> <!-- subcontrol div -->
+			<br>
+			<br>
+			<div class ="subControl">
+    			<div  id="wellText" class="panel panel-default" style="display: none;">
+                    <div class="panel-body">
+                         <div id="subText1"  class="subText" acceptDisabled=1 >
+                            <h3>Start Cleanup Process</h3>
+                             <p> In the following steps, you will smooth and remesh the socket.<p>
+                        </div>
+                        <div id="subText2" apifunc="callAccept()" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Remesh  </h3>
+                            <hr>
+                            <p>Use the "Remesh" and "Smooth" sliders to smooth the socket. Setting a high "Remesh" value will make the socket look more natural when printed. <p>
+                                <div id="page6_3Remesh"> </div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#page6_3Remesh').html(Mustache.to_html(template, RemeshValues));
+                                    });
+                                </script>
+                        </div>
+                        <div id="subText3" apifunc="callAccept()" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Smooth  </h3>
+                            <hr>
+                            <p> In this step, you can smooth the socket further. Don't worry if the trimline looks slightly ragged at this point. You'll perform an additional, manual smooth in the next step. <p>
+                                <div id="page6_3Smooth"> </div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#page6_3Smooth').html(Mustache.to_html(template, SmoothValues));
+                                    });
+                                </script>
+                        </div>
+                        <div id="subText4" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Trim Line Smoothing  </h3>
+                            <hr>
+                            <p>Use the "Flatten Smooth" sculpting brush to smooth out your trim line. Simply Draw on the trimline, smoothing, until the its smoothness is satisfactory.
+                                <div class="btn-group">
+                                    <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Brushes <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a onclick="$.post('api/flattenSmooth()', apiReturnParser);">Flatten Smooth</a></li>
+                                        <li><a onclick="$.post('api/bubbleSmooth()', apiReturnParser);">Bubble Smooth</a></li>
+                                    </ul>
+                                </div>
+                            
+                            
+                            <p>
+
+                        </div>
+    					
+                        <div id="subText5" class="subText" style="display: none;" acceptdisabled=1 apifuncstart="$.post('api/saveLatest()',apiReturnParser);">
+                            <h3>Finished </h3>
+                        </div>
+                    </div>
+                    <div class="panel-footer "> 
+					   <div id="page63TemplateControls"> </div>
+                    </div>
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page63TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage63));
+                    });
+                    </script>
+					
+				</div>
+
+				<a id = "activateButton" class="btn btn-info " role="button">
+					 <span class="glyphicon glyphicon-wrench"></span> Cleanup
+				</a>
+				
+			</div> <!-- subcontrol div -->
+		
+	</div>
+
+</div>
+
+<script>
+   
+
+
+    function seperateAndRename(data)
+    {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else {
+            $.post("api/renameObjectByName('rectifiedLimb (part)','socket')", hideOrig5);
+        }
+    }
+
+    function hideOrig5(data) {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else {
+            $.post("api/hideObjectByName('rectifiedLimb')", apiReturnParser);
+        }
+    }
+    //function renameDuplicate5(data) {
+    //    if (data == false) {
+    //        apiReturnParser(data)
+    //    }
+    //    else {
+    //        $.post("api/renameObjectByName('rectifiedLimb (part)','socket')", hideOrig5);
+    //    }
+    //}
+    //function createDuplicate5(data) {
+    //    if (data == false) {
+    //        apiReturnParser(data)
+    //    }
+    //    else {
+    //        $.post("api/duplicate('rectifiedLimb')", renameDuplicate5);
+    //    }
+    //}
+
+</script>

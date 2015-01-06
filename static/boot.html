@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"> </script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    
+    <script src="js/jquery-ui.min.js"></script>
+    <link href="css/jquery-ui.css" rel="stylesheet">
+
+    <script src="js/advanced.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-wysihtml5.css">
+
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+</head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><font face="Lato" color="white"><b>SEMAPHORE PROSTHETIC WIZARD</b></font></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                      
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div id="headerwrap">
+            <div class="container" style="margin-left:40px">
+                <div class="row">
+                     <div class="col-lg-6">
+                        <h1>
+                            <font face="Lato" color="white">
+                                Launch <br />
+                                Wizard
+                            </font>
+                        </h1>
+                        <button id="openme" type="button"><span class="glyphicon glyphicon-resize-full">Open</span></button>
+                        
+                    </div><!-- /col-lg-6 -->
+
+
+                </div><!-- /row -->
+            </div><!-- /container -->
+        </div><!-- /headerwrap -->
+
+
+    </body>
+    <script>
+
+        $(document).ready(function () {
+            
+            $("#openme").on("click", function () {
+                openWin()
+            });
+
+            var myWindow;
+           
+            function openWin() {
+                debugger;
+               
+                var currentPath = document.URL
+                var width = screen.width
+                var height = screen.height
+                var args = "width=" + width / 2.2 + ", height=" + height * 0.93 + "top=0,left=0,scrollbars=1"
+                var newPath = currentPath.replace("boot","index")
+                myWindow = window.open(newPath, "", args);
+
+              
+            }
+
+            function resizeWin() {
+                myWindow.resizeTo(250, 250);
+                myWindow.focus();
+            }
+          
+            var triggered = false
+            $(document).mousemove(function (event) {
+                if (triggered)
+                    return
+                triggered = true
+                $("#openme").trigger("click");
+                
+            });
+
+
+        });
+    </script>
+</html>
+
+

@@ -1,0 +1,94 @@
+<div id="instructionSection" >
+	<div style ="margin:20px">
+
+       
+
+		<p>
+			In step 1... 
+            <br >
+            ...you will import the 3D model you produced in the scanning steps. Press the "Import" button to start.
+		<p>
+		<p>Checklist:</p>
+		<ul>
+			<li>Import scan data by clicking "Import"</li> 
+			<li>Use dialog box to locate file</li>
+			<li>Click "Import" in dialog</li>
+		</ul>
+		<br>
+		<br>
+        <form id="ajaxform"  action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" class="filestyle"  name="upload" accept=".obj" />
+            </div>
+        </form>
+		
+			<a id="importBT" class="btn btn-info " role="button">
+				 <span class="glyphicon glyphicon-folder-open"></span> Import
+			</a>
+			<script>
+
+                $("#ajaxform").submit(function (e) {
+
+                    var formObj = $(this);
+                    var formURL = formObj.attr("action");
+                    var formData = new FormData(this);
+                    $.ajax({
+                        url: formURL,
+                        type: 'POST',
+                        data: formData,
+                        mimeType: "multipart/form-data",
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (data, textStatus, jqXHR) {
+                            $.post("api/importFile('" + data + "','upload')", secondStage);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                        }
+                    });
+                    e.preventDefault(); //Prevent Default action. 
+                    e.unbind();
+                });
+
+                $("#importBT").click(function () {
+                    $("#ajaxform").submit();
+                    alert('processing please wait')
+				    //$.post("api/importFile()", secondStage);
+				});
+			</script>
+
+			
+</script>
+		
+	</div>
+
+</div>
+
+<script>
+    $(":file").filestyle({ buttonBefore: true });
+    function saveMix(data)
+    {
+        if (data == 'false') {
+            apiReturnParser(data)
+        }
+        else
+        {
+            $.post('api/saveLatest()', apiReturnParser);
+        }
+    }
+    function secondStage(data)
+    {
+        if (data == 'false') {
+            apiReturnParser(data)
+        }
+        else
+        {
+            $.post("api/renameObjectByName('*','scan')", saveMix);
+        }
+    }
+
+$('a').tooltip({
+     'delay': { show: 300, hide: 3000 }
+});
+</script>

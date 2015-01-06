@@ -1,0 +1,77 @@
+<div id="instructionSection">
+	<div style ="margin:20px">
+			<p>
+				In step 6... 
+				<br>
+				...you will attach a mounting point to the distal end of the socket. The connection between the socket and the mounting point will not only make the socket compatible with ICRC alignment hardware, but will offer an opportunity to do some preliminary alignment.
+			</p>
+			<p>Checklist:</p>
+			<ul>
+				<li>Select bottom of socket, where mounting point should be attached</li>
+				<li>Import mounting point</li>
+				<li>Position mounting point relative to socket, as necessary</li>
+				<li>Align socket in relation to mounting point, as necessary</li>
+				<li>Cut away external layer of socket</li>
+				<li>Merge socket and mounting point together</li>
+			</ul>	
+			<br>
+			<br>	
+		
+			<div class ="subControl">
+	<!-- 			step 1 -->
+				<div  id="wellText" class="panel panel-default" style="display: none;">
+					<div class="panel-body">
+
+	                    <div id="subText1"  class="subText" acceptDisabled=1>
+	                        <h3>Start Mounting Point Attachment Process</h3>
+	                        <hr>
+                            <p>In the following steps, you will attach a mounting point to the distal end of the socket.<p>
+	                    </div>
+
+                        <div id="subText2" apifuncstart="$.post('api/beginSelection()',apiReturnParser);" apifunc="$.post('api/importConnectorAndPosition()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Select Area</h3>
+                            <hr>
+                            <p>Using the selection tool that is now active, mark the region on the bottom of the socket 
+                                where the mounting point should be attached. Press "Accept" to import the mounting point.<p>
+                        </div>
+
+						<div  id="subText3"  apiFunc="$.post('api/cutSocketForConnection()',apiReturnParser);" class="subText" style="display: none;">
+							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+							<h3>Position Mounting Point</h3>
+							<hr>
+                            <p>If the mounting point is positioned correctly relative to the socket, continue to the next step. Otherwise, use the arrows 
+                                to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.<p>
+						</div>
+						<div id="subText4" apiFunc=" $.post('api/joinConnectionToSocket()',apiReturnParser);" class="subText" style="display: none;">
+							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+							<h3>Position Cutting Plane</h3>
+							<hr>
+                            <p>
+                                In this step, you will cut away part of the outer shell of the socket, which will allow the socket and mounting point to be automatically connected to each other.
+                                If the plane position is appropriate, continue to the next step. Otherwise, use the arrows to position it before continuing.<p>
+						</div>
+						<div id="subText5" class="subText" style="display: none;">
+							<h3>Finished </h3>
+						</div>
+					</div>
+					<div class="panel-footer "> 
+						<div id="page7TemplateControls"> </div>
+					</div>
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page7TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage7));
+                    });
+                    </script>
+				</div>
+
+				<a id = "activateButton" class="btn btn-info " role="button">
+					 <span class="glyphicon glyphicon-wrench"></span>Attach Mounting Point
+				</a>
+				
+			</div> <!-- subcontrol div -->
+			
+		
+	</div>
+
+</div>

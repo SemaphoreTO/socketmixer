@@ -1,0 +1,155 @@
+
+
+<div id="instructionSection">
+	<div style ="margin:20px">
+		<p>
+			In step 2...
+            <br /> 
+            
+            ...you will remove any unnecessary scan data in order to create a clean model of the residual limb.</p>
+		<p>Checklist:</p>
+		<ul>
+			<li>Use "Plane Cut" to detach desired portion of model and create flat top surface</li>
+			<li>Select and remove all remaining unnecessary data</li>
+			<li>Remesh model of residual limb to improve mesh quality</li>
+			<li>Duplicate model of residual limb, for use in comparison and fit later</li>
+		</ul>
+            <div class ="subControl">
+	<!-- 			step 1 -->
+				<div  id="wellText" class="panel panel-default" style="display: none;" >
+					<div class="panel-body">
+                        <div id="subText1"  class="subText" acceptdisabled=1>
+                            <h3>Start Plane Cut Process</h3>
+                            <hr>
+                            <p> In this step, you will use the "Plane Cut" tool to remove excess data. <p>
+                        </div>
+                        <div id="subText2"
+                             apifunc="$.post('api/accept()',apiReturnParser);"
+                             apifuncstart="$.post('api/planeCut()',apiReturnParser);"
+                             class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Plane Cut</h3>
+                            <hr>
+                            <p>
+                                Using the blue arrow to move the plane up and down, and the green and red curves to rotate the angle, position the 
+                                plane slightly above the top of the patella. 
+                                The portion of the leg that appears slightly transparent will be removed when you press the "Accept" key.
+                            <p>
+                        </div>
+
+	                    <div id="subText3"  apiFuncStart="$.post('api/cancel()',apiReturnParser);" class="subText" style="display: none;" acceptDisabled=1>
+	                        <h3>Finished </h3>
+	                    </div>
+	                </div>
+	                <div class="panel-footer "> 
+                    	<div id="page2TemplateControls"> </div>
+                    </div>
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page2TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage2));
+                    });
+                    </script>
+				</div>
+
+
+				<a id = "activateButton" class="btn btn-info " role="button" >
+					 <span class="glyphicon glyphicon-wrench"></span> Plane Cut
+				</a>
+
+				<!-- controls for subinstructions -->
+			</div> <!-- subcontrol div -->
+			<br>
+			<div class ="subControl">
+	<!-- 			step 1 -->
+				<div  id="wellText" class="panel panel-default" style="display: none;" >
+					<div class="panel-body">
+	                    <div id="subText1" class="subText"  acceptDisabled=1>
+	                        <h3>Start Clean Up Process</h3>
+                            <hr />
+                            <p>In this step, you will remove any remaining excess data.</p>
+	                    </div>
+<!-- 	                    <div id="subText2" apiFuncStart= "shownElement.find('input[type=range]').each(function() { $(this).change()})" class="subText" style="display: none;">
+	                        <div id="page3SelectTool"> </div>
+	                        <script>
+	                        $( document ).ready(function() {
+	                          $('#page3SelectTool').html(Mustache.to_html(template, SelectValues));
+	                        });
+	                         
+	                        </script>
+	                    </div> -->
+	                    <div id="subText2"  apiFuncStart="$.post('api/selectTool(30.2)',apiReturnParser);"  apiFunc="$.post('api/expandToConnected()',apiReturnParser);" 
+                             class="subText" style="display: none;" acceptDisabled=0>
+	                        <h3> Select Limb</h3>
+	                        <hr>
+	                        <p>Click anywhere on the leg. When you press the "Accept" button, the entire leg will be selected.</p>
+	                        
+	                    </div>
+						<div id="subText3" apiFunc=" $.post('api/invertTool()',apiReturnParser);" class="subText" style="display: none;">
+							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+							<h3>Invert Selection </h3>
+							<hr>
+                            <p> By clicking the "Accept" button, your selection will be inverted, leaving everything but the leg selected.<p>
+						</div>
+						
+						<div id="subText4" apiFunc=" $.post('api/discard()',apiReturnParser);" class="subText" style="display: none;">
+							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+							<h3>Discard </h3>
+                            <hr />
+                            <p>By clicking the "Accept" button, you will discard all of the selected areas.</p>
+							
+						</div>
+						<div id="subText5" apiFuncStart=" $.post('api/inspector()',apiReturnParser);"
+						apiFunc=" $.post('api/repairAll()',apiReturnParser);" class="subText" style="display: none;">
+							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+							<h3>Inspector </h3>
+                            <hr />
+                            <p>Clicking the "Accept" button will run the Inspector tool, repairing any holes in the object mesh.</p>
+							
+						</div>
+	                    
+<!-- 	                    apiFunc="$(this).closest('.subControl').find('.subText').filter(':visible').find('input[type=range]').each(function() { $(this).change()})" -->
+                        <div id="subText6" apifuncstart="$.post('api/selectAll()',apiReturnParser);"
+                             apifunc="callAccept()"
+                             class="subText" style="display: none;">
+
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Remesh</h3>
+                            <hr>
+                            <p> Remeshing the model will change its quality. A larger number on the "Remesh" slider results in a more detailed model, 
+                            but will slightly slow down the operation of the software. The "Smooth" slider will smooth out bumps in the model. 
+                            A larger number will result in a smoother mesh. As always, press the "Accept" button when you're happy with your modifications. </p>
+                            <div id="page3Remodel"> </div>
+                            <script>
+                                $(document).ready(function () {
+                                    $('#page3Remodel').html(Mustache.to_html(template, RemeshValues));
+                                });
+                            </script>
+                        </div>
+                        <div id="subText7" apifuncstart="$.post('api/saveLatest()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
+                            <h3>Finished </h3>
+                        </div>
+	                </div>
+	                <div class="panel-footer "> 
+	                	<div id="page3TemplateControls"> </div>
+	                </div>
+                   
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page3TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage3));
+                    });
+                    </script>
+				</div>
+
+
+				<a id = "activateButton" class="btn btn-info " role="button" >
+					 <span class="glyphicon glyphicon-wrench"></span> Clean Up
+				</a>
+				
+
+			</div> <!-- subcontrol div -->
+
+		
+		</p>
+	</div>
+
+</div>
