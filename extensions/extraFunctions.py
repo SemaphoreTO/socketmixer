@@ -94,7 +94,14 @@ def saveLatest():
     return cmd
 
 ########################### BASIC API CALLS ####################################
-
+@meshWrapper
+def remeshFreeBoundary():
+    print 'here'
+    cmd  = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('remesh')
+    cmd.AppendToolParameterCommand('density',0.5)
+    cmd.AppendToolParameterCommand('boundaryMode',0)
+    return cmd
 
 @meshWrapper
 def remesh(param,paramValue):
@@ -428,7 +435,7 @@ def reOrientModel():
     cmd.AppendBeginToolCommand('transform')
     cmd.AppendToolParameterCommand('rotation',a,b,c,d,e,f,g,h,i)
 
-    cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
+    #cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
     cmd.AppendCompleteToolCommand('accept')
     remote.runCommand(cmd)
     remote.shutdown()

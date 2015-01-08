@@ -156,7 +156,21 @@ var template = "<div class='row' style='margin-left:3px;margin-right:3px;'>\
 	onchange: "$.post('api/offsetDistance('+$(this).val()+',False)',apiReturnParser)"
 	}]
      , acceptFunction: "offsetAcceptButton(this,false)"
-};
+ };
+ var OffsetValues3 = {
+     mainControlName: "Offset",
+     sliders: [{
+         value: 4.0,
+         sectionName: "Distance",
+         idName: "Distance",
+         max: 10,
+         min: 0,
+         step: 0.05,
+         units: 'mm',
+         onchange: "$.post('api/offsetDistance('+$(this).val()+',False)',apiReturnParser)"
+     }]
+     , acceptFunction: "offsetAcceptButton(this,true)"
+ };
 
 //----------------------------------------------------------------------------------------------------------------------
  var SmoothValues = {

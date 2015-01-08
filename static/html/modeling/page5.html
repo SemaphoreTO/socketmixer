@@ -101,8 +101,14 @@
                             <hr>
                             <p> Press the "Accept" button to select the socket. <p>
                         </div>
+                        <div id="subText5" apifuncstart="$.post('api/remeshFreeBoundary()',apiReturnParser);" apifunc="$.post('api/accept()',apiReturnParser); " class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Remesh Free Boundary</h3>
+                            <hr>
+                            <p> Press the "Accept" button to accept the remesh. <p>
+                        </div>
 
-                        <div id="subText5" apiFunc="callAccept()" class="subText" style="display: none;">
+                        <div id="subText6" apiFunc="callAccept()" class="subText" style="display: none;">
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
                             <h3>Create Socket Thickness </h3>
                             <hr>
@@ -110,7 +116,7 @@
                             <div id="page6_2Offset"> </div>
                             <script>
                             $( document ).ready(function() {
-                              $('#page6_2Offset').html(Mustache.to_html(template, OffsetValues));
+                                $('#page6_2Offset').html(Mustache.to_html(template, OffsetValues3));
                             });
                              
                             </script>
@@ -122,7 +128,7 @@
 
                         </div>
     					
-    					<div id="subText6" class="subText" style="display: none;" acceptDisabled=1>
+    					<div id="subText7" class="subText" style="display: none;" acceptDisabled=1>
     						<h3>Finished </h3>
     					</div>
                     </div>
@@ -143,77 +149,7 @@
 			</div> <!-- subcontrol div -->
 			<br>
 			<br>
-			<div class ="subControl">
-    			<div  id="wellText" class="panel panel-default" style="display: none;">
-                    <div class="panel-body">
-                         <div id="subText1"  class="subText" acceptDisabled=1 >
-                            <h3>Start Cleanup Process</h3>
-                             <p> In the following steps, you will smooth and remesh the socket.<p>
-                        </div>
-                        <div id="subText2" apifunc="callAccept()" class="subText" style="display: none;">
-                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Remesh  </h3>
-                            <hr>
-                            <p>Use the "Remesh" and "Smooth" sliders to smooth the socket. Setting a high "Remesh" value will make the socket look more natural when printed. <p>
-                                <div id="page6_3Remesh"> </div>
-                                <script>
-                                    $(document).ready(function () {
-                                        $('#page6_3Remesh').html(Mustache.to_html(template, RemeshValues));
-                                    });
-                                </script>
-                        </div>
-                        <div id="subText3" apifunc="callAccept()" class="subText" style="display: none;">
-                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Smooth  </h3>
-                            <hr>
-                            <p> In this step, you can smooth the socket further. Don't worry if the trimline looks slightly ragged at this point. You'll perform an additional, manual smooth in the next step. <p>
-                                <div id="page6_3Smooth"> </div>
-                                <script>
-                                    $(document).ready(function () {
-                                        $('#page6_3Smooth').html(Mustache.to_html(template, SmoothValues));
-                                    });
-                                </script>
-                        </div>
-                        <div id="subText4" class="subText" style="display: none;">
-                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Trim Line Smoothing  </h3>
-                            <hr>
-                            <p>Use the "Flatten Smooth" sculpting brush to smooth out your trim line. Simply Draw on the trimline, smoothing, until the its smoothness is satisfactory.
-                                <div class="btn-group">
-                                    <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Brushes <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a onclick="$.post('api/flattenSmooth()', apiReturnParser);">Flatten Smooth</a></li>
-                                        <li><a onclick="$.post('api/bubbleSmooth()', apiReturnParser);">Bubble Smooth</a></li>
-                                    </ul>
-                                </div>
-                            
-                            
-                            <p>
 
-                        </div>
-    					
-                        <div id="subText5" class="subText" style="display: none;" acceptdisabled=1 apifuncstart="$.post('api/saveLatest()',apiReturnParser);">
-                            <h3>Finished </h3>
-                        </div>
-                    </div>
-                    <div class="panel-footer "> 
-					   <div id="page63TemplateControls"> </div>
-                    </div>
-                    <script>
-                    $( document ).ready(function() {
-                      $('#page63TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage63));
-                    });
-                    </script>
-					
-				</div>
-
-				<a id = "activateButton" class="btn btn-info " role="button">
-					 <span class="glyphicon glyphicon-wrench"></span> Cleanup
-				</a>
-				
-			</div> <!-- subcontrol div -->
-		
-	</div>
 
 </div>
 
