@@ -3,9 +3,13 @@
 def ConnectorName():
     return "connector"
 
+connectorPath ='socket.obj'
+def setConnectorPath(path):
+    connectorPath = path
 def ConnectorPath():
     # [RMS] can we get a relative path for this?
-    return "socket.obj"
+    return connectorPath
+
 
 def SocketName():
-    return "socket"
+    return 'socket'

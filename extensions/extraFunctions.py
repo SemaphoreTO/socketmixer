@@ -14,6 +14,24 @@ from time import gmtime, strftime
 
 ########################### File Management CALLS ##############################
 
+def checkAvaliableSocketModels():
+    cwd =os.getcwd()
+    socketpath = os.path.join(cwd,'socket')
+    if not os.path.isdir(socketpath):
+        return false
+
+    connectorFiles = []
+
+    for root, dirs, files in os.walk(socketpath):
+        for file in files:
+            if file.endswith(".obj"):
+                connectorFiles.append(file)
+    jsonreturn =  json.dumps(connectorFiles)
+    print jsonreturn
+    return jsonreturn
+    
+
+
 @meshWrapper
 def exportTempModel():
     cmd  = mmapi.StoredCommands()
@@ -580,8 +598,8 @@ def beginSelection():
 #   to the Socket (first import and position Connector, then plane-cut outer shell of Socket, then Join & Smooth)
 #   You could call all three in a row, to fully automate it. With the three separate steps, the user has
 #   the option to reposition the connector and cutting plane
-def importConnectorAndPosition():
-    connector.import_connector(False)
+def importConnectorAndPosition(socketname):
+    connector.import_connector(False,socketname)
     return True
 
 def cutSocketForConnection():

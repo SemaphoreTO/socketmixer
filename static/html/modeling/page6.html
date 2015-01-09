@@ -28,22 +28,36 @@
                             <p>In the following steps, you will attach a mounting point to the distal end of the socket.<p>
 	                    </div>
 
-                        <div id="subText2" apifuncstart="$.post('api/beginSelection()',apiReturnParser);" apifunc="$.post('api/importConnectorAndPosition()',apiReturnParser);" class="subText" style="display: none;">
+                        <div id="subText2" acceptdisabled=1 apifuncstart="$.post('api/beginSelection()',apiReturnParser);" class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                             <h3>Select Area</h3>
                             <hr>
-                            <p>Using the selection tool that is now active, mark the region on the bottom of the socket 
-                                where the mounting point should be attached. Press "Accept" to import the mounting point.<p>
+                            <p>
+                                Using the selection tool that is now active, mark the region on the bottom of the socket
+                                where the mounting point should be attached. Press "Accept" to import the mounting point.
+                            <p>
                         </div>
+                        <div id="subText3" apifunc="loadconnector()" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Select Connector</h3>
+                            <hr>
+                            <p>
+                                message here
+                            <p>
+                                <div class="btn-group">
+                                    <button id="connectorSelector" type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle" onclick=populatemodels()>Connector Models <span class="caret"></span></button>
+                                    <ul class="dropdown-menu" id="connectorModels"></ul>
+                                </div>
 
-						<div  id="subText3"  apiFunc="$.post('api/cutSocketForConnection()',apiReturnParser);" class="subText" style="display: none;">
+                        </div>
+						<div  id="subText4"  apiFunc="$.post('api/cutSocketForConnection()',apiReturnParser);" class="subText" style="display: none;">
 							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
 							<h3>Position Mounting Point</h3>
 							<hr>
                             <p>If the mounting point is positioned correctly relative to the socket, continue to the next step. Otherwise, use the arrows 
                                 to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.<p>
 						</div>
-						<div id="subText4" apiFunc=" $.post('api/joinConnectionToSocket()',apiReturnParser);" class="subText" style="display: none;">
+						<div id="subText5" apiFunc=" $.post('api/joinConnectionToSocket()',apiReturnParser);" class="subText" style="display: none;">
 							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
 							<h3>Position Cutting Plane</h3>
 							<hr>
@@ -51,7 +65,7 @@
                                 In this step, you will cut away part of the outer shell of the socket, which will allow the socket and mounting point to be automatically connected to each other.
                                 If the plane position is appropriate, continue to the next step. Otherwise, use the arrows to position it before continuing.<p>
 						</div>
-						<div id="subText5" class="subText" style="display: none;">
+						<div id="subText6" class="subText" style="display: none;">
 							<h3>Finished </h3>
 						</div>
 					</div>
@@ -75,3 +89,33 @@
 	</div>
 
 </div>
+
+<script>
+    var selectedConnector ='socket.obj'
+    function loadconnector()
+    {
+        debugger;
+        $.post("api/importConnectorAndPosition('" + selectedConnector + "')", apiReturnParser);
+    }
+    function parseResultmodels(data)
+    {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+
+        json = $.parseJSON(data);
+        $('#connectorModels').empty()
+        $.each(json, function (index, value) {
+
+            insert = "<li ><a  onclick=selectedConnector='" + value + "';$('#connectorSelector').text('"+value+"')>" + value + "</a></li>"
+            $('#connectorModels').append(insert)
+        })
+
+    }
+    function populatemodels() {
+        $.post("api/checkAvaliableSocketModels()", parseResultmodels);
+      
+    }
+
+
+</script>

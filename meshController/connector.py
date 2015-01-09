@@ -14,11 +14,11 @@ import os;
 
 # [RMS] this function imports the socket connector and positions it such that it is offset half its height
 #   from the centroid of the current selection. 
-def import_connector(do_accept):
+def import_connector(do_accept,connectorName):
     # initialize connection
     remote = mmRemote();
     remote.connect();
-
+    setConnectorPath(connectorName)
     # find center of current selection, and then shoot ray from below this point, straight upwards, and
     # hope that it hits outer shell
     centroid = mm.get_face_selection_centroid(remote)
@@ -30,7 +30,7 @@ def import_connector(do_accept):
 
     # import part we want to position at selection
     cwd = os.getcwd()
-    socketPath = os.path.join(cwd,'socket','socket.obj')
+    socketPath = os.path.join(cwd,'socket',connectorName)
     new_objs = mm.append_objects_from_file(remote, socketPath);
 
     # rename part
