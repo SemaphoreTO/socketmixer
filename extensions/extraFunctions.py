@@ -105,6 +105,11 @@ def saveLatest():
 
 ########################### BASIC API CALLS ####################################
 @meshWrapper
+def clearAllFaceGroup():
+    cmd  = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('clearFaceGroup') 
+    return cmd
+@meshWrapper
 def remeshFreeBoundary():
     print 'here'
     cmd  = mmapi.StoredCommands()
