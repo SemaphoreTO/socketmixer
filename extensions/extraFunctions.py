@@ -10,6 +10,7 @@ import numpy as np
 import math
 import os
 import numpy.linalg as linalg
+from time import gmtime, strftime
 
 ########################### File Management CALLS ##############################
 
@@ -24,9 +25,6 @@ def exportTempModel():
     cmd.AppendSceneCommand_ExportMeshFile_CurrentSelection(fileName)
     return cmd
     
-    
-
-
 ## use extensionFunction()
 def importFile(fileLocation = None,folder=None):
     if fileLocation != None and folder != None:
@@ -79,6 +77,18 @@ def loadLatest(name):
     saveFile = currentDir+name
     if os.path.isfile(saveFile):
         cmd.AppendSceneCommand_OpenMixFile(saveFile)
+    return cmd
+
+@meshWrapper
+def saveLatestQuick():
+    name = 'QuickSave.mix'
+    cmd  = mmapi.StoredCommands()
+    currentDir = os.getcwd()
+    historyDirectory = 'history'
+    if not os.path.exists(historyDirectory):
+        os.makedirs(historyDirectory)
+    saveFile = os.path.join(currentDir,'history',name)
+    cmd.AppendSceneCommand_ExportMixFile(saveFile)
     return cmd
 
 @meshWrapper
