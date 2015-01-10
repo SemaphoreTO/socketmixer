@@ -207,6 +207,7 @@
         <div class="myPage" id="p16" style="display: none;"></div>
 
         <div class="myPage" id="p17" style="display: none;"></div>
+
     </div><br>
     <nav id ="bookControls">
         <ul>
@@ -461,7 +462,7 @@
                  goToPage(7)
                  break;
              case 3:
-                 goToPage(15)
+                 goToPage(16)
                  break;
          }
          }
@@ -473,13 +474,13 @@
          {
            pageToGo= 6;
          }
-         else if(currentPage <=14)
+         else if(currentPage <=15)
          {
-           pageToGo = 14;
+           pageToGo = 15;
          }
          else
          {
-           pageToGo = 15;
+           pageToGo = 17;
          }
          goToPage(pageToGo)
          }
@@ -490,13 +491,13 @@
          {
            pageToGo= 1;
          }
-         else if(currentPage <=14)
+         else if(currentPage <=15)
          {
            pageToGo = 7;
          }
          else
          {
-           pageToGo = 15;
+           pageToGo = 16;
          }
          goToPage(pageToGo)
          }
@@ -621,10 +622,11 @@
          $( "#p11" ).load( "html/modeling/page4.html" );
          $( "#p12" ).load( "html/modeling/page5.html" );
          $( "#p13" ).load( "html/modeling/page6.html" );
-         $( "#p14" ).load( "html/modeling/end.html" );
+         $("#p14").load("html/modeling/page7.html");
+         $( "#p15" ).load( "html/modeling/end.html" );
          // printing
-         $( "#p15" ).load( "html/printing/cover.html" );
-         $( "#p16" ).load( "html/printing/end.html" );
+         $( "#p16" ).load( "html/printing/cover.html" );
+         $( "#p17" ).load( "html/printing/end.html" );
          var pageNumber = location.hash;
          if(pageNumber)
          {

@@ -69,6 +69,7 @@
     <Content Include="static\html\modeling\page4.html" />
     <Content Include="static\html\modeling\page5.html" />
     <Content Include="static\html\modeling\page6.html" />
+    <Content Include="static\html\modeling\page7.html" />
     <Content Include="static\html\printing\cover.html" />
     <Content Include="static\html\printing\end.html" />
     <Content Include="static\html\scanning\cover.html" />
