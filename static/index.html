@@ -287,36 +287,14 @@
              }
          }
 
-         function alignReference(data)
-         {
-             if (data == false) {
-                 apiReturnParser(data)
-             }
-             else
-             {
-                 $.post("api/centerModel()", selectObjects);
-             }
-         }
-         function exportReference(data)
-         {
-             if (data == false) {
-                 apiReturnParser(data)
-             }
-             else {
-                 $.post("api/exportTempModel()", alignReference);
-             }
-         }
-
-         
          function loadReferenceObject(data)
          {
-             debugger;
              if (data == false) {
                  apiReturnParser(data)
              }
              else {
                  selectedObjects = data;
-                 $.post("api/importFile('alignmentObject.STL','reference')", exportReference);
+                 $.post("api/importFile('alignmentObject.stl','reference')", selectObjects);
              }
          }
 

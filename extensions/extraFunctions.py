@@ -416,7 +416,7 @@ def boolean(object1,object2):
     cmd.AppendBeginToolCommand('difference')
     remote.runCommand(cmd)
     remote.shutdown()
-    return cmd
+    return True
 
 
 

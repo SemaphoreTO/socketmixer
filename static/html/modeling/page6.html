@@ -114,7 +114,7 @@
                             message here
                         <p>
                     </div>
-                    <div id="subText4" apifunc=$.post("api/boolean('socket','holemaker')",apiReturnParser); class="subText" style="display: none;">
+                    <div id="subText4" apifunc=$.post("api/boolean('connector','holemaker')",acceptBoolean); class="subText" style="display: none;">
                         <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                         <h3>Boolean Hole Maker</h3>
                         <hr>
@@ -123,7 +123,7 @@
                         <p>
                     </div>
                     
-                    <div id="subText5" class="subText" style="display: none;">
+                    <div id="subText5" apifuncstart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;">
                         <h3>Finished </h3>
                     </div>
                 </div>
@@ -149,6 +149,16 @@
 </div>
 
 <script>
+
+    function acceptBoolean(data)
+    {
+        debugger;
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        $.post("api/accept()", apiReturnParser);
+    }
+
     var selectedConnector ='socket.obj'
     function loadconnector()
     {

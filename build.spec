@@ -57,6 +57,7 @@ coll = COLLECT(exe,
                Tree('history',prefix='history'),
                Tree('reference',prefix='reference'),
                Tree('socket',prefix='socket'),
+               Tree('holeMaker',prefix='holeMaker'),
                strip=None,
                upx=True,
                name='SocketmixerStart')
