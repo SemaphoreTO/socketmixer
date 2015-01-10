@@ -84,6 +84,64 @@
 				</a>
 				
 			</div> <!-- subcontrol div -->
+            <br />
+            NEED TEXT HERE
+            <div class="subControl">
+            <!-- 			step 1 -->
+            <div id="wellText" class="panel panel-default" style="display: none;">
+                <div class="panel-body">
+
+                    <div id="subText1" class="subText" acceptdisabled=1>
+                        <h3>Create Hole Process</h3>
+                        <hr>
+                        <p>Need text here<p>
+                    </div>
+
+                    <div id="subText2" apifunc=$.post("api/importHoleMaker('holemakerv2.obj')",renameHoleMaker); class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                        <h3>Import hole maker</h3>
+                        <hr>
+                        <p>
+                            Using the selection tool that is now active, mark the region on the bottom of the socket
+                            where the mounting point should be attached. Press "Accept" to import the mounting point.
+                        <p>
+                    </div>
+                    <div id="subText3" apifuncstart="$.post('api/alignTransform()',apiReturnParser);" apifunc="$.post('api/accept()',apiReturnParser);" class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                        <h3>Position Hole Maker</h3>
+                        <hr>
+                        <p>
+                            message here
+                        <p>
+                    </div>
+                    <div id="subText4" apifunc=$.post("api/boolean('holemaker','socket')",apiReturnParser); class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                        <h3>Boolean Hole Maker</h3>
+                        <hr>
+                        <p>
+                            message here
+                        <p>
+                    </div>
+                    
+                    <div id="subText5" class="subText" style="display: none;">
+                        <h3>Finished </h3>
+                    </div>
+                </div>
+                <div class="panel-footer ">
+                    <div id="page8TemplateControls"> </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('#page8TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage72));
+                    });
+                </script>
+            </div>
+
+            <a id="activateButton" class="btn btn-info " role="button">
+                <span class="glyphicon glyphicon-wrench"></span>Create Hole
+            </a>
+
+        </div>
 			
 		
 	</div>
@@ -117,5 +175,14 @@
       
     }
 
+
+    function renameHoleMaker(data)
+    {
+
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        $.post("api/renameObjectByName('holemakerv2.obj','holemaker')", apiReturnParser);
+    }
 
 </script>

@@ -182,7 +182,8 @@ var subControlValuesPage32 = { mainStep: "Step 3 Part 2 Progress" }
 var subControlValuesPage61 = {mainStep: "Step 5 part 1 Progress"};
 var subControlValuesPage62 = {mainStep: "Step 5 part 2 Progress"};
 var subControlValuesPage63 = {mainStep: "Step 5 part 3 Progress"};
-var subControlValuesPage7 = { mainStep: "Step 6 Progress" };
+var subControlValuesPage7 = { mainStep: "Step 6 part 1 Progress" };
+var subControlValuesPage72 = { mainStep: "Step 6 part 2 Progress" };
 
 
 // 

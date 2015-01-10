@@ -13,7 +13,9 @@ import numpy.linalg as linalg
 from time import gmtime, strftime
 
 ########################### File Management CALLS ##############################
-
+def importHoleMaker(name):
+    return importFile(name,'holeMaker')
+    
 def checkAvaliableSocketModels():
     cwd =os.getcwd()
     socketpath = os.path.join(cwd,'socket')
@@ -404,6 +406,17 @@ def alignZCam(view):
 
 ########################### MESHMIXER OBJECT API CALLS #########################
 
+def boolean(object1,object2):
+    remote = mmRemote()
+    remote.connect()
+    [found,id1] = mm.find_object_by_name(remote,object1)
+    [found,id2] = mm.find_object_by_name(remote,object2)
+    mm.select_objects(remote,[id1,id2])
+    cmd  = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('difference')
+    remote.runCommand(cmd)
+    remote.shutdown()
+    return cmd
 
 
 
