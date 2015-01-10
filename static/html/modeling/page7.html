@@ -14,7 +14,7 @@
 					<div class="panel-body">
 
 	                    <div id="subText1"  class="subText" acceptDisabled=1>
-	                        <h3>Start Mounting Point Attachment Process</h3>
+	                        <h3>Trim Line Smoothing Process</h3>
 	                        <hr>
                             <p>In the following steps, you will attach a mounting point to the distal end of the socket.<p>
 	                    </div>
@@ -24,54 +24,49 @@
                             <h3>Select Area</h3>
                             <hr>
                             <p>
-                                Using the selection tool that is now active, mark the region on the bottom of the socket
-                                where the mounting point should be attached. Press "Accept" to import the mounting point.
+                                Select top by double-clicking on flat surface at top of socket. Press the (>) keyboard button two to three times to expand ring of selection, and then click ‘accept’ to smooth.
+                                I think that is it for now - we may add in an additional smooth and remesh and the end.
                             <p>
+                            <div id="page7SelectTool"> </div>
+                            <script>
+                                $(document).ready(function () {
+                                    $('#page7SelectTool').html(Mustache.to_html(template, SelectValues));
+                                });
+
+                            </script>
                         </div>
-                        <div id="subText3" apifunc="loadconnector()" class="subText" style="display: none;">
+                        <div id="subText3" apifunc=callAccept() apifuncstart=$.post('api/smooth(0.5)',apiReturnParser); class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Select Connector</h3>
+                            <h3>Smooth</h3>
                             <hr>
                             <p>
-                                message here
+                                Accept Smooth
                             <p>
-                                <div class="btn-group">
-                                    <button id="connectorSelector" type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle" onclick=populatemodels()>Connector Models <span class="caret"></span></button>
-                                    <ul class="dropdown-menu" id="connectorModels"></ul>
-                                </div>
+                                <div id="page6Smooth"> </div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#page6Smooth').html(Mustache.to_html(template, SmoothValues));
+                                    });
+
+                                </script>
 
                         </div>
-						<div  id="subText4"  apiFunc="$.post('api/cutSocketForConnection()',apiReturnParser);" class="subText" style="display: none;">
-							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
-							<h3>Position Mounting Point</h3>
-							<hr>
-                            <p>If the mounting point is positioned correctly relative to the socket, continue to the next step. Otherwise, use the arrows 
-                                to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.<p>
-						</div>
-						<div id="subText5" apiFunc=" $.post('api/joinConnectionToSocket()',apiReturnParser);" class="subText" style="display: none;">
-							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
-							<h3>Position Cutting Plane</h3>
-							<hr>
-                            <p>
-                                In this step, you will cut away part of the outer shell of the socket, which will allow the socket and mounting point to be automatically connected to each other.
-                                If the plane position is appropriate, continue to the next step. Otherwise, use the arrows to position it before continuing.<p>
-						</div>
-						<div id="subText6" class="subText" style="display: none;">
+						<div id="subText4" class="subText" style="display: none;">
 							<h3>Finished </h3>
 						</div>
 					</div>
 					<div class="panel-footer "> 
-						<div id="page7TemplateControls"> </div>
+						<div id="page9TemplateControls"> </div>
 					</div>
                     <script>
                     $( document ).ready(function() {
-                      $('#page7TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage7));
+                        $('#page9TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage8));
                     });
                     </script>
 				</div>
 
 				<a id = "activateButton" class="btn btn-info " role="button">
-					 <span class="glyphicon glyphicon-wrench"></span>Attach Mounting Point
+					 <span class="glyphicon glyphicon-wrench"></span> Trim Line Smoothing
 				</a>
 				
 			</div> <!-- subcontrol div -->
@@ -80,41 +75,3 @@
 
 </div>
 
-<script>
-    var selectedConnector ='socket.obj'
-    function loadconnector()
-    {
-        debugger;
-        $.post("api/importConnectorAndPosition('" + selectedConnector + "')", apiReturnParser);
-    }
-    function parseResultmodels(data)
-    {
-        if (data == false) {
-            apiReturnParser(data)
-        }
-
-        json = $.parseJSON(data);
-        $('#connectorModels').empty()
-        $.each(json, function (index, value) {
-
-            insert = "<li ><a  onclick=selectedConnector='" + value + "';$('#connectorSelector').text('"+value+"')>" + value + "</a></li>"
-            $('#connectorModels').append(insert)
-        })
-
-    }
-    function populatemodels() {
-        $.post("api/checkAvaliableSocketModels()", parseResultmodels);
-      
-    }
-
-
-    function renameHoleMaker(data)
-    {
-
-        if (data == false) {
-            apiReturnParser(data)
-        }
-        $.post("api/renameObjectByName('holemakerv2.obj','holemaker')", apiReturnParser);
-    }
-
-</script>
