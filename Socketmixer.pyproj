@@ -34,6 +34,7 @@
     <Content Include="static\css\bootstrap-wysihtml5.css" />
     <Content Include="static\css\bootstrap.css" />
     <Content Include="static\css\bootstrap.min.css" />
+    <Content Include="static\css\font.css" />
     <Content Include="static\css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="static\css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="static\css\images\ui-bg_flat_10_000000_40x100.png" />
