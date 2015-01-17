@@ -196,9 +196,9 @@ var subControlTemplate = "<h5> {{mainStep}}</h5>\
 					</div>"
 var subControlValuesPage2 = {mainStep: "Step 2, Part 1 Progress"};
 var subControlValuesPage3 = {mainStep: "Step 2, Part 2 Progress"};
-var subControlValuesPage4 = {mainStep: "Step 4 Progress"};
+var subControlValuesPage4 = { mainStep: "Step 4 Part 2 Progress" };
 var subControlValuesPage5 = { mainStep: "Step 3 Part 1 Progress" };
-var subControlValuesPage32 = { mainStep: "Step 3 Part 2 Progress" }
+var subControlValuesPage32 = { mainStep: "Step 4 Part 1 Progress" }
 var subControlValuesPage61 = {mainStep: "Step 5 part 1 Progress"};
 var subControlValuesPage62 = {mainStep: "Step 5 part 2 Progress"};
 var subControlValuesPage63 = {mainStep: "Step 5 part 3 Progress"};

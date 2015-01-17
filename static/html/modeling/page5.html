@@ -3,7 +3,7 @@
 			
 	    In step 5 ...
         <p>
-            ...you will generate the socket from the now rectified positive model. Start by using the selection tool to trace the trim line for the socket as marked during the sca nning process, Make sure to trace above the line rather than directly on the line and verify that the line is continuous and that there are no gaps.
+            ...you will generate the socket from the now rectified positive model. Start by using the selection tool to trace the trim line for the socket as marked during the scanning process, Make sure to trace above the line rather than directly on the line and verify that the line is continuous and that there are no gaps.
             </p>
             <div class="subControl">
                 <!-- 			step 1 -->
@@ -18,7 +18,9 @@
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
                             <h3>Select Brush Size</h3>
                             <hr>
-                            <p> Use the slider to select an appropriate brush size. It shouldn't be too large, but should be large enough to create a smooth, consistent selection with no breaks. <p>
+                            <p> Use the slider to select an appropriate brush size. It shouldn't be too large, but should be large enough to create a smooth, consistent selection with no breaks. 
+                                Don't make the line too thin. An overly-thin brush will cause gaps to appear in the trim line when the line is smoothed.
+                                 <p>
                             <div id="page6SelectTool"> </div>
                             <script>
                             $( document ).ready(function() {
@@ -36,7 +38,7 @@
                                 <br />
                                 <br />
                                 To generate a socket, double-click anywhere below the trim line. The area on which you've double clicked should turn orange. 
-                            If an area does not turn orange, simply double-click in it as well. When the entire area below the trim line is selected, press "Generate Socket" to create the socket.
+                            If an area does not turn orange, simply double-click in it as well. When the entire area below the trim line is selected, press "Accept" and then move on to the "Generate Socket" step.
                             
                             
                             <p>
@@ -105,7 +107,7 @@
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                             <h3>Remesh Free Boundary</h3>
                             <hr>
-                            <p> Press the "Accept" button to accept the remesh. <p>
+                            <p> In this step, you will smooth the edge of the trim line. Press the "Accept" button to accept the remesh. <p>
                         </div>
 
                         <div id="subText6" apiFunc="callAccept()" class="subText" style="display: none;">
