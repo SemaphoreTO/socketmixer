@@ -134,31 +134,31 @@ def connector_join():
     mm.begin_tool(remote, "join")
     mm.accept_tool(remote)
 
-    # [RMS] this block will clean up holes, but requires ability to save & restore selection!
-    #   [TODO] we can do this now, because we can read back facegroup after createFaceGroup...
-    if False:
-        # save selection
-        mm.begin_tool(remote, "createFaceGroup")
-        mm.clear_face_selection(remote)
+    ## [RMS] this block will clean up holes, but requires ability to save & restore selection!
+    ##   [TODO] we can do this now, because we can read back facegroup after createFaceGroup...
+    #if False:
+    #    # save selection
+    #    mm.begin_tool(remote, "createFaceGroup")
+    #    mm.clear_face_selection(remote)
 
-        # do repair pass, in case join created holes (happens!)
-        mm.begin_tool(remote, "inspector")
-        mm.tool_utility_command(remote, "repairAll")
+    #    # do repair pass, in case join created holes (happens!)
+    #    mm.begin_tool(remote, "inspector")
+    #    mm.tool_utility_command(remote, "repairAll")
 
-        # [TODO] restore selection
+    #    # [TODO] restore selection
 
 
-    # expand selection a few times, then remesh
-    if True:
-        for x in range(0,8):
-            mm.selection_utility_command(remote, "expandByOneRing")
+    ## expand selection a few times, then remesh
+    #if True:
+    #    for x in range(0,8):
+    #        mm.selection_utility_command(remote, "expandByOneRing")
 
-        mm.begin_tool(remote, "remesh")
-        mm.accept_tool(remote)
-        mm.begin_tool(remote, "smooth")
-        mm.set_toolparam(remote, "scale", 500.0)
-        mm.accept_tool(remote)
+    #    mm.begin_tool(remote, "remesh")
+    #    mm.accept_tool(remote)
+    #    mm.begin_tool(remote, "smooth")
+    #    mm.set_toolparam(remote, "scale", 500.0)
+    #    mm.accept_tool(remote)
 
-    mm.clear_face_selection(remote)
+    #mm.clear_face_selection(remote)
 
     remote.shutdown()

@@ -125,6 +125,18 @@ def saveLatest():
 
 ########################### BASIC API CALLS ####################################
 @meshWrapper
+def expandByOneRing():
+    cmd = mmapi.StoredCommands()
+    cmd.AppendSelectUtilityCommand('expandByOneRing')
+    return cmd
+
+@meshWrapper
+def contractByOneRing():
+    cmd = mmapi.StoredCommands()
+    cmd.AppendSelectUtilityCommand('contractByOneRing')
+    return cmd
+
+@meshWrapper
 def clearAllFaceGroup():
     cmd  = mmapi.StoredCommands()
     cmd.AppendBeginToolCommand('clearFaceGroup') 
@@ -243,6 +255,12 @@ def deformSmooth(smoothValue):
      cmd.AppendToolParameterCommand('smooth',smoothValue)
      return cmd
 
+@meshWrapper
+def deformSmoothScale(scaleValue):
+     cmd  = mmapi.StoredCommands()
+     cmd.AppendBeginToolCommand('smooth') 
+     cmd.AppendToolParameterCommand('scale',scaleValue)
+     return cmd
 
 @meshWrapper
 def smoothBoundary():
@@ -257,7 +275,7 @@ def accept():
     cmd.AppendCompleteToolCommand('accept')
     return cmd
 
-#i am to tired to give a shit
+#RE THINK THIS HERE
 @meshWrapper
 def acceptSelect():
     cmd  = mmapi.StoredCommands()
@@ -354,24 +372,28 @@ def alignZCam(view):
     height = 0.7
     eye = vec3f()
     if view == 0:
-        eye.x = -10.0/divisor
+        eye.x = -10.0
         eye.y= height
         eye.z = 0
     elif view ==1:
         eye.x = 0.0
         eye.y=  height
-        eye.z = 10.0/divisor
+        eye.z = 10.0
     elif view ==2:
         eye.x =0
         eye.y= height
-        eye.z =  -10.0/divisor
+        eye.z =  -10.0
     elif view ==3:
         eye.x = 10.0
         eye.y= height
         eye.z = 0
     elif view ==4:
         eye.x = 0.0
-        eye.y= 1.0
+        eye.y= 10.0
+        eye.z = 0
+    elif view ==5:
+        eye.x = 0.0
+        eye.y= -10.0
         eye.z = 0
     else:
         eye.x = 0.0
@@ -382,13 +404,13 @@ def alignZCam(view):
     target = vec3f()
     target.x = 0.0
 
-    if view == 4:
+    if view == 4 or view ==5:
         target.y= 0.0
     else:
         target.y= height
     target.z = 0
 
-    if view == 4:
+    if view == 4 or view ==5:
         up = vec3f()
         up.x = 1.0
         up.y= 0.0

@@ -38,7 +38,18 @@ function SmoothAcceptButton(id) {
 
         $.post('api/accept()', apiReturnParser)
     })
-    $(id).parent().find('#Distance')
+   
+}
+
+function SmoothScaleAcceptButton(id) {
+    var SmoothScale = $(id).parent().find('#Scale').val()
+    $.post('api/deformSmoothScale(' + SmoothScale + ')', function (data) {
+        if (apiReturnParser(data) == false) {
+            return;
+        }
+
+        $.post('api/accept()', apiReturnParser)
+    })
 }
 
 
@@ -186,7 +197,21 @@ var template = "<div class='row' style='margin-left:3px;margin-right:3px;'>\
 		onchange: "$.post('api/deformSmooth('+$(this).val()+')',apiReturnParser)"
  	}]
      , acceptFunction: "SmoothAcceptButton(this)"
-	};
+ };
+ var SmoothValuesScale = {
+     mainControlName: "SmoothScale",
+     sliders: [{
+         value: 4.0,
+         sectionName: "Select Size",
+         idName: "Scale",
+         max: 200.0,
+         min: 0,
+         step: 1.0,
+         units: '',
+         onchange: "$.post('api/deformSmoothScale('+$(this).val()+')',apiReturnParser)"
+     }]
+      , acceptFunction: "SmoothScaleAcceptButton(this)"
+ };
 //----------------------------------------------------------------------------------------------------------------------
  var SelectValues = {
  	mainControlName:"Select Size",

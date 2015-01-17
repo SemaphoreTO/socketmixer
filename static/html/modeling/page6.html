@@ -57,15 +57,37 @@
                             <p>If the mounting point is positioned correctly relative to the socket, continue to the next step. Otherwise, use the arrows 
                                 to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.<p>
 						</div>
-						<div id="subText5" apiFunc=" $.post('api/joinConnectionToSocket()',apiReturnParser);" class="subText" style="display: none;">
-							<div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
-							<h3>Position Cutting Plane</h3>
-							<hr>
+                        <div id="subText5" apifunc="$.post('api/joinConnectionToSocket()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Join socket for connector</h3>
+                            <hr>
                             <p>
-                                In this step, you will cut away part of the outer shell of the socket, which will allow the socket and mounting point to be automatically connected to each other.
-                                If the plane position is appropriate, continue to the next step. Otherwise, use the arrows to position it before continuing.<p>
-						</div>
-						<div id="subText6" class="subText" style="display: none;">
+                                If the mounting point is positioned correctly relative to the socket, continue to the next step. Otherwise, use the arrows
+                                to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.
+                            <p>
+                        </div>
+                        <div id="subText6" apifunc="callAccept()" class="subText" style="display: none;" acceptdisabled=1>
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Expand TEXT HERE</h3>
+                            <hr>
+                            <button class='btn btn-default btn-sm' onclick="$.post('api/contractByOneRing()', apiReturnParser);">Contract --</button>
+                            <button class='btn btn-default btn-sm'  onclick="$.post('api/expandByOneRing()', apiReturnParser);">Expand ++</button>
+
+
+                        </div>
+                        <div id="subText7" apifunc=" callAccept();" class="subText" style="display: none;" >
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Smooth Scale</h3>
+                            <hr>
+                            <div id="page6ScaleSmooth"> </div>
+                            <script>
+                                $(document).ready(function () {
+                                    $('#page6ScaleSmooth').html(Mustache.to_html(template, SmoothValuesScale));
+                                });
+                            </script>
+                        </div>
+                      
+						<div id="subText8" class="subText" style="display: none;">
 							<h3>Finished </h3>
 						</div>
 					</div>
@@ -106,7 +128,16 @@
                             where the mounting point should be attached. Press "Accept" to import the mounting point.
                         <p>
                     </div>
-                    <div id="subText3" apifuncstart="$.post('api/alignTransform()',apiReturnParser);" apifunc="$.post('api/accept()',apiReturnParser);" class="subText" style="display: none;">
+                    <div id="subText3" apifunc=$.post('api/alignZCam(5)',apiReturnParser); class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                        <h3>Change View</h3>
+                        <hr>
+                        <p>
+                            Using the selection tool that is now active, mark the region on the bottom of the socket
+                            where the mounting point should be attached. Press "Accept" to import the mounting point.
+                        <p>
+                    </div>
+                    <div id="subText4" apifuncstart="$.post('api/alignTransform()',apiReturnParser);" apifunc="$.post('api/accept()',apiReturnParser);" class="subText" style="display: none;">
                         <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                         <h3>Position Hole Maker</h3>
                         <hr>
@@ -114,7 +145,7 @@
                             message here
                         <p>
                     </div>
-                    <div id="subText4" apifunc=$.post("api/boolean('connector','holemaker')",acceptBoolean); class="subText" style="display: none;">
+                    <div id="subText5" apifunc=$.post("api/boolean('connector','holemaker')",acceptBoolean); class="subText" style="display: none;">
                         <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                         <h3>Boolean Hole Maker</h3>
                         <hr>
@@ -123,7 +154,7 @@
                         <p>
                     </div>
                     
-                    <div id="subText5" apifuncstart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;">
+                    <div id="subText6" apifuncstart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;">
                         <h3>Finished </h3>
                     </div>
                 </div>
