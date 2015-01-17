@@ -29,7 +29,6 @@ $(document).on('click','#activateButton',function(){
 
   $(this).hide()
   $("#backFowardCancel",parent).show()
-
   var currentIndex =parseInt(parent.attr("index"))
   var txtToShow = 'subText' +currentIndex 
   var shownElement = $("#"+txtToShow,parent)
@@ -37,6 +36,7 @@ $(document).on('click','#activateButton',function(){
   disableAccept(this,shownElement)
 
   changeProgressBar(0, parent)
+  parent.find('#completedCheck').hide()
 });
 
 $(document).on('click',"#cancelButton",function(){
@@ -45,7 +45,8 @@ $(document).on('click',"#cancelButton",function(){
 });
 
 $(document).on('click',"#fowardButton",function(){	
-	var parent = $( this ).parents( ".subControl" )
+
+    var parent = $(this).parents(".subControl")
 
 	var currentIndex =parseInt(parent.attr("index")) 
 
@@ -66,7 +67,16 @@ $(document).on('click',"#fowardButton",function(){
 	disableAccept(this,shownElement)
 	
 	checkControlValid(parent)
-	changeProgressBar((currentIndex-1)/(parent.attr("numberOfInstructions")-1),parent)
+	changeProgressBar((currentIndex - 1) / (parent.attr("numberOfInstructions") - 1), parent)
+	var completedattr = $(shownElement).attr('completed');
+	if (typeof completedattr !== typeof undefined && completedattr !== false) {
+	    $(parent).find('#completedCheck').show()
+	}
+	else
+	{
+	    $(parent).find('#completedCheck').hide()
+	}
+
 });
 
 $(document).on('click',"#acceptButton",function(){	
@@ -82,6 +92,8 @@ $(document).on('click',"#acceptButton",function(){
 	if (typeof attr !== typeof undefined && attr !== false) {
     	eval(attr)
 	}
+	$(shownElement).attr('completed', true)
+	$(parent).find('#completedCheck').show()
 });
 
 $(document).on('click',"#backButton",function(){
@@ -107,7 +119,15 @@ $(document).on('click',"#backButton",function(){
 
 
 	checkControlValid(parent)
-	changeProgressBar((currentIndex-1)/(parent.attr("numberOfInstructions")-1),parent)
+	changeProgressBar((currentIndex - 1) / (parent.attr("numberOfInstructions") - 1), parent)
+
+	var completedattr = $(shownElement).attr('completed');
+	if (typeof completedattr !== typeof undefined && completedattr !== false) {
+	    $(parent).find('#completedCheck').show()
+	}
+	else {
+	    $(parent).find('#completedCheck').hide()
+	}
 		
 });
 
@@ -168,7 +188,7 @@ var subControlTemplate = "<h5> {{mainStep}}</h5>\
 						<div class='col-xs-4'>\
 							<div id = 'backFowardCancel' class='btn-group' style='display: none;'' >\
 								<button type='button' id='backButton' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-chevron-left'></span></button>\
-								<button type='button' id='acceptButton' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-ok'> Accept</span></button>\
+								<button type='button' id='acceptButton' class='btn btn-default btn-sm'><span id='completedCheck' class='glyphicon glyphicon-ok' > </span>Accept</button>\
 								<button type='button' id='fowardButton' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-chevron-right'></span></button>\
 								<!--<button type='button' id='cancelButton' class='btn btn-default btn-sm'>Cancel</button>-->\
 							</div>\
