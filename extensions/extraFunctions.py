@@ -29,7 +29,6 @@ def checkAvaliableSocketModels():
             if file.endswith(".obj"):
                 connectorFiles.append(file)
     jsonreturn =  json.dumps(connectorFiles)
-    print jsonreturn
     return jsonreturn
     
 
@@ -143,10 +142,10 @@ def clearAllFaceGroup():
     return cmd
 @meshWrapper
 def remeshFreeBoundary():
-    print 'here'
     cmd  = mmapi.StoredCommands()
     cmd.AppendBeginToolCommand('remesh')
-    cmd.AppendToolParameterCommand('density',0.5)
+    cmd.AppendToolParameterCommand('density',1.0)
+    cmd.AppendToolParameterCommand('smooth',1.0)
     cmd.AppendToolParameterCommand('boundaryMode',0)
     return cmd
 
@@ -494,7 +493,8 @@ def reOrientModel():
     
     remote = mmRemote()
     remote.connect()
-    cmd  = mmapi.StoredCommands( )
+    cmd  = mmapi.StoredCommands()
+
     result =  mm.to_scene_xyz(remote,xAvg,yAvg,zAvg)
     xAvg = result[0]
     yAvg = result[1]
@@ -503,7 +503,7 @@ def reOrientModel():
     cmd.AppendBeginToolCommand('transform')
     cmd.AppendToolParameterCommand('rotation',a,b,c,d,e,f,g,h,i)
 
-    #cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
+    cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
     cmd.AppendCompleteToolCommand('accept')
     remote.runCommand(cmd)
 

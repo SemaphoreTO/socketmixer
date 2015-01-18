@@ -34,6 +34,8 @@
                                 });
 
                             </script>
+                            <button class='btn btn-default btn-sm' onclick="$.post('api/contractByOneRing()', apiReturnParser);">Contract --</button>
+                            <button class='btn btn-default btn-sm' onclick="$.post('api/expandByOneRing()', apiReturnParser);">Expand ++</button>
                         </div>
                         <div id="subText3" apifunc=callAccept() apifuncstart=$.post('api/smooth(0.5)',apiReturnParser); class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
