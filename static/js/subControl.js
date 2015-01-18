@@ -94,6 +94,7 @@ $(document).on('click',"#acceptButton",function(){
 	}
 	$(shownElement).attr('completed', true)
 	$(parent).find('#completedCheck').show()
+	
 });
 
 $(document).on('click',"#backButton",function(){
@@ -141,7 +142,14 @@ function reset(parent)
 	$("#subText1",parent).show('fast')
 	parent.attr("index",1)
 	checkControlValid(parent)
-	changeProgressBar(0,parent)
+	changeProgressBar(0, parent)
+	parent.find('.subText').each(function (index,subtext) {
+	    var completedattr = $(subtext).attr('completed');
+	    if (typeof completedattr !== typeof undefined && completedattr !== false) {
+	        subtext.removeAttribute('completed')
+	    }
+	    
+	})
 }
 function changeProgressBar(newPercentage,parent)
 {
@@ -178,7 +186,7 @@ function checkControlValid(parent) {
     }
 }
 
-var subControlTemplate = "<h5> {{mainStep}}</h5>\
+var subControlTemplate = "<h5 > {{mainStep}} <span id='completedCheck'> - <b>Completed</b></span></h5>\
                    	<div class='row' >\
                    		<div class='col-xs-8'>\
 							<div class='progress progress-striped'>\
@@ -188,7 +196,7 @@ var subControlTemplate = "<h5> {{mainStep}}</h5>\
 						<div class='col-xs-4'>\
 							<div id = 'backFowardCancel' class='btn-group' style='display: none;'' >\
 								<button type='button' id='backButton' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-chevron-left'></span></button>\
-								<button type='button' id='acceptButton' class='btn btn-default btn-sm'><span id='completedCheck' class='glyphicon glyphicon-ok' > </span>Accept</button>\
+								<button type='button' id='acceptButton' class='btn btn-default btn-sm'>Accept</button>\
 								<button type='button' id='fowardButton' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-chevron-right'></span></button>\
 								<!--<button type='button' id='cancelButton' class='btn btn-default btn-sm'>Cancel</button>-->\
 							</div>\

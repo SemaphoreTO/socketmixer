@@ -506,6 +506,24 @@ def reOrientModel():
     #cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
     cmd.AppendCompleteToolCommand('accept')
     remote.runCommand(cmd)
+
+
+    #groups = mm.list_selected_groups(remote)
+
+
+    ## now check the flip orientation
+    #cmd  = mmapi.StoredCommands( )
+    #cmd.AppendSelectCommand_All()
+    #remote.runCommand(cmd)
+
+    #centroid = mm.get_face_selection_centroid(remote)
+    #centroid =  mm.to_scene_xyz(remote,centroid[0],centroid[1],centroid[2])
+    ##(bFound, selFrame) = mm.find_ray_hit(remote, mm.addv3(sel_ctr, (0,0,0)), (0,1,0)  )
+    #cmd.AppendBeginToolCommand('transform')
+    #cmd.AppendToolParameterCommand('translation',-centroid[0],-centroid[1],-centroid[2])
+    #cmd.AppendCompleteToolCommand('accept')
+    #remote.runCommand(cmd)
+
     remote.shutdown()
 
     os.remove (fileName)
