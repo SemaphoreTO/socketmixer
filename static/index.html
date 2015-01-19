@@ -204,8 +204,9 @@
         <!--Printings-->
 
         <div class="myPage" id="p16" style="display: none;"></div>
-
         <div class="myPage" id="p17" style="display: none;"></div>
+
+        <div class="myPage" id="p18" style="display: none;"></div>
 
     </div><br>
     <nav id ="bookControls">
@@ -602,8 +603,9 @@
          $("#p14").load("html/modeling/page7.html");
          $( "#p15" ).load( "html/modeling/end.html" );
          // printing
-         $( "#p16" ).load( "html/printing/cover.html" );
-         $( "#p17" ).load( "html/printing/end.html" );
+         $("#p16").load("html/printing/cover.html");
+         $("#p17").load("html/printing/page1.html");
+         $( "#p18" ).load( "html/printing/end.html" );
          var pageNumber = location.hash;
          if(pageNumber)
          {
