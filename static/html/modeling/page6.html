@@ -55,7 +55,9 @@
 							<h3>Position Mounting Point</h3>
 							<hr>
                             <p>If the mounting point is positioned correctly relative to the socket, continue to the next step. Otherwise, use the arrows 
-                                to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.<p>
+                                to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.
+                                When positioned appropriately the cutting plane will be low on the socket, just above the point where the socket begins to narrow. Cutting the socket too low can result in a bad connection between the socket and the connector.
+                            <p>
 						</div>
                         <div id="subText5" apifunc="$.post('api/joinConnectionToSocket()',apiReturnParser);" class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
@@ -107,16 +109,21 @@
 				
 			</div> <!-- subcontrol div -->
             <br />
-            NEED TEXT HERE
+            Now, make a hole for the alignment screw.
+            <br />
+        <br />
             <div class="subControl">
             <!-- 			step 1 -->
             <div id="wellText" class="panel panel-default" style="display: none;">
                 <div class="panel-body">
 
                     <div id="subText1" class="subText" acceptdisabled=1>
-                        <h3>Create Hole Process</h3>
+                        <h3>Start Hole Creation Process</h3>
                         <hr>
-                        <p>Need text here<p>
+                        <p>
+                            This step makes a small hole in the bottom of the socket, which is used to access the alignment screw."
+                            in "Import Hole Maker" add "In this step, a narrow cylinder will be imported.
+                        <p>
                     </div>
 
                     <div id="subText2" apifunc=$.post("api/importHoleMaker('holemakerv2.obj')",renameHoleMaker); class="subText" style="display: none;">
@@ -124,17 +131,16 @@
                         <h3>Import hole maker</h3>
                         <hr>
                         <p>
-                            Using the selection tool that is now active, mark the region on the bottom of the socket
+                            In this step, a narrow cylinder will be imported. Using the selection tool that is now active, mark the region on the bottom of the socket
                             where the mounting point should be attached. Press "Accept" to import the mounting point.
                         <p>
                     </div>
                     <div id="subText3" apifunc=$.post('api/alignZCam(5)',apiReturnParser); class="subText" style="display: none;">
                         <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                        <h3>Change View</h3>
+                        <h3>Select bottom view</h3>
                         <hr>
                         <p>
-                            Using the selection tool that is now active, mark the region on the bottom of the socket
-                            where the mounting point should be attached. Press "Accept" to import the mounting point.
+                            In this step we will switch to the bottom view of the socket.
                         <p>
                     </div>
                     <div id="subText4" apifuncstart="$.post('api/alignTransform()',apiReturnParser);" apifunc="$.post('api/accept()',apiReturnParser);" class="subText" style="display: none;">
@@ -142,7 +148,7 @@
                         <h3>Position Hole Maker</h3>
                         <hr>
                         <p>
-                            message here
+                            The cylinder should be positioned near the centre of the socket, and should appear to cut through both the distal end of the cup, and the proximal end of the connector.
                         <p>
                     </div>
                     <div id="subText5" apifunc=$.post("api/boolean('socket','holemaker')",acceptBoolean); class="subText" style="display: none;">
@@ -150,7 +156,7 @@
                         <h3>Boolean Hole Maker</h3>
                         <hr>
                         <p>
-                            message here
+                            In this step, the mass of the cylinder will be taken away from the mass of the socket. This operation is called a "boolean difference.
                         <p>
                     </div>
                     
