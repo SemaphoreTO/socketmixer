@@ -3,7 +3,7 @@
 			
 	    In step 5 ...
         <p>
-            ...you will generate the socket from the now rectified positive model. First, the face groups created during rectification will be cleared. Once all face groups are cleared, use the selection tool to draw a trim line.  
+            ...you will generate the socket from the now rectified positive model. Don't make the line too thin. An overly-thin brush will cause gaps to appear in the trim line when the line is smoothed. Once all face groups are cleared, use the selection tool to draw a trim line.  
             Start by using the selection tool to trace the trim line for the socket as marked during the scanning process, Make sure to trace above the line rather than directly on the line and verify that the line is continuous and that there are no gaps.
             </p>
             <div class="subControl">
@@ -15,16 +15,7 @@
                             <hr>
                             <p> In the following steps, you will select an area on the model and use it to form a trim line. <p>
                         </div>
-                        <div id="subText2" style="display: none;"  class="subText"  apifunc=" $.post('api/selectAll()',apiReturnParser);">
-                            <h3>Select All</h3>
-                            <hr>
-                        </div>
-                        <div id="subText3" style="display: none;"  class="subText"  apifunc=" $.post('api/clearAllFaceGroup()',apiReturnParser);">
-                            <h3>Clear Face Group</h3>
-                            <hr>
-                            <p> This step clears all of the face groups that were automatically made during the rectification process. Clearing the face groups lets you conveniently select larger portions of the model all at once. <p>
-                        </div>
-                        <div id="subText4" apiFuncStart= "shownElement.find('input[type=range]').each(function() { $(this).change()})" class="subText" style="display: none;" acceptDisabled=1>
+                         <div id="subText2" apiFuncStart= "shownElement.find('input[type=range]').each(function() { $(this).change()})" class="subText" style="display: none;" acceptDisabled=1>
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
                             <h3>Select Brush Size</h3>
                             <hr>
@@ -38,7 +29,7 @@
                             });
                             </script>
                         </div>
-    					<div  id="subText5"  apiFunc=" $.post('api/smoothBoundary()',apiReturnParser);" class="subText" style="display: none;">
+    					<div  id="subText3"  apiFunc=" $.post('api/smoothBoundary()',apiReturnParser);" class="subText" style="display: none;">
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
     						<h3>Draw Trim Line and Smooth Boundary </h3>
                             <hr>
@@ -54,7 +45,7 @@
                             <p>
     					</div>
     					
-    					<div id="subText6" class="subText" style="display: none;" acceptDisabled=1>
+    					<div id="subText4" class="subText" style="display: none;" acceptDisabled=1>
     						<h3>Finished </h3>
     					</div>
 					</div>

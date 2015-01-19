@@ -133,7 +133,55 @@
 				</a>
 				
 			</div> <!-- subcontrol div -->
-		</p>
+            <br />
+        <div class="subControl">
+            <!-- 			step 1 -->
+            <div id="wellText" class="panel panel-default" style="display: none;">
+                <div class="panel-body">
+                    <div id="subText1" class="subText" acceptdisabled=1>
+                        <h3>Start Clear Facegroup Process</h3>
+                        <hr>
+                        <p> In this step, you will use the "Plane Cut" tool to remove excess data. <p>
+                    </div>
+                    <div id="subText2"
+                         apifunc=" $.post('api/selectAll()',apiReturnParser);"
+                         class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                        <h3>Select All</h3>
+                        <hr>
+                    </div>
+                    <div id="subText3"
+                         apifunc=" $.post('api/clearAllFaceGroup()',apiReturnParser);"
+                         class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                        <h3>Clear Face Group</h3>
+                        <hr>
+                        <p> This step clears all of the face groups that were automatically made during the rectification process. Clearing the face groups lets you conveniently select larger portions of the model all at once. <p>
+
+                            <hr>
+                        </div>
+
+                    <div id="subText4" apifuncstart="$.post('api/cancel()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
+                        <h3>Finished </h3>
+                    </div>
+                </div>
+                <div class="panel-footer ">
+                    <div id="page42TemplateControls"> </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('#page42TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage10));
+                    });
+                </script>
+            </div>
+
+
+            <a id="activateButton" class="btn btn-info " role="button">
+                <span class="glyphicon glyphicon-wrench"></span> Clear Face Groups
+            </a>
+
+            <!-- controls for subinstructions -->
+        </div> <!-- subcontrol div -->
 	</div>
 
 </div>

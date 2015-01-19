@@ -204,15 +204,17 @@ var subControlTemplate = "<h5 > {{mainStep}} <span id='completedCheck'> - <b>Com
 					</div>"
 var subControlValuesPage2 = {mainStep: "Step 2, Part 1 Progress"};
 var subControlValuesPage3 = {mainStep: "Step 2, Part 2 Progress"};
-var subControlValuesPage4 = { mainStep: "Step 4 Part 2 Progress" };
+var subControlValuesPage4 = { mainStep: "Step 4 Part 1 Progress" };
 var subControlValuesPage5 = { mainStep: "Step 3 Part 1 Progress" };
-var subControlValuesPage32 = { mainStep: "Step 4 Part 1 Progress" }
-var subControlValuesPage61 = {mainStep: "Step 5 part 1 Progress"};
-var subControlValuesPage62 = {mainStep: "Step 5 part 2 Progress"};
-var subControlValuesPage63 = {mainStep: "Step 5 part 3 Progress"};
-var subControlValuesPage7 = { mainStep: "Step 6 part 1 Progress" };
-var subControlValuesPage72 = { mainStep: "Step 6 part 2 Progress" };
+var subControlValuesPage32 = { mainStep: "Step 3 Part 2 Progress" }
+var subControlValuesPage61 = {mainStep: "Step 5 Part 1 Progress"};
+var subControlValuesPage62 = {mainStep: "Step 5 Part 2 Progress"};
+var subControlValuesPage63 = {mainStep: "Step 5 Part 3 Progress"};
+var subControlValuesPage7 = { mainStep: "Step 6 Part 1 Progress" };
+var subControlValuesPage72 = { mainStep: "Step 6 Part 2 Progress" };
 var subControlValuesPage8 = { mainStep: "Step 7 Progress" };
 var subControlValuesPage9 = { mainStep: "Step 1 Progress" };
 
 // 
+
+subControlValuesPage10 = { mainStep: "Step 4 part 2 Progress" };
