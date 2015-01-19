@@ -1,5 +1,5 @@
 $('.questionMarkPlaceHolder').each(function( ) {
-  $(this).append("<span  class='glyphicon glyphicon-question-sign' style='horizontal-align:right'></span>")
+  //$(this).append("<span  class='glyphicon glyphicon-question-sign' style='horizontal-align:right'></span>")
 });
 
 $(document).on("click",".questionMarkPlaceHolder",function() {
