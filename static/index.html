@@ -128,6 +128,10 @@
                                                 type="button">
                                             top
                                         </button>
+                                        <button class="btn  btn-xs" onclick="$.post('api/alignZCam(5)');"
+                                                type="button">
+                                            bottom
+                                        </button>
                                         
                                         
                                         
@@ -207,6 +211,7 @@
         <div class="myPage" id="p17" style="display: none;"></div>
 
         <div class="myPage" id="p18" style="display: none;"></div>
+        <div class="myPage" id="p19" style="display: none;"></div>
 
     </div><br>
     <nav id ="bookControls">
@@ -605,7 +610,8 @@
          // printing
          $("#p16").load("html/printing/cover.html");
          $("#p17").load("html/printing/page1.html");
-         $( "#p18" ).load( "html/printing/end.html" );
+         $("#p18").load("html/printing/page2.html");
+         $( "#p19" ).load( "html/printing/end.html" );
          var pageNumber = location.hash;
          if(pageNumber)
          {

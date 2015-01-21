@@ -44,7 +44,8 @@
                             <div class='questionMarkPlaceHolder' align='right' helppage='helpContainer.html'> </div>
                             <h3>Select Brush Size</h3>
                             <hr>
-                            <p>Use the slider to modify the size of your brush. An appropriate brush size should allow you to select a particular area of the model conveniently, without also selecting other areas by mistake.</p>
+                            <p>Use the slider to modify the size of your brush. An appropriate brush size should allow you to select a particular area of the model conveniently, without also selecting other areas by mistake.
+                                Now use the brush tool to colour in the area you would like to rectify.</p>
                             
                             <div id="page4SelectTool"> </div>
                             <script>
@@ -54,13 +55,8 @@
 
                             </script>
                         </div>
-                        <div id="subText3" class="subText" acceptDisabled=1 style="display: none;">
-                            <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
-                            <h3>Select Area to Rectify</h3>
-                            <hr>
-                            <p>Now use the brush tool to colour in the area you would like to rectify.<p>
-                        </div>
-    					<div id="subText4" 
+                       
+    					<div id="subText3" 
                          apiFunc=" $.post('api/smoothBoundary()',apiReturnParser);"
                          class="subText" style="display: none;">
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
@@ -68,7 +64,7 @@
                             <hr>
                             <p>In this step, the boundary of your selected area will be smoothed, removing sharp edges or inconsistencies. Press the "Accept" button to view the change.<p>
     					</div>
-                        <div id="subText5" apifunc=" callAccept()" class="subText" style="display: none;">
+                        <div id="subText4" apifunc=" callAccept()" class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right'> </div>
                             <h3>Offset </h3>
                             <hr>
@@ -102,7 +98,7 @@
                         </div>
 
                  
-                        <div id="subText6" apifunc=" callAccept()" class="subText" style="display: none;">
+                        <div id="subText5" apifunc=" callAccept()" class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right'> </div>
                             <h3>Smooth</h3>
                             <hr>
@@ -120,7 +116,7 @@
                         
 
     					
-                        <div id="subText7" apifuncstart="$.post('api/saveLatest()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
+                        <div id="subText6" apifuncstart="$.post('api/saveLatest()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                             <h3>Finished </h3>
                             <hr>
@@ -153,7 +149,7 @@
                     <div id="subText1" class="subText" acceptdisabled=1>
                         <h3>Start Clear Facegroup Process</h3>
                         <hr>
-                        <p> In this step, you will use the "Plane Cut" tool to remove excess data. <p>
+                       
                     </div>
                     <div id="subText2"
                          apifunc=" $.post('api/selectAll()',apiReturnParser);"

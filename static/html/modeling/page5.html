@@ -25,7 +25,7 @@
                             <div id="page6SelectTool"> </div>
                             <script>
                             $( document ).ready(function() {
-                              $('#page6SelectTool').html(Mustache.to_html(template, SelectValues));
+                                $('#page6SelectTool').html(Mustache.to_html(template, SelectValuesTrimLine));
                             });
                             </script>
                         </div>
@@ -40,12 +40,58 @@
                                 <br />
                                 To generate a socket, double-click anywhere below the trim line. The area on which you've double clicked should turn orange. 
                             If an area does not turn orange, simply double-click in it as well. When the entire area below the trim line is selected, press "Accept" and then move on to the "Generate Socket" step.
-                            
-                            
+                                                      
                             <p>
     					</div>
+                        <div id="subText4" apifunc=" $.post('api/createFaceGroup()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Create Face Group </h3>
+                            <hr>
+                            <p>
+                                In this step you will turn your selection into a facegroup.
+                            <p>
+                        </div>
+                        <div id="subText5" acceptdisabled=1 apifuncStart =" $.post('api/selectTool()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Select Facegroup</h3>
+                            <hr>
+                            <p>
+                                Double click on the socket area to select the facegroup you've just created.
+                            <p>
+                        </div>
+                        <div id="subText6" acceptdisabled=1 class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Expand Selection</h3>
+                            <hr>
+                            <p>
+                                Use the expand and contract buttons to make the trim line edge of the your selection roughly
+                                10% higher.
+                                <br />
+                                <br />
+
+                                <button class='btn btn-default btn-sm' onclick="$.post('api/contractByOneRing()', apiReturnParser);">Contract --</button>
+                                <button class='btn btn-default btn-sm' onclick="$.post('api/expandByOneRing()', apiReturnParser);">Expand ++</button>
+
+                            <p>
+                        </div>
+                        <div id="subText7" apifunc=" $.post('api/remeshSpecial()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Remesh Trim Line</h3>
+                            <hr>
+                            <p>
+                                By pressing "Accept" the selection will be remeshed to smooth the trim line.
+                            <p>
+                        </div>
+                        <div id="subText8" acceptdisabled=1 apifuncstart ="$.post('api/cancel()',reselect);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Select Facegroup</h3>
+                            <hr>
+                            <p>
+                                Double click on the socket area to select the facegroup you've just created.
+                            <p>
+                        </div>
     					
-    					<div id="subText4" class="subText" style="display: none;" acceptDisabled=1>
+    					<div id="subText9" class="subText" style="display: none;" acceptDisabled=1>
     						<h3>Finished </h3>
     					</div>
 					</div>
@@ -104,14 +150,20 @@
                             <hr>
                             <p> Press the "Accept" button to select the socket. <p>
                         </div>
-                        <div id="subText5" apifuncstart="$.post('api/remeshFreeBoundary()',apiReturnParser);" apifunc="$.post('api/accept()',apiReturnParser); " class="subText" style="display: none;">
+                        <div id="subText5" apifunc=" $.post('api/createFaceGroup()',apiReturnParser);" class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Remesh Free Boundary</h3>
+                            <h3>Create Facegroup</h3>
                             <hr>
-                            <p> In this step, you will smooth the edge of the trim line. Press the "Accept" button to accept the remesh. <p>
+                            <p> Press the "Accept" button to select the socket. <p>
+                        </div>
+                        <div id="subText6" apifunc=" $.post('api/selectAll()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Select All</h3>
+                            <hr>
+                            <p> Press the "Accept" button to select the socket. <p>
                         </div>
 
-                        <div id="subText6" apiFunc="callAccept()" class="subText" style="display: none;">
+                        <div id="subText7" apiFunc="callAccept()" class="subText" style="display: none;">
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
                             <h3>Create Socket Thickness </h3>
                             <hr>
@@ -131,7 +183,7 @@
 
                         </div>
     					
-                        <div id="subText7" apifuncstart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;" acceptdisabled=1>
+                        <div id="subText8" apifuncStart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;" acceptdisabled=1>
                             <h3>Finished </h3>
                         </div>
                     </div>
@@ -157,7 +209,17 @@
 </div>
 
 <script>
-   
+    function reselect(data)
+    {
+        if (data == false) {
+            apiReturnParser(data)
+        }
+        else
+        {
+            $.post("api/selectTool()", apiReturnParser);
+        }
+
+    }
 
 
     function seperateAndRename(data)

@@ -222,11 +222,25 @@ var template = "<div class='row' style='margin-left:3px;margin-right:3px;'>\
  		max: 100,
 		min: 0,
 		step:1.0,
-        units:'mm',
+        units:'',
 		onchange: "$.post('api/selectTool('+$(this).val()+')',apiReturnParser)"
  	}]
      , acceptFunction: "SelectAcceptButton(this)"
-	};
+ };
+ var SelectValuesTrimLine = {
+     mainControlName: "Select Size",
+     sliders: [{
+         value: 5,
+         sectionName: "Select Size",
+         idName: "Select",
+         max: 100,
+         min: 0,
+         step: 1.0,
+         units: '',
+         onchange: "$.post('api/selectTool('+$(this).val()+')',apiReturnParser)"
+     }]
+      , acceptFunction: "SelectAcceptButton(this)"
+ };
 
 //----------------------------------------------------------------------------------------------------------------------
  var RemeshValues = {

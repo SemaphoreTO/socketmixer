@@ -74,6 +74,7 @@
     <Content Include="static\html\printing\cover.html" />
     <Content Include="static\html\printing\end.html" />
     <Content Include="static\html\printing\page1.html" />
+    <Content Include="static\html\printing\page2.html" />
     <Content Include="static\html\scanning\cover.html" />
     <Content Include="static\html\scanning\end.html" />
     <Content Include="static\html\scanning\page1.html" />

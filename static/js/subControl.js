@@ -34,7 +34,7 @@ $(document).on('click','#activateButton',function(){
   var shownElement = $("#"+txtToShow,parent)
 
   disableAccept(this,shownElement)
-
+  checkControlValid(parent)
   changeProgressBar(0, parent)
   parent.find('#completedCheck').hide()
 });

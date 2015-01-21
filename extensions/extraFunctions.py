@@ -100,7 +100,7 @@ def loadLatest(name):
 
 @meshWrapper
 def saveLatestQuick():
-    name = 'QuickSave.mix'
+    name = 'Quick_Save.mix'
     cmd  = mmapi.StoredCommands()
     currentDir = os.getcwd()
     historyDirectory = 'history'
@@ -112,7 +112,7 @@ def saveLatestQuick():
 
 @meshWrapper
 def saveLatest():
-    name ='save.mix'
+    name ='Auto_Save.mix'
     cmd  = mmapi.StoredCommands()
     currentDir = os.getcwd()
     historyDirectory = 'history'
@@ -122,7 +122,15 @@ def saveLatest():
     cmd.AppendSceneCommand_ExportMixFile(saveFile)
     return cmd
 
+
 ########################### BASIC API CALLS ####################################
+
+def generateInsert():
+    remote = mmRemote()
+    remote.connect()
+    newgroups = toolquery_new_groups(remote)
+    #print newgroups
+    remote.shutdown()
 @meshWrapper
 def expandByOneRing():
     cmd = mmapi.StoredCommands()
@@ -141,12 +149,13 @@ def clearAllFaceGroup():
     cmd.AppendBeginToolCommand('clearFaceGroup') 
     return cmd
 @meshWrapper
-def remeshFreeBoundary():
+def remeshSpecial():
     cmd  = mmapi.StoredCommands()
     cmd.AppendBeginToolCommand('remesh')
-    cmd.AppendToolParameterCommand('density',1.0)
+    cmd.AppendToolParameterCommand('density',0.5)
     cmd.AppendToolParameterCommand('smooth',1.0)
-    cmd.AppendToolParameterCommand('boundaryMode',0)
+    cmd.AppendToolParameterCommand('preserveGroups',True)
+    cmd.AppendCompleteToolCommand('accept')
     return cmd
 
 @meshWrapper
@@ -499,14 +508,26 @@ def reOrientModel():
     xAvg = result[0]
     yAvg = result[1]
     zAvg = result[2]
+    #translate from scene to world coordinates
+    result2 = mm.to_scene_xyz(remote,0,0,0)
+    xAvg = xAvg- result2[0]
+    yAvg = yAvg- result2[1]
+    zAvg = zAvg- result2[2]
     
     cmd.AppendBeginToolCommand('transform')
     cmd.AppendToolParameterCommand('rotation',a,b,c,d,e,f,g,h,i)
 
+    
+    cmd.AppendCompleteToolCommand('accept')
+    remote.runCommand(cmd)
+
+    cmd  = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('transform')
     cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
     cmd.AppendCompleteToolCommand('accept')
     remote.runCommand(cmd)
 
+   
 
     #groups = mm.list_selected_groups(remote)
 

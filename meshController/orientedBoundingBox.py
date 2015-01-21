@@ -72,9 +72,9 @@ def calculateEigenVectors(filePath,downSampleCount):
 
     a = np.matrix([xRow,yRow,zRow])
 
-    xAvg = np.average(a[0,:])
-    yAvg = np.average(a[1,:])
-    zAvg = np.average(a[2,:])
+    xAvg = np.average(a[0,:]).item()
+    yAvg = np.average(a[1,:]).item()
+    zAvg = np.average(a[2,:]).item()
 
 
 

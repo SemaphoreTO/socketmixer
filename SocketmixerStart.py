@@ -61,7 +61,7 @@ def checkPast():
                 if file.endswith(".mix"):
                     mixFiles.append(file)
     jsonreturn =  json.dumps(mixFiles)
-    print jsonreturn
+    #print jsonreturn
     return jsonreturn
     
 
