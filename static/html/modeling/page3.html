@@ -117,34 +117,9 @@
 </div>
 
 <script>
-
-
-    function hideOrig(data) {
-        if (data == false) {
-            apiReturnParser(data)
-        }
-        else {
-            $.post("api/hideObjectByName('scan')", apiReturnParser);
-        }
+    function createDuplicate() {
+        $.post("api/duplicateAndRenameAndHide('scan','rectifiedLimb')", apiReturnParser);
     }
-    function renameDuplicate(data) {
-        if (data == false) {
-            apiReturnParser(data)
-        }
-        else {
-            $.post("api/renameObjectByName('scan (copy)','rectifiedLimb')", hideOrig);
-        }
-    }
-    function createDuplicate(data) {
-        if (data == false) {
-            apiReturnParser(data)
-        }
-        else {
-            $.post("api/duplicate('scan')", renameDuplicate);
-        }
-    }
-
-
 
     function reOrientModel(data)
     {

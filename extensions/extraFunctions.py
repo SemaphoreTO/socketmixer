@@ -527,17 +527,12 @@ def reOrientModel():
     
     cmd.AppendBeginToolCommand('transform')
     cmd.AppendToolParameterCommand('rotation',a,b,c,d,e,f,g,h,i)
-
+    cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
     
     cmd.AppendCompleteToolCommand('accept')
     remote.runCommand(cmd)
 
-    cmd  = mmapi.StoredCommands()
-    cmd.AppendBeginToolCommand('transform')
-    cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
-    cmd.AppendCompleteToolCommand('accept')
-    remote.runCommand(cmd)
-
+  
    
 
     #groups = mm.list_selected_groups(remote)
@@ -655,7 +650,29 @@ def duplicate(partToDuplicate):
         remote.shutdown() 
         return False
 
-              
+def duplicateAndRenameAndHide(partToDuplicate,newName):
+    remote = mmRemote()
+    remote.connect()
+    try:
+         mm.select_object_by_name(remote,partToDuplicate)
+         cmd  = mmapi.StoredCommands()
+         cmd.AppendBeginToolCommand('duplicate')
+         remote.runCommand(cmd)
+         cmd  = mmapi.StoredCommands()
+         duplicatename = partToDuplicate + ' (copy)'
+         [state,id]= mm.find_object_by_name(remote,duplicatename)
+         cmd.AppendSceneCommand_SetObjectName(id,newName)
+         remote.runCommand(cmd)
+         cmd  = mmapi.StoredCommands()
+         [state,id]= mm.find_object_by_name(remote,partToDuplicate)
+         cmd.AppendSceneCommand_SetHidden(id)
+         remote.runCommand(cmd)
+         remote.shutdown()
+     
+         return True
+    except:
+        remote.shutdown() 
+        return False
 
 @meshWrapper
 def colorView():

@@ -109,8 +109,8 @@ var template = "<div class='row' style='margin-left:3px;margin-right:3px;'>\
  		value:4.0,
  		sectionName: "Distance",
  		idName: "Distance",
- 		max: 10,
-		min: -10,
+ 		max: 20,
+		min: -20,
 		step:0.05,
         units:'mm',
 		onchange: "$.post('api/offsetDistance('+$(this).val()+',True)',apiReturnParser)"
