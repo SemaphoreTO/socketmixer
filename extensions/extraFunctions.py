@@ -90,10 +90,10 @@ def loadStep(stepArray):
     loadLatest(step)
 
 @meshWrapper
-def loadLatest(name):
+def loadLatest(name,directory):
     cmd  = mmapi.StoredCommands()
     currentDir = os.getcwd()
-    saveFile = currentDir+name
+    saveFile = os.path.join(currentDir,directory,name)
     if os.path.isfile(saveFile):
         cmd.AppendSceneCommand_OpenMixFile(saveFile)
     return cmd
@@ -192,12 +192,23 @@ def createFaceGroup():
 def alignTransform():
     cmd  = mmapi.StoredCommands()
     cmd.AppendBeginToolCommand('transform')
+    cmd.AppendToolParameterCommand('pivotFrameMode',0)
     return cmd
+
 
 @meshWrapper
 def selectTool(size=1.3):
     cmd  = mmapi.StoredCommands()
     cmd.AppendBeginToolCommand('select')
+    cmd.AppendToolParameterCommand("radiusWorld",size) 
+    #cmd  = mmapi.StoredCommands()
+    #cmd.AppendSelectCommand_All()
+    #cmd.AppendSelectUtilityCommand("invert") 
+    return cmd
+
+@meshWrapper
+def AdjustselectTool(size=1.3):
+    cmd  = mmapi.StoredCommands()
     cmd.AppendToolParameterCommand("radiusWorld",size) 
     #cmd  = mmapi.StoredCommands()
     #cmd.AppendSelectCommand_All()
@@ -683,4 +694,8 @@ def cutSocketForConnection():
 def joinConnectionToSocket():
     connector.connector_join()
     return True
+
+
+#---------------Training Stuff-----------------------------------------------------------
+
 

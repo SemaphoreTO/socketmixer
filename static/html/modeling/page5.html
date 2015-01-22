@@ -82,16 +82,9 @@
                                 By pressing "Accept" the selection will be remeshed to smooth the trim line.
                             <p>
                         </div>
-                        <div id="subText8" acceptdisabled=1 apifuncstart ="$.post('api/cancel()',reselect);" class="subText" style="display: none;">
-                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Select Facegroup</h3>
-                            <hr>
-                            <p>
-                                Double click on the socket area to select the facegroup you've just created.
-                            <p>
-                        </div>
+
     					
-    					<div id="subText9" class="subText" style="display: none;" acceptDisabled=1>
+    					<div id="subText8" class="subText" style="display: none;" acceptDisabled=1>
     						<h3>Finished </h3>
     					</div>
 					</div>
@@ -124,7 +117,15 @@
                             <hr>
                             <p> In the following steps, you will create a socket, set its distance from the limb, and determine its thickness. <p>
                         </div>
-                        <div id="subText2" apifunc="callAccept()" class="subText" style="display: none;">
+                        <div id="subText2" acceptdisabled=1 apifuncstart="$.post('api/cancel()',reselect);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Select Facegroup</h3>
+                            <hr>
+                            <p>
+                                Double click on the socket area to select the facegroup you've just created.
+                            <p>
+                        </div>
+                        <div id="subText3" apifunc="callAccept()" class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                             <h3>Offset Socket  </h3>
                             <hr>
@@ -138,32 +139,32 @@
                                 </script>
                         </div>
 
-                        <div id="subText3" apifunc=" $.post('api/separate()',seperateAndRename);" class="subText" style="display: none;">
+                        <div id="subText4" apifunc=" $.post('api/separate()',seperateAndRename);" class="subText" style="display: none;">
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
                             <h3>Make New Object</h3>
                             <hr />
                             <p> In this step, the offset you have created will be turned into a new object. This separates the socket from the rectified residual limb. <p>
                         </div>
-                        <div id="subText4" apifunc=" $.post('api/selectAll()',apiReturnParser);" class="subText" style="display: none;">
+                        <div id="subText5" apifunc=" $.post('api/selectAll()',apiReturnParser);" class="subText" style="display: none;">
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
                             <h3>Select All</h3>
                             <hr>
                             <p> Press the "Accept" button to select the socket. <p>
                         </div>
-                        <div id="subText5" apifunc=" $.post('api/createFaceGroup()',apiReturnParser);" class="subText" style="display: none;">
+                        <div id="subText6" apifunc=" $.post('api/createFaceGroup()',apiReturnParser);" class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                             <h3>Create Facegroup</h3>
                             <hr>
                             <p> Press the "Accept" button to select the socket. <p>
                         </div>
-                        <div id="subText6" apifunc=" $.post('api/selectAll()',apiReturnParser);" class="subText" style="display: none;">
+                        <div id="subText7" apifunc=" $.post('api/selectAll()',apiReturnParser);" class="subText" style="display: none;">
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                             <h3>Select All</h3>
                             <hr>
                             <p> Press the "Accept" button to select the socket. <p>
                         </div>
 
-                        <div id="subText7" apiFunc="callAccept()" class="subText" style="display: none;">
+                        <div id="subText8" apiFunc="callAccept()" class="subText" style="display: none;">
                             <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
                             <h3>Create Socket Thickness </h3>
                             <hr>
@@ -183,7 +184,7 @@
 
                         </div>
     					
-                        <div id="subText8" apifuncStart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;" acceptdisabled=1>
+                        <div id="subText9" apifuncStart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;" acceptdisabled=1>
                             <h3>Finished </h3>
                         </div>
                     </div>
