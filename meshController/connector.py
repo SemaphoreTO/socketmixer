@@ -120,8 +120,8 @@ def connector_join():
     # accept outstanding tools, if there are any
     mm.accept_tool(remote)
 
-    [found,id1] = mm.find_object_by_name(remote,SocketName())
-    [found,id2] = mm.find_object_by_name(remote,ConnectorName())
+    [found,id1] = mm.find_object_by_name(remote,'socket')
+    [found,id2] = mm.find_object_by_name(remote,"connector")
     mm.select_objects(remote,[id1,id2])
 
 
@@ -133,6 +133,14 @@ def connector_join():
     mm.select_all(remote)
     mm.begin_tool(remote, "join")
     mm.accept_tool(remote)
+
+
+    [foundconnector,id1] = mm.find_object_by_name(remote,'connector')
+    ## we need to rename the connector back to socket
+    if foundconnector:
+        cmd  = mmapi.StoredCommands()
+        cmd.AppendSceneCommand_SetObjectName(id1,'socket')
+        remote.runCommand(cmd)
 
     ## [RMS] this block will clean up holes, but requires ability to save & restore selection!
     ##   [TODO] we can do this now, because we can read back facegroup after createFaceGroup...

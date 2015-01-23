@@ -68,15 +68,24 @@
                                 to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.
                             <p>
                         </div>
-                        <div id="subText6" apifunc="callAccept()" class="subText" style="display: none;" acceptdisabled=1>
+                        <div id="subText6" apifuncstart="shownElement.find('input[type=range]').each(function() { $(this).change()})" class="subText" style="display: none;" acceptdisabled=1>
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Expand TEXT HERE</h3>
+                            <h3>Smooth Join</h3>
                             <hr>
-                            <button class='btn btn-default btn-sm' onclick="$.post('api/contractByOneRing()', apiReturnParser);">Contract --</button>
-                            <button class='btn btn-default btn-sm'  onclick="$.post('api/expandByOneRing()', apiReturnParser);">Expand ++</button>
+                            <p>
+                                Select the area around the join, click on expand to expand the join by 10-20%.
+                                <button class='btn btn-default btn-sm' onclick="$.post('api/contractByOneRing()', apiReturnParser);">Contract --</button>
+                                <button class='btn btn-default btn-sm' onclick="$.post('api/expandByOneRing()', apiReturnParser);">Expand ++</button>
 
-
+                            <p>
+                                <div id="page11SelectTool"> </div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#page11SelectTool').html(Mustache.to_html(template, SelectValuesTrimLine));
+                                    });
+                                </script>
                         </div>
+
                         <div id="subText7" apifunc=" callAccept();" class="subText" style="display: none;" >
                             <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                             <h3>Smooth Scale</h3>
@@ -151,7 +160,7 @@
                             The cylinder should be positioned near the centre of the socket, and should appear to cut through both the distal end of the cup, and the proximal end of the connector.
                         <p>
                     </div>
-                    <div id="subText5" apifunc=$.post("api/boolean('connector','holemaker')",acceptBoolean); class="subText" style="display: none;">
+                    <div id="subText5" apifunc=$.post("api/boolean('socket','holemaker')",acceptBoolean); class="subText" style="display: none;">
                         <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
                         <h3>Boolean Hole Maker</h3>
                         <hr>
@@ -186,14 +195,25 @@
 </div>
 
 <script>
-
-    function acceptBoolean(data)
+    function acceptBooleanagain(data)
     {
-        debugger;
         if (data == false) {
             apiReturnParser(data)
         }
         $.post("api/accept()", apiReturnParser);
+    }
+
+    function acceptBoolean(data)
+    {
+        if (data == 'false') {
+            $.post("api/boolean('connector','holemaker')", acceptBooleanagain);
+            
+        }
+        else
+        {
+            $.post("api/accept()", apiReturnParser);
+        }
+        
     }
 
     var selectedConnector ='socket.obj'

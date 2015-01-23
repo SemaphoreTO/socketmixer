@@ -54,8 +54,37 @@ def importFile(fileLocation = None,folder=None):
             return false
     else:
         return MeshWrapper.importFile()
+
+
+## this is used to remember the facegroups that are created
+
 def planeCut():
-    return MeshWrapper.planecut()
+    remote = mmRemote()
+    remote.connect()
+    try:
+        cmd  = mmapi.StoredCommands()
+        cmd.AppendBeginToolCommand('planeCut')
+        remote.runCommand(cmd)
+
+        remote.shutdown()
+        return True
+    except:
+        remote.shutdown()
+        return False
+
+lastPlane = None;
+def acceptPlaneCut():
+    remote = mmRemote()
+    remote.connect()
+    try:
+        cmd  = mmapi.StoredCommands()
+        cmd.AppendCompleteToolCommand('accept')
+        remote.runCommand(cmd)                
+        lastPlane = toolquery_new_groups(remote)
+    except:
+        remote.shutdown()
+        return False
+       
 
 @meshWrapper
 def importFigure(fileName):
@@ -125,12 +154,6 @@ def saveLatest():
 
 ########################### BASIC API CALLS ####################################
 
-def generateInsert():
-    remote = mmRemote()
-    remote.connect()
-    newgroups = toolquery_new_groups(remote)
-    #print newgroups
-    remote.shutdown()
 @meshWrapper
 def expandByOneRing():
     cmd = mmapi.StoredCommands()
@@ -310,14 +333,23 @@ def separate():
     return cmd
 
 
-@meshWrapper
 def offsetDistance(distance,checked=False):
-    cmd  = mmapi.StoredCommands()
-    cmd.AppendBeginToolCommand('offset')
-    cmd.AppendToolParameterCommand('offsetWorld',distance)
-    if checked:
-        cmd.AppendToolParameterCommand('connected',True)
-    return cmd
+    try:
+        remote = mmRemote()
+        remote.connect()
+        cmd  = mmapi.StoredCommands()
+        cmd.AppendSelectUtilityCommand('optimizeBoundary')
+        remote.runCommand(cmd)
+        cmd  = mmapi.StoredCommands()
+        cmd.AppendBeginToolCommand('offset')
+        cmd.AppendToolParameterCommand('offsetWorld',distance)
+        if checked:
+            cmd.AppendToolParameterCommand('connected',True)
+        remote.runCommand(cmd)
+        return True
+    except:
+        remote.shutdown()
+        return False
 
 @meshWrapper
 def connected(state):
@@ -326,13 +358,22 @@ def connected(state):
     cmd.AppendToolParameterCommand('Connected',state)
     return cmd
 
-@meshWrapper
-def softTransition(value):
-    cmd  = mmapi.StoredCommands()
-    cmd.AppendBeginToolCommand('offset')
-    cmd.AppendToolParameterCommand('softenWorld',value)
-    return cmd
 
+def softTransition(value):
+    try:
+        remote = mmRemote()
+        remote.connect()
+        cmd  = mmapi.StoredCommands()
+        cmd.AppendSelectUtilityCommand('optimizeBoundary')
+        remote.runCommand(cmd)
+        cmd.AppendBeginToolCommand('offset')
+        cmd.AppendToolParameterCommand('softenWorld',value)
+        remote.runCommand(cmd)
+        remote.shutdown()
+        return True
+    except:
+        remote.shutdown()
+        return False
 
 @meshWrapper
 def flattenSmooth():
@@ -450,25 +491,29 @@ def alignZCam(view):
 def boolean(object1,object2):
     remote = mmRemote()
     remote.connect()
-    [found,id1] = mm.find_object_by_name(remote,object1)
-    [found,id2] = mm.find_object_by_name(remote,object2)
-    mm.select_objects(remote,[id1,id2])
-    cmd  = mmapi.StoredCommands()
-    cmd.AppendBeginToolCommand('difference')
-    remote.runCommand(cmd)
-    remote.shutdown()
-    return True
+    [found1,id1] = mm.find_object_by_name(remote,object1)
+    [found2,id2] = mm.find_object_by_name(remote,object2)
+    if found1 and found2:
+        mm.select_objects(remote,[id1,id2])
+        cmd  = mmapi.StoredCommands()
+        cmd.AppendBeginToolCommand('difference')
+        remote.runCommand(cmd)
+        remote.shutdown()
+        return True
+    else:
+        remote.shutdown()
+        return False
 
 
 
 ###HACK## want to sleep, fix later
-selectedObjects = None 
+objects = None 
 def getSelectedObject():
     remote = mmRemote()
     remote.connect()
-    selectedObjects = mm.list_selected_objects(remote)
+    objects = mm.list_selected_objects(remote)
     remote.shutdown()
-    jsonreturn =  json.dumps(selectedObjects)
+    jsonreturn =  json.dumps(objects)
     return jsonreturn
 
 def selectObjects(data):
@@ -531,26 +576,6 @@ def reOrientModel():
     
     cmd.AppendCompleteToolCommand('accept')
     remote.runCommand(cmd)
-
-  
-   
-
-    #groups = mm.list_selected_groups(remote)
-
-
-    ## now check the flip orientation
-    #cmd  = mmapi.StoredCommands( )
-    #cmd.AppendSelectCommand_All()
-    #remote.runCommand(cmd)
-
-    #centroid = mm.get_face_selection_centroid(remote)
-    #centroid =  mm.to_scene_xyz(remote,centroid[0],centroid[1],centroid[2])
-    ##(bFound, selFrame) = mm.find_ray_hit(remote, mm.addv3(sel_ctr, (0,0,0)), (0,1,0)  )
-    #cmd.AppendBeginToolCommand('transform')
-    #cmd.AppendToolParameterCommand('translation',-centroid[0],-centroid[1],-centroid[2])
-    #cmd.AppendCompleteToolCommand('accept')
-    #remote.runCommand(cmd)
-
     remote.shutdown()
 
     os.remove (fileName)
