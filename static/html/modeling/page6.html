@@ -74,9 +74,6 @@
                             <hr>
                             <p>
                                 Select the area around the join, click on expand to expand the join by 10-20%.
-                                <button class='btn btn-default btn-sm' onclick="$.post('api/contractByOneRing()', apiReturnParser);">Contract --</button>
-                                <button class='btn btn-default btn-sm' onclick="$.post('api/expandByOneRing()', apiReturnParser);">Expand ++</button>
-
                             <p>
                                 <div id="page11SelectTool"> </div>
                                 <script>
@@ -84,6 +81,9 @@
                                         $('#page11SelectTool').html(Mustache.to_html(template, SelectValuesTrimLine));
                                     });
                                 </script>
+                                <button class='btn btn-default btn-sm' onclick="$.post('api/contractByOneRing()', apiReturnParser);">Contract --</button>
+                                <button class='btn btn-default btn-sm' onclick="$.post('api/expandByOneRing()', apiReturnParser);">Expand ++</button>
+
                         </div>
 
                         <div id="subText7" apifunc=" callAccept();" class="subText" style="display: none;" >
