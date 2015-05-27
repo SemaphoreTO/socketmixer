@@ -32,7 +32,6 @@ a = Analysis(['SocketmixerStart.py'],
              runtime_hooks=None)
 
 a.datas += extra_datas('extensionController/')
-a.datas += extra_datas('meshController/')
 for d in a.datas:
     if 'pyconfig' in d[0]: 
         a.datas.remove(d)
@@ -55,6 +54,7 @@ exe = EXE(pyz,
 coll = COLLECT(exe,
                Tree('static',prefix='static'),
                Tree('history',prefix='history'),
+               Tree('meshController',prefix='meshController'),
                Tree('reference',prefix='reference'),
                Tree('socket',prefix='socket'),
                Tree('holeMaker',prefix='holeMaker'),
