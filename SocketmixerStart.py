@@ -13,17 +13,15 @@ import numpy.linalg as linalg
 
 
 
-web = False
 
-if web == False:
-    sys.path.append( 'extensionController' )
-    sys.path.append( 'meshController' )
-    sys.path.append( 'meshController/mm' )
-    sys.path.append( os.path.join('meshController','pythonApi') )
-    from extensionController import *
-    from MeshWrapper import  *
-    from connector import *
-    from orientedBoundingBox import *
+sys.path.append( 'extensionController' )
+sys.path.append( 'meshController' )
+sys.path.append( 'meshController/mm' )
+sys.path.append( os.path.join('meshController','pythonApi') )
+from extensionController import *
+from MeshWrapper import  *
+from connector import *
+from orientedBoundingBox import *
 
 @route('/upload', method='POST')
 def do_upload():
@@ -109,15 +107,13 @@ def startUp():
 
 browser = BrowserOpen()
 browser.start()
-
-if web == False:
-    startUp()
+startUp()
 
 
 print 'Semaphore Socketmixer Controller is now working at' 
 print str(url)
 print "Please don't close this window"
-run(server='cherrypy',host='localhost', quiet=True,port=myport,debug=False)
+run(server='cherrypy',host='localhost', quiet=False,port=myport,debug=True)
 
 
 
