@@ -62,11 +62,13 @@ def planeCut():
     remote = mmRemote()
     remote.connect()
     try:
+        printf 'Starting plane cut'
         cmd  = mmapi.StoredCommands()
         cmd.AppendBeginToolCommand('planeCut')
         remote.runCommand(cmd)
 
         remote.shutdown()
+        printf 'Ending Plane Cut'
         return True
     except:
         remote.shutdown()
