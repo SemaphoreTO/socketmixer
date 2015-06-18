@@ -132,6 +132,12 @@ def clear_target(remote):
     cmd.AppendSceneCommand_ClearTarget();
     remote.runCommand(cmd)
 
+def select_object_by_name(remote, name):
+    (found, objid) = find_object_by_name(remote, name)
+    if found:
+        select_objects(remote, [objid])
+    return found
+
 
 
 

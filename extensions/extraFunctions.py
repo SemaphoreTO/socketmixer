@@ -634,11 +634,6 @@ def getAllObjects():
         remote.shutdown()
         return False
 
-def select_object_by_name(remote, name):
-    (found, objid) = find_object_by_name(remote, name)
-    if found:
-        select_objects(remote, [objid])
-    return found
 
 def renameObjectByName(origName, newName):
     remote = mmRemote()
@@ -665,7 +660,7 @@ def duplicate(partToDuplicate):
     remote = mmRemote()
     remote.connect()
     try:
-         select_object_by_name(remote,partToDuplicate)
+         mm.select_object_by_name(remote,partToDuplicate)
          cmd  = mmapi.StoredCommands()
          cmd.AppendBeginToolCommand('duplicate')
          remote.runCommand(cmd)
@@ -680,7 +675,7 @@ def duplicateAndRenameAndHide(partToDuplicate,newName):
     remote = mmRemote()
     remote.connect()
     try:
-         select_object_by_name(remote,partToDuplicate)
+         mm.select_object_by_name(remote,partToDuplicate)
          cmd  = mmapi.StoredCommands()
          cmd.AppendBeginToolCommand('duplicate')
          remote.runCommand(cmd)
@@ -715,7 +710,7 @@ def colorView():
 def beginSelection():
     remote = mmRemote()
     remote.connect()
-    select_object_by_name(remote, SocketName() )
+    mm.select_object_by_name(remote, SocketName() )
     mm.begin_tool(remote, "select")
     mm.set_toolparam(remote, "radiusWorld", 25.0)
     remote.shutdown()

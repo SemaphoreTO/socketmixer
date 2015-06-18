@@ -38,3 +38,10 @@ def select_inside_sphere(remote, sphere_center, sphere_radius):
     cmd = mmapi.StoredCommands()
     cmd.AppendSelectCommand_InsideSphere( sphere_center[0],sphere_center[1],sphere_center[2], sphere_radius )
     remote.runCommand(cmd)    
+
+
+def select_hit_triangle(remote, origin,direction):
+     cmd = mmapi.StoredCommands()
+     cmd.AppendSelectCommand_FirstTriangleIntersectingRay(origin[0],origin[1],origin[2],direction[0],direction[1],direction[2])
+
+     remote.runCommand(cmd)

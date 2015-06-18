@@ -70,7 +70,6 @@ def import_connector(do_accept,connectorName):
 
     remote.shutdown()
 
-
 # [RMS] cut the outer shell of the socket at a vertical offset from the Connector
 def connector_plane_cut(do_accept):
     remote = mmRemote();
@@ -100,7 +99,7 @@ def connector_plane_cut(do_accept):
 
     # position cutting plane at offset from part
     mm.set_toolparam(remote, "fillType", 0)
-    #planeNormal = (0,1,0)
+    planeNormal = (0,1,0)
     #mm.set_toolparam(remote, "normal", planeNormal )
     planeOrigin = max
     planeOrigin = mm.addv3( planeOrigin, mm.mulv3s(planeNormal, 0.5*partH) )
