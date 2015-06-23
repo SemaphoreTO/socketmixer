@@ -391,8 +391,33 @@ def bubbleSmooth():
     cmd.AppendToolUtilityCommand('setPrimary','bubbleSmooth')
     return cmd
 
+################## SLICING API CALLS #####################
 
+@meshWrapper
+def makePlaneCutSlice():
+    remote = mmRemote()
+    remote.connect()
 
+    try:
+        print 'Starting plane cut'
+        cmd = mmapi.StoredCommands()
+        cmd.AppendBeginToolCommand('planeCut')
+        cmd.AppendToolParameterCommand('cutType', 1)
+        remote.runCommand(cmd)
+        
+        remote.shutdown()
+        print 'Ending Plane Cut'
+        return True
+    except:
+        remote.shutdown()
+        return False
+    
+    # GET VALUE FROM ARRANGE PLANE CUT STEP (3)
+    # cmd.AppendToolParameterCommand('origin', )
+    # cmd.AppendToolParameterCommand('normal', )
+
+    # GET VALUE FROM SELECT DIRECTION STEP (2)
+    # cmd.AppendToolParameterCommand('rotation', value)
 
 ########################### SCENE API CALLS ####################################
 
@@ -505,7 +530,6 @@ def boolean(object1,object2):
     else:
         remote.shutdown()
         return False
-
 
 
 ###HACK## want to sleep, fix later
