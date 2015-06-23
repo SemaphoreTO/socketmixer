@@ -391,7 +391,48 @@ def bubbleSmooth():
     cmd.AppendToolUtilityCommand('setPrimary','bubbleSmooth')
     return cmd
 
+################## SLICING API CALLS #####################
 
+@meshWrapper
+def makePlaneCutSlice():
+    remote = mmRemote()
+    remote.connect()
+
+    try:
+        print 'Starting plane cut'
+        cmd = mmapi.StoredCommands()
+        cmd.AppendBeginToolCommand('planeCut')
+        cmd.AppendToolParameterCommand('cutType', 1)
+        remote.runCommand(cmd)
+
+        remote.shutdown()
+        print 'Ending Plane Cut'
+        return True
+    except:
+        remote.shutdown()
+        return False
+    
+    # GET VALUE FROM ARRANGE PLANE CUT STEP (3)
+    # cmd.AppendToolParameterCommand('origin', )
+    # cmd.AppendToolParameterCommand('normal', )
+
+    # GET VALUE FROM SELECT DIRECTION STEP (2)
+    # cmd.AppendToolParameterCommand('rotation', value)
+
+@meshWrapper
+def separateShells():
+    remote = mmRemote()
+    remote.connect()
+
+    try:
+        cmd = mmapi.StoredCommands()
+        cmd.AppendBeginToolCommand('separateShells')
+        remote.runCommand(cmd)
+
+        return True
+    except:
+        remote.shutdown()
+        return False
 
 
 ########################### SCENE API CALLS ####################################
@@ -505,7 +546,6 @@ def boolean(object1,object2):
     else:
         remote.shutdown()
         return False
-
 
 
 ###HACK## want to sleep, fix later
@@ -634,6 +674,11 @@ def getAllObjects():
         remote.shutdown()
         return False
 
+def select_object_by_name(remote, name):
+    (found, objid) = find_object_by_name(remote, name)
+    if found:
+        select_objects(remote, [objid])
+    return found
 
 def renameObjectByName(origName, newName):
     remote = mmRemote()
@@ -660,7 +705,7 @@ def duplicate(partToDuplicate):
     remote = mmRemote()
     remote.connect()
     try:
-         mm.select_object_by_name(remote,partToDuplicate)
+         select_object_by_name(remote,partToDuplicate)
          cmd  = mmapi.StoredCommands()
          cmd.AppendBeginToolCommand('duplicate')
          remote.runCommand(cmd)
@@ -675,7 +720,7 @@ def duplicateAndRenameAndHide(partToDuplicate,newName):
     remote = mmRemote()
     remote.connect()
     try:
-         mm.select_object_by_name(remote,partToDuplicate)
+         select_object_by_name(remote,partToDuplicate)
          cmd  = mmapi.StoredCommands()
          cmd.AppendBeginToolCommand('duplicate')
          remote.runCommand(cmd)
@@ -710,7 +755,7 @@ def colorView():
 def beginSelection():
     remote = mmRemote()
     remote.connect()
-    mm.select_object_by_name(remote, SocketName() )
+    select_object_by_name(remote, SocketName() )
     mm.begin_tool(remote, "select")
     mm.set_toolparam(remote, "radiusWorld", 25.0)
     remote.shutdown()
