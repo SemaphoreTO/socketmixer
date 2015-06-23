@@ -1,0 +1,118 @@
+<div id="instructionSection">
+	<div style ="margin:20px">
+			<p>
+				In step 8... 
+                <br>
+                ... you will slices the pieces to speed the process of printing.
+			</p>
+			<br>
+			<br>	
+		
+			<div class ="subControl">
+	        <!--Step 8 -->
+				<div  id="wellText" class="panel panel-default" style="display: none;">
+					<div class="panel-body">
+
+	                    <div id="subText1"  class="subText" acceptDisabled=1>
+	                        <h3>Make Slices</h3>
+	                        <hr>
+                            <p>In the following steps, you will make slices to the socket.<p>
+	                    </div>
+
+                        <div id="subText2" apifuncstart="$.post('api/selectDirection()',apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Select Direction</h3>
+                            <hr>
+                            <p>
+                                Select the axis along which the slices will be made. 
+                            <p>
+                        </div>
+                        <div id="subText3" apifunc="$.post('api/arrangePlaneCut()', apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Arrange plane cut</h3>
+                            <hr>
+                            <p>
+                                Arrange where the slice will be made on the socket.
+                            <p>
+
+                        </div>
+
+                        <div id="subText4" apifuncstart="$.post('api/makePlaneCutSlice()', apiReturnParser);" apifunc="$.post('api/acceptPlaneCut()', apiReturnParser);" class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
+                            <h3>Make the plane cut.</h3>
+                            <hr>
+                            <p>
+                                Pizza slice the socket. 
+                            <p>
+
+                        </div>
+                      
+                        <div id="subText5" apifuncstart="$.post('api/saveLatest()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
+                            <h3>Finished </h3>
+                        </div>
+					</div>
+					<div class="panel-footer "> 
+						<div id="page81TemplateControls"> </div>
+					</div>
+                    <script>
+                    $( document ).ready(function() {
+                      $('#page81TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage81));
+                    });
+                    </script>
+				</div>
+
+				<a id = "activateButton" class="btn btn-info " role="button">
+					 <span class="glyphicon glyphicon-wrench"></span>Make Slices
+				</a>
+				
+			</div> <!-- subcontrol div -->
+            <br />
+            Now, sliced pieces can be exported as separate objects. 
+            <br />
+        <br />
+            <div class="subControl">
+            <!-- 			step 1 -->
+            <div id="wellText" class="panel panel-default" style="display: none;">
+                <div class="panel-body">
+
+                    <div id="subText1" class="subText" acceptdisabled=1>
+                        <h3>Separate Pieces</h3>
+                        <hr>
+                        <p>
+                            The sliced socket pieces can now be exported as separate objects by separating the shells.
+                        <p>
+                    </div>
+                    <div  id="subText2"  apiFunc="$.post('api/separate()',apiReturnParser);" class="subText" style="display: none;">
+                        <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
+                            <h3>Separate Socket Pieces</h3>
+                            <hr>
+                            <p>
+                                Separate the socket pieces
+                            <p>
+                    </div>
+
+                    <div id="subText3" apifuncstart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;">
+                        <h3>Finished </h3>
+                    </div>
+                </div>
+                <div class="panel-footer ">
+                    <div id="page82TemplateControls"> </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('#page82TemplateControls').html(Mustache.to_html(subControlTemplate, subControlValuesPage82));
+                    });
+                </script>
+            </div>
+
+            <a id="activateButton" class="btn btn-info " role="button">
+                <span class="glyphicon glyphicon-wrench"></span>Separate Pieces
+            </a>
+
+        </div>
+			
+		
+	</div>
+
+</div>
+
