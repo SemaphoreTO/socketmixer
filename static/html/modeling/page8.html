@@ -42,7 +42,20 @@
                                 To move the plane, use the blue arrow to move the plane up and down, use the green and red curves to rotate the angle. Selecting accept will make the slice to the socket.
                             <p>
                         </div>
-                        <div id="subText3" apifuncstart="$.post('api/saveLatest()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
+                        <div id="subText3"
+                            apifunc="$.post('api/separateShells()', apiReturnParser);"
+                            class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''></div>
+                            <h3>Separate Pieces</h3>
+                            <hr>
+                            <p> 
+                                Sliced socket pieces are separated into individual objects.
+                            <p>
+                        </div>
+                        
+                        <div id="subText4" 
+                            apifuncstart="$.post('api/saveLatest()',apiReturnParser);" 
+                            class="subText" style="display: none;" acceptdisabled=1>
                             <h3>Finished </h3>
                         </div>
 					</div>
@@ -78,13 +91,13 @@
                         <p>
                     </div>
                     <div  id="subText2"  
-                        apifunc="$.post('api/separateShells()',apiReturnParser);" 
+                        apifunc="$.post('api/layout()',apiReturnParser);" 
                         class="subText" style="display: none;">
                         <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
-                            <h3>Separate Socket Pieces</h3>
+                            <h3>Layout Socket Pieces</h3>
                             <hr>
                             <p>
-                                Separate the socket pieces
+                                Socket pieces are laid on printer bed.
                             <p>
                     </div>
                     <div id="subText3"

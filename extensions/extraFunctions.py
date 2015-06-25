@@ -404,6 +404,14 @@ def separateShells():
     cmd.AppendBeginToolCommand('separateShells')
     return cmd
 
+@meshWrapper
+def layout():
+    cmd = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('layout')
+    cmd.AppendToolParameterCommand('packingQuality', 0)
+    return cmd
+
+
 def exportSeparate():
     remote = mmRemote()
     remote.connect()
