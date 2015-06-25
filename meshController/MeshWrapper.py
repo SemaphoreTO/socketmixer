@@ -114,7 +114,11 @@ class MeshWrapper(object):
     @staticmethod
     def planecut():
         return MeshWrapper.SingleInstanceApiCommander("planeCut",None,None) 
-            
+
+    @staticmethod
+    def makeSlice():
+        return MeshWrapper.SingleInstanceApiCommander("planeCut",'cutType',1)
+
     @staticmethod
     def createFaceGroup():
         return MeshWrapper.SingleInstanceApiCommander("createFaceGroup",None,None) 

@@ -10,44 +10,39 @@
 		
 			<div class ="subControl">
 	        <!--Step 8 -->
-				<div  id="wellText" class="panel panel-default" style="display: none;">
+            <div  id="wellText" 
+                class="panel panel-default" 
+                style="display: none;">
 					<div class="panel-body">
-
-	                    <div id="subText1"  class="subText" acceptDisabled=1>
+                        <div id="subText1"  
+                            class="subText" acceptDisabled=1>
 	                        <h3>Make Slices</h3>
 	                        <hr>
                             <p>In the following steps, you will make slices to the socket.<p>
 	                    </div>
 
-                        <div id="subText2" apifuncstart="$.post('api/selectDirection()',apiReturnParser);" class="subText" style="display: none;">
-                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Select Direction</h3>
-                            <hr>
+                        <div id="subText2" 
+                            apifunc="$.post('api/acceptPlaneCut()', apiReturnParser);"
+                            apifuncstart="$.post('api/makeSlice()', apiReturnParser);" 
+                            class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''></div>
+                            <h3>Make the plane cut. </h3>
                             <p>
-                                Select the axis along which the slices will be made. 
+                                Select the number of pieces you would like the socket to be sliced into.
+                            <p>
+                            <div id="page8_numslices">
+                                <select>
+                                    <option value="page8_num1"> 1
+                                    <option value="page8_num2"> 2
+                                    <option value="page8_num3"> 3
+                                </select>
+                            </div>
+
+                            <p>
+                                To move the plane, use the blue arrow to move the plane up and down, use the green and red curves to rotate the angle. Selecting accept will make the slice to the socket.
                             <p>
                         </div>
-                        <div id="subText3" apifunc="$.post('api/arrangePlaneCut()', apiReturnParser);" class="subText" style="display: none;">
-                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Arrange plane cut</h3>
-                            <hr>
-                            <p>
-                                To move the plane, use the blue arrow to move the plane up and down, use the green and red curves to rotate the angle. 
-                            <p>
-
-                        </div>
-
-                        <div id="subText4" apifuncstart="$.post('api/makePlaneCutSlice()', apiReturnParser);" apifunc="$.post('api/acceptPlaneCut()', apiReturnParser);" class="subText" style="display: none;">
-                            <div class='questionMarkPlaceHolder' align='right' helppage=''> </div>
-                            <h3>Make the plane cut.</h3>
-                            <hr>
-                            <p>
-                                Make a slice to the socket. 
-                            <p>
-
-                        </div>
-                      
-                        <div id="subText5" apifuncstart="$.post('api/saveLatest()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
+                        <div id="subText3" apifuncstart="$.post('api/saveLatest()',apiReturnParser);" class="subText" style="display: none;" acceptdisabled=1>
                             <h3>Finished </h3>
                         </div>
 					</div>

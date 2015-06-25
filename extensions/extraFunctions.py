@@ -198,7 +198,6 @@ def remesh(param,paramValue):
     cmd.AppendToolParameterCommand(param,paramValue) 
     return cmd
 
-
 @meshWrapper
 def smooth(smoothValue):
     cmd  = mmapi.StoredCommands()
@@ -212,14 +211,12 @@ def createFaceGroup():
     cmd.AppendBeginToolCommand('createFaceGroup') 
     return cmd
 
-
 @meshWrapper
 def alignTransform():
     cmd  = mmapi.StoredCommands()
     cmd.AppendBeginToolCommand('transform')
     cmd.AppendToolParameterCommand('pivotFrameMode',0)
     return cmd
-
 
 @meshWrapper
 def selectTool(size=1.3):
@@ -277,8 +274,6 @@ def expandToConnected():
     cmd  = mmapi.StoredCommands()
     cmd.AppendSelectUtilityCommand("expandToConnected") 
     return cmd
-
-
 
 @meshWrapper
 def cancel():
@@ -391,49 +386,23 @@ def bubbleSmooth():
     cmd.AppendToolUtilityCommand('setPrimary','bubbleSmooth')
     return cmd
 
-################## SLICING API CALLS #####################
+####### SLICING API CALLS ##################
 
 @meshWrapper
-def makePlaneCutSlice():
-    remote = mmRemote()
-    remote.connect()
+def makeSlice():
+    cmd = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('planeCut')
+    cmd.AppendToolParameterCommand('cutType', 1)
+    return cmd
 
-    try:
-        print 'Starting plane cut'
-        cmd = mmapi.StoredCommands()
-        cmd.AppendBeginToolCommand('planeCut')
-        cmd.AppendToolParameterCommand('cutType', 1)
-        remote.runCommand(cmd)
-
-        remote.shutdown()
-        print 'Ending Plane Cut'
-        return True
-    except:
-        remote.shutdown()
-        return False
-    
-    # GET VALUE FROM ARRANGE PLANE CUT STEP (3)
-    # cmd.AppendToolParameterCommand('origin', )
-    # cmd.AppendToolParameterCommand('normal', )
-
-    # GET VALUE FROM SELECT DIRECTION STEP (2)
-    # cmd.AppendToolParameterCommand('rotation', value)
+    # GET VALUE FOR NUMBER OF SLICES
+    # LOOP THROUGH FOR NUMBER OF SLICES
 
 @meshWrapper
 def separateShells():
-    remote = mmRemote()
-    remote.connect()
-
-    try:
-        cmd = mmapi.StoredCommands()
-        cmd.AppendBeginToolCommand('separateShells')
-        remote.runCommand(cmd)
-
-        return True
-    except:
-        remote.shutdown()
-        return False
-
+    cmd = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('separateShells')
+    return cmd
 
 ########################### SCENE API CALLS ####################################
 
@@ -457,7 +426,6 @@ def centerModel():
     os.remove (fileName)
     return True
 
-
 @meshWrapper
 def align():
     cmd  = mmapi.StoredCommands()
@@ -465,8 +433,6 @@ def align():
     cmd.AppendBeginToolCommand('align')
     
     return cmd
-
-
 
 @meshWrapper
 def alignZCam(view):
