@@ -404,6 +404,28 @@ def separateShells():
     cmd.AppendBeginToolCommand('separateShells')
     return cmd
 
+def exportSeparate():
+    remote = mmRemote()
+    remote.connect()
+    try:
+        cmd = mmapi.StoredCommands()
+        cwd = os.getcwd()
+        objects = mm.list_objects(remote)
+        newDirectory = os.path.join(cwd, 'pieces')
+        if not os.path.exists(newDirectory):
+            os.makedirs(newDirectory)
+        for object in objects:
+            name = mm.get_object_name(remote, object)
+            fileName = os.path.join(newDirectory, name + '.obj')
+            cmd.AppendSceneCommand_ExportMeshFile_CurrentSelection(fileName)
+        remote.runCommand(cmd)
+        remote.shutdown()
+        return True
+    except:
+        remote.shutdown()
+        return False
+
+
 ########################### SCENE API CALLS ####################################
 
 def centerModel():

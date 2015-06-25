@@ -77,7 +77,9 @@
                             The sliced socket pieces can now be exported as separate objects by separating the shells.
                         <p>
                     </div>
-                    <div  id="subText2"  apiFunc="$.post('api/separateShells()',apiReturnParser);" class="subText" style="display: none;">
+                    <div  id="subText2"  
+                        apifunc="$.post('api/separateShells()',apiReturnParser);" 
+                        class="subText" style="display: none;">
                         <div class = 'questionMarkPlaceHolder' align = 'right' helpPage= ''> </div>
                             <h3>Separate Socket Pieces</h3>
                             <hr>
@@ -85,8 +87,19 @@
                                 Separate the socket pieces
                             <p>
                     </div>
+                    <div id="subText3"
+                        apifunc="$.post('api/exportSeparate()', apiReturnParser);"
+                        class="subText" style="display: none;">
+                        <div class='questionMarkPlaceHolder' align='right' helpPage=''>
+                        </div>
+                            <h3> Export socket pieces into separate .obj files</h3>
+                            <hr>
+                            <p>
+                                Export socket pieces into separate .obj files located in the "pieces" folder in the current working directory.
+                                <p>
+                    </div>
 
-                    <div id="subText3" apifuncstart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;">
+                    <div id="subText4" apifuncstart="$.post('api/saveLatest()',apiReturnParser);"  class="subText" style="display: none;">
                         <h3>Finished </h3>
                     </div>
                 </div>
