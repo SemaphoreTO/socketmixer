@@ -20,8 +20,7 @@
 	                        <hr>
                             <p>In the following steps, you will make slices to the socket.<p>
 	                    </div>
-
-                        <div id="subText2" 
+                    <div id="subText2" 
                             apifunc="$.post('api/acceptPlaneCut()', apiReturnParser);"
                             apifuncstart="$.post('api/makeSlice()', apiReturnParser);" 
                             class="subText" style="display: none;">
@@ -52,8 +51,29 @@
                                 Sliced socket pieces are separated into individual objects.
                             <p>
                         </div>
-                        
-                        <div id="subText4" 
+ 
+                         <div id="subText4" 
+                            apifunc="$.post('api/acceptPlaneCut()', apiReturnParser);"
+                            apifuncstart="$.post('api/makeSlice()', apiReturnParser);" 
+                            class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''></div>
+                            <h3>Make the plane cut. </h3>
+                            <p>
+                                To move the plane, use the blue arrow to move the plane up and down, use the green and red curves to rotate the angle. Selecting accept will make the slice to the socket.
+                            <p>
+                        </div>
+                        <div id="subText5"
+                            apifunc="$.post('api/separateShells()', apiReturnParser);"
+                            class="subText" style="display: none;">
+                            <div class='questionMarkPlaceHolder' align='right' helppage=''></div>
+                            <h3>Separate Pieces</h3>
+                            <hr>
+                            <p> 
+                                Sliced socket pieces are separated into individual objects.
+                            <p>
+                        </div>
+                       
+                        <div id="subText6" 
                             apifuncstart="$.post('api/saveLatest()',apiReturnParser);" 
                             class="subText" style="display: none;" acceptdisabled=1>
                             <h3>Finished </h3>

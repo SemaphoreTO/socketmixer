@@ -398,6 +398,41 @@ def makeSlice():
     # GET VALUE FOR NUMBER OF SLICES
     # LOOP THROUGH FOR NUMBER OF SLICES
 
+# Problem with looping -> not good UX
+#   does not give user opportunity to offset slice to suit the socket
+#   not ideal, would rather have step through, click accept when satisfied
+@meshWrapper
+def makeSlices(num):
+    cmd = mmapi.StoredCommands()
+    i = 0
+    while i < num:
+       cmd.AppendBeginToolCommand('planeCut')
+       cmd.AppendToolParameterCommand('cutType', 1)
+       cmd.AppendBeginToolCommand('separateShells')
+       cmd.AppendCompleteToolCommand('accept')
+    return cmd
+
+# DO NOT USE, BROKEN
+# AppendSceneCommand_SelectObjects( ...) takes parameter not of type int
+# object[i] is of type int
+# figure out how this works
+def secondSlice():
+    remote = mmRemote()
+    remote.connect()
+    try:
+        cmd = mmapi.StoredCommands()
+        objects = mm.list_objects(remote)
+        if len(objects) >= 2:
+            cmd.AppendSceneCommand_SelectObjects(objects[-1])
+        cmd.AppendBeginToolCommand('planeCut')
+        cmd.AppendToolParameterCommand('cutType', 1)
+        remote.runCommand(cmd)
+        remote.shutdown()
+        return True
+    except:
+        remote.shutdown()
+        return False
+
 @meshWrapper
 def separateShells():
     cmd = mmapi.StoredCommands()
