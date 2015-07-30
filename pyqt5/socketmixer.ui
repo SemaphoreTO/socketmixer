@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Socketmixer</class>
+ <widget class="QMainWindow" name="Socketmixer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>913</width>
+    <height>679</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Calibri</family>
+    <pointsize>12</pointsize>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>UpArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>Socketmixer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>801</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tabScanning">
+     <attribute name="title">
+      <string>Scanning</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tabModeling">
+     <attribute name="title">
+      <string>Modeling</string>
+     </attribute>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>90</y>
+        <width>661</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="s1">
+       <widget class="QToolButton" name="s1_a">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>a</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_b">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>b</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_c">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>c</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_d">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>90</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>d</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_e">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>e</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_j">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>210</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>j</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_i">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>190</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>i</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_h">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>170</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>h</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_g">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>150</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>g</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_f">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>130</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>f</string>
+        </property>
+       </widget>
+       <widget class="QStackedWidget" name="s1page">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>30</y>
+          <width>561</width>
+          <height>361</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>10</number>
+        </property>
+        <widget class="QWidget" name="s1_p0">
+         <widget class="QTextEdit" name="s1_p0_text_intro">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>521</width>
+            <height>321</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;This section will take between 10 and 30 minutes.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;To start, click the button on the black bar. The  button will move you back one step. The  button will move you to the end of this section. The button will bring you back to the start of the section. Additional  and buttons appear in individual steps (on a grey background, inside task boxes), allowing you to move between smaller tasks. In Meshmixer, holding the &amp;quot;Space&amp;quot; bar opens a set of controls which change the way your models are displayed. Most importantly, the buttons in the &amp;quot;Color&amp;quot; section allow you to switch between displaying the original color data from your 3D scan, and displaying what are called &amp;quot;face groups.&amp;quot; To toggle between the two views in Meshmixer, simply hold down the &amp;quot;Space&amp;quot; bar and click on either of the two icons in the &amp;quot;Color&amp;quot; area of the pop-up menu.   This section will cover the following:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Importing your scan file&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Removing excess data from the file&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Rectifying the positive model&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Creating a socket from the rectified positive&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Adding an ICRC-compatible mounting point to the socket&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p1">
+         <widget class="QCommandLinkButton" name="s1_p1_button_importFile">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>280</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Import File</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="s1_p1_text_importFile">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>501</width>
+            <height>250</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;In step 1...&lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt; &lt;br /&gt;...you will import the 3D model you produced in the scanning steps. Press the &amp;quot;Import&amp;quot; button to start.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Import scan data by clicking &amp;quot;Import&amp;quot;&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use dialog box to locate file&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Click &amp;quot;Import&amp;quot; in dialog&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p2">
+         <widget class="QTextEdit" name="s1_p2text_planeCut">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>0</y>
+            <width>521</width>
+            <height>281</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;In step 2...&lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt; &lt;br /&gt;...you will remove any unnecessary scan data in order to create a clean model of the residual limb.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use &amp;quot;Plane Cut&amp;quot; to detach desired portion of model and create flat top surface&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Select and remove all remaining unnecessary data&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Remesh model of residual limb to improve mesh quality&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Duplicate model of residual limb, for use in comparison and fit later&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p2_button_cleanUp">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>280</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Clean Up</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p2_button_planeCut">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>280</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Plane Cut</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <zorder>s1_p2_button_cleanUp</zorder>
+         <zorder>s1_p2_button_planeCut</zorder>
+         <zorder>s1_p2text_planeCut</zorder>
+        </widget>
+        <widget class="QWidget" name="s1_p3">
+         <widget class="QTextEdit" name="s1_p3_text_select_residual">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>20</y>
+            <width>481</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Click anywhere on the leg. When you press the &amp;quot;Accept&amp;quot; button, the entire leg will be selected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p3_button_select_residual">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>110</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Select Residual Limb</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p4">
+         <widget class="QTextEdit" name="s1_p4_text_invert_selection">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>30</y>
+            <width>461</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;By clicking the &amp;quot;Accept&amp;quot; button, your selection will be inverted, leaving everything but the leg selected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p4_button_invert_selection">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>120</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Invert Selection</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p4_button_discard_selection">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>120</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Discard Selected Areas</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p5">
+         <widget class="QTextEdit" name="s1_p5_text_inspector">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>20</y>
+            <width>501</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Run the Inspector tool, repairing any holes in the object mesh.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p5_button_inspector">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>80</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Inspector Tool</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p6">
+         <widget class="QTextEdit" name="s1_p6_text_remesh">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>30</y>
+            <width>491</width>
+            <height>151</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Remeshing the model will change its quality. A larger number on the &amp;quot;Remesh&amp;quot; slider results in a more detailed model, but will slightly slow down the operation of the software. The &amp;quot;Smooth&amp;quot; slider will smooth out bumps in the model. A larger number will result in a smoother mesh. As always, press the &amp;quot;Accept&amp;quot; button when you're happy with your modifications.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p5_button_remesh">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>200</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Remesh</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p5_button_smooth">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>200</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Smooth</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p7">
+         <widget class="QTextEdit" name="s1_p7_text_auto_align">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>511</width>
+            <height>231</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;In this step, &lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;you will align the distal end of the residual limb, making the residual limb roughly perpendicular to the plane.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use the automatic alignment tool to do a rough alignment of the model&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use the manual alignment tool to make fine changes to the model alignment&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p7_button_auto_align">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>260</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Auto-Align</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p8">
+         <widget class="QTextEdit" name="s1_p8_text_recenter">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>30</y>
+            <width>491</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Centre the camera view on the model.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p8_button_recenter">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>90</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Re-center Camera</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p9">
+         <widget class="QTextEdit" name="s1_p9_text_manual_align">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>30</y>
+            <width>501</width>
+            <height>191</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the alignment arrows to make any desired modifications to the position of the model. In particular, the distal end of the limb should be just above the plane. At this point, also open the alignment tool, from the &amp;quot;Tools&amp;quot; menu. The alignment tool provides a handy reference for determining the angle at which the residual limb is positioned. The socket should be centred on the plane, with the distal end positioned near the red dot. The shaft on the aligment tool should intersect the model.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p9_button_manual_align">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>240</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Manual Align</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s1_p10">
+         <widget class="QTextEdit" name="s1_p10_text_duplicate_model">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>30</y>
+            <width>471</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Meshmixer will automatically create a duplicate of the model for use in comparison and fit.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p10_button_duplicate_model">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>100</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Duplicate Model</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="s2"/>
+      <widget class="QWidget" name="s3"/>
+      <widget class="QWidget" name="s4"/>
+     </widget>
+     <widget class="QToolButton" name="s1_button">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>40</y>
+        <width>26</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="s2_button">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>40</y>
+        <width>26</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="s3_button">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>40</y>
+        <width>26</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="s4_button">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>40</y>
+        <width>26</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="s5_button">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>40</y>
+        <width>26</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </widget>
+     <widget class="Line" name="s_line">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>40</y>
+        <width>271</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <zorder>stackedWidget</zorder>
+     <zorder>s_line</zorder>
+     <zorder>s5_button</zorder>
+     <zorder>s4_button</zorder>
+     <zorder>s2_button</zorder>
+     <zorder>s3_button</zorder>
+     <zorder>s1_button</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_printing">
+     <property name="focusPolicy">
+      <enum>Qt::WheelFocus</enum>
+     </property>
+     <attribute name="title">
+      <string>Printing</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionExit"/>
+   <addaction name="actionScanning"/>
+   <addaction name="actionModeling"/>
+   <addaction name="actionPrinting"/>
+   <addaction name="actionContact"/>
+  </widget>
+  <action name="actionScanning">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Scanning</string>
+   </property>
+   <property name="toolTip">
+    <string>Scanning Socket</string>
+   </property>
+  </action>
+  <action name="actionModeling">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/play.png</normaloff>:/icons/play.png</iconset>
+   </property>
+   <property name="text">
+    <string>Modeling</string>
+   </property>
+   <property name="toolTip">
+    <string>Modeling Socket</string>
+   </property>
+  </action>
+  <action name="actionPrinting">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/fullscreen_on.png</normaloff>:/icons/fullscreen_on.png</iconset>
+   </property>
+   <property name="text">
+    <string>Printing</string>
+   </property>
+   <property name="toolTip">
+    <string>Printing Socket</string>
+   </property>
+  </action>
+  <action name="actionImportFile">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+   </property>
+   <property name="text">
+    <string>importFile</string>
+   </property>
+   <property name="toolTip">
+    <string>Import File</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/arrow_double_left.png</normaloff>:/icons/arrow_double_left.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit Socketmixer</string>
+   </property>
+  </action>
+  <action name="actionContact">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/thumbs.png</normaloff>:/icons/thumbs.png</iconset>
+   </property>
+   <property name="text">
+    <string>Contact</string>
+   </property>
+   <property name="toolTip">
+    <string>Contact Us</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionModeling</sender>
+   <signal>triggered()</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>112</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>Socketmixer</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>477</x>
+     <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

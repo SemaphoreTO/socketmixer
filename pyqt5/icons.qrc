@@ -1,0 +1,19 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>icons/arrow_double_left.png</file>
+    <file>icons/arrow_double_right.png</file>
+    <file>icons/arrow_left.png</file>
+    <file>icons/arrow_right.png</file>
+    <file>icons/fullscreen_off.png</file>
+    <file>icons/fullscreen_on.png</file>
+    <file>icons/pause.png</file>
+    <file>icons/play.png</file>
+    <file>icons/slideshow_pause.png</file>
+    <file>icons/slideshow_play.png</file>
+    <file>icons/sound_off.png</file>
+    <file>icons/sound_on.png</file>
+    <file>icons/thumbs.png</file>
+    <file>icons/zoom_in.png</file>
+    <file>icons/zoom_out.png</file>
+</qresource>
+</RCC> 

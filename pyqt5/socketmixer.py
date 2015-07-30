@@ -1,96 +1,468 @@
+# -*- coding: utf-8 -*-
+
 import sys
-
 sys.path.append('/Users/bge/socketmixer')
-sys.path.append('/Users/bge/.env/ariane_mail/lib/python3.4/site-packages')
 
-from PyQt5.QtWidgets import (
-        QMessageBox, QPushButton, QApplication, QWidget, QDesktopWidget, QAction, qApp, QMainWindow
-        )
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QCoreApplication
+from PyQt5 import QtCore, QtGui
+from PyQt5.QtWidgets import QApplication
 
-class Socketmixer(QMainWindow):
 
-    def __init__(self):
-        super().__init__()
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
 
-        self.initUI()
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
-    def initUI(self):
+class Ui_Socketmixer(QMainWindow):
+    def setupUi(self, Socketmixer):
+        Socketmixer.setObjectName(_fromUtf8("Socketmixer"))
+        Socketmixer.resize(913, 679)
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Calibri"))
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setWeight(50)
+        Socketmixer.setFont(font)
+        Socketmixer.setCursor(QtGui.QCursor(QtCore.Qt.UpArrowCursor))
+        self.centralwidget = QtGui.QWidget(Socketmixer)
+        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
+        self.tabWidget = QtGui.QTabWidget(self.centralwidget)
+        self.tabWidget.setGeometry(QtCore.QRect(10, 20, 801, 551))
+        self.tabWidget.setObjectName(_fromUtf8("tabWidget"))
+        self.tabScanning = QtGui.QWidget()
+        self.tabScanning.setObjectName(_fromUtf8("tabScanning"))
+        self.tabWidget.addTab(self.tabScanning, _fromUtf8(""))
+        self.tabModeling = QtGui.QWidget()
+        self.tabModeling.setObjectName(_fromUtf8("tabModeling"))
+        self.stackedWidget = QtGui.QStackedWidget(self.tabModeling)
+        self.stackedWidget.setGeometry(QtCore.QRect(60, 90, 661, 411))
+        self.stackedWidget.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.stackedWidget.setAcceptDrops(False)
+        self.stackedWidget.setFrameShape(QtGui.QFrame.NoFrame)
+        self.stackedWidget.setObjectName(_fromUtf8("stackedWidget"))
+        self.s1 = QtGui.QWidget()
+        self.s1.setObjectName(_fromUtf8("s1"))
+        self.s1_a = QtGui.QToolButton(self.s1)
+        self.s1_a.setGeometry(QtCore.QRect(20, 30, 26, 22))
+        self.s1_a.setObjectName(_fromUtf8("s1_a"))
+        self.s1_b = QtGui.QToolButton(self.s1)
+        self.s1_b.setGeometry(QtCore.QRect(20, 50, 26, 22))
+        self.s1_b.setObjectName(_fromUtf8("s1_b"))
+        self.s1_c = QtGui.QToolButton(self.s1)
+        self.s1_c.setGeometry(QtCore.QRect(20, 70, 26, 22))
+        self.s1_c.setObjectName(_fromUtf8("s1_c"))
+        self.s1_d = QtGui.QToolButton(self.s1)
+        self.s1_d.setGeometry(QtCore.QRect(20, 90, 26, 22))
+        self.s1_d.setObjectName(_fromUtf8("s1_d"))
+        self.s1_e = QtGui.QToolButton(self.s1)
+        self.s1_e.setGeometry(QtCore.QRect(20, 110, 26, 22))
+        self.s1_e.setObjectName(_fromUtf8("s1_e"))
+        self.s1_j = QtGui.QToolButton(self.s1)
+        self.s1_j.setGeometry(QtCore.QRect(20, 210, 26, 22))
+        self.s1_j.setObjectName(_fromUtf8("s1_j"))
+        self.s1_i = QtGui.QToolButton(self.s1)
+        self.s1_i.setGeometry(QtCore.QRect(20, 190, 26, 22))
+        self.s1_i.setObjectName(_fromUtf8("s1_i"))
+        self.s1_h = QtGui.QToolButton(self.s1)
+        self.s1_h.setGeometry(QtCore.QRect(20, 170, 26, 22))
+        self.s1_h.setObjectName(_fromUtf8("s1_h"))
+        self.s1_g = QtGui.QToolButton(self.s1)
+        self.s1_g.setGeometry(QtCore.QRect(20, 150, 26, 22))
+        self.s1_g.setObjectName(_fromUtf8("s1_g"))
+        self.s1_f = QtGui.QToolButton(self.s1)
+        self.s1_f.setGeometry(QtCore.QRect(20, 130, 26, 22))
+        self.s1_f.setObjectName(_fromUtf8("s1_f"))
+        self.s1page = QtGui.QStackedWidget(self.s1)
+        self.s1page.setGeometry(QtCore.QRect(60, 30, 561, 361))
+        self.s1page.setObjectName(_fromUtf8("s1page"))
+        self.s1_p0 = QtGui.QWidget()
+        self.s1_p0.setObjectName(_fromUtf8("s1_p0"))
+        self.s1_p0_text_intro = QtGui.QTextEdit(self.s1_p0)
+        self.s1_p0_text_intro.setGeometry(QtCore.QRect(20, 10, 521, 321))
+        self.s1_p0_text_intro.setObjectName(_fromUtf8("s1_p0_text_intro"))
+        self.s1page.addWidget(self.s1_p0)
+        self.s1_p1 = QtGui.QWidget()
+        self.s1_p1.setObjectName(_fromUtf8("s1_p1"))
+        self.s1_p1_button_importFile = QtGui.QCommandLinkButton(self.s1_p1)
+        self.s1_p1_button_importFile.setGeometry(QtCore.QRect(170, 280, 197, 41))
+        self.s1_p1_button_importFile.setAutoFillBackground(False)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/arrow_double_right.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.s1_p1_button_importFile.setIcon(icon)
+        self.s1_p1_button_importFile.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p1_button_importFile.setAutoDefault(False)
+        self.s1_p1_button_importFile.setObjectName(_fromUtf8("s1_p1_button_importFile"))
+        self.s1_p1_text_importFile = QtGui.QTextEdit(self.s1_p1)
+        self.s1_p1_text_importFile.setGeometry(QtCore.QRect(20, 10, 501, 250))
+        self.s1_p1_text_importFile.setObjectName(_fromUtf8("s1_p1_text_importFile"))
+        self.s1page.addWidget(self.s1_p1)
+        self.s1_p2 = QtGui.QWidget()
+        self.s1_p2.setObjectName(_fromUtf8("s1_p2"))
+        self.s1_p2text_planeCut = QtGui.QTextEdit(self.s1_p2)
+        self.s1_p2text_planeCut.setGeometry(QtCore.QRect(20, 0, 521, 281))
+        self.s1_p2text_planeCut.setObjectName(_fromUtf8("s1_p2text_planeCut"))
+        self.s1_p2_button_cleanUp = QtGui.QCommandLinkButton(self.s1_p2)
+        self.s1_p2_button_cleanUp.setGeometry(QtCore.QRect(290, 280, 197, 41))
+        self.s1_p2_button_cleanUp.setAutoFillBackground(False)
+        self.s1_p2_button_cleanUp.setIcon(icon)
+        self.s1_p2_button_cleanUp.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p2_button_cleanUp.setAutoDefault(False)
+        self.s1_p2_button_cleanUp.setObjectName(_fromUtf8("s1_p2_button_cleanUp"))
+        self.s1_p2_button_planeCut = QtGui.QCommandLinkButton(self.s1_p2)
+        self.s1_p2_button_planeCut.setGeometry(QtCore.QRect(60, 280, 197, 41))
+        self.s1_p2_button_planeCut.setAutoFillBackground(False)
+        self.s1_p2_button_planeCut.setIcon(icon)
+        self.s1_p2_button_planeCut.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p2_button_planeCut.setAutoDefault(False)
+        self.s1_p2_button_planeCut.setObjectName(_fromUtf8("s1_p2_button_planeCut"))
+        self.s1page.addWidget(self.s1_p2)
+        self.s1_p3 = QtGui.QWidget()
+        self.s1_p3.setObjectName(_fromUtf8("s1_p3"))
+        self.s1_p3_text_select_residual = QtGui.QTextEdit(self.s1_p3)
+        self.s1_p3_text_select_residual.setGeometry(QtCore.QRect(30, 20, 481, 71))
+        self.s1_p3_text_select_residual.setObjectName(_fromUtf8("s1_p3_text_select_residual"))
+        self.s1_p3_button_select_residual = QtGui.QCommandLinkButton(self.s1_p3)
+        self.s1_p3_button_select_residual.setGeometry(QtCore.QRect(180, 110, 197, 41))
+        self.s1_p3_button_select_residual.setAutoFillBackground(False)
+        self.s1_p3_button_select_residual.setIcon(icon)
+        self.s1_p3_button_select_residual.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p3_button_select_residual.setAutoDefault(False)
+        self.s1_p3_button_select_residual.setObjectName(_fromUtf8("s1_p3_button_select_residual"))
+        self.s1page.addWidget(self.s1_p3)
+        self.s1_p4 = QtGui.QWidget()
+        self.s1_p4.setObjectName(_fromUtf8("s1_p4"))
+        self.s1_p4_text_invert_selection = QtGui.QTextEdit(self.s1_p4)
+        self.s1_p4_text_invert_selection.setGeometry(QtCore.QRect(30, 30, 461, 71))
+        self.s1_p4_text_invert_selection.setObjectName(_fromUtf8("s1_p4_text_invert_selection"))
+        self.s1_p4_button_invert_selection = QtGui.QCommandLinkButton(self.s1_p4)
+        self.s1_p4_button_invert_selection.setGeometry(QtCore.QRect(30, 120, 197, 41))
+        self.s1_p4_button_invert_selection.setAutoFillBackground(False)
+        self.s1_p4_button_invert_selection.setIcon(icon)
+        self.s1_p4_button_invert_selection.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p4_button_invert_selection.setAutoDefault(False)
+        self.s1_p4_button_invert_selection.setObjectName(_fromUtf8("s1_p4_button_invert_selection"))
+        self.s1_p4_button_discard_selection = QtGui.QCommandLinkButton(self.s1_p4)
+        self.s1_p4_button_discard_selection.setGeometry(QtCore.QRect(300, 120, 197, 41))
+        self.s1_p4_button_discard_selection.setAutoFillBackground(False)
+        self.s1_p4_button_discard_selection.setIcon(icon)
+        self.s1_p4_button_discard_selection.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p4_button_discard_selection.setAutoDefault(False)
+        self.s1_p4_button_discard_selection.setObjectName(_fromUtf8("s1_p4_button_discard_selection"))
+        self.s1page.addWidget(self.s1_p4)
+        self.s1_p5 = QtGui.QWidget()
+        self.s1_p5.setObjectName(_fromUtf8("s1_p5"))
+        self.s1_p5_text_inspector = QtGui.QTextEdit(self.s1_p5)
+        self.s1_p5_text_inspector.setGeometry(QtCore.QRect(30, 20, 501, 41))
+        self.s1_p5_text_inspector.setObjectName(_fromUtf8("s1_p5_text_inspector"))
+        self.s1_p5_button_inspector = QtGui.QCommandLinkButton(self.s1_p5)
+        self.s1_p5_button_inspector.setGeometry(QtCore.QRect(30, 80, 197, 41))
+        self.s1_p5_button_inspector.setAutoFillBackground(False)
+        self.s1_p5_button_inspector.setIcon(icon)
+        self.s1_p5_button_inspector.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p5_button_inspector.setAutoDefault(False)
+        self.s1_p5_button_inspector.setObjectName(_fromUtf8("s1_p5_button_inspector"))
+        self.s1page.addWidget(self.s1_p5)
+        self.s1_p6 = QtGui.QWidget()
+        self.s1_p6.setObjectName(_fromUtf8("s1_p6"))
+        self.s1_p6_text_remesh = QtGui.QTextEdit(self.s1_p6)
+        self.s1_p6_text_remesh.setGeometry(QtCore.QRect(30, 30, 491, 151))
+        self.s1_p6_text_remesh.setObjectName(_fromUtf8("s1_p6_text_remesh"))
+        self.s1_p5_button_remesh = QtGui.QCommandLinkButton(self.s1_p6)
+        self.s1_p5_button_remesh.setGeometry(QtCore.QRect(50, 200, 197, 41))
+        self.s1_p5_button_remesh.setAutoFillBackground(False)
+        self.s1_p5_button_remesh.setIcon(icon)
+        self.s1_p5_button_remesh.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p5_button_remesh.setAutoDefault(False)
+        self.s1_p5_button_remesh.setObjectName(_fromUtf8("s1_p5_button_remesh"))
+        self.s1_p5_button_smooth = QtGui.QCommandLinkButton(self.s1_p6)
+        self.s1_p5_button_smooth.setGeometry(QtCore.QRect(280, 200, 197, 41))
+        self.s1_p5_button_smooth.setAutoFillBackground(False)
+        self.s1_p5_button_smooth.setIcon(icon)
+        self.s1_p5_button_smooth.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p5_button_smooth.setAutoDefault(False)
+        self.s1_p5_button_smooth.setObjectName(_fromUtf8("s1_p5_button_smooth"))
+        self.s1page.addWidget(self.s1_p6)
+        self.s1_p7 = QtGui.QWidget()
+        self.s1_p7.setObjectName(_fromUtf8("s1_p7"))
+        self.s1_p7_text_auto_align = QtGui.QTextEdit(self.s1_p7)
+        self.s1_p7_text_auto_align.setGeometry(QtCore.QRect(20, 20, 511, 231))
+        self.s1_p7_text_auto_align.setObjectName(_fromUtf8("s1_p7_text_auto_align"))
+        self.s1_p7_button_auto_align = QtGui.QCommandLinkButton(self.s1_p7)
+        self.s1_p7_button_auto_align.setGeometry(QtCore.QRect(170, 260, 197, 41))
+        self.s1_p7_button_auto_align.setAutoFillBackground(False)
+        self.s1_p7_button_auto_align.setIcon(icon)
+        self.s1_p7_button_auto_align.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p7_button_auto_align.setAutoDefault(False)
+        self.s1_p7_button_auto_align.setObjectName(_fromUtf8("s1_p7_button_auto_align"))
+        self.s1page.addWidget(self.s1_p7)
+        self.s1_p8 = QtGui.QWidget()
+        self.s1_p8.setObjectName(_fromUtf8("s1_p8"))
+        self.s1_p8_text_recenter = QtGui.QTextEdit(self.s1_p8)
+        self.s1_p8_text_recenter.setGeometry(QtCore.QRect(30, 30, 491, 41))
+        self.s1_p8_text_recenter.setObjectName(_fromUtf8("s1_p8_text_recenter"))
+        self.s1_p8_button_recenter = QtGui.QCommandLinkButton(self.s1_p8)
+        self.s1_p8_button_recenter.setGeometry(QtCore.QRect(180, 90, 197, 41))
+        self.s1_p8_button_recenter.setAutoFillBackground(False)
+        self.s1_p8_button_recenter.setIcon(icon)
+        self.s1_p8_button_recenter.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p8_button_recenter.setAutoDefault(False)
+        self.s1_p8_button_recenter.setObjectName(_fromUtf8("s1_p8_button_recenter"))
+        self.s1page.addWidget(self.s1_p8)
+        self.s1_p9 = QtGui.QWidget()
+        self.s1_p9.setObjectName(_fromUtf8("s1_p9"))
+        self.s1_p9_text_manual_align = QtGui.QTextEdit(self.s1_p9)
+        self.s1_p9_text_manual_align.setGeometry(QtCore.QRect(30, 30, 501, 191))
+        self.s1_p9_text_manual_align.setObjectName(_fromUtf8("s1_p9_text_manual_align"))
+        self.s1_p9_button_manual_align = QtGui.QCommandLinkButton(self.s1_p9)
+        self.s1_p9_button_manual_align.setGeometry(QtCore.QRect(170, 240, 197, 41))
+        self.s1_p9_button_manual_align.setAutoFillBackground(False)
+        self.s1_p9_button_manual_align.setIcon(icon)
+        self.s1_p9_button_manual_align.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p9_button_manual_align.setAutoDefault(False)
+        self.s1_p9_button_manual_align.setObjectName(_fromUtf8("s1_p9_button_manual_align"))
+        self.s1page.addWidget(self.s1_p9)
+        self.s1_p10 = QtGui.QWidget()
+        self.s1_p10.setObjectName(_fromUtf8("s1_p10"))
+        self.s1_p10_text_duplicate_model = QtGui.QTextEdit(self.s1_p10)
+        self.s1_p10_text_duplicate_model.setGeometry(QtCore.QRect(50, 30, 471, 51))
+        self.s1_p10_text_duplicate_model.setObjectName(_fromUtf8("s1_p10_text_duplicate_model"))
+        self.s1_p10_button_duplicate_model = QtGui.QCommandLinkButton(self.s1_p10)
+        self.s1_p10_button_duplicate_model.setGeometry(QtCore.QRect(170, 100, 197, 41))
+        self.s1_p10_button_duplicate_model.setAutoFillBackground(False)
+        self.s1_p10_button_duplicate_model.setIcon(icon)
+        self.s1_p10_button_duplicate_model.setIconSize(QtCore.QSize(60, 60))
+        self.s1_p10_button_duplicate_model.setAutoDefault(False)
+        self.s1_p10_button_duplicate_model.setObjectName(_fromUtf8("s1_p10_button_duplicate_model"))
+        self.s1page.addWidget(self.s1_p10)
+        self.stackedWidget.addWidget(self.s1)
+        self.s2 = QtGui.QWidget()
+        self.s2.setObjectName(_fromUtf8("s2"))
+        self.stackedWidget.addWidget(self.s2)
+        self.s3 = QtGui.QWidget()
+        self.s3.setObjectName(_fromUtf8("s3"))
+        self.stackedWidget.addWidget(self.s3)
+        self.s4 = QtGui.QWidget()
+        self.s4.setObjectName(_fromUtf8("s4"))
+        self.stackedWidget.addWidget(self.s4)
+        self.s1_button = QtGui.QToolButton(self.tabModeling)
+        self.s1_button.setGeometry(QtCore.QRect(280, 40, 26, 22))
+        self.s1_button.setObjectName(_fromUtf8("s1_button"))
+        self.s2_button = QtGui.QToolButton(self.tabModeling)
+        self.s2_button.setGeometry(QtCore.QRect(330, 40, 26, 22))
+        self.s2_button.setObjectName(_fromUtf8("s2_button"))
+        self.s3_button = QtGui.QToolButton(self.tabModeling)
+        self.s3_button.setGeometry(QtCore.QRect(380, 40, 26, 22))
+        self.s3_button.setObjectName(_fromUtf8("s3_button"))
+        self.s4_button = QtGui.QToolButton(self.tabModeling)
+        self.s4_button.setGeometry(QtCore.QRect(430, 40, 26, 22))
+        self.s4_button.setObjectName(_fromUtf8("s4_button"))
+        self.s5_button = QtGui.QToolButton(self.tabModeling)
+        self.s5_button.setGeometry(QtCore.QRect(480, 40, 26, 22))
+        self.s5_button.setObjectName(_fromUtf8("s5_button"))
+        self.s_line = QtGui.QFrame(self.tabModeling)
+        self.s_line.setGeometry(QtCore.QRect(260, 40, 271, 20))
+        self.s_line.setFrameShape(QtGui.QFrame.HLine)
+        self.s_line.setFrameShadow(QtGui.QFrame.Sunken)
+        self.s_line.setObjectName(_fromUtf8("s_line"))
+        self.tabWidget.addTab(self.tabModeling, _fromUtf8(""))
+        self.tab_printing = QtGui.QWidget()
+        self.tab_printing.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.tab_printing.setObjectName(_fromUtf8("tab_printing"))
+        self.tabWidget.addTab(self.tab_printing, _fromUtf8(""))
+        Socketmixer.setCentralWidget(self.centralwidget)
+        self.statusbar = QtGui.QStatusBar(Socketmixer)
+        self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        Socketmixer.setStatusBar(self.statusbar)
+        self.toolBar = QtGui.QToolBar(Socketmixer)
+        self.toolBar.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
+        self.toolBar.setObjectName(_fromUtf8("toolBar"))
+        Socketmixer.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
+        self.actionScanning = QtGui.QAction(Socketmixer)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/zoom_in.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionScanning.setIcon(icon1)
+        self.actionScanning.setObjectName(_fromUtf8("actionScanning"))
+        self.actionModeling = QtGui.QAction(Socketmixer)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/play.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionModeling.setIcon(icon2)
+        self.actionModeling.setObjectName(_fromUtf8("actionModeling"))
+        self.actionPrinting = QtGui.QAction(Socketmixer)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/fullscreen_on.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionPrinting.setIcon(icon3)
+        self.actionPrinting.setObjectName(_fromUtf8("actionPrinting"))
+        self.actionImportFile = QtGui.QAction(Socketmixer)
+        self.actionImportFile.setIcon(icon)
+        self.actionImportFile.setObjectName(_fromUtf8("actionImportFile"))
+        self.actionExit = QtGui.QAction(Socketmixer)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/arrow_double_left.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionExit.setIcon(icon4)
+        self.actionExit.setObjectName(_fromUtf8("actionExit"))
+        self.actionContact = QtGui.QAction(Socketmixer)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/thumbs.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionContact.setIcon(icon5)
+        self.actionContact.setObjectName(_fromUtf8("actionContact"))
+        self.toolBar.addAction(self.actionExit)
+        self.toolBar.addAction(self.actionScanning)
+        self.toolBar.addAction(self.actionModeling)
+        self.toolBar.addAction(self.actionPrinting)
+        self.toolBar.addAction(self.actionContact)
 
-        # ACTION: Exit
-        exitAction = QAction(QIcon('static/icons/arrow_double_left.png'), '&Exit', self)
-        exitAction.setShortcut('Ctrl+Q')
-        exitAction.setStatusTip('Exit')
-        exitAction.triggered.connect(qApp.quit)
+        self.retranslateUi(Socketmixer)
+        self.tabWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
+        self.s1page.setCurrentIndex(10)
+        QtCore.QObject.connect(self.actionModeling, QtCore.SIGNAL(_fromUtf8("triggered()")), self.stackedWidget.show)
+        QtCore.QObject.connect(self.actionExit, QtCore.SIGNAL(_fromUtf8("triggered()")), Socketmixer.close)
+        QtCore.QMetaObject.connectSlotsByName(Socketmixer)
 
-        # ACTION: Scanning
-        scanning = QAction(QIcon('static/icons/zoom_out.png'), '&Open', self)
-        scanning.setShortcut('Ctrl+S')
-        scanning.setStatusTip('Scanning')
-        scanning.triggered.connect(self.changeFilePath)
-
-        # ACTION: Modeling
-        modeling = QAction(QIcon('static/icons/play.png'), '&Open', self)
-        modeling.setShortcut('Ctrl+M')
-        modeling.setStatusTip('Modeling')
-        modeling.triggered.connect(self.changeFilePath)
-
-        # ACTION: Printing
-        printing = QAction(QIcon('static/icons/fullscreen_off.png'), '&Open', self)
-        printing.setShortcut('Ctrl+P')
-        printing.setStatusTip('Printing')
-        printing.triggered.connect(self.changeFilePath)
-
-        # FEATURE: Menu Bar
-        menubar = self.menuBar()
-        menubar.setNativeMenuBar(False)
-        fileMenu = menubar.addMenu('&File')
-        fileMenu.addAction(scanning)
-        fileMenu.addAction(modeling)
-        fileMenu.addAction(printing)
-        fileMenu.addAction(exitAction)
-
-        # FEATURE: Tool Bar
-        self.toolbar = self.addToolBar('Modeling')
-        self.toolbar.addAction(exitAction)
-        self.toolbar.addAction(scanning)
-        self.toolbar.addAction(modeling)
-        self.toolbar.addAction(printing)
-        
-        # FEATURE: Status Bar
-        self.statusBar().showMessage('Ready')
-        
-        # SET UP: window dimensions
-        self.resize(600, 400)
-        self.setWindowTitle('Socketmixer')
-        self.center()
-        self.show()
-
-    ''' Center the socketmixer application on the screen. '''
-    def center(self):
-        qr = self.frameGeometry()
-        cp = QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
-
-    def closeEvent(self, event):
-        
-        reply = QMessageBox.question(self,
-                'Quit',
-                'Are you sure you want to exit?',
-                QMessageBox.Yes | QMessageBox.No,
-                QMessageBox.No)
-        if reply == QMessageBox.Yes:
-            event.accept()
-        else:
-            event.ignore()
-
-    def changeFilePath(self):
-        print('changeFilePath')
+    def retranslateUi(self, Socketmixer):
+        Socketmixer.setWindowTitle(_translate("Socketmixer", "Socketmixer", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabScanning), _translate("Socketmixer", "Scanning", None))
+        self.s1_a.setText(_translate("Socketmixer", "a", None))
+        self.s1_b.setText(_translate("Socketmixer", "b", None))
+        self.s1_c.setText(_translate("Socketmixer", "c", None))
+        self.s1_d.setText(_translate("Socketmixer", "d", None))
+        self.s1_e.setText(_translate("Socketmixer", "e", None))
+        self.s1_j.setText(_translate("Socketmixer", "j", None))
+        self.s1_i.setText(_translate("Socketmixer", "i", None))
+        self.s1_h.setText(_translate("Socketmixer", "h", None))
+        self.s1_g.setText(_translate("Socketmixer", "g", None))
+        self.s1_f.setText(_translate("Socketmixer", "f", None))
+        self.s1_p0_text_intro.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:13pt; font-weight:296; color:#555555; background-color:#f2f2f2;\">This section will take between 10 and 30 minutes.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Lato,sans-serif\'; font-size:13pt; font-weight:296; color:#555555;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:13pt; font-weight:296; color:#555555; background-color:#f2f2f2;\">To start, click the button on the black bar. The  button will move you back one step. The  button will move you to the end of this section. The button will bring you back to the start of the section. Additional  and buttons appear in individual steps (on a grey background, inside task boxes), allowing you to move between smaller tasks. In Meshmixer, holding the &quot;Space&quot; bar opens a set of controls which change the way your models are displayed. Most importantly, the buttons in the &quot;Color&quot; section allow you to switch between displaying the original color data from your 3D scan, and displaying what are called &quot;face groups.&quot; To toggle between the two views in Meshmixer, simply hold down the &quot;Space&quot; bar and click on either of the two icons in the &quot;Color&quot; area of the pop-up menu.   This section will cover the following:</span></p>\n"
+"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" font-family:\'Lato,sans-serif\'; font-size:13pt; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Importing your scan file</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:13pt; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Removing excess data from the file</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:13pt; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Rectifying the positive model</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:13pt; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Creating a socket from the rectified positive</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:13pt; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Adding an ICRC-compatible mounting point to the socket</span></li></ul></body></html>", None))
+        self.s1_p1_button_importFile.setText(_translate("Socketmixer", "Import File", None))
+        self.s1_p1_button_importFile.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p1_text_importFile.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;\">In step 1...</span><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\"> <br />...you will import the 3D model you produced in the scanning steps. Press the &quot;Import&quot; button to start.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;\">Checklist:</span></p>\n"
+"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Import scan data by clicking &quot;Import&quot;</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Use dialog box to locate file</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Click &quot;Import&quot; in dialog</span></li></ul></body></html>", None))
+        self.s1_p2text_planeCut.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;\">In step 2...</span><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\"> <br />...you will remove any unnecessary scan data in order to create a clean model of the residual limb.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;\">Checklist:</span></p>\n"
+"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Use &quot;Plane Cut&quot; to detach desired portion of model and create flat top surface</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Select and remove all remaining unnecessary data</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Remesh model of residual limb to improve mesh quality</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Duplicate model of residual limb, for use in comparison and fit later</span></li></ul></body></html>", None))
+        self.s1_p2_button_cleanUp.setText(_translate("Socketmixer", "Clean Up", None))
+        self.s1_p2_button_cleanUp.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p2_button_planeCut.setText(_translate("Socketmixer", "Plane Cut", None))
+        self.s1_p2_button_planeCut.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p3_text_select_residual.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;\">Click anywhere on the leg. When you press the &quot;Accept&quot; button, the entire leg will be selected.</span></p></body></html>", None))
+        self.s1_p3_button_select_residual.setText(_translate("Socketmixer", "Select Residual Limb", None))
+        self.s1_p3_button_select_residual.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p4_text_invert_selection.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;\">By clicking the &quot;Accept&quot; button, your selection will be inverted, leaving everything but the leg selected.</span></p></body></html>", None))
+        self.s1_p4_button_invert_selection.setText(_translate("Socketmixer", "Invert Selection", None))
+        self.s1_p4_button_invert_selection.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p4_button_discard_selection.setText(_translate("Socketmixer", "Discard Selected Areas", None))
+        self.s1_p4_button_discard_selection.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p5_text_inspector.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;\">Run the Inspector tool, repairing any holes in the object mesh.</span></p></body></html>", None))
+        self.s1_p5_button_inspector.setText(_translate("Socketmixer", "Inspector Tool", None))
+        self.s1_p5_button_inspector.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p6_text_remesh.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;\">Remeshing the model will change its quality. A larger number on the &quot;Remesh&quot; slider results in a more detailed model, but will slightly slow down the operation of the software. The &quot;Smooth&quot; slider will smooth out bumps in the model. A larger number will result in a smoother mesh. As always, press the &quot;Accept&quot; button when you\'re happy with your modifications.</span></p></body></html>", None))
+        self.s1_p5_button_remesh.setText(_translate("Socketmixer", "Remesh", None))
+        self.s1_p5_button_remesh.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p5_button_smooth.setText(_translate("Socketmixer", "Smooth", None))
+        self.s1_p5_button_smooth.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p7_text_auto_align.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;\">In this step, </span><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\">you will align the distal end of the residual limb, making the residual limb roughly perpendicular to the plane.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;\">Checklist:</span></p>\n"
+"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Use the automatic alignment tool to do a rough alignment of the model</span></li>\n"
+"<li style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555;\" style=\" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16px;\">Use the manual alignment tool to make fine changes to the model alignment</span></li></ul></body></html>", None))
+        self.s1_p7_button_auto_align.setText(_translate("Socketmixer", "Auto-Align", None))
+        self.s1_p7_button_auto_align.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p8_text_recenter.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;\">Centre the camera view on the model.</span></p></body></html>", None))
+        self.s1_p8_button_recenter.setText(_translate("Socketmixer", "Re-center Camera", None))
+        self.s1_p8_button_recenter.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p9_text_manual_align.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;\">Use the alignment arrows to make any desired modifications to the position of the model. In particular, the distal end of the limb should be just above the plane. At this point, also open the alignment tool, from the &quot;Tools&quot; menu. The alignment tool provides a handy reference for determining the angle at which the residual limb is positioned. The socket should be centred on the plane, with the distal end positioned near the red dot. The shaft on the aligment tool should intersect the model.</span></p></body></html>", None))
+        self.s1_p9_button_manual_align.setText(_translate("Socketmixer", "Manual Align", None))
+        self.s1_p9_button_manual_align.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_p10_text_duplicate_model.setHtml(_translate("Socketmixer", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Lato,sans-serif\'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;\">Meshmixer will automatically create a duplicate of the model for use in comparison and fit.</span></p></body></html>", None))
+        self.s1_p10_button_duplicate_model.setText(_translate("Socketmixer", "Duplicate Model", None))
+        self.s1_p10_button_duplicate_model.setDescription(_translate("Socketmixer", "Choose a file from computer.", None))
+        self.s1_button.setText(_translate("Socketmixer", "1", None))
+        self.s2_button.setText(_translate("Socketmixer", "2", None))
+        self.s3_button.setText(_translate("Socketmixer", "3", None))
+        self.s4_button.setText(_translate("Socketmixer", "4", None))
+        self.s5_button.setText(_translate("Socketmixer", "5", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabModeling), _translate("Socketmixer", "Modeling", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_printing), _translate("Socketmixer", "Printing", None))
+        self.toolBar.setWindowTitle(_translate("Socketmixer", "toolBar", None))
+        self.actionScanning.setText(_translate("Socketmixer", "Scanning", None))
+        self.actionScanning.setToolTip(_translate("Socketmixer", "Scanning Socket", None))
+        self.actionModeling.setText(_translate("Socketmixer", "Modeling", None))
+        self.actionModeling.setToolTip(_translate("Socketmixer", "Modeling Socket", None))
+        self.actionPrinting.setText(_translate("Socketmixer", "Printing", None))
+        self.actionPrinting.setToolTip(_translate("Socketmixer", "Printing Socket", None))
+        self.actionImportFile.setText(_translate("Socketmixer", "importFile", None))
+        self.actionImportFile.setToolTip(_translate("Socketmixer", "Import File", None))
+        self.actionExit.setText(_translate("Socketmixer", "Exit", None))
+        self.actionExit.setToolTip(_translate("Socketmixer", "Exit Socketmixer", None))
+        self.actionContact.setText(_translate("Socketmixer", "Contact", None))
+        self.actionContact.setToolTip(_translate("Socketmixer", "Contact Us", None))
 
 if __name__ == "__main__":
-    
+
     app = QApplication(sys.argv)
-    ex = Socketmixer()
+    ex = Ui_Socketmixer()
     sys.exit(app.exec_())
