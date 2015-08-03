@@ -78,7 +78,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>a</string>
+         <string>A</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_b">
@@ -91,7 +91,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>b</string>
+         <string>B</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_c">
@@ -104,7 +104,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>c</string>
+         <string>C</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_d">
@@ -117,7 +117,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>d</string>
+         <string>D</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_e">
@@ -130,7 +130,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>e</string>
+         <string>E</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_j">
@@ -143,7 +143,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>j</string>
+         <string>J</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_i">
@@ -156,7 +156,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>i</string>
+         <string>I</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_h">
@@ -169,7 +169,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>h</string>
+         <string>H</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_g">
@@ -182,7 +182,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>g</string>
+         <string>G</string>
         </property>
        </widget>
        <widget class="QToolButton" name="s1_f">
@@ -195,7 +195,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>f</string>
+         <string>F</string>
         </property>
        </widget>
        <widget class="QStackedWidget" name="s1page">
@@ -208,7 +208,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>10</number>
+         <number>4</number>
         </property>
         <widget class="QWidget" name="s1_p0">
          <widget class="QTextEdit" name="s1_p0_text_intro">
@@ -314,38 +314,6 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Duplicate model of residual limb, for use in comparison and fit later&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p2_button_cleanUp">
-          <property name="geometry">
-           <rect>
-            <x>290</x>
-            <y>280</y>
-            <width>197</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Clean Up</string>
-          </property>
-          <property name="icon">
-           <iconset resource="icons.qrc">
-            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>60</width>
-            <height>60</height>
-           </size>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-          <property name="description">
-           <string>Choose a file from computer.</string>
-          </property>
-         </widget>
          <widget class="QCommandLinkButton" name="s1_p2_button_planeCut">
           <property name="geometry">
            <rect>
@@ -378,12 +346,25 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <zorder>s1_p2_button_cleanUp</zorder>
+         <widget class="QPushButton" name="s1_p2_button_planeCut_accept">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>290</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
          <zorder>s1_p2_button_planeCut</zorder>
          <zorder>s1_p2text_planeCut</zorder>
+         <zorder>s1_p2_button_planeCut_accept</zorder>
         </widget>
         <widget class="QWidget" name="s1_p3">
-         <widget class="QTextEdit" name="s1_p3_text_select_residual">
+         <widget class="QTextEdit" name="s1_p3_text_selectResidual">
           <property name="geometry">
            <rect>
             <x>30</x>
@@ -400,10 +381,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Click anywhere on the leg. When you press the &amp;quot;Accept&amp;quot; button, the entire leg will be selected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p3_button_select_residual">
+         <widget class="QCommandLinkButton" name="s1_p3_button_selectResidual">
           <property name="geometry">
            <rect>
-            <x>180</x>
+            <x>50</x>
             <y>110</y>
             <width>197</width>
             <height>41</height>
@@ -432,9 +413,22 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p3_button_selectResidual_accept">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>120</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s1_p4">
-         <widget class="QTextEdit" name="s1_p4_text_invert_selection">
+         <widget class="QTextEdit" name="s1_p4_text_invert">
           <property name="geometry">
            <rect>
             <x>30</x>
@@ -451,7 +445,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;By clicking the &amp;quot;Accept&amp;quot; button, your selection will be inverted, leaving everything but the leg selected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p4_button_invert_selection">
+         <widget class="QCommandLinkButton" name="s1_p4_button_invert">
           <property name="geometry">
            <rect>
             <x>30</x>
@@ -483,10 +477,10 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p4_button_discard_selection">
+         <widget class="QCommandLinkButton" name="s1_p4_button_discard">
           <property name="geometry">
            <rect>
-            <x>300</x>
+            <x>250</x>
             <y>120</y>
             <width>197</width>
             <height>41</height>
@@ -513,6 +507,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p4_button_discard_accept">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>190</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
           </property>
          </widget>
         </widget>
@@ -566,6 +573,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p5_button_inspector_accept">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>90</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s1_p6">
          <widget class="QTextEdit" name="s1_p6_text_remesh">
@@ -585,7 +605,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Remeshing the model will change its quality. A larger number on the &amp;quot;Remesh&amp;quot; slider results in a more detailed model, but will slightly slow down the operation of the software. The &amp;quot;Smooth&amp;quot; slider will smooth out bumps in the model. A larger number will result in a smoother mesh. As always, press the &amp;quot;Accept&amp;quot; button when you're happy with your modifications.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p5_button_remesh">
+         <widget class="QCommandLinkButton" name="s1_p6_button_remesh">
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -617,11 +637,11 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p5_button_smooth">
+         <widget class="QCommandLinkButton" name="s1_p6_button_smooth">
           <property name="geometry">
            <rect>
-            <x>280</x>
-            <y>200</y>
+            <x>50</x>
+            <y>260</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -649,9 +669,35 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p6_button_remesh_accept">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>210</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p6_button_smooth_accept">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>260</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s1_p7">
-         <widget class="QTextEdit" name="s1_p7_text_auto_align">
+         <widget class="QTextEdit" name="s1_p7_text_autoAlign">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -671,11 +717,11 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use the manual alignment tool to make fine changes to the model alignment&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p7_button_auto_align">
+         <widget class="QCommandLinkButton" name="s1_p7_button_autoAlign">
           <property name="geometry">
            <rect>
-            <x>170</x>
-            <y>260</y>
+            <x>30</x>
+            <y>270</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -703,6 +749,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p7_button_autoAlign_accept">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>270</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s1_p8">
          <widget class="QTextEdit" name="s1_p8_text_recenter">
@@ -725,7 +784,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p8_button_recenter">
           <property name="geometry">
            <rect>
-            <x>180</x>
+            <x>30</x>
             <y>90</y>
             <width>197</width>
             <height>41</height>
@@ -754,9 +813,22 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p8_button_recenter_accept">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>90</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s1_p9">
-         <widget class="QTextEdit" name="s1_p9_text_manual_align">
+         <widget class="QTextEdit" name="s1_p9_text_manualAlign">
           <property name="geometry">
            <rect>
             <x>30</x>
@@ -773,10 +845,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the alignment arrows to make any desired modifications to the position of the model. In particular, the distal end of the limb should be just above the plane. At this point, also open the alignment tool, from the &amp;quot;Tools&amp;quot; menu. The alignment tool provides a handy reference for determining the angle at which the residual limb is positioned. The socket should be centred on the plane, with the distal end positioned near the red dot. The shaft on the aligment tool should intersect the model.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p9_button_manual_align">
+         <widget class="QCommandLinkButton" name="s1_p9_button_manualAlign">
           <property name="geometry">
            <rect>
-            <x>170</x>
+            <x>30</x>
             <y>240</y>
             <width>197</width>
             <height>41</height>
@@ -805,9 +877,22 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p9_button_manualAlign_accept">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>250</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s1_p10">
-         <widget class="QTextEdit" name="s1_p10_text_duplicate_model">
+         <widget class="QTextEdit" name="s1_p10_text_duplicate">
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -824,7 +909,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Meshmixer will automatically create a duplicate of the model for use in comparison and fit.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p10_button_duplicate_model">
+         <widget class="QCommandLinkButton" name="s1_p10_button_duplicate">
           <property name="geometry">
            <rect>
             <x>170</x>
@@ -858,6 +943,202 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
        </widget>
+       <widget class="QToolButton" name="s1_a_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>80</red>
+              <green>80</green>
+              <blue>80</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>80</red>
+              <green>80</green>
+              <blue>80</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>80</red>
+              <green>80</green>
+              <blue>80</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_f_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>130</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>F</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_j_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>210</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>J</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_h_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>170</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>H</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_b_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>B</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_c_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_d_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>90</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>D</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_i_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>190</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>I</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_g_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>150</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>G</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s1_e_highlight">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>E</string>
+        </property>
+       </widget>
+       <zorder>s1page</zorder>
+       <zorder>s1_f_highlight</zorder>
+       <zorder>s1_j_highlight</zorder>
+       <zorder>s1_h_highlight</zorder>
+       <zorder>s1_b_highlight</zorder>
+       <zorder>s1_c_highlight</zorder>
+       <zorder>s1_d_highlight</zorder>
+       <zorder>s1_i_highlight</zorder>
+       <zorder>s1_g_highlight</zorder>
+       <zorder>s1_e_highlight</zorder>
+       <zorder>s1_f</zorder>
+       <zorder>s1_j</zorder>
+       <zorder>s1_h</zorder>
+       <zorder>s1_b</zorder>
+       <zorder>s1_c</zorder>
+       <zorder>s1_d</zorder>
+       <zorder>s1_i</zorder>
+       <zorder>s1_g</zorder>
+       <zorder>s1_e</zorder>
+       <zorder>s1_a_highlight</zorder>
+       <zorder>s1_a</zorder>
       </widget>
       <widget class="QWidget" name="s2"/>
       <widget class="QWidget" name="s3"/>
@@ -1067,8 +1348,8 @@ p, li { white-space: pre-wrap; }
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>112</x>
-     <y>148</y>
+     <x>115</x>
+     <y>234</y>
     </hint>
    </hints>
   </connection>
@@ -1085,6 +1366,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>477</x>
      <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>s1_button</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>s1page</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>413</x>
+     <y>406</y>
     </hint>
    </hints>
   </connection>
