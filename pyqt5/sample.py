@@ -10,7 +10,7 @@ sys.path.append(root + '/meshController/pythonApi')
 sys.path.append(root + '/extensions')
 
 from extensionController import *
-from MeshWrapper import *
+import MeshWrapper
 from connector import *
 from orientedBoundingBox import *
 from extraFunctions import *
@@ -93,6 +93,9 @@ class Socketmixer(QMainWindow):
 		self.s1_i.clicked.connect(self.setStep1PageI)
 		self.s1_j.clicked.connect(self.setStep1PageJ)
 
+		self.s1_p6_label_remesh.setStyleSheet('background-color: None; border: 0px')
+		self.s1_p6_label_smooth.setStyleSheet('background-color: None; border: 0px')
+
 		self.s1_p1_button_importFile.clicked.connect(self.importFile)
 		self.s1_p2_button_planeCut.clicked.connect(self.planeCut)
 		self.s1_p2_button_planeCut_accept.clicked.connect(self.acceptPlaneCut)
@@ -102,7 +105,6 @@ class Socketmixer(QMainWindow):
 		self.s1_p4_button_discard.clicked.connect(self.discard)
 		self.s1_p4_button_discard_accept.clicked.connect(self.accept)
 		self.s1_p5_button_inspector.clicked.connect(self.inspector)
-		self.s1_p5_button_inspector_accept.clicked.connect(self.accept)
 		self.s1_p6_button_remesh.clicked.connect(self.remesh)
 		self.s1_p6_button_remesh_accept.clicked.connect(self.accept)
 		self.s1_p7_button_autoAlign.clicked.connect(self.autoAlign)
@@ -128,18 +130,21 @@ class Socketmixer(QMainWindow):
 	# ============== API CALLS ==================
 	def accept(self):
 		accept()
+		saveLatest()
 
 	def acceptSelect(self):
 		acceptSelect()
+		saveLatest()
 
 	def importFile(self):
-		importFile()
+		MeshWrapper.importFile()
 
 	def planeCut(self):
 		planeCut()
 
 	def acceptPlaneCut(self):
 		acceptPlaneCut()
+		saveLatest()
 
 	def selectResidual(self):
 		selectTool(30.2)
@@ -157,10 +162,11 @@ class Socketmixer(QMainWindow):
 
 	def remesh(self):
 		selectAll()
-		callAccept()
+		remesh(1, self.s1_p6_value_remesh.value())
+		remesh(2, self.s1_p6_value_smooth.value())
 
 	def autoAlign(self):
-		exportTempModel()
+		reOrientModel()
 
 	def recenter(self):
 		alignZCam(1)
@@ -170,7 +176,6 @@ class Socketmixer(QMainWindow):
 
 	def duplicate(self):
 		duplicateAndRenameAndHide('scan', 'rectifiedLimb')
-
 
 	# =============== PAGE CHANGES ==================
 
