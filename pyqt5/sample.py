@@ -61,6 +61,26 @@ class Socketmixer(QMainWindow):
 			self.s1_i: 9,
 			self.s1_j: 10
 		}
+
+		self.step2_buttons = {
+			'connect': self.s2page,
+			self.s2_a: 1,
+			self.s2_b: 2,
+			self.s2_c: 3,
+			self.s2_d: 4,
+			self.s2_e: 5,
+			self.s2_f: 6
+		}
+
+		self.step3_buttons = {
+			'connect': self.s3page,
+			self.s3_a: 1,
+			self.s3_b: 2,
+			self.s3_c: 3,
+			self.s3_d: 4,
+			self.s3_e: 5,
+			self.s3_f: 6
+		}
 		
 		self.icons = {
 			'arrow_double_left': QIcon('/Users/bge/socketmixer/static/icons/arrow_double_left.png'),
@@ -93,9 +113,6 @@ class Socketmixer(QMainWindow):
 		self.s1_i.clicked.connect(self.setStep1PageI)
 		self.s1_j.clicked.connect(self.setStep1PageJ)
 
-		self.s1_p6_label_remesh.setStyleSheet('background-color: None; border: 0px')
-		self.s1_p6_label_smooth.setStyleSheet('background-color: None; border: 0px')
-
 		self.s1_p1_button_importFile.clicked.connect(self.importFile)
 		self.s1_p2_button_planeCut.clicked.connect(self.planeCut)
 		self.s1_p2_button_planeCut_accept.clicked.connect(self.acceptPlaneCut)
@@ -110,10 +127,27 @@ class Socketmixer(QMainWindow):
 		self.s1_p7_button_autoAlign.clicked.connect(self.autoAlign)
 		self.s1_p7_button_autoAlign_accept.clicked.connect(self.accept)
 		self.s1_p8_button_recenter.clicked.connect(self.recenter)
-		self.s1_p8_button_recenter_accept.clicked.connect(self.accept)
 		self.s1_p9_button_manualAlign.clicked.connect(self.manualAlign)
 		self.s1_p9_button_manualAlign_accept.clicked.connect(self.accept)
 		self.s1_p10_button_duplicate.clicked.connect(self.duplicate)
+
+		self.s2_a.clicked.connect(self.setStep2PageA)
+		self.s2_b.clicked.connect(self.setStep2PageB)
+		self.s2_c.clicked.connect(self.setStep2PageC)
+		self.s2_d.clicked.connect(self.setStep2PageD)
+		self.s2_e.clicked.connect(self.setStep2PageE)
+		self.s2_f.clicked.connect(self.setStep2PageF)
+
+		self.s2_p1_button_brushSize.clicked.connect(self.selectBrushSize)
+		self.s2_p2_button_smoothBoundary.clicked.connect(self.smoothBoundary)
+		self.s2_p2_button_smoothBoundary_accept.clicked.connect(self.accept)
+		self.s2_p3_button_generateOffset.clicked.connect(self.generateOffset)
+		self.s2_p3_button_generateOffset_accept.clicked.connect(self.acceptSelect)
+		self.s2_p4_button_smoothOffset.clicked.connect(self.smoothOffset)
+		self.s2_p4_button_smoothOffset_accept.clicked.connect(self.accept)
+		self.s2_p5_button_yes.clicked.connect(self.setStep2PageA)
+		self.s2_p5_button_no.clicked.connect(self.setStep2PageF)
+		self.s2_p6_button_clearFaceGroups.clicked.connect(self.clearFaceGroups)
 
 	# def buttonConnect(self, d):
 	# 	self.currentWidget = d['connect']
@@ -166,6 +200,7 @@ class Socketmixer(QMainWindow):
 		remesh(2, self.s1_p6_value_smooth.value())
 
 	def autoAlign(self):
+		exportTempModel()
 		reOrientModel()
 
 	def recenter(self):
@@ -176,6 +211,31 @@ class Socketmixer(QMainWindow):
 
 	def duplicate(self):
 		duplicateAndRenameAndHide('scan', 'rectifiedLimb')
+
+	def selectBrushSize(self):
+		brush_size = self.s2_p1_value_brushSize.value()
+		selectTool(brush_size)
+
+	def smoothBoundary(self):
+		smoothBoundary()
+
+	def generateOffset(self):
+		connected = self.s2_p3_value_isConnected.isChecked()
+		soft_value = self.s2_p3_value_softTransition.value()
+		distance = self.s2_p3_value_distance.value()
+
+		print(connected)
+
+		offsetDistance(distance, connected)
+		softTransition(soft_value)
+
+	def smoothOffset(self):
+		smooth_value = self.s2_p4_value_selectSize.value()
+		deformSmooth(smooth_value)
+
+	def clearFaceGroups(self):
+		selectAll()
+		clearAllFaceGroup()
 
 	# =============== PAGE CHANGES ==================
 
@@ -190,9 +250,11 @@ class Socketmixer(QMainWindow):
 		self.s1page.setCurrentIndex(0)
 		self.s1_button.setStyleSheet('background-color: gray; border: 1px solid black')
 		self.unHighlight(self.s1_button, self.step_buttons)
+		self.unHighlight(self.s1_button, self.step1_buttons)
 
 	def setStep2Page(self):
 		self.stackedWidget.setCurrentIndex(1)
+		self.s2page.setCurrentIndex(0)
 		self.s2_button.setStyleSheet('background-color: gray; border: 1px solid black')
 		self.unHighlight(self.s2_button, self.step_buttons)
 
@@ -260,6 +322,67 @@ class Socketmixer(QMainWindow):
 		self.s1page.setCurrentIndex(10)
 		self.s1_j.setStyleSheet('background-color: gray; border: 1px solid black')
 		self.unHighlight(self.s1_j, self.step1_buttons)
+
+	def setStep2PageA(self):
+		self.s2page.setCurrentIndex(1)
+		self.s2_a.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s2_a, self.step2_buttons)
+
+	def setStep2PageB(self):
+		self.s2page.setCurrentIndex(2)
+		self.s2_b.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s2_b, self.step2_buttons)
+
+	def setStep2PageC(self):
+		self.s2page.setCurrentIndex(3)
+		self.s2_c.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s2_c, self.step2_buttons)
+
+	def setStep2PageD(self):
+		self.s2page.setCurrentIndex(4)
+		self.s2_d.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s2_d, self.step2_buttons)
+
+	def setStep2PageE(self):
+		self.s2page.setCurrentIndex(5)
+		self.s2_e.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s2_e, self.step2_buttons)
+
+	def setStep2PageF(self):
+		self.s2page.setCurrentIndex(6)
+		self.s2_f.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s2_f, self.step2_buttons)
+
+	def setStep3PageA(self):
+		self.s3page.setCurrentIndex(1)
+		self.s3_a.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s3_a, self.step3_buttons)
+
+	def setStep3PageB(self):
+		self.s3page.setCurrentIndex(2)
+		self.s3_b.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s3_b, self.step3_buttons)
+
+	def setStep3PageC(self):
+		self.s3page.setCurrentIndex(3)
+		self.s3_c.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s3_c, self.step3_buttons)
+
+	def setStep3PageD(self):
+		self.s3page.setCurrentIndex(4)
+		self.s3_d.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s3_d, self.step3_buttons)
+
+	def setStep3PageE(self):
+		self.s3page.setCurrentIndex(5)
+		self.s3_e.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s3_e, self.step3_buttons)
+
+	def setStep3PageF(self):
+		self.s3page.setCurrentIndex(6)
+		self.s3_f.setStyleSheet('background-color: gray; border: 1px solid black')
+		self.unHighlight(self.s3_f, self.step3_buttons)
+
 
 
 if __name__ == "__main__":

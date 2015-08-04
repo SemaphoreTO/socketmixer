@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>913</width>
-    <height>679</height>
+    <width>620</width>
+    <height>751</height>
    </rect>
   </property>
   <property name="font">
@@ -30,7 +30,7 @@
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>801</width>
+      <width>600</width>
       <height>551</height>
      </rect>
     </property>
@@ -49,9 +49,9 @@
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>90</y>
-        <width>661</width>
+        <x>20</x>
+        <y>70</y>
+        <width>550</width>
         <height>411</height>
        </rect>
       </property>
@@ -65,14 +65,14 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="s1">
        <widget class="QToolButton" name="s1_a">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>30</y>
+          <y>50</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -85,7 +85,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>50</y>
+          <y>70</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -98,7 +98,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>70</y>
+          <y>90</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -111,7 +111,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>90</y>
+          <y>110</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -124,7 +124,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>110</y>
+          <y>130</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -137,7 +137,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>210</y>
+          <y>230</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -150,7 +150,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>190</y>
+          <y>210</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -163,7 +163,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>170</y>
+          <y>190</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -176,7 +176,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>150</y>
+          <y>170</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -189,7 +189,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>130</y>
+          <y>150</y>
           <width>26</width>
           <height>22</height>
          </rect>
@@ -201,10 +201,10 @@
        <widget class="QStackedWidget" name="s1page">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>30</y>
-          <width>561</width>
-          <height>361</height>
+          <x>50</x>
+          <y>50</y>
+          <width>491</width>
+          <height>411</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -216,8 +216,8 @@
            <rect>
             <x>20</x>
             <y>10</y>
-            <width>521</width>
-            <height>321</height>
+            <width>461</width>
+            <height>331</height>
            </rect>
           </property>
           <property name="html">
@@ -225,9 +225,9 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;This section will take between 10 and 30 minutes.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Pre-Scan&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;To start, click the button on the black bar. The  button will move you back one step. The  button will move you to the end of this section. The button will bring you back to the start of the section. Additional  and buttons appear in individual steps (on a grey background, inside task boxes), allowing you to move between smaller tasks. In Meshmixer, holding the &amp;quot;Space&amp;quot; bar opens a set of controls which change the way your models are displayed. Most importantly, the buttons in the &amp;quot;Color&amp;quot; section allow you to switch between displaying the original color data from your 3D scan, and displaying what are called &amp;quot;face groups.&amp;quot; To toggle between the two views in Meshmixer, simply hold down the &amp;quot;Space&amp;quot; bar and click on either of the two icons in the &amp;quot;Color&amp;quot; area of the pop-up menu.   This section will cover the following:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;The  button will move you back one step. The  button will move you to the end of this section. The button will bring you back to the start of the section. In Meshmixer, holding the &amp;quot;Space&amp;quot; bar opens a set of controls which change the way your models are displayed. Most importantly, the buttons in the &amp;quot;Color&amp;quot; section allow you to switch between displaying the original color data from your 3D scan, and displaying what are called &amp;quot;face groups.&amp;quot; To toggle between the two views in Meshmixer, simply hold down the &amp;quot;Space&amp;quot; bar and click on either of the two icons in the &amp;quot;Color&amp;quot; area of the pop-up menu.   This section will cover the following:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Importing your scan file&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Removing excess data from the file&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:13pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Rectifying the positive model&lt;/span&gt;&lt;/li&gt;
@@ -237,11 +237,33 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
         <widget class="QWidget" name="s1_p1">
+         <widget class="QTextEdit" name="s1_p1_text_importFile">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>301</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;Step A. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;...you will import the 3D model produced in the scanning steps. Press the &amp;quot;Import&amp;quot; button to start.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Import scan data by clicking &amp;quot;Import&amp;quot;&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use dialog box to locate file&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Click &amp;quot;Import&amp;quot; in dialog&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
          <widget class="QCommandLinkButton" name="s1_p1_button_importFile">
           <property name="geometry">
            <rect>
-            <x>170</x>
-            <y>280</y>
+            <x>140</x>
+            <y>320</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -269,36 +291,15 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QTextEdit" name="s1_p1_text_importFile">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>10</y>
-            <width>501</width>
-            <height>250</height>
-           </rect>
-          </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;In step 1...&lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt; &lt;br /&gt;...you will import the 3D model you produced in the scanning steps. Press the &amp;quot;Import&amp;quot; button to start.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Import scan data by clicking &amp;quot;Import&amp;quot;&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use dialog box to locate file&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Click &amp;quot;Import&amp;quot; in dialog&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
         </widget>
         <widget class="QWidget" name="s1_p2">
          <widget class="QTextEdit" name="s1_p2text_planeCut">
           <property name="geometry">
            <rect>
             <x>20</x>
-            <y>0</y>
-            <width>521</width>
-            <height>281</height>
+            <y>10</y>
+            <width>461</width>
+            <height>291</height>
            </rect>
           </property>
           <property name="html">
@@ -306,19 +307,32 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;In step 2...&lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt; &lt;br /&gt;...you will remove any unnecessary scan data in order to create a clean model of the residual limb.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Step B. &lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;...you will remove unnecessary scan data in order to create a clean model of the residual limb.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use &amp;quot;Plane Cut&amp;quot; to detach desired portion of model and create flat top surface&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Select and remove all remaining unnecessary data&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Remesh model of residual limb to improve mesh quality&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Duplicate model of residual limb, for use in comparison and fit later&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p2_button_planeCut_accept">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>320</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
          <widget class="QCommandLinkButton" name="s1_p2_button_planeCut">
           <property name="geometry">
            <rect>
-            <x>60</x>
-            <y>280</y>
+            <x>50</x>
+            <y>310</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -346,31 +360,15 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s1_p2_button_planeCut_accept">
-          <property name="geometry">
-           <rect>
-            <x>280</x>
-            <y>290</y>
-            <width>115</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>OK</string>
-          </property>
-         </widget>
-         <zorder>s1_p2_button_planeCut</zorder>
-         <zorder>s1_p2text_planeCut</zorder>
-         <zorder>s1_p2_button_planeCut_accept</zorder>
         </widget>
         <widget class="QWidget" name="s1_p3">
          <widget class="QTextEdit" name="s1_p3_text_selectResidual">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>20</y>
-            <width>481</width>
-            <height>71</height>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>91</height>
            </rect>
           </property>
           <property name="html">
@@ -378,6 +376,8 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step C.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Click anywhere on the leg. When you press the &amp;quot;Accept&amp;quot; button, the entire leg will be selected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
@@ -385,7 +385,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>50</x>
-            <y>110</y>
+            <y>160</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -417,7 +417,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>310</x>
-            <y>120</y>
+            <y>170</y>
             <width>115</width>
             <height>32</height>
            </rect>
@@ -431,10 +431,10 @@ p, li { white-space: pre-wrap; }
          <widget class="QTextEdit" name="s1_p4_text_invert">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>30</y>
+            <x>20</x>
+            <y>10</y>
             <width>461</width>
-            <height>71</height>
+            <height>91</height>
            </rect>
           </property>
           <property name="html">
@@ -442,6 +442,8 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step D. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;By clicking the &amp;quot;Accept&amp;quot; button, your selection will be inverted, leaving everything but the leg selected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
@@ -527,10 +529,10 @@ p, li { white-space: pre-wrap; }
          <widget class="QTextEdit" name="s1_p5_text_inspector">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>20</y>
-            <width>501</width>
-            <height>41</height>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>91</height>
            </rect>
           </property>
           <property name="html">
@@ -538,14 +540,16 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step E.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Run the Inspector tool, repairing any holes in the object mesh.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QCommandLinkButton" name="s1_p5_button_inspector">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>80</y>
+            <x>170</x>
+            <y>130</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -573,11 +577,32 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s1_p5_button_inspector_accept">
+        </widget>
+        <widget class="QWidget" name="s1_p6">
+         <widget class="QTextEdit" name="s1_p6_text_remesh">
           <property name="geometry">
            <rect>
-            <x>300</x>
-            <y>90</y>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>201</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step F.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Remeshing the model will change its quality. A larger number on the &amp;quot;Remesh&amp;quot; slider results in a more detailed model, but will slightly slow down the operation of the software. The &amp;quot;Smooth&amp;quot; slider will smooth out bumps in the model. A larger number will result in a smoother mesh. As always, press the &amp;quot;Accept&amp;quot; button when you're happy with your modifications.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p6_button_remesh_accept">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>280</y>
             <width>115</width>
             <height>32</height>
            </rect>
@@ -586,30 +611,11 @@ p, li { white-space: pre-wrap; }
            <string>OK</string>
           </property>
          </widget>
-        </widget>
-        <widget class="QWidget" name="s1_p6">
-         <widget class="QTextEdit" name="s1_p6_text_remesh">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>30</y>
-            <width>491</width>
-            <height>151</height>
-           </rect>
-          </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Remeshing the model will change its quality. A larger number on the &amp;quot;Remesh&amp;quot; slider results in a more detailed model, but will slightly slow down the operation of the software. The &amp;quot;Smooth&amp;quot; slider will smooth out bumps in the model. A larger number will result in a smoother mesh. As always, press the &amp;quot;Accept&amp;quot; button when you're happy with your modifications.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
          <widget class="QCommandLinkButton" name="s1_p6_button_remesh">
           <property name="geometry">
            <rect>
-            <x>50</x>
-            <y>200</y>
+            <x>60</x>
+            <y>270</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -637,62 +643,80 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p6_button_smooth">
+         <widget class="QDoubleSpinBox" name="s1_p6_value_remesh">
           <property name="geometry">
            <rect>
-            <x>50</x>
-            <y>260</y>
-            <width>197</width>
-            <height>41</height>
+            <x>140</x>
+            <y>230</y>
+            <width>66</width>
+            <height>24</height>
            </rect>
           </property>
-          <property name="autoFillBackground">
+          <property name="accessibleName">
+           <string>Remesh</string>
+          </property>
+          <property name="wrapping">
            <bool>false</bool>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::UpDownArrows</enum>
+          </property>
+          <property name="specialValueText">
+           <string/>
+          </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.050000000000000</double>
+          </property>
+          <property name="value">
+           <double>0.400000000000000</double>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="s1_p6_value_smooth">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>230</y>
+            <width>66</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.050000000000000</double>
+          </property>
+          <property name="value">
+           <double>0.500000000000000</double>
+          </property>
+         </widget>
+         <widget class="QLabel" name="s1_p6_label_remesh">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>240</y>
+            <width>59</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Remesh</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="s1_p6_label_smooth">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>240</y>
+            <width>59</width>
+            <height>16</height>
+           </rect>
           </property>
           <property name="text">
            <string>Smooth</string>
-          </property>
-          <property name="icon">
-           <iconset resource="icons.qrc">
-            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>60</width>
-            <height>60</height>
-           </size>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-          <property name="description">
-           <string>Choose a file from computer.</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="s1_p6_button_remesh_accept">
-          <property name="geometry">
-           <rect>
-            <x>370</x>
-            <y>210</y>
-            <width>115</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>OK</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="s1_p6_button_smooth_accept">
-          <property name="geometry">
-           <rect>
-            <x>370</x>
-            <y>260</y>
-            <width>115</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>OK</string>
           </property>
          </widget>
         </widget>
@@ -701,9 +725,9 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>20</x>
-            <y>20</y>
-            <width>511</width>
-            <height>231</height>
+            <y>10</y>
+            <width>461</width>
+            <height>271</height>
            </rect>
           </property>
           <property name="html">
@@ -711,8 +735,9 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Step G. &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;In this step, &lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;you will align the distal end of the residual limb, making the residual limb roughly perpendicular to the plane.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use the automatic alignment tool to do a rough alignment of the model&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use the manual alignment tool to make fine changes to the model alignment&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
@@ -720,8 +745,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p7_button_autoAlign">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>270</y>
+            <x>50</x>
+            <y>290</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -753,7 +778,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>310</x>
-            <y>270</y>
+            <y>290</y>
             <width>115</width>
             <height>32</height>
            </rect>
@@ -767,10 +792,10 @@ p, li { white-space: pre-wrap; }
          <widget class="QTextEdit" name="s1_p8_text_recenter">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>30</y>
-            <width>491</width>
-            <height>41</height>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>71</height>
            </rect>
           </property>
           <property name="html">
@@ -778,14 +803,16 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step H.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Centre the camera view on the model.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QCommandLinkButton" name="s1_p8_button_recenter">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>90</y>
+            <x>110</x>
+            <y>160</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -813,28 +840,15 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s1_p8_button_recenter_accept">
-          <property name="geometry">
-           <rect>
-            <x>310</x>
-            <y>90</y>
-            <width>115</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>OK</string>
-          </property>
-         </widget>
         </widget>
         <widget class="QWidget" name="s1_p9">
          <widget class="QTextEdit" name="s1_p9_text_manualAlign">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>30</y>
-            <width>501</width>
-            <height>191</height>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>241</height>
            </rect>
           </property>
           <property name="html">
@@ -842,6 +856,8 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step I.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the alignment arrows to make any desired modifications to the position of the model. In particular, the distal end of the limb should be just above the plane. At this point, also open the alignment tool, from the &amp;quot;Tools&amp;quot; menu. The alignment tool provides a handy reference for determining the angle at which the residual limb is positioned. The socket should be centred on the plane, with the distal end positioned near the red dot. The shaft on the aligment tool should intersect the model.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
@@ -849,7 +865,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>30</x>
-            <y>240</y>
+            <y>270</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -881,7 +897,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>300</x>
-            <y>250</y>
+            <y>280</y>
             <width>115</width>
             <height>32</height>
            </rect>
@@ -895,10 +911,10 @@ p, li { white-space: pre-wrap; }
          <widget class="QTextEdit" name="s1_p10_text_duplicate">
           <property name="geometry">
            <rect>
-            <x>50</x>
-            <y>30</y>
-            <width>471</width>
-            <height>51</height>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>91</height>
            </rect>
           </property>
           <property name="html">
@@ -906,14 +922,16 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step J.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Meshmixer will automatically create a duplicate of the model for use in comparison and fit.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QCommandLinkButton" name="s1_p10_button_duplicate">
           <property name="geometry">
            <rect>
-            <x>170</x>
-            <y>100</y>
+            <x>130</x>
+            <y>160</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -943,191 +961,28 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
        </widget>
-       <widget class="QToolButton" name="s1_a_highlight">
+       <widget class="QLabel" name="s1_label">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>30</y>
-          <width>26</width>
-          <height>22</height>
+          <x>230</x>
+          <y>20</y>
+          <width>121</width>
+          <height>31</height>
          </rect>
-        </property>
-        <property name="palette">
-         <palette>
-          <active>
-           <colorrole role="Button">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>80</red>
-              <green>80</green>
-              <blue>80</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </active>
-          <inactive>
-           <colorrole role="Button">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>80</red>
-              <green>80</green>
-              <blue>80</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </inactive>
-          <disabled>
-           <colorrole role="Button">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>80</red>
-              <green>80</green>
-              <blue>80</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </disabled>
-         </palette>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>Arial</family>
+          <pointsize>24</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
-        <property name="autoFillBackground">
-         <bool>true</bool>
-        </property>
         <property name="text">
-         <string>A</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_f_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>130</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>F</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_j_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>210</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>J</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_h_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>170</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>H</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_b_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>50</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>B</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_c_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>C</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_d_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>D</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_i_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>190</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>I</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_g_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>150</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>G</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_e_highlight">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>E</string>
+         <string>Pre-Scan</string>
         </property>
        </widget>
        <zorder>s1page</zorder>
-       <zorder>s1_f_highlight</zorder>
-       <zorder>s1_j_highlight</zorder>
-       <zorder>s1_h_highlight</zorder>
-       <zorder>s1_b_highlight</zorder>
-       <zorder>s1_c_highlight</zorder>
-       <zorder>s1_d_highlight</zorder>
-       <zorder>s1_i_highlight</zorder>
-       <zorder>s1_g_highlight</zorder>
-       <zorder>s1_e_highlight</zorder>
        <zorder>s1_f</zorder>
        <zorder>s1_j</zorder>
        <zorder>s1_h</zorder>
@@ -1137,17 +992,1255 @@ p, li { white-space: pre-wrap; }
        <zorder>s1_i</zorder>
        <zorder>s1_g</zorder>
        <zorder>s1_e</zorder>
-       <zorder>s1_a_highlight</zorder>
        <zorder>s1_a</zorder>
+       <zorder>s1_label</zorder>
       </widget>
-      <widget class="QWidget" name="s2"/>
-      <widget class="QWidget" name="s3"/>
+      <widget class="QWidget" name="s2">
+       <widget class="QStackedWidget" name="s2page">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>50</y>
+          <width>490</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>3</number>
+        </property>
+        <widget class="QWidget" name="s2_p0">
+         <widget class="QTextEdit" name="s2_p0_text_intro">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>281</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Rectify Limb&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;You will rectify the model of the residual limb, making all adjustments that you would perform on a plaster positive. When you complete a step, click the &amp;quot;Accept&amp;quot; button and then use the  button to move to the next step. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;Checklist (steps for each rectification):&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Select area requiring relief or recessing&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Offset selected area&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Smooth the newly-offset area&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Do additional, localized smoothing if desired&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s2_p1">
+         <widget class="QCommandLinkButton" name="s2_p1_button_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>240</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Select Brush Size</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="s2_p1_text_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step A. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the slider to modify the size of your brush. An appropriate brush size should allow you to select a particular area of the model conveniently, without also selecting other areas by mistake. Now use the brush tool to colour in the area you would like to rectify.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="s2_p1_label_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>230</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Brush Size</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="s2_p1_value_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>250</y>
+            <width>47</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>7</number>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s2_p2">
+         <widget class="QTextEdit" name="s2_p2_text_smoothBoundary">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step B. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;In this step, the boundary of your selected area will be smoothed, removing sharp edges or inconsistencies. Press the &amp;quot;Accept&amp;quot; button to view the change.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s2_p2_button_smoothBoundary">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>200</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Smooth Boundary</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s2_p2_button_smoothBoundary_accept">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>200</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s2_p3">
+         <widget class="QCommandLinkButton" name="s2_p3_button_generateOffset">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>320</y>
+            <width>141</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Generate Offset</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s2_p3_button_generateOffset_accept">
+          <property name="geometry">
+           <rect>
+            <x>250</x>
+            <y>330</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="s2_p3_text_generateOffset">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>250</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step C.&lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Offset allows you to choose the distance of your relief or indent. Use the number entry box to select an appropriate offset, measured in millimetres. For an indent, use the same method, but ensure that the number is negative. Once you press &amp;quot;Accept,&amp;quot; a new face group will be made. This will help you see which rectifications you have already done. To view face groups, simply hold down the &amp;quot;Space&amp;quot; bar while in Meshmixer, and select the icon of the grey and green sphere in the &amp;quot;Color&amp;quot; section of the pop-up menu.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="s2_p3_value_distance">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>290</y>
+            <width>47</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-20</number>
+          </property>
+          <property name="maximum">
+           <number>20</number>
+          </property>
+          <property name="singleStep">
+           <number>1</number>
+          </property>
+          <property name="value">
+           <number>4</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="s2_p3_label_distance">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>270</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Distance</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="s2_p3_value_softTransition">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>290</y>
+            <width>47</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>50</number>
+          </property>
+          <property name="value">
+           <number>31</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="s2_p3_label_softTransition">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>270</y>
+            <width>101</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Soft Transition</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="s2_p3_value_isConnected">
+          <property name="geometry">
+           <rect>
+            <x>330</x>
+            <y>290</y>
+            <width>89</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Connected</string>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <zorder>s2_p3_text_generateOffset</zorder>
+         <zorder>s2_p3_button_generateOffset</zorder>
+         <zorder>s2_p3_button_generateOffset_accept</zorder>
+         <zorder>s2_p3_value_distance</zorder>
+         <zorder>s2_p3_label_distance</zorder>
+         <zorder>s2_p3_value_softTransition</zorder>
+         <zorder>s2_p3_label_softTransition</zorder>
+         <zorder>s2_p3_value_isConnected</zorder>
+        </widget>
+        <widget class="QWidget" name="s2_p4">
+         <widget class="QTextEdit" name="s2_p4_text_smoothOffset">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>151</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step D. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;This tool will refine your offset, giving it a smoother transition. Adjust the slider or number entry box to change the level of smoothness. Changes you make in these fields will appear on your model, but will not be saved until you click the &amp;quot;Accept&amp;quot; button.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s2_p4_button_smoothOffset">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>180</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Smooth Offset</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s2_p4_button_smoothOffset_accept">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>190</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="s2_p4_label_selectSize">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>180</y>
+            <width>81</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Select Size</string>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="s2_p4_value_selectSize">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>200</y>
+            <width>66</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.050000000000000</double>
+          </property>
+          <property name="value">
+           <double>0.500000000000000</double>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s2_p5">
+         <widget class="QTextEdit" name="s2_p5_text_rectifyAgain">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Step E.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Would you like to choose another area to rectify?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s2_p5_button_yes">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>130</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Yes</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s2_p5_button_no">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>130</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>No</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s2_p6">
+         <widget class="QTextEdit" name="s2_p6_text_clearFaceGroups">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step F. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;This step clears all of the face groups that were automatically made during the rectification process. Clearing the face groups lets you conveniently select larger portions of the model all at once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s2_p6_button_clearFaceGroups">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>210</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Clear Face Groups</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="s2_label">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>0</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>24</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Rectify Limb</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s2_b">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>B</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s2_c">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>90</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s2_e">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>130</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>E</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s2_a">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s2_d">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>D</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s2_f">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>150</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>F</string>
+        </property>
+       </widget>
+       <zorder>s2_label</zorder>
+       <zorder>s2_b</zorder>
+       <zorder>s2_c</zorder>
+       <zorder>s2_e</zorder>
+       <zorder>s2_a</zorder>
+       <zorder>s2_d</zorder>
+       <zorder>s2_f</zorder>
+       <zorder>s2page</zorder>
+      </widget>
+      <widget class="QWidget" name="s3">
+       <widget class="QStackedWidget" name="s3page">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>50</y>
+          <width>490</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>3</number>
+        </property>
+        <widget class="QWidget" name="s3_p0">
+         <widget class="QTextEdit" name="s3_p0_text_intro">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>231</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Create Trim Line&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;You will generate the socket from the now rectified positive model. Don't make the line too thin. An overly-thin brush will cause gaps to appear in the trim line when the line is smoothed. Once all face groups are cleared, use the selection tool to draw a trim line. Start by using the selection tool to trace the trim line for the socket as marked during the scanning process, Make sure to trace above the line rather than directly on the line and verify that the line is continuous and that there are no gaps.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s3_p1">
+         <widget class="QTextEdit" name="s3_p1_text_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step A. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the slider to select an appropriate brush size. It shouldn't be too large, but should be large enough to create a smooth, consistent selection with no breaks. Don't make the line too thin. An overly-thin brush will cause gaps to appear in the trim line when the line is smoothed.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s3_p1_button_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>200</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Select Brush Size</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="s3_p1_value_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>220</y>
+            <width>47</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="s3_p1_label_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>200</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Brush Size</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s3_p2">
+         <widget class="QTextEdit" name="textEdit">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>271</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Step B. &lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;Turn on the symmetry tool. Move symmetry plane to lateral midpoint of model, starting at patellar midpoint. Draw one side of trim line, rotate model to verify accuracy of other side. Once drawn, click below to select model below drawn line.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p2_button_symmetry">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>290</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Begin Drawing</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s3_p3">
+         <widget class="QTextEdit" name="s3_p3_text_createFaceGroup">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step C. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;subText4&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;I&lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;n this step you will turn your selection into a facegroup.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s3_p3_button_createFaceGroup">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>170</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Create Face Group</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>From Selection</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s3_p3_button_createFaceGroup_accept">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>180</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s3_p4">
+         <widget class="QTextEdit" name="s3_p4_text_selectFaceGroup">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step D.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Double click on the socket area to select the facegroup you've just created. Next, double click on the trim line. Both areas should now appear in orange, indicating that they are selected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s3_p4_button_selectFaceGroup">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>170</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Select Face Group</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>From Selection</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s3_p4_button_selectFaceGroup_accept">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>180</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s3_p5">
+         <widget class="QTextEdit" name="s3_p5_text_expandSelection">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>201</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step E.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the expand and contract buttons to make the trim line edge of the your selection roughly 10% higher. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s3_p5_button_contract">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>230</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Contract</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/zoom_out.png</normaloff>:/icons/zoom_out.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s3_p5_button_expand">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>230</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Expand</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s3_p6">
+         <widget class="QTextEdit" name="s3_p6_text_remeshTrimLine">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step F.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;By pressing &amp;quot;Accept&amp;quot; the selection will be remeshed to smooth the trim line.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s3_p6_button_remeshTrimLine">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>160</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Remesh Trim Line</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s3_p6_button_remeshTrimLine_accept">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>170</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QToolButton" name="s3_c">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>90</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s3_a">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s3_b">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>B</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s3_e">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>130</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>E</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s3_d">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>D</string>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="s3_f">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>150</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>F</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="s3_label">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>0</y>
+          <width>191</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>24</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Create Trim Line</string>
+        </property>
+       </widget>
+      </widget>
       <widget class="QWidget" name="s4"/>
+      <widget class="QWidget" name="s5"/>
+      <widget class="QWidget" name="s6"/>
      </widget>
      <widget class="QToolButton" name="s1_button">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>180</x>
         <y>40</y>
         <width>26</width>
         <height>22</height>
@@ -1160,7 +2253,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QToolButton" name="s2_button">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>230</x>
         <y>40</y>
         <width>26</width>
         <height>22</height>
@@ -1173,7 +2266,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QToolButton" name="s3_button">
       <property name="geometry">
        <rect>
-        <x>380</x>
+        <x>280</x>
         <y>40</y>
         <width>26</width>
         <height>22</height>
@@ -1186,7 +2279,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QToolButton" name="s4_button">
       <property name="geometry">
        <rect>
-        <x>430</x>
+        <x>330</x>
         <y>40</y>
         <width>26</width>
         <height>22</height>
@@ -1199,7 +2292,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QToolButton" name="s5_button">
       <property name="geometry">
        <rect>
-        <x>480</x>
+        <x>380</x>
         <y>40</y>
         <width>26</width>
         <height>22</height>
@@ -1212,7 +2305,7 @@ p, li { white-space: pre-wrap; }
      <widget class="Line" name="s_line">
       <property name="geometry">
        <rect>
-        <x>260</x>
+        <x>160</x>
         <y>40</y>
         <width>271</width>
         <height>20</height>
@@ -1230,7 +2323,7 @@ p, li { white-space: pre-wrap; }
      <zorder>s3_button</zorder>
      <zorder>s1_button</zorder>
     </widget>
-    <widget class="QWidget" name="tab_printing">
+    <widget class="QWidget" name="tabPrinting">
      <property name="focusPolicy">
       <enum>Qt::WheelFocus</enum>
      </property>
@@ -1366,22 +2459,6 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>477</x>
      <y>298</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>s1_button</sender>
-   <signal>triggered(QAction*)</signal>
-   <receiver>s1page</receiver>
-   <slot>update()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>305</x>
-     <y>156</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>413</x>
-     <y>406</y>
     </hint>
    </hints>
   </connection>
