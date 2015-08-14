@@ -127,8 +127,9 @@ class Socketmixer(QMainWindow):
 		self.s1_p1_button_importFile.clicked.connect(self.importFile)
 		self.s1_p2_button_planeCut.clicked.connect(self.planeCut)
 		self.s1_p2_button_planeCut_accept.clicked.connect(self.acceptPlaneCut)
+		self.s1_p2_button_planeCut_cancel.clicked.connect(self.cancel)
 		self.s1_p3_button_selectResidual.clicked.connect(self.selectResidual)
-		self.s1_p3_button_selectResidual_accept.clicked.connect(self.accept)
+		self.s1_p3_button_selectResidual_accept.clicked.connect(self.expandToConnected)
 		self.s1_p4_button_invert.clicked.connect(self.invertTool)
 		self.s1_p4_button_discard.clicked.connect(self.discard)
 		self.s1_p4_button_discard_accept.clicked.connect(self.accept)
@@ -153,7 +154,7 @@ class Socketmixer(QMainWindow):
 		self.s2_p2_button_smoothBoundary.clicked.connect(self.smoothBoundary)
 		self.s2_p2_button_smoothBoundary_accept.clicked.connect(self.accept)
 		self.s2_p3_button_generateOffset.clicked.connect(self.generateOffset)
-		self.s2_p3_button_generateOffset_accept.clicked.connect(self.acceptSelect)
+		self.s2_p3_button_generateOffset_accept.clicked.connect(self.accept)
 		self.s2_p4_button_smoothOffset.clicked.connect(self.smoothOffset)
 		self.s2_p4_button_smoothOffset_accept.clicked.connect(self.accept)
 		self.s2_p5_button_yes.clicked.connect(self.setStep2PageA)
@@ -192,6 +193,9 @@ class Socketmixer(QMainWindow):
 		accept()
 		saveLatest()
 
+	def cancel(self):
+		cancel()
+
 	def acceptSelect(self):
 		acceptSelect()
 		saveLatest()
@@ -208,6 +212,8 @@ class Socketmixer(QMainWindow):
 
 	def selectResidual(self):
 		selectTool(30.2)
+
+	def expandToConnected(self):
 		expandToConnected()
 
 	def invertTool(self):
@@ -236,6 +242,7 @@ class Socketmixer(QMainWindow):
 		alignTransform()
 
 	def duplicate(self):
+		exportTempModel()
 		duplicateAndRenameAndHide('scan', 'rectifiedLimb')
 
 	def selectBrushSize(self):
