@@ -229,6 +229,14 @@ def selectTool(size=1.3):
     return cmd
 
 @meshWrapper
+def selectToolSymmetry(size=1.3, symmetry=False):
+    cmd = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('select')
+    cmd.AppendToolParameterCommand('radiusWorld', size)
+    cmd.AppendToolParameterCommand('symmetry', True)
+    return cmd
+
+@meshWrapper
 def AdjustselectTool(size=1.3):
     cmd  = mmapi.StoredCommands()
     cmd.AppendToolParameterCommand("radiusWorld",size) 
@@ -647,7 +655,6 @@ def reOrientModel():
     cmd.AppendToolParameterCommand('rotation',a,b,c,d,e,f,g,h,i)
     cmd.AppendToolParameterCommand('translation',-xAvg,-yAvg,-zAvg)
     
-    cmd.AppendCompleteToolCommand('accept')
     remote.runCommand(cmd)
     remote.shutdown()
 
