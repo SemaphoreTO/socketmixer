@@ -65,7 +65,7 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="s1">
        <widget class="QToolButton" name="s1_a">
@@ -208,7 +208,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="s1_p0">
          <widget class="QTextEdit" name="s1_p0_text_intro">
@@ -317,7 +317,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s1_p2_button_planeCut_accept">
           <property name="geometry">
            <rect>
-            <x>270</x>
+            <x>240</x>
             <y>320</y>
             <width>115</width>
             <height>32</height>
@@ -330,7 +330,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p2_button_planeCut">
           <property name="geometry">
            <rect>
-            <x>50</x>
+            <x>20</x>
             <y>310</y>
             <width>197</width>
             <height>41</height>
@@ -357,6 +357,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p2_button_planeCut_cancel">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>320</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -1005,7 +1018,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>5</number>
         </property>
         <widget class="QWidget" name="s2_p0">
          <widget class="QTextEdit" name="s2_p0_text_intro">
@@ -1692,7 +1705,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="s3_p0">
          <widget class="QTextEdit" name="s3_p0_text_intro">
@@ -1815,11 +1828,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Step B - Draw Trim Line and Smooth Boundary&lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;Move symmetry plane to lateral midpoint of model, starting at patellar midpoint. Draw one side of trim line, rotate model to verify accuracy of other side. Once drawn, click below to select model below drawn line.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s3_p2_button_beginDrawing">
+         <widget class="QCommandLinkButton" name="s3_p2_button_smoothTrimLine">
           <property name="geometry">
            <rect>
-            <x>130</x>
-            <y>290</y>
+            <x>170</x>
+            <y>300</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -1828,7 +1841,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Begin Drawing</string>
+           <string>Smooth Trim Line</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -1871,7 +1884,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s3_p3_button_createFaceGroup">
           <property name="geometry">
            <rect>
-            <x>50</x>
+            <x>150</x>
             <y>170</y>
             <width>197</width>
             <height>41</height>
@@ -1900,19 +1913,6 @@ p, li { white-space: pre-wrap; }
            <string>From Selection</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s3_p3_button_createFaceGroup_accept">
-          <property name="geometry">
-           <rect>
-            <x>290</x>
-            <y>180</y>
-            <width>115</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>OK</string>
-          </property>
-         </widget>
         </widget>
         <widget class="QWidget" name="s3_p4">
          <widget class="QTextEdit" name="s3_p4_text_selectFaceGroup">
@@ -1937,7 +1937,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s3_p4_button_selectFaceGroup">
           <property name="geometry">
            <rect>
-            <x>50</x>
+            <x>140</x>
             <y>170</y>
             <width>197</width>
             <height>41</height>
@@ -1964,19 +1964,6 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>From Selection</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="s3_p4_button_selectFaceGroup_accept">
-          <property name="geometry">
-           <rect>
-            <x>290</x>
-            <y>180</y>
-            <width>115</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>OK</string>
           </property>
          </widget>
         </widget>

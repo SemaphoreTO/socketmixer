@@ -150,7 +150,7 @@ class Socketmixer(QMainWindow):
 		self.s2_e.clicked.connect(self.setStep2PageE)
 		self.s2_f.clicked.connect(self.setStep2PageF)
 
-		self.s2_p1_button_brushSize.clicked.connect(self.selectBrushSize)
+		self.s2_p1_button_brushSize.clicked.connect(self.s2_selectBrushSize)
 		self.s2_p2_button_smoothBoundary.clicked.connect(self.smoothBoundary)
 		self.s2_p2_button_smoothBoundary_accept.clicked.connect(self.accept)
 		self.s2_p3_button_generateOffset.clicked.connect(self.generateOffset)
@@ -167,6 +167,15 @@ class Socketmixer(QMainWindow):
 		self.s3_d.clicked.connect(self.setStep3PageD)
 		self.s3_e.clicked.connect(self.setStep3PageE)
 		self.s3_f.clicked.connect(self.setStep3PageF)
+
+		self.s3_p1_button_brushSize.clicked.connect(self.beginDrawing)
+		self.s3_p2_button_smoothTrimLine.clicked.connect(self.smoothBoundary)
+		self.s3_p3_button_createFaceGroup.clicked.connect(self.createFaceGroup)
+		self.s3_p4_button_selectFaceGroup.clicked.connect(self.selectTool)
+		self.s3_p5_button_expand.clicked.connect(self.expand)
+		self.s3_p5_button_contract.clicked.connect(self.contract)
+		self.s3_p6_button_remeshTrimLine.clicked.connect(self.remeshSpecial)
+		self.s3_p6_button_remeshTrimLine_accept.clicked.connect(self.accept)
 
 		self.s4_a.clicked.connect(self.setStep4PageA)
 		self.s4_b.clicked.connect(self.setStep4PageB)
@@ -245,9 +254,13 @@ class Socketmixer(QMainWindow):
 		exportTempModel()
 		duplicateAndRenameAndHide('scan', 'rectifiedLimb')
 
-	def selectBrushSize(self):
+	def s2_selectBrushSize(self):
 		brush_size = self.s2_p1_value_brushSize.value()
 		selectTool(brush_size)
+
+	def beginDrawing(self):
+		brush_size = self.s3_p1_value_brushSize.value()
+		selectToolSymmetry(brush_size)
 
 	def smoothBoundary(self):
 		smoothBoundary()
@@ -264,9 +277,24 @@ class Socketmixer(QMainWindow):
 		smooth_value = self.s2_p4_value_selectSize.value()
 		deformSmooth(smooth_value)
 
+	def createFaceGroup(self):
+		createFaceGroup()
+
 	def clearFaceGroups(self):
 		selectAll()
 		clearAllFaceGroup()
+
+	def selectTool(self):
+		selectTool()
+
+	def expand(self):
+		expandByOneRing()
+
+	def contract(self):
+		contractByOneRing()
+
+	def remeshSpecial(self):
+		remeshSpecial()
 
 	# =============== PAGE CHANGES ==================
 
