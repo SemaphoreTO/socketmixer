@@ -43,15 +43,34 @@ def exportTempModel():
     fileName = os.path.join(tmpDirectory,'tmp.obj')
     cmd.AppendSceneCommand_ExportMeshFile_CurrentSelection(fileName)
     return cmd
-    
+
+@meshWrapper
+def exportStepModel(step):
+    cmd = mmapi.StoredCommands()
+    cwd = os.getcwd()
+    tmpDirectory = os.path.join(cwd, 'AutoSave')
+    if not os.path.exists(tmpDirectory):
+        os.makedirs(tmpDirectory)
+    fileName = os.path.join(tmpDirectory, 'Step ' + str(step) + '.obj')
+    cmd.AppendSceneCommand_ExportMeshFile_CurrentSelection(fileName)
+    return cmd
+
+@meshWrapper
+def removeStepModel(step):
+    cwd = os.getcwd()
+    tmpDirectory = os.path.join(cwd, 'AutoSave')
+    fileName = os.path.join(tmpDirectory, 'Step ' + str(step) + '.obj')
+    os.remove(fileName)
+
 ## use extensionFunction()
+@meshWrapper
 def importFile(fileLocation = None,folder=None):
     if fileLocation != None and folder != None:
         currentPath = os.path.join(os.getcwd(), folder,fileLocation)
         if os.path.isfile(currentPath):
             return MeshWrapper.importFigure(currentPath)
         else:
-            return false
+            return False
     else:
         return MeshWrapper.importFile()
 
@@ -233,7 +252,7 @@ def selectToolSymmetry(size=1.3, symmetry=False):
     cmd = mmapi.StoredCommands()
     cmd.AppendBeginToolCommand('select')
     cmd.AppendToolParameterCommand('radiusWorld', size)
-    cmd.AppendToolParameterCommand('symmetry', True)
+    cmd.AppendToolParameterCommand('symmetry', symmetry)
     return cmd
 
 @meshWrapper

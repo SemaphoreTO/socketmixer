@@ -8,6 +8,7 @@ sys.path.append(root + '/meshController')
 sys.path.append(root + '/meshController/mm')
 sys.path.append(root + '/meshController/pythonApi')
 sys.path.append(root + '/extensions')
+sys.path.append(root + '/socket')
 
 from extensionController import *
 import MeshWrapper
@@ -38,6 +39,8 @@ class Socketmixer(QMainWindow):
 
 		uic.loadUi('socketmixer.ui', self)
 
+		# ============ BUTTONS =============
+
 		self.step_buttons = [
 			self.s1_button, self.s2_button, self.s3_button, self.s4_button,
 			self.s5_button, self.s6_button
@@ -66,16 +69,17 @@ class Socketmixer(QMainWindow):
 		]
 
 		self.step6_buttons = [
-			self.s6_a, self.s6_b, self.s6_c, self.s6_d, self.s6_e, self.s6_f
+			self.s6_a, self.s6_b, self.s6_c, self.s6_d, self.s6_e, self.s6_f,
+			self.s6_g
 		]
 
 		self.steps = {
-			0 : (self.s1page, self.step1_buttons),
-			1 : (self.s2page, self.step2_buttons),
-			2 : (self.s3page, self.step3_buttons),
-			3 : (self.s4page, self.step4_buttons),
-			4 : (self.s5page, self.step5_buttons),
-			5 : (self.s6page, self.step6_buttons)
+			0 : [self.s1page, self.step1_buttons, 0],
+			1 : [self.s2page, self.step2_buttons, 0],
+			2 : [self.s3page, self.step3_buttons, 0],
+			3 : [self.s4page, self.step4_buttons, 0],
+			4 : [self.s5page, self.step5_buttons, 0],
+			5 : [self.s6page, self.step6_buttons, 0]
 		}
 		
 		self.icons = {
@@ -87,11 +91,19 @@ class Socketmixer(QMainWindow):
 			'thumbs': QIcon('/Users/bge/socketmixer/static/icons/thumbs.png')
 		}
 
+		# Upon starting application, removes any temporarily saved objects from
+		# previous executions of socketmixer. 
+		for i in range(1, 7):
+			removeStepModel(i)
+
 		self.actionScanning.setIcon(self.icons['zoom_out'])
 		self.actionModeling.setIcon(self.icons['play'])
 		self.actionPrinting.setIcon(self.icons['fullscreen_off'])
 		self.actionExit.setIcon(self.icons['arrow_double_left'])
 		self.actionContact.setIcon(self.icons['thumbs'])
+
+		self.s4_p5_button_contract.setIcon(self.icons['zoom_in'])
+		self.s4_p5_button_expand.setIcon(self.icons['zoom_out'])
 
 		self.s1_button.clicked.connect(lambda: self.setSteps(0, self.s1_button))
 		self.s2_button.clicked.connect(lambda: self.setSteps(1, self.s2_button))
@@ -151,6 +163,7 @@ class Socketmixer(QMainWindow):
 		self.s6_d.clicked.connect(lambda: self.setStep(4, self.s6_d, 5))
 		self.s6_e.clicked.connect(lambda: self.setStep(5, self.s6_e, 5))
 		self.s6_f.clicked.connect(lambda: self.setStep(6, self.s6_f, 5))
+		self.s6_g.clicked.connect(lambda: self.setStep(7, self.s6_g, 5))
 
 		self.s1_p1_button_importFile.clicked.connect(self.importFile)
 		self.s1_p2_button_planeCut.clicked.connect(self.planeCut)
@@ -170,19 +183,32 @@ class Socketmixer(QMainWindow):
 		self.s1_p9_button_manualAlign.clicked.connect(self.manualAlign)
 		self.s1_p9_button_manualAlign_accept.clicked.connect(self.accept)
 		self.s1_p10_button_duplicate.clicked.connect(self.duplicate)
+		self.s1_p10_button_save.clicked.connect(
+			lambda: self.exportStepModel(1))
 
-		self.s2_p1_button_brushSize.clicked.connect(lambda: self.selectTool(self.s2_p1_value_brushSize.value()))
+		self.s2_p1_button_brushSize.clicked.connect(
+			lambda: self.selectTool(self.s2_p1_value_brushSize.value()))
 		self.s2_p2_button_smoothBoundary.clicked.connect(self.smoothBoundary)
 		self.s2_p2_button_smoothBoundary_accept.clicked.connect(self.accept)
-		self.s2_p3_button_generateOffset.clicked.connect(self.generateOffset)
+		self.s2_p3_button_generateOffset.clicked.connect(
+			lambda: self.offset(
+						self.s2_p3_value_distance.value(), 
+						self.s2_p3_value_softTransition.value(), 
+						self.s2_p3_value_isConnected.isChecked()))
 		self.s2_p3_button_generateOffset_accept.clicked.connect(self.accept)
-		self.s2_p4_button_smoothOffset.clicked.connect(self.smoothOffset)
-		self.s2_p4_button_smoothOffset_accept.clicked.connect(self.accept)
-		self.s2_p5_button_yes.clicked.connect(lambda: self.setStep(1, self.s2_a, 1))
-		self.s2_p5_button_no.clicked.connect(lambda: self.setStep(6, self.s2_f, 1))
+		self.s2_p4_button_smooth.clicked.connect(
+			lambda: self.smooth(self.s2_p4_value_smooth.value()))
+		self.s2_p4_button_smooth_accept.clicked.connect(self.accept)
+		self.s2_p5_button_yes.clicked.connect(
+			lambda: self.setStep(1, self.s2_a, 1))
+		self.s2_p5_button_no.clicked.connect(
+			lambda: self.setStep(6, self.s2_f, 1))
 		self.s2_p6_button_clearFaceGroups.clicked.connect(self.clearFaceGroups)
+		self.s2_p6_button_save.clicked.connect(
+			lambda: self.exportStepModel(2))
 
-		self.s3_p1_button_brushSize.clicked.connect(lambda: self.selectTool(self.s3_p1_value_brushSize.value(), True))
+		self.s3_p1_button_brushSize.clicked.connect(
+			lambda: self.selectTool(self.s3_p1_value_brushSize.value(), True))
 		self.s3_p2_button_smoothTrimLine.clicked.connect(self.smoothBoundary)
 		self.s3_p3_button_createFaceGroup.clicked.connect(self.createFaceGroup)
 		self.s3_p4_button_selectFaceGroup.clicked.connect(self.selectTool)
@@ -190,6 +216,66 @@ class Socketmixer(QMainWindow):
 		self.s3_p5_button_contract.clicked.connect(self.contract)
 		self.s3_p6_button_remeshTrimLine.clicked.connect(self.remeshSpecial)
 		self.s3_p6_button_remeshTrimLine_accept.clicked.connect(self.accept)
+		self.s3_p6_button_save.clicked.connect(
+			lambda: self.exportStepModel(3))
+
+		self.s4_p1_button_selectFacegroup.clicked.connect(self.selectTool)
+		self.s4_p3_button_generateOffset.clicked.connect(
+			lambda: self.offset(self.s4_p2_value_offsetSocket.value()))
+		self.s4_p3_button_generateOffset_accept.clicked.connect(self.accept)
+		self.s4_p4_button_separateOffset.clicked.connect(self.separate)
+		self.s4_p5_button_brushSize.clicked.connect(
+			lambda: self.selectTool(self.s4_p5_value_brushSize.value()))
+		self.s4_p5_button_contract.clicked.connect(self.contract)
+		self.s4_p5_button_expand.clicked.connect(self.expand)
+		self.s4_p5_button_smoothBoundary.clicked.connect(self.smoothBoundary)
+		self.s4_p5_button_createHoles.clicked.connect(self.discard)
+		# TODO: create relief
+		# TODO: generate offset2
+		self.s4_p7_button_selectAll.clicked.connect(self.selectAll)
+		self.s4_p7_button_generateOffset.clicked.connect(
+			lambda: self.offset(self.s4_p7_value_offsetDistance.value()))
+		self.s4_p7_button_generateOffset_accept.clicked.connect(self.accept)
+		self.s4_p7_button_save.clicked.connect(
+			lambda: self.exportStepModel(4))
+
+		self.s5_p1_button_brushSize.clicked.connect(
+			lambda: self.selectTool(self.s5_p1_value_brushSize.value()))
+		self.s5_p1_button_contract.clicked.connect(self.contract)
+		self.s5_p1_button_expand.clicked.connect(self.expand)
+		self.s5_p2_button_smooth.clicked.connect(
+			lambda: self.smooth(self.s5_p2_value_smooth.value()))
+		self.s5_p2_button_smooth_accept.clicked.connect(self.accept)
+		#TODO: page 3 sculpting tools
+		self.s5_p4_button_clearFaceGroups.clicked.connect(self.clearFaceGroups)
+		self.s5_p5_button_remesh.clicked.connect(self.remeshSpecial)
+		self.s5_p5_button_remesh_accept.clicked.connect(self.accept)
+		self.s5_p5_button_save.clicked.connect(
+			lambda: self.exportStepModel(5))
+
+		self.s6_p1_button_selectCoupler.clicked.connect(
+			lambda: self.importConnector(str(self.s6_p1_value_selectCoupler.currentText())))
+		self.s6_p2_button_manualAlign.clicked.connect(self.manualAlign)
+		self.s6_p2_button_manualAlign_accept.clicked.connect(self.accept)
+		self.s6_p3_button_selectTool.clicked.connect(self.selectTool)
+		self.s6_p4_button_alignMountingPoint.clicked.connect(self.cutSocketForConnection)
+		self.s6_p5_button_joinMountingPoint.clicked.connect(self.joinConnectionToSocket)
+		self.s6_p6_button_brushSize.clicked.connect(
+			lambda: self.selectTool(self.s6_p6_value_brushSize.value()))
+		self.s6_p6_button_expand.clicked.connect(self.expand)
+		self.s6_p6_button_contract.clicked.connect(self.contract)
+		self.s6_p6_button_smoothJoin.clicked.connect(self.smoothBoundary)
+		self.s6_p7_a_button_importHoleMaker.clicked.connect(self.importHoleMaker)
+		self.s6_p7_b_button_alignBottomView.clicked.connect(self.alignZCam)
+		self.s6_p7_c_button_positionHoleMaker.clicked.connect(self.alignTransform)
+		self.s6_p7_c_button_positionHoleMaker_accept.clicked.connect(self.accept)
+		self.s6_p7_d_button_createHole.clicked.connect(self.boolean)
+		self.s6_p7_d_button_createHole_accept.clicked.connect(self.accept)
+		self.s6_p7_button_save.clicked.connect(
+			lambda: self.exportStepModel(6))
+
+		# Load first page
+		self.setSteps(0, self.s1_button)
 
 	# ============== API CALLS ==================
 	def accept(self):
@@ -227,6 +313,9 @@ class Socketmixer(QMainWindow):
 		remesh(1, self.s1_p6_value_remesh.value())
 		remesh(2, self.s1_p6_value_smooth.value())
 
+	def selectAll(self):
+		selectAll()
+
 	def autoAlign(self):
 		exportTempModel()
 		reOrientModel()
@@ -247,16 +336,14 @@ class Socketmixer(QMainWindow):
 	def smoothBoundary(self):
 		smoothBoundary()
 
-	def generateOffset(self):
-		connected = self.s2_p3_value_isConnected.isChecked()
-		soft_value = self.s2_p3_value_softTransition.value()
-		distance = self.s2_p3_value_distance.value()
+	def selectAll(self):
+		selectAll()
 
+	def offset(self, distance, connected=False, soft_value=0):
 		offsetDistance(distance, connected)
 		softTransition(soft_value)
 
-	def smoothOffset(self):
-		smooth_value = self.s2_p4_value_selectSize.value()
+	def smooth(self, smooth_value):
 		deformSmooth(smooth_value)
 
 	def createFaceGroup(self):
@@ -273,14 +360,44 @@ class Socketmixer(QMainWindow):
 		contractByOneRing()
 
 	def remeshSpecial(self):
+		selectAll()
 		remeshSpecial()
+
+	def separate(self):
+		separate()
+		renameObjectByName('rectifiedLimb (part)','socket')
+
+	def importConnector(self, socketname):
+		print(socketname)
+		importConnectorAndPosition('socket.obj')
+
+	def cutSocketForConnection(self):
+		cutSocketForConnection()
+
+	def joinConnectionToSocket(self):
+		joinConnectionToSocket()
+
+	def importHoleMaker(self):
+		importHoleMaker('holemakerv2.obj')
+
+	def alignZCam(self):
+		alignZCam(5)
+
+	def alignTransform(self):
+		alignTransform()
+
+	def boolean(self):
+		boolean('socket', 'holemaker')
+
+	def exportStepModel(self, step_number):
+		exportStepModel(step_number)
 
 	# =============== PAGE CHANGES ==================
 
 	def unHighlight(self, clickedButton, d):
 
 		for button in d:
-			if not (button == clickedButton):
+			if not (button == clickedButton) :
 				button.setStyleSheet('background-color: None')
 
 	def setSteps(self, index, button):
@@ -293,12 +410,23 @@ class Socketmixer(QMainWindow):
 		self.s6page.setCurrentIndex(0)
 		button.setStyleSheet(BUTTONSTYLEHIGHLIGHT)
 		self.unHighlight(button, self.step_buttons)
+		self.unHighlight(button, self.step1_buttons)
+		self.unHighlight(button, self.step2_buttons)
+		self.unHighlight(button, self.step3_buttons)
+		self.unHighlight(button, self.step4_buttons)
+		self.unHighlight(button, self.step5_buttons)
+		self.unHighlight(button, self.step6_buttons)
 
 	def setStep(self, index, button, page):
 		self.stackedWidget.setCurrentIndex(page)
 		self.steps[page][0].setCurrentIndex(index)
 		button.setStyleSheet(BUTTONSTYLEHIGHLIGHT)
 		self.unHighlight(button, self.steps[page][1])
+		if self.steps[page][2] == 0:
+			self.steps[page][2] = 1
+		else:
+			fileName = 'Step ' + str(page + 1) + '.obj'
+			importFigure(fileName, 'AutoSave')
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)

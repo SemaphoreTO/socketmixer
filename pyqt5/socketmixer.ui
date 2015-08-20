@@ -65,7 +65,7 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="s1">
        <widget class="QToolButton" name="s1_a">
@@ -208,7 +208,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="s1_p0">
          <widget class="QTextEdit" name="s1_p0_text_intro">
@@ -292,7 +292,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
         <widget class="QWidget" name="s1_p2">
-         <widget class="QTextEdit" name="s1_p2text_planeCut">
+         <widget class="QTextEdit" name="s1_p2_text_planeCut">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -971,6 +971,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p10_button_save">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>310</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
         </widget>
        </widget>
        <widget class="QLabel" name="s1_label">
@@ -1018,7 +1031,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>4</number>
+         <number>6</number>
         </property>
         <widget class="QWidget" name="s2_p0">
          <widget class="QTextEdit" name="s2_p0_text_intro">
@@ -1350,7 +1363,7 @@ p, li { white-space: pre-wrap; }
          <zorder>s2_p3_value_isConnected</zorder>
         </widget>
         <widget class="QWidget" name="s2_p4">
-         <widget class="QTextEdit" name="s2_p4_text_smoothOffset">
+         <widget class="QTextEdit" name="s2_p4_text_smooth">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -1369,7 +1382,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;This tool will refine your offset, giving it a smoother transition. Adjust the slider or number entry box to change the level of smoothness. Changes you make in these fields will appear on your model, but will not be saved until you click the &amp;quot;Accept&amp;quot; button.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s2_p4_button_smoothOffset">
+         <widget class="QCommandLinkButton" name="s2_p4_button_smooth">
           <property name="geometry">
            <rect>
             <x>160</x>
@@ -1401,7 +1414,7 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s2_p4_button_smoothOffset_accept">
+         <widget class="QPushButton" name="s2_p4_button_smooth_accept">
           <property name="geometry">
            <rect>
             <x>370</x>
@@ -1414,20 +1427,20 @@ p, li { white-space: pre-wrap; }
            <string>OK</string>
           </property>
          </widget>
-         <widget class="QLabel" name="s2_p4_label_selectSize">
+         <widget class="QLabel" name="s2_p4_label_smooth">
           <property name="geometry">
            <rect>
             <x>60</x>
             <y>180</y>
-            <width>81</width>
+            <width>91</width>
             <height>21</height>
            </rect>
           </property>
           <property name="text">
-           <string>Select Size</string>
+           <string>Smooth Value</string>
           </property>
          </widget>
-         <widget class="QDoubleSpinBox" name="s2_p4_value_selectSize">
+         <widget class="QDoubleSpinBox" name="s2_p4_value_smooth">
           <property name="geometry">
            <rect>
             <x>60</x>
@@ -1582,6 +1595,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s2_p6_button_save">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>310</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Save</string>
           </property>
          </widget>
         </widget>
@@ -2117,6 +2143,19 @@ p, li { white-space: pre-wrap; }
            <string>OK</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s3_p6_button_save">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>280</y>
+            <width>121</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
         </widget>
        </widget>
        <widget class="QToolButton" name="s3_c">
@@ -2230,7 +2269,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>7</number>
         </property>
         <widget class="QWidget" name="s4_p0">
          <widget class="QTextEdit" name="s4_p0_text_intro">
@@ -2323,58 +2362,13 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step B - Offset Socket&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the &amp;quot;Distance&amp;quot; slider to choose how much space there will be between the limb and the inside of the socket. Measurements are in millimetres. Press &amp;quot;Accept&amp;quot; to generate the socket.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="s4_p2_button_offsetSocket_accept">
-          <property name="geometry">
-           <rect>
-            <x>370</x>
-            <y>330</y>
-            <width>115</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>OK</string>
-          </property>
-         </widget>
-         <widget class="QCommandLinkButton" name="s4_p2_button_offsetSocket">
-          <property name="geometry">
-           <rect>
-            <x>160</x>
-            <y>320</y>
-            <width>197</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Offset Socket</string>
-          </property>
-          <property name="icon">
-           <iconset resource="icons.qrc">
-            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>60</width>
-            <height>60</height>
-           </size>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-          <property name="description">
-           <string>Choose a file from computer.</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the &amp;quot;Distance&amp;quot; slider to choose how much space there will be between the limb and the inside of the socket. Measurements are in millimetres.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QLabel" name="s4_p2_label_offsetSocket">
           <property name="geometry">
            <rect>
-            <x>30</x>
+            <x>60</x>
             <y>310</y>
             <width>101</width>
             <height>16</height>
@@ -2387,7 +2381,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QSpinBox" name="s4_p2_value_offsetSocket">
           <property name="geometry">
            <rect>
-            <x>30</x>
+            <x>70</x>
             <y>330</y>
             <width>71</width>
             <height>31</height>
@@ -2405,7 +2399,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
         <widget class="QWidget" name="s4_p3">
-         <widget class="QTextEdit" name="s4_p3_text_generateInternalOffset">
+         <widget class="QTextEdit" name="s4_p3_text_generateOffset">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -2424,10 +2418,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;In this step, the offset you have created will be turned into a new object. This separates the socket from the rectified residual limb.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s4_p3_button_generateInternalOffset">
+         <widget class="QCommandLinkButton" name="s4_p3_button_generateOffset">
           <property name="geometry">
            <rect>
-            <x>120</x>
+            <x>40</x>
             <y>150</y>
             <width>197</width>
             <height>41</height>
@@ -2454,6 +2448,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s4_p3_button_generateOffset_accept">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>160</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
           </property>
          </widget>
         </widget>
@@ -2533,8 +2540,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s4_p5_button_createHoles">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>230</y>
+            <x>150</x>
+            <y>300</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -2562,11 +2569,104 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s4_p5_button_brushSize">
+         <widget class="QLabel" name="s4_p5_label_brushSize">
           <property name="geometry">
            <rect>
-            <x>220</x>
+            <x>50</x>
             <y>120</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Brush Size</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="s4_p5_value_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>140</y>
+            <width>47</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s4_p5_button_contract">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>180</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Contract</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s4_p5_button_expand">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>180</y>
+            <width>121</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Expand</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s4_p5_button_smoothBoundary">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>240</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -2575,7 +2675,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Select Brush Size</string>
+           <string>Smooth Boundary</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -2594,33 +2694,36 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QLabel" name="s4_p5_label_brushSize">
+         <widget class="QCommandLinkButton" name="s4_p5_button_brushSize">
           <property name="geometry">
            <rect>
-            <x>90</x>
+            <x>150</x>
             <y>120</y>
-            <width>71</width>
-            <height>16</height>
+            <width>197</width>
+            <height>41</height>
            </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
           </property>
           <property name="text">
-           <string>Brush Size</string>
+           <string>Select Tool</string>
           </property>
-         </widget>
-         <widget class="QSpinBox" name="s4_p5_value_brushSize">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>140</y>
-            <width>47</width>
-            <height>24</height>
-           </rect>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
-          <property name="maximum">
-           <number>100</number>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
           </property>
-          <property name="value">
-           <number>5</number>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
           </property>
          </widget>
         </widget>
@@ -2691,13 +2794,13 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
         <widget class="QWidget" name="s4_p7">
-         <widget class="QTextEdit" name="s1_p7_text_autoAlign_2">
+         <widget class="QTextEdit" name="s4_p7_text_generateOffset">
           <property name="geometry">
            <rect>
             <x>20</x>
             <y>10</y>
             <width>461</width>
-            <height>271</height>
+            <height>141</height>
            </rect>
           </property>
           <property name="html">
@@ -2705,18 +2808,16 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Step G. &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:25px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:28px; background-color:#f2f2f2;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;In this step, &lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;you will align the distal end of the residual limb, making the residual limb roughly perpendicular to the plane.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;Checklist:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use the automatic alignment tool to do a rough alignment of the model&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Use the manual alignment tool to make fine changes to the model alignment&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step G - Generate Offset&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Using the &amp;quot;Distance&amp;quot; slider, set the thickness of the socket, in millimetres. Press &amp;quot;Accept&amp;quot; to apply the change.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s1_p7_button_autoAlign_2">
+         <widget class="QCommandLinkButton" name="s4_p7_button_generateOffset">
           <property name="geometry">
            <rect>
-            <x>50</x>
-            <y>290</y>
+            <x>140</x>
+            <y>240</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -2725,7 +2826,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Auto-Align</string>
+           <string>Generate Offset</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -2744,17 +2845,94 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s1_p7_button_autoAlign_accept_2">
+         <widget class="QPushButton" name="s4_p7_button_generateOffset_accept">
           <property name="geometry">
            <rect>
-            <x>310</x>
-            <y>290</y>
+            <x>360</x>
+            <y>250</y>
             <width>115</width>
             <height>32</height>
            </rect>
           </property>
           <property name="text">
            <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="s4_p7_value_offsetDistance">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>250</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="suffix">
+           <string>mm</string>
+          </property>
+          <property name="maximum">
+           <number>10</number>
+          </property>
+          <property name="value">
+           <number>4</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="s4_p7_label_offsetDistance">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>230</y>
+            <width>101</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Offset Distance</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s4_p7_button_save">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>300</y>
+            <width>121</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s4_p7_button_selectAll">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>170</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Select All</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
           </property>
          </widget>
         </widget>
@@ -2883,7 +3061,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>5</number>
         </property>
         <widget class="QWidget" name="s5_p0">
          <widget class="QTextEdit" name="s5_p0_text_intro">
@@ -2907,11 +3085,11 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
         <widget class="QWidget" name="s5_p1">
-         <widget class="QCommandLinkButton" name="s5_p1_button_contract_2">
+         <widget class="QCommandLinkButton" name="s5_p1_button_contract">
           <property name="geometry">
            <rect>
-            <x>180</x>
-            <y>240</y>
+            <x>190</x>
+            <y>310</y>
             <width>101</width>
             <height>41</height>
            </rect>
@@ -2939,7 +3117,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
          </widget>
-         <widget class="QTextEdit" name="s5_p1_text_selectFaceGroup_2">
+         <widget class="QTextEdit" name="s5_p1_text_selectFaceGroup">
           <property name="geometry">
            <rect>
             <x>30</x>
@@ -2958,7 +3136,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Double click on the socket area to select the facegroup you've just created. Next, double click on the trim line. Both areas should now appear in orange, indicating that they are selected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QSpinBox" name="s5_p1_value_selectSize_2">
+         <widget class="QSpinBox" name="s5_p1_value_brushSize">
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -2977,11 +3155,11 @@ p, li { white-space: pre-wrap; }
            <number>7</number>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s5_p1_button_expand_2">
+         <widget class="QCommandLinkButton" name="s5_p1_button_expand">
           <property name="geometry">
            <rect>
-            <x>290</x>
-            <y>240</y>
+            <x>300</x>
+            <y>310</y>
             <width>101</width>
             <height>41</height>
            </rect>
@@ -3009,7 +3187,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
          </widget>
-         <widget class="QLabel" name="s5_p1_label_selectSize_2">
+         <widget class="QLabel" name="s5_p1_label_brushSize">
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -3020,6 +3198,38 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="text">
            <string>Select Size</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s5_p1_button_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>240</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Select Brush Size</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
           </property>
          </widget>
         </widget>
@@ -3292,6 +3502,19 @@ p, li { white-space: pre-wrap; }
            <string>OK</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s5_p5_button_save">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>290</y>
+            <width>121</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
         </widget>
        </widget>
        <widget class="QLabel" name="s5_label">
@@ -3392,7 +3615,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>7</number>
         </property>
         <widget class="QWidget" name="s6_p0">
          <widget class="QTextEdit" name="s6_p0_text_intro">
@@ -3453,7 +3676,7 @@ p, li { white-space: pre-wrap; }
            <string>Coupler Model</string>
           </property>
          </widget>
-         <widget class="QComboBox" name="s6_value_selectCoupler">
+         <widget class="QComboBox" name="s6_p1_value_selectCoupler">
           <property name="geometry">
            <rect>
             <x>30</x>
@@ -3502,13 +3725,13 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
         <widget class="QWidget" name="s6_p2">
-         <widget class="QTextEdit" name="s4_p2_text_offsetSocket_2">
+         <widget class="QTextEdit" name="s6_p2_text_manualAlign">
           <property name="geometry">
            <rect>
             <x>20</x>
             <y>10</y>
             <width>461</width>
-            <height>291</height>
+            <height>151</height>
            </rect>
           </property>
           <property name="html">
@@ -3516,16 +3739,16 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step B - Offset Socket&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step B - Use Alignment Tool&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Use the &amp;quot;Distance&amp;quot; slider to choose how much space there will be between the limb and the inside of the socket. Measurements are in millimetres. Press &amp;quot;Accept&amp;quot; to generate the socket.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s4_p2_button_offsetSocket_accept_2">
+         <widget class="QPushButton" name="s6_p2_button_manualAlign_accept">
           <property name="geometry">
            <rect>
-            <x>370</x>
-            <y>330</y>
+            <x>290</x>
+            <y>220</y>
             <width>115</width>
             <height>32</height>
            </rect>
@@ -3534,11 +3757,11 @@ p, li { white-space: pre-wrap; }
            <string>OK</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s4_p2_button_offsetSocket_2">
+         <widget class="QCommandLinkButton" name="s6_p2_button_manualAlign">
           <property name="geometry">
            <rect>
-            <x>160</x>
-            <y>320</y>
+            <x>80</x>
+            <y>210</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -3547,7 +3770,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Offset Socket</string>
+           <string>Manual Align</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -3566,41 +3789,9 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QLabel" name="s4_p2_label_offsetSocket_2">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>310</y>
-            <width>101</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Offset Distance</string>
-          </property>
-         </widget>
-         <widget class="QSpinBox" name="s4_p2_value_offsetSocket_2">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>330</y>
-            <width>71</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="suffix">
-           <string>mm</string>
-          </property>
-          <property name="maximum">
-           <number>10</number>
-          </property>
-          <property name="value">
-           <number>4</number>
-          </property>
-         </widget>
         </widget>
         <widget class="QWidget" name="s6_p3">
-         <widget class="QTextEdit" name="s4_p3_text_generateInternalOffset_2">
+         <widget class="QTextEdit" name="s6_p3_text_selectTool">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -3614,12 +3805,12 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step C - Generate Internal Offset&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step C - Select Mounting Point Region&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;In this step, the offset you have created will be turned into a new object. This separates the socket from the rectified residual limb.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Using the selection tool that is now active, mark the region on the bottom of the socket where the mounting point should be attached.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s4_p3_button_generateInternalOffset_2">
+         <widget class="QCommandLinkButton" name="s6_p3_button_selectTool">
           <property name="geometry">
            <rect>
             <x>120</x>
@@ -3632,7 +3823,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Generate Internal Offset</string>
+           <string>Select Region</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -3652,14 +3843,14 @@ p, li { white-space: pre-wrap; }
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" name="s4_p4_2">
-         <widget class="QTextEdit" name="s4_p4_text_separateOffset_2">
+        <widget class="QWidget" name="s6_p4">
+         <widget class="QTextEdit" name="s6_p4_text_selectMountingPoint">
           <property name="geometry">
            <rect>
             <x>20</x>
             <y>10</y>
             <width>461</width>
-            <height>91</height>
+            <height>241</height>
            </rect>
           </property>
           <property name="html">
@@ -3667,16 +3858,16 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step D - Separate Offset from Original Model&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step 4 - Align Mounting Point&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;By clicking the &amp;quot;Accept&amp;quot; button the internal offset will be separated from the original model. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;If the mounting point is positioned correctly relative to the socket, continue to the next step. Otherwise, use the arrows to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point. When positioned appropriately the cutting plane will be low on the socket, just above the point where the socket begins to narrow. Cutting the socket too low can result in a bad connection between the socket and the connector.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s4_p4_button_separateOffset_2">
+         <widget class="QCommandLinkButton" name="s6_p4_button_alignMountingPoint">
           <property name="geometry">
            <rect>
             <x>130</x>
-            <y>130</y>
+            <y>280</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -3685,7 +3876,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Separate Offset</string>
+           <string>Align Mounting Point</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -3705,14 +3896,14 @@ p, li { white-space: pre-wrap; }
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" name="s4_p5_2">
-         <widget class="QTextEdit" name="s4_p5_text_createHoles_2">
+        <widget class="QWidget" name="s6_p5">
+         <widget class="QTextEdit" name="s6_p6_text_joinMountingPoint">
           <property name="geometry">
            <rect>
             <x>20</x>
             <y>10</y>
             <width>461</width>
-            <height>91</height>
+            <height>241</height>
            </rect>
           </property>
           <property name="html">
@@ -3720,16 +3911,16 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step E - Create Holes in Socket&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step E - Join Mounting Point&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Select brush size, then select parts of the model which will be deleted. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;If the mounting point is positioned correctly relative to the socket, continue to the next step. Otherwise, use the arrows to move the mounting point to an appropriate position. Make sure the distal end of the socket does not overlap through the mounting point.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s4_p5_button_createHoles_2">
+         <widget class="QCommandLinkButton" name="s6_p5_button_joinMountingPoint">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>230</y>
+            <x>130</x>
+            <y>280</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -3738,7 +3929,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Create Holes</string>
+           <string>Join Mounting Point</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -3757,11 +3948,115 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QCommandLinkButton" name="s4_p5_button_brushSize_2">
+        </widget>
+        <widget class="QWidget" name="s6_p6">
+         <widget class="QSpinBox" name="s6_p6_value_brushSize">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>120</y>
+            <x>40</x>
+            <y>240</y>
+            <width>61</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>7</number>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s6_p6_button_contract">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>270</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Contract</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/zoom_out.png</normaloff>:/icons/zoom_out.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s6_p6_button_expand">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>270</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Expand</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="s6_p6_text_smooth">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>191</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step F - Smooth Join&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Select the area around the join, click on expand to expand the join by 10-20%.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s6_p6_button_brushSize">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>220</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -3789,74 +4084,24 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QLabel" name="s4_p5_label_brushSize_2">
+         <widget class="QLabel" name="s6_p6_label_smooth">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>120</y>
-            <width>71</width>
+            <x>40</x>
+            <y>220</y>
+            <width>101</width>
             <height>16</height>
            </rect>
           </property>
           <property name="text">
-           <string>Brush Size</string>
+           <string>Smooth Value</string>
           </property>
          </widget>
-         <widget class="QSpinBox" name="s4_p5_value_brushSize_2">
+         <widget class="QCommandLinkButton" name="s6_p6_button_smoothJoin">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>140</y>
-            <width>47</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="maximum">
-           <number>100</number>
-          </property>
-          <property name="value">
-           <number>5</number>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="s4_p6_2">
-         <widget class="QTextEdit" name="s4_p6_text_createRelief_2">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>10</y>
-            <width>461</width>
-            <height>201</height>
-           </rect>
-          </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step F - Create Reliefs in Socket&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Create reliefs in socket by using sculpting tools to push or pull the model.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="s4_p6_button_createRelief_accept_2">
-          <property name="geometry">
-           <rect>
-            <x>290</x>
-            <y>280</y>
-            <width>115</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>OK</string>
-          </property>
-         </widget>
-         <widget class="QCommandLinkButton" name="s4_p6_button_createRelief_2">
-          <property name="geometry">
-           <rect>
-            <x>60</x>
-            <y>270</y>
+            <x>180</x>
+            <y>320</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -3865,7 +4110,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Create Reliefs</string>
+           <string>Smooth Join</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -3882,6 +4127,194 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="s6_p7">
+         <widget class="QTextEdit" name="s6_p7_text_createHole">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>461</width>
+            <height>201</height>
+           </rect>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#ffffff;&quot;&gt;Step G - Create Holes in Socket&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#ffffff;&quot;&gt;Now make a hole in the alignment screw. This step makes a small hole in the bottom of the socket, which is used to access the alignment screw.&amp;quot; in &amp;quot;Import Hole Maker&amp;quot; add &amp;quot;In this step, a narrow cylinder will be imported. The cylinder should be positioned near the centre of the socket, and should appear to cut through both the distal end of the cup, and the proximal end of the connector.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s6_p7_d_button_createHole_accept">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>320</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s6_p7_d_button_createHole">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>310</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Create Hole</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s6_p7_a_button_importHoleMaker">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>220</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Import Hole Maker</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s6_p7_b_button_alignBottomView">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>220</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Align Bottom View</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s6_p7_c_button_positionHoleMaker">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>270</y>
+            <width>197</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Position Hole Maker</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s6_p7_c_button_positionHoleMaker_accept">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>280</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s6_p7_button_save">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>330</y>
+            <width>121</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Save</string>
           </property>
          </widget>
         </widget>
@@ -3985,6 +4418,19 @@ p, li { white-space: pre-wrap; }
          <string>Attach Mounting Point for Coupler</string>
         </property>
        </widget>
+       <widget class="QToolButton" name="s6_g">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>170</y>
+          <width>26</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>G</string>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QToolButton" name="s1_button">
@@ -4086,6 +4532,7 @@ p, li { white-space: pre-wrap; }
      <zorder>s3_button</zorder>
      <zorder>s1_button</zorder>
      <zorder>s6_button</zorder>
+     <zorder>s1_p10_button_save_2</zorder>
     </widget>
     <widget class="QWidget" name="tabPrinting">
      <property name="focusPolicy">
