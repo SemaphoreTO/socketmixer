@@ -1,7 +1,10 @@
 import sys, numpy as np
 from numpy import linalg
+import os
 
-root = '/Users/bge/socketmixer'
+
+
+root = os.path.normpath(os.getcwd() + os.sep + os.pardir) 
 sys.path.append(root)
 sys.path.append(root + '/extensionController')
 sys.path.append(root + '/meshController')
@@ -9,6 +12,7 @@ sys.path.append(root + '/meshController/mm')
 sys.path.append(root + '/meshController/pythonApi')
 sys.path.append(root + '/extensions')
 sys.path.append(root + '/socket')
+sys.path.append(root + '/pyqt5/icons')
 
 from extensionController import *
 import MeshWrapper
@@ -83,12 +87,12 @@ class Socketmixer(QMainWindow):
 		}
 		
 		self.icons = {
-			'arrow_double_left': QIcon('/Users/bge/socketmixer/static/icons/arrow_double_left.png'),
-			'zoom_out': QIcon('/Users/bge/socketmixer/static/icons/zoom_out.png'),
-			'zoom_in': QIcon('/Users/bge/socketmixer/static/icons/zoom_in.png'),
-			'play': QIcon('/Users/bge/socketmixer/static/icons/play.png'),
-			'fullscreen_off': QIcon('/Users/bge/socketmixer/static/icons/fullscreen_off.png'),
-			'thumbs': QIcon('/Users/bge/socketmixer/static/icons/thumbs.png')
+			'arrow_double_left': QIcon('/icons/arrow_double_left.png'),
+			'zoom_out': QIcon('/icons/zoom_out.png'),
+			'zoom_in': QIcon('/icons/zoom_in.png'),
+			'play': QIcon('/icons/play.png'),
+			'fullscreen_off': QIcon('/icons/fullscreen_off.png'),
+			'thumbs': QIcon('/icons/thumbs.png')
 		}
 
 		# Upon starting application, removes any temporarily saved objects from
