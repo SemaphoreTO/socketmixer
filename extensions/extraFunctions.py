@@ -789,12 +789,12 @@ def duplicateAndRenameAndHide(partToDuplicate,newName):
          cmd.AppendBeginToolCommand('duplicate')
          remote.runCommand(cmd)
          cmd  = mmapi.StoredCommands()
-         duplicatename = partToDuplicate + ' (copy)'
+         duplicatename = partToDuplicate + '.obj (copy)'
          [state,id]= mm.find_object_by_name(remote,duplicatename)
-         cmd.AppendSceneCommand_SetObjectName(id,newName)
+         cmd.AppendSceneCommand_SetObjectName(id,newName + '.obj')
          remote.runCommand(cmd)
          cmd  = mmapi.StoredCommands()
-         [state,id]= mm.find_object_by_name(remote,partToDuplicate)
+         [state,id]= mm.find_object_by_name(remote,partToDuplicate + '.obj')
          cmd.AppendSceneCommand_SetHidden(id)
          remote.runCommand(cmd)
          remote.shutdown()
