@@ -495,6 +495,13 @@ def exportSeparate():
         remote.shutdown()
         return False
 
+@meshWrapper
+def sculptingTools():
+    cmd = mmapi.StoredCommands()
+    cmd.AppendBeginToolCommand('volumeBrush')
+
+    return cmd
+
 
 ########################### SCENE API CALLS ####################################
 

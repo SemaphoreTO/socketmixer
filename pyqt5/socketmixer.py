@@ -158,7 +158,9 @@ class Socketmixer(QMainWindow):
 		self.s1_p4_button_discard.clicked.connect(self.discard)
 		self.s1_p4_button_discard_accept.clicked.connect(self.accept)
 		self.s1_p5_button_inspector.clicked.connect(self.inspector)
-		self.s1_p6_button_remesh.clicked.connect(self.remesh)
+		self.s1_p6_button_remesh.clicked.connect(
+			lambda: self.remesh(self.s1_p6_value_remesh.value(), 
+								self.s1_p6_value_smooth.value()))
 		self.s1_p6_button_remesh_accept.clicked.connect(self.accept)
 		self.s1_p7_button_autoAlign.clicked.connect(self.autoAlign)
 		self.s1_p7_button_autoAlign_accept.clicked.connect(self.accept)
@@ -213,8 +215,8 @@ class Socketmixer(QMainWindow):
 		self.s4_p5_button_expand.clicked.connect(self.expand)
 		self.s4_p5_button_smoothBoundary.clicked.connect(self.smoothBoundary)
 		self.s4_p5_button_createHoles.clicked.connect(self.discard)
-		# TODO: create relief
-		# TODO: generate offset2
+		self.s4_p6_button_createRelief.clicked.connect(self.sculptingTools)
+		self.s4_p6_button_createRelief_accept.clicked.connect(self.accept)
 		self.s4_p7_button_selectAll.clicked.connect(self.selectAll)
 		self.s4_p7_button_generateOffset.clicked.connect(
 			lambda: self.offset(self.s4_p7_value_offsetDistance.value()))
@@ -229,7 +231,7 @@ class Socketmixer(QMainWindow):
 		self.s5_p2_button_smooth.clicked.connect(
 			lambda: self.smooth(self.s5_p2_value_smooth.value()))
 		self.s5_p2_button_smooth_accept.clicked.connect(self.accept)
-		#TODO: page 3 sculpting tools
+		self.s5_p3_button_sculptingTools.clicked.connect(self.sculptingTools)
 		self.s5_p4_button_clearFaceGroups.clicked.connect(self.clearFaceGroups)
 		self.s5_p5_button_remesh.clicked.connect(self.remeshSpecial)
 		self.s5_p5_button_remesh_accept.clicked.connect(self.accept)
@@ -268,6 +270,9 @@ class Socketmixer(QMainWindow):
 	def cancel(self):
 		cancel()
 
+	def exportStepModel(self, step_number):
+		exportStepModel(step_number)
+
 	def importFile(self):
 		MeshWrapper.importFile()
 
@@ -291,10 +296,14 @@ class Socketmixer(QMainWindow):
 		inspector()
 		repairAll()
 
-	def remesh(self):
+	def remesh(self, remeshvalue, smoothvalue):
 		selectAll()
-		remesh(1, self.s1_p6_value_remesh.value())
-		remesh(2, self.s1_p6_value_smooth.value())
+		remesh(1, remeshvalue)
+		remesh(2, smoothvalue)
+
+	def remeshSpecial(self):
+		selectAll()
+		remeshSpecial()
 
 	def selectAll(self):
 		selectAll()
@@ -342,10 +351,6 @@ class Socketmixer(QMainWindow):
 	def contract(self):
 		contractByOneRing()
 
-	def remeshSpecial(self):
-		selectAll()
-		remeshSpecial()
-
 	def separate(self):
 		separate()
 		renameObjectByName('rectifiedLimb (part)','socket')
@@ -372,8 +377,8 @@ class Socketmixer(QMainWindow):
 	def boolean(self):
 		boolean('socket', 'holemaker')
 
-	def exportStepModel(self, step_number):
-		exportStepModel(step_number)
+	def sculptingTools(self):
+		sculptingTools()
 
 	# =============== PAGE CHANGES ==================
 
@@ -384,6 +389,7 @@ class Socketmixer(QMainWindow):
 				button.setStyleSheet('background-color: None')
 
 	def setSteps(self, index, button):
+
 		self.stackedWidget.setCurrentIndex(index)
 		self.s1page.setCurrentIndex(0)
 		self.s2page.setCurrentIndex(0)
