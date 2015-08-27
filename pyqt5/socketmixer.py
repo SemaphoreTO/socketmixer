@@ -2,8 +2,6 @@ import sys, numpy as np
 from numpy import linalg
 import os
 
-
-
 root = os.path.normpath(os.getcwd() + os.sep + os.pardir) 
 sys.path.append(root)
 sys.path.append(root + '/extensionController')
@@ -19,6 +17,7 @@ import MeshWrapper
 from connector import *
 from orientedBoundingBox import *
 from extraFunctions import *
+import icons
 
 from PyQt5.QtWidgets import (
 	QApplication, QWidget, QAction, qApp, QMainWindow, QTextEdit,
@@ -86,28 +85,8 @@ class Socketmixer(QMainWindow):
 			5 : [self.s6page, self.step6_buttons, 0]
 		}
 		
-		self.icons = {
-			'arrow_double_left': QIcon('/icons/arrow_double_left.png'),
-			'zoom_out': QIcon('/icons/zoom_out.png'),
-			'zoom_in': QIcon('/icons/zoom_in.png'),
-			'play': QIcon('/icons/play.png'),
-			'fullscreen_off': QIcon('/icons/fullscreen_off.png'),
-			'thumbs': QIcon('/icons/thumbs.png')
-		}
-
-		# Upon starting application, removes any temporarily saved objects from
-		# previous executions of socketmixer. 
 		for i in range(1, 7):
 			removeStepModel(i)
-
-		self.actionScanning.setIcon(self.icons['zoom_out'])
-		self.actionModeling.setIcon(self.icons['play'])
-		self.actionPrinting.setIcon(self.icons['fullscreen_off'])
-		self.actionExit.setIcon(self.icons['arrow_double_left'])
-		self.actionContact.setIcon(self.icons['thumbs'])
-
-		self.s4_p5_button_contract.setIcon(self.icons['zoom_in'])
-		self.s4_p5_button_expand.setIcon(self.icons['zoom_out'])
 
 		self.s1_button.clicked.connect(lambda: self.setSteps(0, self.s1_button))
 		self.s2_button.clicked.connect(lambda: self.setSteps(1, self.s2_button))
