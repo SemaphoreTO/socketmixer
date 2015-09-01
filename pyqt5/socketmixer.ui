@@ -65,7 +65,7 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="s1">
        <widget class="QToolButton" name="s1_a">
@@ -73,7 +73,7 @@
          <rect>
           <x>20</x>
           <y>50</y>
-          <width>26</width>
+          <width>25</width>
           <height>22</height>
          </rect>
         </property>
@@ -208,7 +208,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="s1_p0">
          <widget class="QTextEdit" name="s1_p0_text_intro">
@@ -232,6 +232,38 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-size:14pt; color:#666666;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Rectifying the positive model&lt;/li&gt;
 &lt;li style=&quot; font-size:14pt; color:#666666;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Creating a socket from the rectified positive&lt;/li&gt;
 &lt;li style=&quot; font-size:14pt; color:#666666;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Adding an ICRC-compatible mounting point to the socket&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s1_p0_button_begin">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>300</y>
+            <width>121</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Begin</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
           </property>
          </widget>
         </widget>
@@ -396,7 +428,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p3_button_selectResidual">
           <property name="geometry">
            <rect>
-            <x>50</x>
+            <x>20</x>
             <y>160</y>
             <width>197</width>
             <height>41</height>
@@ -428,7 +460,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s1_p3_button_selectResidual_accept">
           <property name="geometry">
            <rect>
-            <x>310</x>
+            <x>220</x>
             <y>170</y>
             <width>115</width>
             <height>32</height>
@@ -436,6 +468,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="text">
            <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p3_button_selectResidual_cancel">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>170</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -526,7 +571,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s1_p4_button_discard_accept">
           <property name="geometry">
            <rect>
-            <x>180</x>
+            <x>80</x>
             <y>190</y>
             <width>115</width>
             <height>32</height>
@@ -534,6 +579,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="text">
            <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p4_button_discard_cancel">
+          <property name="geometry">
+           <rect>
+            <x>260</x>
+            <y>190</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -560,7 +618,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p5_button_inspector">
           <property name="geometry">
            <rect>
-            <x>170</x>
+            <x>80</x>
             <y>130</y>
             <width>197</width>
             <height>41</height>
@@ -589,6 +647,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p5_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>130</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s1_p6">
          <widget class="QTextEdit" name="s1_p6_text_remesh">
@@ -613,7 +684,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s1_p6_button_remesh_accept">
           <property name="geometry">
            <rect>
-            <x>290</x>
+            <x>230</x>
             <y>280</y>
             <width>115</width>
             <height>32</height>
@@ -626,7 +697,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p6_button_remesh">
           <property name="geometry">
            <rect>
-            <x>60</x>
+            <x>20</x>
             <y>270</y>
             <width>197</width>
             <height>41</height>
@@ -731,6 +802,19 @@ p, li { white-space: pre-wrap; }
            <string>Smooth</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s1_p6_button_remesh_cancel">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>280</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s1_p7">
          <widget class="QTextEdit" name="s1_p7_text_autoAlign">
@@ -757,7 +841,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p7_button_autoAlign">
           <property name="geometry">
            <rect>
-            <x>50</x>
+            <x>20</x>
             <y>290</y>
             <width>197</width>
             <height>41</height>
@@ -789,14 +873,27 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s1_p7_button_autoAlign_accept">
           <property name="geometry">
            <rect>
-            <x>310</x>
-            <y>290</y>
+            <x>240</x>
+            <y>300</y>
             <width>115</width>
             <height>32</height>
            </rect>
           </property>
           <property name="text">
            <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p7_button_autoAlign_cancel">
+          <property name="geometry">
+           <rect>
+            <x>380</x>
+            <y>300</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -876,7 +973,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p9_button_manualAlign">
           <property name="geometry">
            <rect>
-            <x>30</x>
+            <x>20</x>
             <y>270</y>
             <width>197</width>
             <height>41</height>
@@ -908,7 +1005,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s1_p9_button_manualAlign_accept">
           <property name="geometry">
            <rect>
-            <x>300</x>
+            <x>230</x>
             <y>280</y>
             <width>115</width>
             <height>32</height>
@@ -916,6 +1013,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="text">
            <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p9_button_manualAlign_cancel">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>280</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -942,7 +1052,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p10_button_duplicate">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>60</x>
             <y>160</y>
             <width>197</width>
             <height>41</height>
@@ -971,17 +1081,17 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s1_p10_button_save">
+         <widget class="QPushButton" name="s1_p10_button_accept">
           <property name="geometry">
            <rect>
-            <x>370</x>
-            <y>310</y>
+            <x>290</x>
+            <y>160</y>
             <width>115</width>
             <height>32</height>
            </rect>
           </property>
           <property name="text">
-           <string>Save</string>
+           <string>OK</string>
           </property>
          </widget>
         </widget>
@@ -1031,7 +1141,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="s2_p0">
          <widget class="QTextEdit" name="s2_p0_text_intro">
@@ -1059,13 +1169,45 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Do additional, localized smoothing if desired&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
+         <widget class="QCommandLinkButton" name="s2_p0_button_begin">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>300</y>
+            <width>121</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Begin</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s2_p1">
          <widget class="QCommandLinkButton" name="s2_p1_button_brushSize">
           <property name="geometry">
            <rect>
-            <x>180</x>
-            <y>240</y>
+            <x>110</x>
+            <y>230</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -1115,8 +1257,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QLabel" name="s2_p1_label_brushSize">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>230</y>
+            <x>20</x>
+            <y>220</y>
             <width>71</width>
             <height>16</height>
            </rect>
@@ -1128,8 +1270,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QSpinBox" name="s2_p1_value_brushSize">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>250</y>
+            <x>20</x>
+            <y>240</y>
             <width>47</width>
             <height>24</height>
            </rect>
@@ -1139,6 +1281,32 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="value">
            <number>7</number>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s2_p1_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>240</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s2_p1_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>200</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
           </property>
          </widget>
         </widget>
@@ -1165,7 +1333,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s2_p2_button_smoothBoundary">
           <property name="geometry">
            <rect>
-            <x>70</x>
+            <x>10</x>
             <y>200</y>
             <width>197</width>
             <height>41</height>
@@ -1197,8 +1365,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s2_p2_button_smoothBoundary_accept">
           <property name="geometry">
            <rect>
-            <x>280</x>
-            <y>200</y>
+            <x>210</x>
+            <y>210</y>
             <width>115</width>
             <height>32</height>
            </rect>
@@ -1207,12 +1375,25 @@ p, li { white-space: pre-wrap; }
            <string>OK</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s2_p2_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>210</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s2_p3">
          <widget class="QCommandLinkButton" name="s2_p3_button_generateOffset">
           <property name="geometry">
            <rect>
-            <x>100</x>
+            <x>30</x>
             <y>320</y>
             <width>141</width>
             <height>41</height>
@@ -1244,7 +1425,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s2_p3_button_generateOffset_accept">
           <property name="geometry">
            <rect>
-            <x>250</x>
+            <x>180</x>
             <y>330</y>
             <width>115</width>
             <height>32</height>
@@ -1353,6 +1534,19 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
          </widget>
+         <widget class="QPushButton" name="s2_p3_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>330</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
          <zorder>s2_p3_text_generateOffset</zorder>
          <zorder>s2_p3_button_generateOffset</zorder>
          <zorder>s2_p3_button_generateOffset_accept</zorder>
@@ -1361,6 +1555,7 @@ p, li { white-space: pre-wrap; }
          <zorder>s2_p3_value_softTransition</zorder>
          <zorder>s2_p3_label_softTransition</zorder>
          <zorder>s2_p3_value_isConnected</zorder>
+         <zorder>s2_p3_button_cancel</zorder>
         </widget>
         <widget class="QWidget" name="s2_p4">
          <widget class="QTextEdit" name="s2_p4_text_smooth">
@@ -1568,7 +1763,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s2_p6_button_clearFaceGroups">
           <property name="geometry">
            <rect>
-            <x>140</x>
+            <x>80</x>
             <y>210</y>
             <width>197</width>
             <height>41</height>
@@ -1597,17 +1792,17 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s2_p6_button_save">
+         <widget class="QPushButton" name="s2_p6_button_clearFaceGroups_accept">
           <property name="geometry">
            <rect>
-            <x>370</x>
-            <y>310</y>
+            <x>330</x>
+            <y>220</y>
             <width>115</width>
             <height>32</height>
            </rect>
           </property>
           <property name="text">
-           <string>Save</string>
+           <string>OK</string>
           </property>
          </widget>
         </widget>
@@ -1731,7 +1926,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="s3_p0">
          <widget class="QTextEdit" name="s3_p0_text_intro">
@@ -1751,6 +1946,38 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Create Trim Line&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;You will generate the socket from the now rectified positive model. Don't make the line too thin. An overly-thin brush will cause gaps to appear in the trim line when the line is smoothed. Once all face groups are cleared, use the selection tool to draw a trim line. Start by using the selection tool to trace the trim line for the socket as marked during the scanning process, Make sure to trace above the line rather than directly on the line and verify that the line is continuous and that there are no gaps.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s3_p0_button_begin">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>250</y>
+            <width>121</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Begin</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
           </property>
          </widget>
         </widget>
@@ -1835,6 +2062,32 @@ p, li { white-space: pre-wrap; }
            <string>Brush Size</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s3_p1_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>250</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s3_p1_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>250</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s3_p2">
          <widget class="QTextEdit" name="s3_p2_text_beginDrawing">
@@ -1857,7 +2110,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s3_p2_button_smoothTrimLine">
           <property name="geometry">
            <rect>
-            <x>170</x>
+            <x>20</x>
             <y>300</y>
             <width>197</width>
             <height>41</height>
@@ -1886,6 +2139,32 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s3_p2_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>310</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s3_p2_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>310</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s3_p3">
          <widget class="QTextEdit" name="s3_p3_text_createFaceGroup">
@@ -1910,7 +2189,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s3_p3_button_createFaceGroup">
           <property name="geometry">
            <rect>
-            <x>150</x>
+            <x>20</x>
             <y>170</y>
             <width>197</width>
             <height>41</height>
@@ -1939,6 +2218,32 @@ p, li { white-space: pre-wrap; }
            <string>From Selection</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s3_p3_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>180</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s3_p3_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>180</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s3_p4">
          <widget class="QTextEdit" name="s3_p4_text_selectFaceGroup">
@@ -1963,9 +2268,9 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s3_p4_button_selectFaceGroup">
           <property name="geometry">
            <rect>
-            <x>140</x>
+            <x>30</x>
             <y>170</y>
-            <width>197</width>
+            <width>151</width>
             <height>41</height>
            </rect>
           </property>
@@ -1990,6 +2295,32 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>From Selection</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s3_p4_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>180</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s3_p4_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>180</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -2077,6 +2408,19 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
          </widget>
+         <widget class="QPushButton" name="s3_p5_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>240</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s3_p6">
          <widget class="QTextEdit" name="s3_p6_text_remeshTrimLine">
@@ -2101,7 +2445,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s3_p6_button_remeshTrimLine">
           <property name="geometry">
            <rect>
-            <x>50</x>
+            <x>30</x>
             <y>160</y>
             <width>197</width>
             <height>41</height>
@@ -2133,7 +2477,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s3_p6_button_remeshTrimLine_accept">
           <property name="geometry">
            <rect>
-            <x>310</x>
+            <x>220</x>
             <y>170</y>
             <width>115</width>
             <height>32</height>
@@ -2143,17 +2487,17 @@ p, li { white-space: pre-wrap; }
            <string>OK</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s3_p6_button_save">
+         <widget class="QPushButton" name="s3_p6_button_remeshTrimLine_accept_2">
           <property name="geometry">
            <rect>
-            <x>360</x>
-            <y>280</y>
-            <width>121</width>
+            <x>350</x>
+            <y>170</y>
+            <width>115</width>
             <height>32</height>
            </rect>
           </property>
           <property name="text">
-           <string>Save</string>
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -2269,7 +2613,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>7</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="s4_p0">
          <widget class="QTextEdit" name="s4_p0_text_intro">
@@ -2278,7 +2622,7 @@ p, li { white-space: pre-wrap; }
             <x>20</x>
             <y>10</y>
             <width>461</width>
-            <height>331</height>
+            <height>201</height>
            </rect>
           </property>
           <property name="html">
@@ -2289,6 +2633,38 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Socket Generation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;To generate a socket, double-click anywhere below the trim line to select the appropriate part of the model. Then, press generate socket to create the socket. You can set the space between the residual limb and the socket using the ‘inner dimension’ slider and the thickness of the socket wall using the ‘outer dimension’ slider.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s4_p0_button_begin">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>230</y>
+            <width>121</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Begin</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
           </property>
          </widget>
         </widget>
@@ -2315,7 +2691,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s4_p1_button_selectFacegroup">
           <property name="geometry">
            <rect>
-            <x>140</x>
+            <x>20</x>
             <y>320</y>
             <width>197</width>
             <height>41</height>
@@ -2342,6 +2718,32 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s4_p1_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>330</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s4_p1_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>330</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -2397,6 +2799,19 @@ p, li { white-space: pre-wrap; }
            <number>4</number>
           </property>
          </widget>
+         <widget class="QPushButton" name="s4_p2_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>320</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s4_p3">
          <widget class="QTextEdit" name="s4_p3_text_generateOffset">
@@ -2421,7 +2836,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s4_p3_button_generateOffset">
           <property name="geometry">
            <rect>
-            <x>40</x>
+            <x>20</x>
             <y>150</y>
             <width>197</width>
             <height>41</height>
@@ -2453,7 +2868,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s4_p3_button_generateOffset_accept">
           <property name="geometry">
            <rect>
-            <x>280</x>
+            <x>230</x>
             <y>160</y>
             <width>115</width>
             <height>32</height>
@@ -2461,6 +2876,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="text">
            <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s4_p3_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>160</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -2487,7 +2915,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s4_p4_button_separateOffset">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>20</x>
             <y>130</y>
             <width>197</width>
             <height>41</height>
@@ -2516,6 +2944,32 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s4_p4_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>140</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s4_p4_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>140</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s4_p5">
          <widget class="QTextEdit" name="s4_p5_text_createHoles">
@@ -2541,7 +2995,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>150</x>
-            <y>300</y>
+            <y>280</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -2602,7 +3056,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>150</x>
-            <y>180</y>
+            <y>170</y>
             <width>101</width>
             <height>41</height>
            </rect>
@@ -2615,7 +3069,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
-            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+            <normaloff>:/icons/zoom_out.png</normaloff>:/icons/zoom_out.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -2634,7 +3088,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>270</x>
-            <y>180</y>
+            <y>170</y>
             <width>121</width>
             <height>41</height>
            </rect>
@@ -2647,7 +3101,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
-            <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+            <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -2666,7 +3120,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>150</x>
-            <y>240</y>
+            <y>230</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -2726,6 +3180,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s4_p5_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>330</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s4_p6">
          <widget class="QTextEdit" name="s4_p6_text_createRelief">
@@ -2750,7 +3217,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s4_p6_button_createRelief_accept">
           <property name="geometry">
            <rect>
-            <x>290</x>
+            <x>230</x>
             <y>280</y>
             <width>115</width>
             <height>32</height>
@@ -2763,7 +3230,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s4_p6_button_createRelief">
           <property name="geometry">
            <rect>
-            <x>60</x>
+            <x>20</x>
             <y>270</y>
             <width>197</width>
             <height>41</height>
@@ -2790,6 +3257,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s4_p6_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>280</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -2845,7 +3325,7 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s4_p7_button_generateOffset_accept">
+         <widget class="QPushButton" name="s4_p7_button_accept">
           <property name="geometry">
            <rect>
             <x>360</x>
@@ -2888,19 +3368,6 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="text">
            <string>Offset Distance</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="s4_p7_button_save">
-          <property name="geometry">
-           <rect>
-            <x>360</x>
-            <y>300</y>
-            <width>121</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Save</string>
           </property>
          </widget>
          <widget class="QCommandLinkButton" name="s4_p7_button_selectAll">
@@ -3061,7 +3528,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>5</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="s5_p0">
          <widget class="QTextEdit" name="s5_p0_text_intro">
@@ -3070,7 +3537,7 @@ p, li { white-space: pre-wrap; }
             <x>30</x>
             <y>30</y>
             <width>461</width>
-            <height>331</height>
+            <height>191</height>
            </rect>
           </property>
           <property name="html">
@@ -3083,13 +3550,45 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555; background-color:#f2f2f2;&quot;&gt;You will smooth the trim line. This step can be performed as many times as you want in order to increase the smoothness of the trim line.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
+         <widget class="QCommandLinkButton" name="s5_p0_button_begin">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>240</y>
+            <width>121</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Begin</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s5_p1">
          <widget class="QCommandLinkButton" name="s5_p1_button_contract">
           <property name="geometry">
            <rect>
-            <x>190</x>
-            <y>310</y>
+            <x>160</x>
+            <y>290</y>
             <width>101</width>
             <height>41</height>
            </rect>
@@ -3158,8 +3657,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s5_p1_button_expand">
           <property name="geometry">
            <rect>
-            <x>300</x>
-            <y>310</y>
+            <x>280</x>
+            <y>290</y>
             <width>101</width>
             <height>41</height>
            </rect>
@@ -3203,7 +3702,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s5_p1_button_brushSize">
           <property name="geometry">
            <rect>
-            <x>190</x>
+            <x>160</x>
             <y>240</y>
             <width>197</width>
             <height>41</height>
@@ -3232,6 +3731,32 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s5_p1_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>340</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s5_p1_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>340</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s5_p2">
          <widget class="QTextEdit" name="s5_p2_text_smooth">
@@ -3240,7 +3765,7 @@ p, li { white-space: pre-wrap; }
             <x>30</x>
             <y>30</y>
             <width>461</width>
-            <height>291</height>
+            <height>161</height>
            </rect>
           </property>
           <property name="html">
@@ -3256,8 +3781,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s5_p2_button_smooth_accept">
           <property name="geometry">
            <rect>
-            <x>380</x>
-            <y>350</y>
+            <x>370</x>
+            <y>210</y>
             <width>115</width>
             <height>32</height>
            </rect>
@@ -3269,8 +3794,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s5_p2_button_smooth">
           <property name="geometry">
            <rect>
-            <x>170</x>
-            <y>340</y>
+            <x>150</x>
+            <y>220</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -3279,7 +3804,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Smooth Selection</string>
+           <string>Smooth</string>
           </property>
           <property name="icon">
            <iconset resource="icons.qrc">
@@ -3301,8 +3826,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QLabel" name="s5_p2_label_smooth">
           <property name="geometry">
            <rect>
-            <x>70</x>
-            <y>330</y>
+            <x>40</x>
+            <y>210</y>
             <width>101</width>
             <height>16</height>
            </rect>
@@ -3314,8 +3839,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QDoubleSpinBox" name="s5_p2_value_smooth">
           <property name="geometry">
            <rect>
-            <x>70</x>
-            <y>350</y>
+            <x>40</x>
+            <y>230</y>
             <width>66</width>
             <height>24</height>
            </rect>
@@ -3328,6 +3853,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="value">
            <double>0.500000000000000</double>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s5_p2_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>240</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -3354,7 +3892,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s5_p3_button_sculptingTools">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>30</x>
             <y>170</y>
             <width>197</width>
             <height>41</height>
@@ -3383,6 +3921,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s5_p3_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>180</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s5_p4">
          <widget class="QTextEdit" name="s5_p4_text_clearFaceGroups">
@@ -3407,7 +3958,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s5_p4_button_clearFaceGroups">
           <property name="geometry">
            <rect>
-            <x>140</x>
+            <x>40</x>
             <y>150</y>
             <width>197</width>
             <height>41</height>
@@ -3436,6 +3987,32 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s5_p4_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>160</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s5_p4_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>160</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s5_p5">
          <widget class="QTextEdit" name="s5_p5_text_remesh">
@@ -3460,8 +4037,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s5_p5_button_remesh">
           <property name="geometry">
            <rect>
-            <x>60</x>
-            <y>180</y>
+            <x>30</x>
+            <y>150</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -3492,8 +4069,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="s5_p5_button_remesh_accept">
           <property name="geometry">
            <rect>
-            <x>320</x>
-            <y>190</y>
+            <x>250</x>
+            <y>160</y>
             <width>115</width>
             <height>32</height>
            </rect>
@@ -3502,17 +4079,17 @@ p, li { white-space: pre-wrap; }
            <string>OK</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s5_p5_button_save">
+         <widget class="QPushButton" name="s5_p5_button_cancel">
           <property name="geometry">
            <rect>
-            <x>320</x>
-            <y>290</y>
-            <width>121</width>
+            <x>380</x>
+            <y>160</y>
+            <width>115</width>
             <height>32</height>
            </rect>
           </property>
           <property name="text">
-           <string>Save</string>
+           <string>Cancel</string>
           </property>
          </widget>
         </widget>
@@ -3615,7 +4192,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>7</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="s6_p0">
          <widget class="QTextEdit" name="s6_p0_text_intro">
@@ -3624,7 +4201,7 @@ p, li { white-space: pre-wrap; }
             <x>20</x>
             <y>10</y>
             <width>461</width>
-            <height>331</height>
+            <height>291</height>
            </rect>
           </property>
           <property name="html">
@@ -3633,13 +4210,45 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:600; color:#555555; background-color:#f2f2f2;&quot;&gt;Attach Mounting Point for Coupler&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;You will attach a mounting point to the distal end of the socket. The connection between the socket and the mounting point will not only make the socket compatible with ICRC alignment hardware, but will offer an opportunity to do some preliminary alignment.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Select bottom of socket, where mounting point should be attached&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Import mounting point&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Position mounting point relative to socket, as necessary&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Align socket in relation to mounting point, as necessary&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Cut away external layer of socket&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Merge socket and mounting point together&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:16px; font-weight:296; color:#555555;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Lato,sans-serif'; font-size:11pt; font-weight:296; color:#555555;&quot;&gt;You will attach a mounting point to the distal end of the socket. The connection between the socket and the mounting point will not only make the socket compatible with ICRC alignment hardware, but will offer an opportunity to do some preliminary alignment.&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:11pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Select bottom of socket, where mounting point should be attached&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:11pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Import mounting point&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:11pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Position mounting point relative to socket, as necessary&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:11pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Align socket in relation to mounting point, as necessary&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:11pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Cut away external layer of socket&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:'Lato,sans-serif'; font-size:11pt; font-weight:296; color:#555555;&quot; style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;Merge socket and mounting point together&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QCommandLinkButton" name="s6_p0_button_begin">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>310</y>
+            <width>121</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Begin</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="description">
+           <string/>
           </property>
          </widget>
         </widget>
@@ -3723,6 +4332,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s6_p1_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>280</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s6_p2">
          <widget class="QTextEdit" name="s6_p2_text_manualAlign">
@@ -3744,10 +4366,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="s6_p2_button_manualAlign_accept">
+         <widget class="QPushButton" name="s6_p2_button_accept">
           <property name="geometry">
            <rect>
-            <x>290</x>
+            <x>220</x>
             <y>220</y>
             <width>115</width>
             <height>32</height>
@@ -3760,7 +4382,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s6_p2_button_manualAlign">
           <property name="geometry">
            <rect>
-            <x>80</x>
+            <x>30</x>
             <y>210</y>
             <width>197</width>
             <height>41</height>
@@ -3789,6 +4411,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s6_p2_button_cancel">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>220</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s6_p3">
          <widget class="QTextEdit" name="s6_p3_text_selectTool">
@@ -3813,7 +4448,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s6_p3_button_selectTool">
           <property name="geometry">
            <rect>
-            <x>120</x>
+            <x>20</x>
             <y>150</y>
             <width>197</width>
             <height>41</height>
@@ -3842,6 +4477,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s6_p3_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>160</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s6_p4">
          <widget class="QTextEdit" name="s6_p4_text_selectMountingPoint">
@@ -3866,7 +4514,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s6_p4_button_alignMountingPoint">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>20</x>
             <y>280</y>
             <width>197</width>
             <height>41</height>
@@ -3895,6 +4543,19 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s6_p4_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>290</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s6_p5">
          <widget class="QTextEdit" name="s6_p6_text_joinMountingPoint">
@@ -3919,7 +4580,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s6_p5_button_joinMountingPoint">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>40</x>
             <y>280</y>
             <width>197</width>
             <height>41</height>
@@ -3948,13 +4609,26 @@ p, li { white-space: pre-wrap; }
            <string>Choose a file from computer.</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="s6_p5_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>290</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="s6_p6">
          <widget class="QSpinBox" name="s6_p6_value_brushSize">
           <property name="geometry">
            <rect>
             <x>40</x>
-            <y>240</y>
+            <y>160</y>
             <width>61</width>
             <height>24</height>
            </rect>
@@ -3973,7 +4647,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>180</x>
-            <y>270</y>
+            <y>190</y>
             <width>101</width>
             <height>41</height>
            </rect>
@@ -4005,7 +4679,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>290</x>
-            <y>270</y>
+            <y>190</y>
             <width>101</width>
             <height>41</height>
            </rect>
@@ -4039,7 +4713,7 @@ p, li { white-space: pre-wrap; }
             <x>20</x>
             <y>10</y>
             <width>461</width>
-            <height>191</height>
+            <height>111</height>
            </rect>
           </property>
           <property name="html">
@@ -4056,7 +4730,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>180</x>
-            <y>220</y>
+            <y>140</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -4088,7 +4762,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>40</x>
-            <y>220</y>
+            <y>140</y>
             <width>101</width>
             <height>16</height>
            </rect>
@@ -4101,7 +4775,7 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>180</x>
-            <y>320</y>
+            <y>240</y>
             <width>197</width>
             <height>41</height>
            </rect>
@@ -4127,6 +4801,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s6_p6_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>300</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
           </property>
          </widget>
         </widget>
@@ -4302,19 +4989,6 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="text">
            <string>OK</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="s6_p7_button_save">
-          <property name="geometry">
-           <rect>
-            <x>370</x>
-            <y>330</y>
-            <width>121</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Save</string>
           </property>
          </widget>
         </widget>
@@ -4532,7 +5206,6 @@ p, li { white-space: pre-wrap; }
      <zorder>s3_button</zorder>
      <zorder>s1_button</zorder>
      <zorder>s6_button</zorder>
-     <zorder>s1_p10_button_save_2</zorder>
     </widget>
     <widget class="QWidget" name="tabPrinting">
      <property name="focusPolicy">
@@ -4563,6 +5236,29 @@ p, li { white-space: pre-wrap; }
    <addaction name="actionModeling"/>
    <addaction name="actionPrinting"/>
    <addaction name="actionContact"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>620</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExit_2"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
   </widget>
   <action name="actionScanning">
    <property name="icon">
@@ -4634,6 +5330,11 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="toolTip">
     <string>Contact Us</string>
+   </property>
+  </action>
+  <action name="actionExit_2">
+   <property name="text">
+    <string>Exit</string>
    </property>
   </action>
  </widget>
