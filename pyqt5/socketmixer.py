@@ -83,22 +83,6 @@ class Socketmixer(QMainWindow):
 			self.s6_a, self.s6_b, self.s6_c, self.s6_d, self.s6_e, self.s6_f,
 			self.s6_g
 		]
-
-		''' { page number (int): [	page of stackedWidget, 
-									ptr to list of step buttons, 
-									indicator of completed step (0 incomplete, 1 complete)
-								 	dict: {button: [list of functions]}
-								 ]
-			}
-		'''
-		self.steps = {
-			0 : [self.s1page, self.step1_buttons, 0, 10],
-			1 : [self.s2page, self.step2_buttons, 0, 6],
-			2 : [self.s3page, self.step3_buttons, 0],
-			3 : [self.s4page, self.step4_buttons, 0],
-			4 : [self.s5page, self.step5_buttons, 0],
-			5 : [self.s6page, self.step6_buttons, 0]
-		}
 		
 		for i in range(1, 7):
 			removeStepModel(i)
@@ -176,7 +160,7 @@ class Socketmixer(QMainWindow):
 
 		# STEP 1B PLANECUT BUTTONS
 		s1_mm_actions = {
-			self.s1_p0_button_begin: [lambda: self.setStep(1, 0, self.s1_a)]
+			self.s1_p0_button_begin: [lambda: self.setStep(1, 0, self.s1_a)],
 			self.s1_p1_button_importFile: [self.importFile],
 			self.s1_p2_button_planeCut: [self.planeCut],
 			self.s1_p2_button_planeCut_accept: [self.accept, lambda: self.setStep(3, 0, self.s1_c)],
@@ -203,11 +187,11 @@ class Socketmixer(QMainWindow):
 			self.s1_p10_button_accept: [lambda: exportStepModel(1), lambda: self.setStep(0, 1, self.s2_button)]
 		}
 
-		for button, functions in s1_mm_actions.items():
-			self.setAction(button, functions)
+		# for button, functions in s1_mm_actions.items():
+		# 	self.setAction(button, functions)
 
 		s2_mm_actions = {
-			self.s2_p0_button_begin: [lambda: self.setStep(1, 1, self.s2_a)]
+			self.s2_p0_button_begin: [lambda: self.setStep(1, 1, self.s2_a)],
 			self.s2_p1_button_brushSize: [	lambda: self.selectToolSymmetry(self.s2_p1_value_brushSize.value())],
 			self.s2_p1_button_accept: [lambda: self.setStep(2, 1, self.s2_b)],
 			self.s2_p1_button_cancel: [cancel, lambda: self.selectToolSymmetry(self.s2_p1_value_brushSize.value())],
@@ -229,11 +213,11 @@ class Socketmixer(QMainWindow):
 														lambda: self.exportStepModel(2)]
 		}
 
-		for button, functions in s2_mm_actions.items():
-			self.setAction(button, functions)
+		# for button, functions in s2_mm_actions.items():
+		# 	self.setAction(button, functions)
 
 		s3_mm_actions = {
-			self.s3_p0_button_begin: [lambda: self.setStep(1, 2, self.s3_a)]
+			self.s3_p0_button_begin: [lambda: self.setStep(1, 2, self.s3_a)],
 			self.s3_p1_button_brushSize: [lambda: self.selectToolSymmetry(self.s3_p1_value_brushSize.value(), True)],
 			self.s3_p1_button_accept: [lambda: self.setStep(2, 2, self.s3_b)],
 			self.s3_p1_button_cancel: [self.cancel, lambda: self.selectToolSymmetry(self.s3_p1_value_brushSize.value(), True)],
@@ -257,11 +241,11 @@ class Socketmixer(QMainWindow):
 
 		}
 
-		for button, functions in s3_mm_actions.items():
-			self.setAction(button, functions)
+		# for button, functions in s3_mm_actions.items():
+		# 	self.setAction(button, functions)
 
 		s4_mm_actions = {
-			self.s4_p0_button_begin: [lambda: self.setStep(1, 3, self.s4_a)]
+			self.s4_p0_button_begin: [lambda: self.setStep(1, 3, self.s4_a)],
 			self.s4_p1_button_selectFacegroup: [self.selectToolSymmetry],
 			self.s4_p1_button_accept: [self.accept, lambda: self.setStep(2, 3, self.s4_b)],
 			self.s4_p1_button_cancel: [self.cancel, self.selectToolSymmetry],
@@ -284,11 +268,11 @@ class Socketmixer(QMainWindow):
 			self.s4_p7_button_accept: [self.accept, lambda: self.exportStepModel(4), lambda: self.setStep(0, 4, self.s5_button)]
 		}
 
-		for button, functions in s4_mm_actions.items():
-			self.setAction(button, functions)
+		# for button, functions in s4_mm_actions.items():
+		# 	self.setAction(button, functions)
 
 		s5_mm_actions = {
-			self.s5_p0_button_begin: [lambda: self.setStep(1, 4, self.s5_a)]
+			self.s5_p0_button_begin: [lambda: self.setStep(1, 4, self.s5_a)],
 			self.s5_p1_button_brushSize: [lambda: selectToolSymmetry(self.s5_p1_value_brushSize.value())],
 			self.s5_p1_button_contract: [self.contractByOneRing],
 			self.s5_p1_button_expand: [self.expandByOneRing],
@@ -308,11 +292,11 @@ class Socketmixer(QMainWindow):
 					lambda: self.setStep(0, 5, self.s6_button)]
 		}
 
-		for button, functions in s5_mm_actions.items():
-			self.setAction(button, functions)
+		# for button, functions in s5_mm_actions.items():
+		# 	self.setAction(button, functions)
 
 		s6_mm_actions = {
-			self.s6_p0_button_begin: [lambda: self.setStep(1, 5, self.s6_a)]
+			self.s6_p0_button_begin: [lambda: self.setStep(1, 5, self.s6_a)],
 			self.s6_p1_button_selectCoupler: [lambda: self.importConnector(str(self.s6_p1_value_selectCoupler.currentText()))],
 			self.s6_p1_button_accept: [lambda: self.setStep(2, 5, self.s6_b)],
 			self.s6_p2_button_manualAlign: [self.alignTransform],
@@ -338,8 +322,28 @@ class Socketmixer(QMainWindow):
 
 		}
 
-		for button, functions in s6_mm_actions.items():
-			self.setAction(button, functions)
+		# for button, functions in s6_mm_actions.items():
+		# 	self.setAction(button, functions)
+
+		''' { page number (int): [	page of stackedWidget, 
+									ptr to list of step buttons, 
+									indicator of completed step (0 incomplete, 1 complete)
+								 	dict: {button: [list of functions]}
+								 ]
+			}
+		'''
+		self.steps = {
+			0 : [self.s1page, self.step1_buttons, 0, s1_mm_actions],
+			1 : [self.s2page, self.step2_buttons, 0, s2_mm_actions],
+			2 : [self.s3page, self.step3_buttons, 0, s3_mm_actions],
+			3 : [self.s4page, self.step4_buttons, 0, s4_mm_actions],
+			4 : [self.s5page, self.step5_buttons, 0, s5_mm_actions],
+			5 : [self.s6page, self.step6_buttons, 0, s6_mm_actions]
+		}
+
+		for actions in self.steps.values():
+			for button, functions in actions[3].items():
+				self.setAction(button, functions)
 
 		# Load first page
 		self.setSteps(0, self.s1_button)
@@ -374,7 +378,6 @@ class Socketmixer(QMainWindow):
 
 	def repairAll(self):
 		repairAll()
-
 
 	def remesh(self, param, value):
 		remesh(param, value)		
