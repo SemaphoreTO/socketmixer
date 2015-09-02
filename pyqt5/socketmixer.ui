@@ -65,139 +65,9 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="s1">
-       <widget class="QToolButton" name="s1_a">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>50</y>
-          <width>25</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>A</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_b">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>B</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_c">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>C</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_d">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>D</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_e">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>130</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>E</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_j">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>230</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>J</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_i">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>210</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>I</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_h">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>190</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>H</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_g">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>170</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>G</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s1_f">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>150</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>F</string>
-        </property>
-       </widget>
        <widget class="QStackedWidget" name="s1page">
         <property name="geometry">
          <rect>
@@ -1117,18 +987,6 @@ p, li { white-space: pre-wrap; }
          <string>Pre-Scan</string>
         </property>
        </widget>
-       <zorder>s1page</zorder>
-       <zorder>s1_f</zorder>
-       <zorder>s1_j</zorder>
-       <zorder>s1_h</zorder>
-       <zorder>s1_b</zorder>
-       <zorder>s1_c</zorder>
-       <zorder>s1_d</zorder>
-       <zorder>s1_i</zorder>
-       <zorder>s1_g</zorder>
-       <zorder>s1_e</zorder>
-       <zorder>s1_a</zorder>
-       <zorder>s1_label</zorder>
       </widget>
       <widget class="QWidget" name="s2">
        <widget class="QStackedWidget" name="s2page">
@@ -1828,91 +1686,7 @@ p, li { white-space: pre-wrap; }
          <string>Rectify Limb</string>
         </property>
        </widget>
-       <widget class="QToolButton" name="s2_b">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>B</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s2_c">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>C</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s2_e">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>130</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>E</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s2_a">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>50</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>A</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s2_d">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>D</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s2_f">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>150</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>F</string>
-        </property>
-       </widget>
        <zorder>s2_label</zorder>
-       <zorder>s2_b</zorder>
-       <zorder>s2_c</zorder>
-       <zorder>s2_e</zorder>
-       <zorder>s2_a</zorder>
-       <zorder>s2_d</zorder>
-       <zorder>s2_f</zorder>
        <zorder>s2page</zorder>
       </widget>
       <widget class="QWidget" name="s3">
@@ -2501,84 +2275,6 @@ p, li { white-space: pre-wrap; }
           </property>
          </widget>
         </widget>
-       </widget>
-       <widget class="QToolButton" name="s3_c">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>C</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s3_a">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>50</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>A</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s3_b">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>B</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s3_e">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>130</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>E</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s3_d">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>D</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s3_f">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>150</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>F</string>
-        </property>
        </widget>
        <widget class="QLabel" name="s3_label">
         <property name="geometry">
@@ -3425,97 +3121,6 @@ p, li { white-space: pre-wrap; }
          <string>Digital Draping</string>
         </property>
        </widget>
-       <widget class="QToolButton" name="s4_d">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>D</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s4_f">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>150</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>F</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s4_a">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>50</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>A</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s4_c">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>C</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s4_b">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>B</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s4_e">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>130</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>E</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s4_g">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>170</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>G</string>
-        </property>
-       </widget>
       </widget>
       <widget class="QWidget" name="s5">
        <widget class="QStackedWidget" name="s5page">
@@ -4113,71 +3718,6 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="text">
          <string>Socket Clean-Up</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s5_e">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>130</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>E</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s5_c">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>C</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s5_b">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>B</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s5_a">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>50</y>
-          <width>26</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>A</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s5_d">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>D</string>
         </property>
        </widget>
       </widget>
@@ -4993,84 +4533,6 @@ p, li { white-space: pre-wrap; }
          </widget>
         </widget>
        </widget>
-       <widget class="QToolButton" name="s6_f">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>150</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>F</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s6_e">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>130</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>E</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s6_c">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>C</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s6_b">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>B</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s6_a">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>50</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>A</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s6_d">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>D</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="s6_label">
         <property name="geometry">
          <rect>
@@ -5090,19 +4552,6 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="text">
          <string>Attach Mounting Point for Coupler</string>
-        </property>
-       </widget>
-       <widget class="QToolButton" name="s6_g">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>170</y>
-          <width>26</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>G</string>
         </property>
        </widget>
       </widget>
@@ -5250,7 +4699,13 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionExit_2"/>
+    <addaction name="actionNew_Project"/>
+    <addaction name="actionOpen_Existing_Project"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_2"/>
+    <addaction name="actionSave_As"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit_3"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -5333,8 +4788,71 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionExit_2">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/arrow_double_left.png</normaloff>:/icons/arrow_double_left.png</iconset>
+   </property>
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionNew_Project">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Project</string>
+   </property>
+  </action>
+  <action name="actionOpen_Existing_Project">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Existing Project</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/thumbs.png</normaloff>:/icons/thumbs.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_2">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/thumbs.png</normaloff>:/icons/thumbs.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionExit_3">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/arrow_double_left.png</normaloff>:/icons/arrow_double_left.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/fullscreen_on.png</normaloff>:/icons/fullscreen_on.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save As</string>
    </property>
   </action>
  </widget>
@@ -5371,6 +4889,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>477</x>
      <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit_3</sender>
+   <signal>triggered()</signal>
+   <receiver>Socketmixer</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>309</x>
+     <y>375</y>
     </hint>
    </hints>
   </connection>
