@@ -160,3 +160,7 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+
+pyqt5/matt_experiments.py
+
+pyqt5/test.stl
