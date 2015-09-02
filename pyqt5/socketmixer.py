@@ -109,43 +109,43 @@ class Socketmixer(QMainWindow):
 
 		s2_mm_actions = {
 			self.s2_p0_button_begin: [lambda: self.set_step(1, 1, self.step2_buttons[1])],
-			self.s2_p1_button_brushSize: [	lambda: self.selectToolSymmetry(self.s2_p1_value_brushSize.value())],
+			self.s2_p1_button_brushSize: [	lambda: selectTool(self.s2_p1_value_brushSize.value())],
 			self.s2_p1_button_accept: [lambda: self.set_step(2, 1, self.step2_buttons[2])],
-			self.s2_p1_button_cancel: [cancel, lambda: self.selectToolSymmetry(self.s2_p1_value_brushSize.value())],
-			self.s2_p2_button_smoothBoundary: [self.smoothBoundary],
+			self.s2_p1_button_cancel: [cancel, lambda: selectTool(self.s2_p1_value_brushSize.value())],
+			self.s2_p2_button_smoothBoundary: [smoothBoundary],
 			self.s2_p2_button_smoothBoundary_accept: [accept, lambda: self.set_step(3, 1, self.step2_buttons[3])],
-			self.s2_p2_button_cancel: [cancel, lambda: self.selectToolSymmetry(self.s2_p1_value_brushSize.value())],
-			self.s2_p3_button_generateOffset: [	lambda: self.offsetDistance(
+			self.s2_p2_button_cancel: [cancel, lambda: selectTool(self.s2_p1_value_brushSize.value())],
+			self.s2_p3_button_generateOffset: [	lambda: offsetDistance(
 															self.s2_p3_value_distance.value(),
 															self.s2_p3_value_isConnected.isChecked()),
-												lambda: self.softTransition(self.s2_p3_value_softTransition.value())],
+												lambda: softTransition(self.s2_p3_value_softTransition.value())],
 			self.s2_p3_button_generateOffset_accept: [accept, lambda: self.set_step(4, 1, self.step2_buttons[4])],
-			self.s2_p3_button_cancel: [cancel, lambda: self.selectToolSymmetry(self.s2_p1_value_brushSize.value())],
-			self.s2_p4_button_smooth: [lambda: self.deformSmooth(self.s2_p4_value_smooth.value())],
+			self.s2_p3_button_cancel: [cancel, lambda: selectTool(self.s2_p1_value_brushSize.value())],
+			self.s2_p4_button_smooth: [lambda: deformSmooth(self.s2_p4_value_smooth.value())],
 			self.s2_p4_button_smooth_accept: [accept, lambda: self.set_step(5, 1, self.step2_buttons[5])],
 			self.s2_p5_button_yes: [lambda: self.set_step(2, 1, self.step2_buttons[1])],
 			self.s2_p5_button_no: [lambda: self.set_step(6, 1, self.step2_buttons[6])],
-			self.s2_p6_button_clearFaceGroups: [selectAll, self.clearAllFaceGroup],
+			self.s2_p6_button_clearFaceGroups: [selectAll, clearAllFaceGroup],
 			self.s2_p6_button_clearFaceGroups_accept: [	lambda: self.set_step(0, 2, self.s3_button),
 														lambda: exportStepModel(2)]
 		}
 
 		s3_mm_actions = {
 			self.s3_p0_button_begin: [lambda: self.set_step(1, 2, self.step3_buttons[1])],
-			self.s3_p1_button_brushSize: [lambda: self.selectToolSymmetry(self.s3_p1_value_brushSize.value(), True)],
+			self.s3_p1_button_brushSize: [lambda: selectTool(self.s3_p1_value_brushSize.value(), True)],
 			self.s3_p1_button_accept: [lambda: self.set_step(2, 2, self.step3_buttons[2])],
-			self.s3_p1_button_cancel: [cancel, lambda: self.selectToolSymmetry(self.s3_p1_value_brushSize.value(), True)],
-			self.s3_p2_button_smoothTrimLine: [self.smoothBoundary],
+			self.s3_p1_button_cancel: [cancel, lambda: selectTool(self.s3_p1_value_brushSize.value(), True)],
+			self.s3_p2_button_smoothTrimLine: [smoothBoundary],
 			self.s3_p2_button_cancel: [cancel, lambda: selectToolSymmetry(self.s3_p1_value_brushSize.value(), True)],
 			self.s3_p2_button_accept: [accept, lambda: self.set_step(3, 2, self.step3_buttons[3])],
-			self.s3_p3_button_createFaceGroup: [self.createFaceGroup, self.selectToolSymmetry],
-			self.s3_p3_button_cancel: [selectAll, self.clearAllFaceGroup, self.selectToolSymmetry],
+			self.s3_p3_button_createFaceGroup: [createFaceGroup, selectTool],
+			self.s3_p3_button_cancel: [selectAll, clearAllFaceGroup, selectTool],
 			self.s3_p3_button_accept: [lambda: self.set_step(4, 2, self.step3_buttons[4])],
-			self.s3_p4_button_selectFaceGroup: [self.selectToolSymmetry],
+			self.s3_p4_button_selectFaceGroup: [selectTool],
 			self.s3_p4_button_accept: [lambda: self.set_step(5, 2, self.step3_buttons[5])],
-			self.s3_p4_button_cancel: [cancel, self.selectToolSymmetry],
-			self.s3_p5_button_expand: [self.expandByOneRing],
-			self.s3_p5_button_contract: [self.contractByOneRing],
+			self.s3_p4_button_cancel: [cancel, selectTool],
+			self.s3_p5_button_expand: [expandByOneRing],
+			self.s3_p5_button_contract: [contractByOneRing],
 			self.s3_p5_button_accept: [lambda: self.set_step(6, 2, self.step3_buttons[6])],
 			self.s3_p6_button_remeshTrimLine: [selectAll, remeshSpecial],
 			self.s3_p6_button_remeshTrimLine_accept: [accept, 
@@ -157,33 +157,33 @@ class Socketmixer(QMainWindow):
 
 		s4_mm_actions = {
 			self.s4_p0_button_begin: [lambda: self.set_step(1, 3, self.step4_buttons[1])],
-			self.s4_p1_button_selectFacegroup: [self.selectToolSymmetry],
+			self.s4_p1_button_selectFacegroup: [selectTool],
 			self.s4_p1_button_accept: [accept, lambda: self.set_step(2, 3, self.step4_buttons[2])],
-			self.s4_p1_button_cancel: [cancel, self.selectToolSymmetry],
+			self.s4_p1_button_cancel: [cancel, selectTool],
 			self.s4_p2_button_accept: [lambda: self.set_step(3, 3, self.step4_buttons[3])],
-			self.s4_p3_button_generateOffset: [lambda: self.offsetDistance(self.s4_p2_value_offsetSocket.value())],
+			self.s4_p3_button_generateOffset: [lambda: offsetDistance(self.s4_p2_value_offsetSocket.value())],
 			self.s4_p3_button_generateOffset_accept: [accept, lambda: self.set_step(4, 3, self.step4_buttons[4])],
 			self.s4_p3_button_cancel: [cancel],
-			self.s4_p4_button_separateOffset: [self.separate, lambda: self.renameObjectByName('rectifiedLimb (part)', 'socket')],
+			self.s4_p4_button_separateOffset: [separate, lambda: self.renameObjectByName('rectifiedLimb (part)', 'socket')],
 			self.s4_p4_button_accept: [accept, lambda: self.set_step(5, 3, self.step4_buttons[5])],
-			self.s4_p5_button_brushSize: [lambda: self.selectToolSymmetry(self.s4_p5_value_brushSize.value())],
-			self.s4_p5_button_contract: [self.contractByOneRing],
-			self.s4_p5_button_expand: [self.expandByOneRing],
-			self.s4_p5_button_smoothBoundary: [self.smoothBoundary],
+			self.s4_p5_button_brushSize: [lambda: selectTool(self.s4_p5_value_brushSize.value())],
+			self.s4_p5_button_contract: [contractByOneRing],
+			self.s4_p5_button_expand: [expandByOneRing],
+			self.s4_p5_button_smoothBoundary: [smoothBoundary],
 			self.s4_p5_button_createHoles: [discard],
 			self.s4_p5_button_accept: [accept, lambda: self.set_step(6, 3, self.step4_buttons[6])],
 			self.s4_p6_button_createRelief: [sculptingTools],
 			self.s4_p6_button_createRelief_accept: [accept, lambda: self.set_step(7, 3, self.step4_buttons[7])],
 			self.s4_p7_button_selectAll: [selectAll],
-			self.s4_p7_button_generateOffset: [lambda: self.offsetDistance(self.s4_p7_value_offsetDistance.value())],
+			self.s4_p7_button_generateOffset: [lambda: offsetDistance(self.s4_p7_value_offsetDistance.value())],
 			self.s4_p7_button_accept: [accept, lambda: exportStepModel(4), lambda: self.set_step(0, 4, self.s5_button)]
 		}
 
 		s5_mm_actions = {
 			self.s5_p0_button_begin: [lambda: self.set_step(1, 4, self.step5_buttons[1])],
 			self.s5_p1_button_brushSize: [lambda: selectToolSymmetry(self.s5_p1_value_brushSize.value())],
-			self.s5_p1_button_contract: [self.contractByOneRing],
-			self.s5_p1_button_expand: [self.expandByOneRing],
+			self.s5_p1_button_contract: [contractByOneRing],
+			self.s5_p1_button_expand: [expandByOneRing],
 			self.s5_p1_button_accept: [accept, lambda: self.set_step(2, 4, self.step5_buttons[2])],
 			self.s5_p1_button_cancel: [cancel, lambda: selectToolSymmetry(self.s5_p1_value_brushSize.value())],
 			self.s5_p2_button_smooth: [lambda: deformSmooth(self.s5_p2_value_smooth.value())],
@@ -191,7 +191,7 @@ class Socketmixer(QMainWindow):
 			self.s5_p2_button_cancel: [cancel, lambda: selectToolSymmetry(self.s5_p1_value_brushSize.value())],
 			self.s5_p3_button_sculptingTools: [sculptingTools],
 			self.s5_p3_button_accept: [lambda: self.set_step(4, 4, self.step5_buttons[4])],
-			self.s5_p4_button_clearFaceGroups: [selectAll, self.clearAllFaceGroup],
+			self.s5_p4_button_clearFaceGroups: [selectAll, clearAllFaceGroup],
 			self.s5_p4_button_accept: [lambda: self.set_step(5, 4, self.step5_buttons[5])],
 			self.s5_p5_button_remesh: [selectAll, remeshSpecial],
 			self.s5_p5_button_cancel: [cancel],
@@ -207,16 +207,16 @@ class Socketmixer(QMainWindow):
 			self.s6_p2_button_manualAlign: [alignTransform],
 			self.s6_p2_button_accept: [accept, lambda: self.set_step(3, 5, self.step1_buttons[3])],
 			self.s6_p2_button_cancel: [cancel],
-			self.s6_p3_button_selectTool: [self.selectToolSymmetry],
+			self.s6_p3_button_selectTool: [selectTool],
 			self.s6_p3_button_accept: [lambda: self.set_step(4, 5, self.step1_buttons[4])],
 			self.s6_p4_button_alignMountingPoint: [self.cutSocketForConnection],
 			self.s6_p4_button_accept: [accept, lambda: self.set_step(5, 5, self.step1_buttons[5])],
 			self.s6_p5_button_joinMountingPoint: [self.joinConnectionToSocket],
 			self.s6_p5_button_accept: [accept, lambda: self.set_step(6, 5, self.step1_buttons[6])],
-			self.s6_p6_button_brushSize: [lambda: self.selectToolSymmetry(self.s6_p6_value_brushSize.value())],
-			self.s6_p6_button_contract: [self.contractByOneRing],
-			self.s6_p6_button_expand: [self.expandByOneRing],
-			self.s6_p6_button_smoothJoin: [self.smoothBoundary],
+			self.s6_p6_button_brushSize: [lambda: selectTool(self.s6_p6_value_brushSize.value())],
+			self.s6_p6_button_contract: [contractByOneRing],
+			self.s6_p6_button_expand: [expandByOneRing],
+			self.s6_p6_button_smoothJoin: [smoothBoundary],
 			self.s6_p6_button_accept: [accept, lambda: self.set_step(7, 5, self.step1_buttons[7])],
 			self.s6_p7_a_button_importHoleMaker: [self.importHoleMaker],
 			self.s6_p7_b_button_alignBottomView: [lambda: self.alignZCam(5)],
@@ -265,36 +265,6 @@ class Socketmixer(QMainWindow):
 
 	def duplicateAndRenameAndHide(self, rectified):
 		duplicateAndRenameAndHide(rectified)
-
-	def selectToolSymmetry(self, size=1.3, symmetry=False):
-		selectToolSymmetry(size, symmetry)
-
-	def smoothBoundary(self):
-		smoothBoundary()
-
-	def offsetDistance(self, distance, connected=False):
-		offsetDistance(distance, connected)
-
-	def softTransition(self, soft_value):
-		softTransition(soft_value)
-
-	def deformSmooth(self, smooth_value):
-		deformSmooth(smooth_value)
-
-	def createFaceGroup(self):
-		createFaceGroup()
-
-	def clearAllFaceGroup(self):
-		clearAllFaceGroup()
-
-	def expandByOneRing(self):
-		expandByOneRing()
-
-	def contractByOneRing(self):
-		contractByOneRing()
-
-	def separate(self):
-		separate()
 
 	def renameObjectByName(self, p1, p2):
 		renameObjectByName(p1, p2)

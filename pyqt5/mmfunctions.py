@@ -5,6 +5,7 @@ from tool import *
 from scene import *
 from mmapi import *
 from mmRemote import *
+from orientedBoundingBox import *
 
 
 def accept():
@@ -74,6 +75,43 @@ def sculptingTools():
 	except:
 		remote.shutdown()
 
+def smoothBoundary():
+	try:
+		remote = mmRemote()
+		remote.connect()
+		begin_tool(remote, 'smoothBoundary')
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def clearAllFaceGroup():
+	try:
+		remote = mmRemote()
+		remote.connect()
+		begin_tool(remote, 'clearFaceGroup')
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def createFaceGroup():
+	try:
+		remote = mmRemote()
+		remote.connect()
+		begin_tool(remote, 'createFaceGroup')
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def deformSmooth(value):
+	try:
+		remote = mmRemote()
+		remote.connect()
+		begin_tool(remote, 'smooth')
+		set_toolparam(remote, 'smooth', value)
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
 def remesh(param, paramvalue):	
 
 	try:
@@ -104,6 +142,26 @@ def remeshSpecial():
 	except:
 		remote.shutdown()
 
+def separate():
+	try:
+		remote = mmRemote()
+		remote.connect()
+		begin_tool(remote, 'separate')
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def selectTool(size=1.3, symmetry=False):
+	try:
+		remote = mmRemote()
+		remote.connect()
+		begin_tool(remote, 'select')
+		set_toolparam(remote, 'radiusWorld', size)
+		set_toolparam(remote, 'symmetry', symmetry)
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
 def invertTool():
 	try:
 		remote = mmRemote()
@@ -121,6 +179,51 @@ def expandToConnected():
 		remote.shutdown()
 	except:
 		remote.shutdown()	
+
+def offsetDistance(distance, checked=False):
+
+	try:
+		remote = mmRemote()
+		remote.connect()
+		selection_utility_command('optimizeBoundary')
+		begin_tool('offset')
+		set_toolparam('offsetWorld', distance)
+		if checked:
+			set_toolparam('connected', True)
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def softTransition(value):
+
+	try: 
+		remote = mmRemote()
+		remote.connect()
+		selection_utility_command('optimizeBoundary')
+		begin_tool('offset')
+		set_toolparam('softenWorld', value)
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def expandByOneRing():
+
+	try:
+		remote = mmRemote()
+		remote.connect()
+		selection_utility_command('expandByOneRing')
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def contractByOneRing():
+	try:
+		remote = mmRemote()
+		remote.connect()
+		selection_utility_command('contractByOneRing')
+		remote.shutdown()
+	except:
+		remote.shutdown()
 
 
 def saveFile(remote, name=None):
@@ -167,8 +270,6 @@ def alignTransform():
 		remote.shutdown()
 	except:
 		remote.shutdown()
-
-
 
 
 
