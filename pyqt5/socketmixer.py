@@ -16,8 +16,8 @@ import icons
 from mmfunctions import *
 
 from PyQt5.QtWidgets import (
-	QApplication, QWidget, QAction, qApp, QMainWindow, QTextEdit,
-	QTabWidget, QStackedWidget,QCommandLinkButton, QPushButton
+	QApplication, QWidget, QAction, qApp, QMainWindow, QTextEdit, QMessageBox,
+	QTabWidget, QStackedWidget,QCommandLinkButton, QPushButton, QFileDialog
 	)
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QCoreApplication, QSize
@@ -46,10 +46,9 @@ class Socketmixer(QMainWindow):
 
 		uic.loadUi('socketmixer.ui', self)
 
-		exit_action = QAction(QIcon('exit.png'), '&Exit', self)
-		exit_action.setShortcut('Ctrl+Q')
-		exit_action.setStatusTip('Exit application')
-		exit_action.triggered.connect(qApp.quit)
+		self.openAction.setShortcut('Ctrl+O')
+		self.openAction.setStatusTip('Open new File')
+		self.openAction.triggered.connect(self.showMessageBox)
 
 		self.menuBar.setNativeMenuBar(False)
 
@@ -76,11 +75,11 @@ class Socketmixer(QMainWindow):
 		self.s5_button.clicked.connect(lambda: self.set_step(0, 4, self.s5_button))
 		self.s6_button.clicked.connect(lambda: self.set_step(0, 5, self.s6_button))
 
-
 		# STEP 1B PLANECUT BUTTONS
 		s1_mm_actions = {
 			self.s1_p0_button_begin: [lambda: self.set_step(1, 0, self.step1_buttons[1])],
-			self.s1_p1_button_importFile: [self.importFile],
+			self.s1_p1_button_importFile: [self.showFileDialog],
+			self.s1_p1_button_accept: [accept, lambda: self.set_step(2, 0, self.step1_buttons[2])],
 			self.s1_p2_button_planeCut: [planeCut],
 			self.s1_p2_button_planeCut_accept: [accept, lambda: self.set_step(3, 0, self.step1_buttons[3])],
 			self.s1_p2_button_planeCut_cancel: [cancel],
@@ -102,7 +101,7 @@ class Socketmixer(QMainWindow):
 			self.s1_p9_button_manualAlign: [alignTransform],
 			self.s1_p9_button_manualAlign_accept: [accept, lambda: self.set_step(10, 0, self.step1_buttons[10])],
 			self.s1_p9_button_manualAlign_cancel: [cancel],
-			self.s1_p10_button_duplicate: [exportTempModel, lambda: self.duplicateAndRenameAndHide('rectifiedLimb')],
+			self.s1_p10_button_duplicate: [exportTempModel, lambda: duplicateRenameHide('rectifiedLimb')],
 			self.s1_p10_button_accept: [lambda: exportStepModel(1), lambda: self.set_step(0, 1, self.s2_button)]
 		}
 
@@ -164,7 +163,7 @@ class Socketmixer(QMainWindow):
 			self.s4_p3_button_generateOffset: [lambda: offsetDistance(self.s4_p2_value_offsetSocket.value())],
 			self.s4_p3_button_generateOffset_accept: [accept, lambda: self.set_step(4, 3, self.step4_buttons[4])],
 			self.s4_p3_button_cancel: [cancel],
-			self.s4_p4_button_separateOffset: [separate, lambda: self.renameObjectByName('rectifiedLimb (part)', 'socket')],
+			self.s4_p4_button_separateOffset: [separate, lambda: renameObjectByName('rectifiedLimb (part)', 'socket')],
 			self.s4_p4_button_accept: [accept, lambda: self.set_step(5, 3, self.step4_buttons[5])],
 			self.s4_p5_button_brushSize: [lambda: selectTool(self.s4_p5_value_brushSize.value())],
 			self.s4_p5_button_contract: [contractByOneRing],
@@ -219,10 +218,10 @@ class Socketmixer(QMainWindow):
 			self.s6_p6_button_smoothJoin: [smoothBoundary],
 			self.s6_p6_button_accept: [accept, lambda: self.set_step(7, 5, self.step1_buttons[7])],
 			self.s6_p7_a_button_importHoleMaker: [self.importHoleMaker],
-			self.s6_p7_b_button_alignBottomView: [lambda: self.alignZCam(5)],
+			self.s6_p7_b_button_alignBottomView: [lambda: alignZCam(5)],
 			self.s6_p7_c_button_positionHoleMaker: [alignTransform],
 			self.s6_p7_c_button_positionHoleMaker_accept: [accept],
-			self.s6_p7_d_button_createHole: [lambda: self.boolean('socket', 'holemaker')],
+			self.s6_p7_d_button_createHole: [lambda: boolean('socket', 'holemaker')],
 			self.s6_p7_d_button_createHole_accept: [accept, lambda: exportStepModel(6)]
 
 		}
@@ -257,17 +256,8 @@ class Socketmixer(QMainWindow):
 			for button, functions in actions[3].items():
 				self.set_action(button, functions)
 
-	def importFile(self):
-		importFile()
-
 	def reOrientModel(self):
 		reOrientModel()
-
-	def duplicateAndRenameAndHide(self, rectified):
-		duplicateAndRenameAndHide(rectified)
-
-	def renameObjectByName(self, p1, p2):
-		renameObjectByName(p1, p2)
 
 	def importConnector(self, socketname):
 		importConnectorAndPosition('socket.obj')
@@ -280,12 +270,6 @@ class Socketmixer(QMainWindow):
 
 	def importHoleMaker(self):
 		importHoleMaker('holemakerv2.obj')
-
-	def alignZCam(self, cam_number):
-		alignZCam(cam_number)
-
-	def boolean(self, p1, p2):
-		boolean(p1, p2)
 
 	# =============== PAGE CHANGES ==================
 
@@ -344,6 +328,26 @@ class Socketmixer(QMainWindow):
 		for function in functions:
 			button.clicked.connect(function)
 
+	def showMessageBox(self, fileName):
+
+		project_msg = "Opening a file will discard the current scene, which has unsaved changes.\n Are you sure you want to do this?"
+		msgbox = QMessageBox()
+		reply = msgbox.question(self, 'Message', project_msg,
+								QMessageBox.Yes, QMessageBox.No)
+
+		if reply == QMessageBox.Yes:
+			saveLatest()
+			self.showFileDialog()
+		else:
+			pass
+
+	def showFileDialog(self):
+
+		fdialog = QFileDialog()
+		fname = fdialog.getOpenFileName(self, 'Open file', '~')
+
+		fname = os.path.join(fname)
+		importFile(fname)
 
 
 if __name__ == "__main__":

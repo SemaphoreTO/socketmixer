@@ -78,7 +78,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="s1_p0">
          <widget class="QTextEdit" name="s1_p0_text_intro">
@@ -163,7 +163,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QCommandLinkButton" name="s1_p1_button_importFile">
           <property name="geometry">
            <rect>
-            <x>140</x>
+            <x>40</x>
             <y>320</y>
             <width>197</width>
             <height>41</height>
@@ -190,6 +190,19 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="description">
            <string>Choose a file from computer.</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="s1_p1_button_accept">
+          <property name="geometry">
+           <rect>
+            <x>250</x>
+            <y>330</y>
+            <width>115</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>OK</string>
           </property>
          </widget>
         </widget>
@@ -4699,13 +4712,13 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionNew_Project"/>
-    <addaction name="actionOpen_Existing_Project"/>
+    <addaction name="newProjectAction"/>
+    <addaction name="openAction"/>
     <addaction name="separator"/>
-    <addaction name="actionSave_2"/>
-    <addaction name="actionSave_As"/>
+    <addaction name="saveAction"/>
+    <addaction name="saveAsAction"/>
     <addaction name="separator"/>
-    <addaction name="actionExit_3"/>
+    <addaction name="exitAction"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -4796,7 +4809,7 @@ p, li { white-space: pre-wrap; }
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionNew_Project">
+  <action name="newProjectAction">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
@@ -4805,7 +4818,7 @@ p, li { white-space: pre-wrap; }
     <string>New Project</string>
    </property>
   </action>
-  <action name="actionOpen_Existing_Project">
+  <action name="openAction">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
@@ -4828,7 +4841,7 @@ p, li { white-space: pre-wrap; }
     <string>Save</string>
    </property>
   </action>
-  <action name="actionSave_2">
+  <action name="saveAction">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/thumbs.png</normaloff>:/icons/thumbs.png</iconset>
@@ -4837,7 +4850,7 @@ p, li { white-space: pre-wrap; }
     <string>Save</string>
    </property>
   </action>
-  <action name="actionExit_3">
+  <action name="exitAction">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/arrow_double_left.png</normaloff>:/icons/arrow_double_left.png</iconset>
@@ -4846,7 +4859,7 @@ p, li { white-space: pre-wrap; }
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionSave_As">
+  <action name="saveAsAction">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/fullscreen_on.png</normaloff>:/icons/fullscreen_on.png</iconset>
@@ -4893,7 +4906,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>actionExit_3</sender>
+   <sender>exitAction</sender>
    <signal>triggered()</signal>
    <receiver>Socketmixer</receiver>
    <slot>close()</slot>

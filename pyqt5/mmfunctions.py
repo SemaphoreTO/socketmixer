@@ -225,6 +225,30 @@ def contractByOneRing():
 	except:
 		remote.shutdown()
 
+def importFile(fileName):
+
+	try:
+		remote = mmRemote()
+		remote.connect()
+		found = False
+		# cwd = os.getcwd()
+		# path = os.path.join(cwd, fileName)
+		path = str(fileName[0])
+		if os.path.exists(path):
+			if path[-4:] == '.mix':
+				open_mix(remote, path)
+			elif path[-4:] == '.obj':
+				append_objects_from_file(remote, path)
+			else:
+				# create new project
+				pass
+			found = True
+		else:
+			print('File not found')
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
 
 def saveFile(remote, name=None):
 	
@@ -260,6 +284,37 @@ def exportTempModel():
 	except:
 		remote.shutdown()
 
+def renameObjectByName(orig, new):
+	try:
+		remote = mmRemote()
+		remote.connect()
+		if orig == '*':
+			objects = list_objects(remote)
+			for object in objects:
+				set_object_name(remote, object, new)
+		else:
+			[state, id] = find_object_by_name(remote, orig)
+			set_object_name(remote, id, new)
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def duplicateRenameHide(new):
+	try:
+		remote = mmRemote()
+		remote.connect()
+		objects = list_selected_objects(remote)
+		partToDuplicate = get_object_name(remote, objects[0])[:-4]
+		begin_tool('duplicate')
+		duplicateName = partToDuplicate + '.obj (copy)'
+		[state, id] = find_object_by_name(remote, duplicateName)
+		set_object_name(remote, id, newName + '.obj')
+		[state, id] = find_object_by_name(remote, partToDuplicate + '.obj')
+		set_hidden(id)
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
 def alignTransform():
 
 	try:
@@ -271,6 +326,70 @@ def alignTransform():
 	except:
 		remote.shutdown()
 
+def boolean(obj1, obj2):
+	try:
+		remote = mmRemote()
+		remote.connect()
+		[found1, id1] = mm.find_object_by_name(remote, obj1)
+		[found2, id2] = mm.find_object_by_name(remote, obj2)
+		if found1 and found2:
+			mm.select_objects(remote, [id1, id2])
+			begin_tool('difference')
+		remote.shutdown()
+	except:
+		remote.shutdown()
 
+def alignZCam(view):
+
+	try:
+		remote = mmRemote()
+		remote.connect()
+		divisor = 1.0
+		height = 0.7
+		eye = vec3f()
+		if view == 0:
+			eye.x = -10.0
+			eye.y = height
+			eye.z = 0
+		elif view == 1:
+			eye.x = 0.0
+			eye.y = height
+			eye.z = 10.0
+		elif view == 2:
+			eye.x = 0
+			eye.y = height
+			eye.z = 0
+		elif view == 4:
+			eye.x = 0.0
+			eye.y = 10.0
+			eye.z = 0
+		elif view == 5:
+			eye.x = 0.0
+			eye.y = -10.0
+			eye.z = 0
+		else:
+			eye.x = 0.0
+			eye.y = 10.0
+			eye.z = 0.0
+		target = vec3f()
+		target.x = 0.0
+		if view == 4 or view == 5:
+			target.y = 0.0
+			up = vec3f()
+			up.x = 1.0
+			up.y = 0.0
+			up.z = 0.0
+		else:
+			target.y = height
+			up = vec3f()
+			up.x = 0.0
+			up.y = 1.0
+			up.z = 0.0
+		target.z = 0
+	 
+	 	camera_control_set_specific_view(remote, eye,target,up)
+	 	remote.shutdown()
+	except:
+		remote.shutdown()
 
 

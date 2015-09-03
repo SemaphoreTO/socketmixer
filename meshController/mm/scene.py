@@ -78,10 +78,17 @@ def get_object_name(remote, object_id):
     cmd.GetSceneCommandResult_GetObjectName(cmd_key, obj_name_vec)
     obj_name = vectorub_to_string(obj_name_vec)
     return obj_name
+
 def set_object_name(remote, object_id, new_name):
     """Modify the string name of the scene object with the given ID"""
     cmd = mmapi.StoredCommands()
     cmd.AppendSceneCommand_SetObjectName(object_id, new_name)
+    remote.runCommand(cmd)
+
+def set_hidden(remote, object_id):
+    """Hide the scene object with the id object_id"""
+    cmd = mmapi.StoredCommands()
+    cmd.AppendSceneCommand_SetHidden(object_id)
     remote.runCommand(cmd)
 
 
@@ -118,8 +125,10 @@ def unlink_pivot(remote, pivot_id):
     cmd_key = cmd.AppendSceneCommand_UnlinkPivot(pivot_id)
     remote.runCommand(cmd)
 
-
-
+def camera_control_set_specific_view(remote, x, y, z):
+    cmd = mmapi.StoredCommands()
+    cmd.CameraControl_SetSpecificView(x, y, z)
+    remote.runCommand(cmd)
 
 def set_as_target(remote):
     """Set the current scene object as the Target object"""
