@@ -17,7 +17,7 @@ from mmfunctions import *
 
 from PyQt5.QtWidgets import (
 	QApplication, QWidget, QAction, qApp, QMainWindow, QTextEdit, QMessageBox,
-	QTabWidget, QStackedWidget,QCommandLinkButton, QPushButton, QFileDialog
+	QTabWidget, QStackedWidget,QCommandLinkButton, QPushButton, QFileDialog, QInputDialog
 	)
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QCoreApplication, QSize
@@ -45,10 +45,33 @@ class Socketmixer(QMainWindow):
 		QMainWindow.__init__(self)
 
 		uic.loadUi('socketmixer.ui', self)
+		
+		self.path = os.getcwd()
+		self.project = ''
+		self.patient = ''
+		self.checkNewProject()
+
+		self.newProjectAction.setShortcut('Ctrl+P')
+		self.newProjectAction.setStatusTip('Create new Project')
+		self.newProjectAction.triggered.connect(self.newProjectSaveCurrent)
 
 		self.openAction.setShortcut('Ctrl+O')
 		self.openAction.setStatusTip('Open new File')
-		self.openAction.triggered.connect(self.showMessageBox)
+		self.openAction.triggered.connect(self.openFileDiscardCurrent)
+
+		self.saveAction.setShortcut('Ctrl+S')
+		self.saveAction.setStatusTip('Save File')
+		self.saveAction.triggered.connect(lambda: saveFile(self.path))
+
+		# self.saveAsAction.setShortCut('')
+		self.saveAsAction.setStatusTip('Save File As')
+		self.saveAsAction.triggered.connect(self.showSaveAsDialog)
+
+		self.exitAction.setShortcut('Ctrl+Q')
+		self.exitAction.setStatusTip('Quit Project')
+		self.exitAction.triggered.connect(self.showExitDialog)
+
+		self.actionExit.triggered.connect(self.showExitDialog)
 
 		self.menuBar.setNativeMenuBar(False)
 
@@ -79,30 +102,30 @@ class Socketmixer(QMainWindow):
 		s1_mm_actions = {
 			self.s1_p0_button_begin: [lambda: self.set_step(1, 0, self.step1_buttons[0])],
 			self.s1_p1_button_importFile: [self.showFileDialog],
-			self.s1_p1_button_accept: [accept, lambda: self.set_step(2, 0, self.step1_buttons[1])],
+			self.s1_p1_button_accept: [lambda: accept(self.path), lambda: self.set_step(2, 0, self.step1_buttons[1])],
 			self.s1_p2_button_planeCut: [planeCut],
-			self.s1_p2_button_planeCut_accept: [accept, lambda: self.set_step(3, 0, self.step1_buttons[2])],
+			self.s1_p2_button_planeCut_accept: [lambda: accept(self.path), lambda: self.set_step(3, 0, self.step1_buttons[2])],
 			self.s1_p2_button_planeCut_cancel: [cancel],
 			self.s1_p3_button_selectResidual: [lambda: selectToolSymmetry(30.2)],
 			self.s1_p3_button_selectResidual_accept: [expandToConnected, lambda: self.set_step(4, 0, self.step1_buttons[3])],
 			self.s1_p3_button_selectResidual_cancel: [lambda: selectToolSymmetry(30.2)],
 			self.s1_p4_button_invert: [invertTool],
 			self.s1_p4_button_discard: [discard],
-			self.s1_p4_button_discard_accept: [accept, lambda: self.set_step(5, 0, self.step1_buttons[4])],
+			self.s1_p4_button_discard_accept: [lambda: accept(self.path), lambda: self.set_step(5, 0, self.step1_buttons[4])],
 			self.s1_p5_button_inspector: [inspector],
 			self.s1_p5_button_accept: [lambda: self.set_step(6, 0, self.step1_buttons[5])],
 			self.s1_p6_button_remesh: [selectAll, lambda: remesh(1, self.s1_p6_value_remesh.value()), lambda: remesh(2, self.s1_p6_value_smooth.value())],
-			self.s1_p6_button_remesh_accept: [accept, lambda: self.set_step(7, 0, self.step1_buttons[6]), cancel],
+			self.s1_p6_button_remesh_accept: [lambda: accept(self.path), lambda: self.set_step(7, 0, self.step1_buttons[6]), cancel],
 			self.s1_p6_button_remesh_cancel: [cancel],
-			self.s1_p7_button_autoAlign: [exportTempModel, self.reOrientModel],
-			self.s1_p7_button_autoAlign_accept: [accept, lambda: self.set_step(8, 0, self.step1_buttons[7])],
+			self.s1_p7_button_autoAlign: [lambda: exportTempModel(self.path), self.reOrientModel],
+			self.s1_p7_button_autoAlign_accept: [lambda: accept(self.path), lambda: self.set_step(8, 0, self.step1_buttons[7])],
 			self.s1_p7_button_autoAlign_cancel: [cancel],
 			self.s1_p8_button_recenter: [lambda: alignZCam(1), lambda: self.set_step(9, 0, self.step1_buttons[8])],
 			self.s1_p9_button_manualAlign: [alignTransform],
-			self.s1_p9_button_manualAlign_accept: [accept, lambda: self.set_step(10, 0, self.step1_buttons[9])],
+			self.s1_p9_button_manualAlign_accept: [lambda: accept(self.path), lambda: self.set_step(10, 0, self.step1_buttons[9])],
 			self.s1_p9_button_manualAlign_cancel: [cancel],
-			self.s1_p10_button_duplicate: [exportTempModel, lambda: duplicateRenameHide('rectifiedLimb')],
-			self.s1_p10_button_accept: [lambda: exportStepModel(1), lambda: self.set_step(0, 1, self.s2_button)]
+			self.s1_p10_button_duplicate: [lambda: exportTempModel(self.path), lambda: duplicateRenameHide('rectifiedLimb')],
+			self.s1_p10_button_accept: [lambda: exportStepModel(self.path, 1), lambda: self.set_step(0, 1, self.s2_button)]
 		}
 
 
@@ -112,21 +135,21 @@ class Socketmixer(QMainWindow):
 			self.s2_p1_button_accept: [lambda: self.set_step(2, 1, self.step2_buttons[1])],
 			self.s2_p1_button_cancel: [cancel, lambda: selectTool(self.s2_p1_value_brushSize.value())],
 			self.s2_p2_button_smoothBoundary: [smoothBoundary],
-			self.s2_p2_button_smoothBoundary_accept: [accept, lambda: self.set_step(3, 1, self.step2_buttons[2])],
+			self.s2_p2_button_smoothBoundary_accept: [lambda: accept(self.path), lambda: self.set_step(3, 1, self.step2_buttons[2])],
 			self.s2_p2_button_cancel: [cancel, lambda: selectTool(self.s2_p1_value_brushSize.value())],
 			self.s2_p3_button_generateOffset: [	lambda: offsetDistance(
 															self.s2_p3_value_distance.value(),
 															self.s2_p3_value_isConnected.isChecked()),
 												lambda: softTransition(self.s2_p3_value_softTransition.value())],
-			self.s2_p3_button_generateOffset_accept: [accept, lambda: self.set_step(4, 1, self.step2_buttons[3])],
+			self.s2_p3_button_generateOffset_accept: [lambda: accept(self.path), lambda: self.set_step(4, 1, self.step2_buttons[3])],
 			self.s2_p3_button_cancel: [cancel, lambda: selectTool(self.s2_p1_value_brushSize.value())],
 			self.s2_p4_button_smooth: [lambda: deformSmooth(self.s2_p4_value_smooth.value())],
-			self.s2_p4_button_smooth_accept: [accept, lambda: self.set_step(5, 1, self.step2_buttons[4])],
+			self.s2_p4_button_smooth_accept: [lambda: accept(self.path), lambda: self.set_step(5, 1, self.step2_buttons[4])],
 			self.s2_p5_button_yes: [lambda: self.set_step(2, 1, self.step2_buttons[0])],
 			self.s2_p5_button_no: [lambda: self.set_step(6, 1, self.step2_buttons[5])],
 			self.s2_p6_button_clearFaceGroups: [selectAll, clearAllFaceGroup],
 			self.s2_p6_button_clearFaceGroups_accept: [	lambda: self.set_step(0, 2, self.s3_button),
-														lambda: exportStepModel(2)]
+														lambda: exportStepModel(self.path, 2)]
 		}
 
 		s3_mm_actions = {
@@ -136,7 +159,7 @@ class Socketmixer(QMainWindow):
 			self.s3_p1_button_cancel: [cancel, lambda: selectTool(self.s3_p1_value_brushSize.value(), True)],
 			self.s3_p2_button_smoothTrimLine: [smoothBoundary],
 			self.s3_p2_button_cancel: [cancel, lambda: selectToolSymmetry(self.s3_p1_value_brushSize.value(), True)],
-			self.s3_p2_button_accept: [accept, lambda: self.set_step(3, 2, self.step3_buttons[2])],
+			self.s3_p2_button_accept: [lambda: accept(self.path), lambda: self.set_step(3, 2, self.step3_buttons[2])],
 			self.s3_p3_button_createFaceGroup: [createFaceGroup, selectTool],
 			self.s3_p3_button_cancel: [selectAll, clearAllFaceGroup, selectTool],
 			self.s3_p3_button_accept: [lambda: self.set_step(4, 2, self.step3_buttons[3])],
@@ -147,8 +170,8 @@ class Socketmixer(QMainWindow):
 			self.s3_p5_button_contract: [contractByOneRing],
 			self.s3_p5_button_accept: [lambda: self.set_step(6, 2, self.step3_buttons[5])],
 			self.s3_p6_button_remeshTrimLine: [selectAll, remeshSpecial],
-			self.s3_p6_button_remeshTrimLine_accept: [accept, 
-										lambda: exportStepModel(3),
+			self.s3_p6_button_remeshTrimLine_accept: [lambda: accept(self.path), 
+										lambda: exportStepModel(self.path, 3),
 										lambda: self.set_step(0, 3, self.s4_button)],
 			self.s3_p6_button_remeshTrimLine: [cancel]
 
@@ -157,25 +180,25 @@ class Socketmixer(QMainWindow):
 		s4_mm_actions = {
 			self.s4_p0_button_begin: [lambda: self.set_step(1, 3, self.step4_buttons[0])],
 			self.s4_p1_button_selectFacegroup: [selectTool],
-			self.s4_p1_button_accept: [accept, lambda: self.set_step(2, 3, self.step4_buttons[1])],
+			self.s4_p1_button_accept: [lambda: accept(self.path), lambda: self.set_step(2, 3, self.step4_buttons[1])],
 			self.s4_p1_button_cancel: [cancel, selectTool],
 			self.s4_p2_button_accept: [lambda: self.set_step(3, 3, self.step4_buttons[2])],
 			self.s4_p3_button_generateOffset: [lambda: offsetDistance(self.s4_p2_value_offsetSocket.value())],
-			self.s4_p3_button_generateOffset_accept: [accept, lambda: self.set_step(4, 3, self.step4_buttons[3])],
+			self.s4_p3_button_generateOffset_accept: [lambda: accept(self.path), lambda: self.set_step(4, 3, self.step4_buttons[3])],
 			self.s4_p3_button_cancel: [cancel],
 			self.s4_p4_button_separateOffset: [separate, lambda: renameObjectByName('rectifiedLimb (part)', 'socket')],
-			self.s4_p4_button_accept: [accept, lambda: self.set_step(5, 3, self.step4_buttons[4])],
+			self.s4_p4_button_accept: [lambda: accept(self.path), lambda: self.set_step(5, 3, self.step4_buttons[4])],
 			self.s4_p5_button_brushSize: [lambda: selectTool(self.s4_p5_value_brushSize.value())],
 			self.s4_p5_button_contract: [contractByOneRing],
 			self.s4_p5_button_expand: [expandByOneRing],
 			self.s4_p5_button_smoothBoundary: [smoothBoundary],
 			self.s4_p5_button_createHoles: [discard],
-			self.s4_p5_button_accept: [accept, lambda: self.set_step(6, 3, self.step4_buttons[5])],
+			self.s4_p5_button_accept: [lambda: accept(self.path), lambda: self.set_step(6, 3, self.step4_buttons[5])],
 			self.s4_p6_button_createRelief: [sculptingTools],
-			self.s4_p6_button_createRelief_accept: [accept, lambda: self.set_step(7, 3, self.step4_buttons[6])],
+			self.s4_p6_button_createRelief_accept: [lambda: accept(self.path), lambda: self.set_step(7, 3, self.step4_buttons[6])],
 			self.s4_p7_button_selectAll: [selectAll],
 			self.s4_p7_button_generateOffset: [lambda: offsetDistance(self.s4_p7_value_offsetDistance.value())],
-			self.s4_p7_button_accept: [accept, lambda: exportStepModel(4), lambda: self.set_step(0, 4, self.s5_button)]
+			self.s4_p7_button_accept: [lambda: accept(self.path), lambda: exportStepModel(self.path, 4), lambda: self.set_step(0, 4, self.s5_button)]
 		}
 
 		s5_mm_actions = {
@@ -183,10 +206,10 @@ class Socketmixer(QMainWindow):
 			self.s5_p1_button_brushSize: [lambda: selectToolSymmetry(self.s5_p1_value_brushSize.value())],
 			self.s5_p1_button_contract: [contractByOneRing],
 			self.s5_p1_button_expand: [expandByOneRing],
-			self.s5_p1_button_accept: [accept, lambda: self.set_step(2, 4, self.step5_buttons[1])],
+			self.s5_p1_button_accept: [lambda: accept(self.path), lambda: self.set_step(2, 4, self.step5_buttons[1])],
 			self.s5_p1_button_cancel: [cancel, lambda: selectToolSymmetry(self.s5_p1_value_brushSize.value())],
 			self.s5_p2_button_smooth: [lambda: deformSmooth(self.s5_p2_value_smooth.value())],
-			self.s5_p2_button_smooth_accept: [accept, lambda: self.set_step(3, 4, self.step5_buttons[2])],
+			self.s5_p2_button_smooth_accept: [lambda: accept(self.path), lambda: self.set_step(3, 4, self.step5_buttons[2])],
 			self.s5_p2_button_cancel: [cancel, lambda: selectToolSymmetry(self.s5_p1_value_brushSize.value())],
 			self.s5_p3_button_sculptingTools: [sculptingTools],
 			self.s5_p3_button_accept: [lambda: self.set_step(4, 4, self.step5_buttons[3])],
@@ -194,8 +217,8 @@ class Socketmixer(QMainWindow):
 			self.s5_p4_button_accept: [lambda: self.set_step(5, 4, self.step5_buttons[4])],
 			self.s5_p5_button_remesh: [selectAll, remeshSpecial],
 			self.s5_p5_button_cancel: [cancel],
-			self.s5_p5_button_remesh_accept: [accept, 
-					lambda: exportStepModel(5),
+			self.s5_p5_button_remesh_accept: [lambda: accept(self.path), 
+					lambda: exportStepModel(self.path, 5),
 					lambda: self.set_step(0, 5, self.s6_button)]
 		}
 
@@ -204,25 +227,25 @@ class Socketmixer(QMainWindow):
 			self.s6_p1_button_selectCoupler: [lambda: self.importConnector(str(self.s6_p1_value_selectCoupler.currentText()))],
 			self.s6_p1_button_accept: [lambda: self.set_step(2, 5, self.step6_buttons[1])],
 			self.s6_p2_button_manualAlign: [alignTransform],
-			self.s6_p2_button_accept: [accept, lambda: self.set_step(3, 5, self.step1_buttons[2])],
+			self.s6_p2_button_accept: [lambda: accept(self.path), lambda: self.set_step(3, 5, self.step1_buttons[2])],
 			self.s6_p2_button_cancel: [cancel],
 			self.s6_p3_button_selectTool: [selectTool],
 			self.s6_p3_button_accept: [lambda: self.set_step(4, 5, self.step1_buttons[3])],
 			self.s6_p4_button_alignMountingPoint: [self.cutSocketForConnection],
-			self.s6_p4_button_accept: [accept, lambda: self.set_step(5, 5, self.step1_buttons[4])],
+			self.s6_p4_button_accept: [lambda: accept(self.path), lambda: self.set_step(5, 5, self.step1_buttons[4])],
 			self.s6_p5_button_joinMountingPoint: [self.joinConnectionToSocket],
-			self.s6_p5_button_accept: [accept, lambda: self.set_step(6, 5, self.step1_buttons[5])],
+			self.s6_p5_button_accept: [lambda: accept(self.path), lambda: self.set_step(6, 5, self.step1_buttons[5])],
 			self.s6_p6_button_brushSize: [lambda: selectTool(self.s6_p6_value_brushSize.value())],
 			self.s6_p6_button_contract: [contractByOneRing],
 			self.s6_p6_button_expand: [expandByOneRing],
 			self.s6_p6_button_smoothJoin: [smoothBoundary],
-			self.s6_p6_button_accept: [accept, lambda: self.set_step(7, 5, self.step1_buttons[6])],
+			self.s6_p6_button_accept: [lambda: accept(self.path), lambda: self.set_step(7, 5, self.step1_buttons[6])],
 			self.s6_p7_a_button_importHoleMaker: [self.importHoleMaker],
 			self.s6_p7_b_button_alignBottomView: [lambda: alignZCam(5)],
 			self.s6_p7_c_button_positionHoleMaker: [alignTransform],
-			self.s6_p7_c_button_positionHoleMaker_accept: [accept],
+			self.s6_p7_c_button_positionHoleMaker_accept: [lambda: accept(self.path)],
 			self.s6_p7_d_button_createHole: [lambda: boolean('socket', 'holemaker')],
-			self.s6_p7_d_button_createHole_accept: [accept, lambda: exportStepModel(6)]
+			self.s6_p7_d_button_createHole_accept: [lambda: accept(self.path), lambda: exportStepModel(self.path, 6)]
 
 		}
 
@@ -257,7 +280,7 @@ class Socketmixer(QMainWindow):
 				self.set_action(button, functions)
 
 	def reOrientModel(self):
-		reOrientModel()
+		reOrientModel(self.path)
 
 	def importConnector(self, socketname):
 		importConnectorAndPosition('~/socketmixer/socket/socket.obj')
@@ -328,7 +351,7 @@ class Socketmixer(QMainWindow):
 		for function in functions:
 			button.clicked.connect(function)
 
-	def showMessageBox(self, fileName):
+	def openFileDiscardCurrent(self, fileName):
 
 		project_msg = "Opening a file will discard the current scene, which has unsaved changes.\n Are you sure you want to do this?"
 		msgbox = QMessageBox()
@@ -336,10 +359,60 @@ class Socketmixer(QMainWindow):
 								QMessageBox.Yes, QMessageBox.No)
 
 		if reply == QMessageBox.Yes:
-			saveLatest()
+			saveFile(self.path)
 			self.showFileDialog()
 		else:
 			pass
+
+	def newProjectSaveCurrent(self):
+		 project_msg = "Are you sure you would like to exit the current scene and create a new project?"
+		 msgbox = QMessageBox()
+		 reply = msgbox.question(self, 'Message', project_msg, QMessageBox.Yes, QMessageBox.No)
+
+		 if reply == QMessageBox.Yes:
+		 	saveFile(self.path)
+		 	self.createNewProject()
+		 else:
+		 	pass
+
+	def checkNewProject(self):
+
+		project_msg = "Would you like to create a new project or open an existing project?"
+		msgbox = QMessageBox()
+		msgbox.setText(project_msg)
+		openexisting = msgbox.addButton('Open Existing Project', QMessageBox.NoRole)
+		createnew = msgbox.addButton('Create New Project', QMessageBox.YesRole)
+
+		ret = msgbox.exec_()
+
+		if (msgbox.clickedButton() == createnew):
+			self.createNewProject()
+		elif (msgbox.clickedButton() == openexisting):
+			self.showFileDialog()
+
+	def createNewProject(self):
+
+		# Set up input dialog
+		self.showInputDialog()
+
+		# Save new directory
+		self.path = makeDirectory(self.project)
+		if self.path == '':
+			self.overWrite()
+
+		# Display information on socketmixer
+
+	def overWrite(self):
+
+		project_msg = "This project name already exists. Would you like to overwrite?"
+		msgbox = QMessageBox()
+		reply = msgbox.question(self, 'Message', project_msg, QMessageBox.Yes, QMessageBox.No)
+
+		if reply == QMessageBox.Yes:
+			self.path = makeDirectory(self.project, True)
+		else:
+			pass
+
 
 	def showFileDialog(self):
 
@@ -347,7 +420,45 @@ class Socketmixer(QMainWindow):
 		fname = fdialog.getOpenFileName(self, 'Open file', '~')
 
 		fname = os.path.join(fname)
+		fnametemp = str(fname[0])
+		dirs = fnametemp.split('/')
+		self.path = '/'.join(dirs[:-1])
+		
 		importFile(fname)
+
+	def showInputDialog(self):
+
+		idialog = QInputDialog()
+
+		projectname, ok = idialog.getText(self, 'Input Dialog', 'Project Name: ')
+		patientname, ok = idialog.getText(self, 'Input Dialog', 'Patient Name: ')
+
+		if ok:
+			self.project = projectname
+			self.patient = patientname
+			# Save information to text file
+
+	def showSaveAsDialog(self):
+
+		dialog = QInputDialog()
+
+		projectname, ok = idialog.getText(self, 'Input Dialog', 'Save Project As: ')
+
+		if ok:
+			saveFile(self.path, projectname)
+
+	def showExitDialog(self):
+
+		msg = "Are you sure you would like to quit the project?"
+		msgbox = QMessageBox()
+		reply = msgbox.question(self, 'Message', msg, QMessageBox.Yes, QMessageBox.No)
+
+		if reply == QMessageBox.Yes:
+			saveFile(self.path)
+			#Close Socketmixer
+			self.close()
+		else:
+			pass
 
 
 if __name__ == "__main__":

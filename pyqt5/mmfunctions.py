@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, shutil
 
 from selection import *
 from tool import *
@@ -8,12 +8,12 @@ from mmRemote import *
 from orientedBoundingBox import *
 
 
-def accept():
+def accept(path):
 	try:
 		remote = mmRemote()
 		remote.connect()
 		accept_tool(remote)
-		saveFile(remote)
+		saveFile(path)
 		remote.shutdown()
 	except:
 		remote.shutdown()
@@ -175,7 +175,7 @@ def expandToConnected():
 	try:
 		remote = mmRemote()
 		remote.connect()
-		selection_utility_command(remote, 'expandToConected')
+		selection_utility_command(remote, 'expandToConnected')
 		remote.shutdown()
 	except:
 		remote.shutdown()	
@@ -250,36 +250,69 @@ def importFile(fileName):
 		remote.shutdown()
 
 
-def saveFile(remote, name=None):
-	
+def saveFile(path, name=None):
+		
+	try:
+		remote = mmRemote()
+		remote.connect()
+		if not name:
+			name = 'Auto_Save.mix'
+		fileName = os.path.join(path, name)
+		save_mix(remote, fileName)
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def makeDirectory(name=None, overwrite=False):
+
 	if not name:
-		name = 'Auto_Save.mix'
+		name = 'Project'
 	cwd = os.getcwd()
-	tmp_dir = 'tmp'
-	if not os.path.exists(tmp_dir):
-		os.makedirs(tmp_dir)
-	path = os.path.join(cwd, tmp_dir, name)
-	save_mix(remote, path)
+	if not os.path.exists(name):
+		os.makedirs(name)
+	else:
+		if overwrite == True:
+			shutil.rmtree(name)
+			os.makedirs(name)
+		else:
+			return ''
+	path = os.path.join(cwd, name)
+	# Clear scene in meshmixer
+	clearScene()
 
+	return path
 
-def exportStepModel(step_number):
+def clearScene():
+	try:
+		remote = mmRemote()
+		remote.connect()
+
+		allobjects = list_objects(remote)
+		delete_objects(remote, allobjects)
+		remote.shutdown()
+	except:
+		remote.shutdown()
+
+def exportStepModel(path, step_number):
 
 	try:
 		remote = mmRemote()
 		remote.connect()
 		name = 'Step ' + str(step_number) + '.obj'
-		saveFile(remote, name)
+		path = os.path.join(path, 'Steps')
+		saveFile(path, name)
 		remote.shutdown()
 	except:
 		remote.shutdown()
 
-def exportTempModel():
+def exportTempModel(path):
 
 	try:
 		remote = mmRemote()
 		remote.connect()
 		name = 'tmp.obj'
-		saveFile(remote, name)
+		path = os.path.join(path, 'tmp')
+		saveFile(path, name)
 		remote.shutdown()
 	except:
 		remote.shutdown()

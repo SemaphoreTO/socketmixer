@@ -4889,37 +4889,5 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>actionExit</sender>
-   <signal>triggered()</signal>
-   <receiver>Socketmixer</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>477</x>
-     <y>298</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>exitAction</sender>
-   <signal>triggered()</signal>
-   <receiver>Socketmixer</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>309</x>
-     <y>375</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
 </ui>
