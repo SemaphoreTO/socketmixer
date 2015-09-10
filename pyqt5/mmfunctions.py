@@ -13,7 +13,7 @@ def accept(path):
 		remote = mmRemote()
 		remote.connect()
 		accept_tool(remote)
-		saveFile(path)
+		save_mix(remote, path)
 		remote.shutdown()
 	except:
 		remote.shutdown()
@@ -282,6 +282,15 @@ def makeDirectory(name=None, overwrite=False):
 
 	return path
 
+def getDirectory(name):
+
+	if not os.path.exists(name):
+		return ''
+	else:
+		cwd = os.getcwd()
+		path = os.path.join(cwd, name)
+		return path
+
 def clearScene():
 	try:
 		remote = mmRemote()
@@ -298,9 +307,12 @@ def exportStepModel(path, step_number):
 	try:
 		remote = mmRemote()
 		remote.connect()
-		name = 'Step ' + str(step_number) + '.obj'
-		path = os.path.join(path, 'Steps')
-		saveFile(path, name)
+		name = 'Step ' + str(step_number) + '.mix'
+		directory = os.path.join(path, 'Steps')
+		if not os.path.exists(directory):
+			os.makedirs(directory)
+		fileName = os.path.join(directory, name)
+		save_mix(remote, fileName)
 		remote.shutdown()
 	except:
 		remote.shutdown()
@@ -311,8 +323,11 @@ def exportTempModel(path):
 		remote = mmRemote()
 		remote.connect()
 		name = 'tmp.obj'
-		path = os.path.join(path, 'tmp')
-		saveFile(path, name)
+		directory = os.path.join(path, 'tmp')
+		if not os.path.exists(directory):
+			os.makedirs(directory)
+		fileName = os.path.join(directory, name)
+		save_mix(remote, fileName)
 		remote.shutdown()
 	except:
 		remote.shutdown()

@@ -411,7 +411,7 @@ class Socketmixer(QMainWindow):
 		if reply == QMessageBox.Yes:
 			self.path = makeDirectory(self.project, True)
 		else:
-			pass
+			self.path = getDirectory(self.project)
 
 
 	def showFileDialog(self):
