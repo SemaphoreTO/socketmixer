@@ -25,7 +25,7 @@
    <string>Socketmixer</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QStackedWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -34,18 +34,153 @@
       <height>551</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>1</number>
-    </property>
-    <widget class="QWidget" name="tabScanning">
-     <attribute name="title">
-      <string>Scanning</string>
-     </attribute>
+    <widget class="QWidget" name="tabHome">
+     <widget class="QLabel" name="text_title">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>80</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Socketmixer</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="value_projectName">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>290</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="value_patientName">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>360</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="text_projectName">
+      <property name="geometry">
+       <rect>
+        <x>118</x>
+        <y>290</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Project Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="text_patientName">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>360</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Patient Name</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_beginSocketmixer">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>420</y>
+        <width>115</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+     </widget>
+     <widget class="QCommandLinkButton" name="button_createNew">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>160</y>
+        <width>197</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Create New Project</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
+        <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="description">
+       <string>Choose a file from computer.</string>
+      </property>
+     </widget>
+     <widget class="QCommandLinkButton" name="button_openExisting">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>220</y>
+        <width>197</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Open Existing Project</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
+        <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="description">
+       <string>Choose a file from computer.</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tabModeling">
-     <attribute name="title">
-      <string>Modeling</string>
-     </attribute>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="geometry">
        <rect>
@@ -120,7 +255,7 @@ p, li { white-space: pre-wrap; }
            <string>Begin</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
           </property>
           <property name="iconSize">
@@ -176,7 +311,7 @@ p, li { white-space: pre-wrap; }
            <string>Import File</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -258,7 +393,7 @@ p, li { white-space: pre-wrap; }
            <string>Plane Cut</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -324,7 +459,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Residual Limb</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -403,7 +538,7 @@ p, li { white-space: pre-wrap; }
            <string>Invert Selection</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -435,7 +570,7 @@ p, li { white-space: pre-wrap; }
            <string>Discard Selected Areas</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -514,7 +649,7 @@ p, li { white-space: pre-wrap; }
            <string>Inspector Tool</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -593,7 +728,7 @@ p, li { white-space: pre-wrap; }
            <string>Remesh</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -737,7 +872,7 @@ p, li { white-space: pre-wrap; }
            <string>Auto-Align</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -816,7 +951,7 @@ p, li { white-space: pre-wrap; }
            <string>Re-center Camera</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -869,7 +1004,7 @@ p, li { white-space: pre-wrap; }
            <string>Manual Align</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -948,7 +1083,7 @@ p, li { white-space: pre-wrap; }
            <string>Duplicate Model</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1056,7 +1191,7 @@ p, li { white-space: pre-wrap; }
            <string>Begin</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
           </property>
           <property name="iconSize">
@@ -1090,7 +1225,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Brush Size</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1217,7 +1352,7 @@ p, li { white-space: pre-wrap; }
            <string>Smooth Boundary</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1277,7 +1412,7 @@ p, li { white-space: pre-wrap; }
            <string>Generate Offset</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1464,7 +1599,7 @@ p, li { white-space: pre-wrap; }
            <string>Smooth Offset</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1562,7 +1697,7 @@ p, li { white-space: pre-wrap; }
            <string>Yes</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1594,7 +1729,7 @@ p, li { white-space: pre-wrap; }
            <string>No</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1647,7 +1782,7 @@ p, li { white-space: pre-wrap; }
            <string>Clear Face Groups</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1751,7 +1886,7 @@ p, li { white-space: pre-wrap; }
            <string>Begin</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
           </property>
           <property name="iconSize">
@@ -1804,7 +1939,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Brush Size</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1910,7 +2045,7 @@ p, li { white-space: pre-wrap; }
            <string>Smooth Trim Line</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -1989,7 +2124,7 @@ p, li { white-space: pre-wrap; }
            <string>Create Face Group</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2068,7 +2203,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Face Group</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2147,7 +2282,7 @@ p, li { white-space: pre-wrap; }
            <string>Contract</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/zoom_out.png</normaloff>:/icons/zoom_out.png</iconset>
           </property>
           <property name="iconSize">
@@ -2179,7 +2314,7 @@ p, li { white-space: pre-wrap; }
            <string>Expand</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
           </property>
           <property name="iconSize">
@@ -2245,7 +2380,7 @@ p, li { white-space: pre-wrap; }
            <string>Remesh Trim Line</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2360,7 +2495,7 @@ p, li { white-space: pre-wrap; }
            <string>Begin</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
           </property>
           <property name="iconSize">
@@ -2413,7 +2548,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Facegroup</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2558,7 +2693,7 @@ p, li { white-space: pre-wrap; }
            <string>Generate Internal Offset</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2637,7 +2772,7 @@ p, li { white-space: pre-wrap; }
            <string>Separate Offset</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2716,7 +2851,7 @@ p, li { white-space: pre-wrap; }
            <string>Create Holes</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2777,7 +2912,7 @@ p, li { white-space: pre-wrap; }
            <string>Contract</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/zoom_out.png</normaloff>:/icons/zoom_out.png</iconset>
           </property>
           <property name="iconSize">
@@ -2809,7 +2944,7 @@ p, li { white-space: pre-wrap; }
            <string>Expand</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
           </property>
           <property name="iconSize">
@@ -2841,7 +2976,7 @@ p, li { white-space: pre-wrap; }
            <string>Smooth Boundary</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2873,7 +3008,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Tool</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -2952,7 +3087,7 @@ p, li { white-space: pre-wrap; }
            <string>Create Reliefs</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3018,7 +3153,7 @@ p, li { white-space: pre-wrap; }
            <string>Generate Offset</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3095,7 +3230,7 @@ p, li { white-space: pre-wrap; }
            <string>Select All</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3184,7 +3319,7 @@ p, li { white-space: pre-wrap; }
            <string>Begin</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
           </property>
           <property name="iconSize">
@@ -3218,7 +3353,7 @@ p, li { white-space: pre-wrap; }
            <string>Contract</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/zoom_out.png</normaloff>:/icons/zoom_out.png</iconset>
           </property>
           <property name="iconSize">
@@ -3288,7 +3423,7 @@ p, li { white-space: pre-wrap; }
            <string>Expand</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
           </property>
           <property name="iconSize">
@@ -3333,7 +3468,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Brush Size</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3425,7 +3560,7 @@ p, li { white-space: pre-wrap; }
            <string>Smooth</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3523,7 +3658,7 @@ p, li { white-space: pre-wrap; }
            <string>Make Changes</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3589,7 +3724,7 @@ p, li { white-space: pre-wrap; }
            <string>Clear Face Groups</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3668,7 +3803,7 @@ p, li { white-space: pre-wrap; }
            <string>Remesh</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3745,7 +3880,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="s6_p0">
          <widget class="QTextEdit" name="s6_p0_text_intro">
@@ -3788,7 +3923,7 @@ p, li { white-space: pre-wrap; }
            <string>Begin</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
           </property>
           <property name="iconSize">
@@ -3869,7 +4004,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Coupler Model</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -3948,7 +4083,7 @@ p, li { white-space: pre-wrap; }
            <string>Manual Align</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4014,7 +4149,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Region</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4080,7 +4215,7 @@ p, li { white-space: pre-wrap; }
            <string>Align Mounting Point</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4146,7 +4281,7 @@ p, li { white-space: pre-wrap; }
            <string>Join Mounting Point</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4212,7 +4347,7 @@ p, li { white-space: pre-wrap; }
            <string>Contract</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/zoom_out.png</normaloff>:/icons/zoom_out.png</iconset>
           </property>
           <property name="iconSize">
@@ -4244,7 +4379,7 @@ p, li { white-space: pre-wrap; }
            <string>Expand</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
           </property>
           <property name="iconSize">
@@ -4295,7 +4430,7 @@ p, li { white-space: pre-wrap; }
            <string>Select Brush Size</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4340,7 +4475,7 @@ p, li { white-space: pre-wrap; }
            <string>Smooth Join</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4419,7 +4554,7 @@ p, li { white-space: pre-wrap; }
            <string>Create Hole</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4451,7 +4586,7 @@ p, li { white-space: pre-wrap; }
            <string>Import Hole Maker</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4483,7 +4618,7 @@ p, li { white-space: pre-wrap; }
            <string>Align Bottom View</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4515,7 +4650,7 @@ p, li { white-space: pre-wrap; }
            <string>Position Hole Maker</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
             <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
           </property>
           <property name="iconSize">
@@ -4669,36 +4804,10 @@ p, li { white-space: pre-wrap; }
      <zorder>s1_button</zorder>
      <zorder>s6_button</zorder>
     </widget>
-    <widget class="QWidget" name="tabPrinting">
-     <property name="focusPolicy">
-      <enum>Qt::WheelFocus</enum>
-     </property>
-     <attribute name="title">
-      <string>Printing</string>
-     </attribute>
-    </widget>
+    <widget class="QWidget" name="stackedWidgetPage3"/>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionExit"/>
-   <addaction name="actionScanning"/>
-   <addaction name="actionModeling"/>
-   <addaction name="actionPrinting"/>
-   <addaction name="actionContact"/>
-  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -4730,7 +4839,7 @@ p, li { white-space: pre-wrap; }
   </widget>
   <action name="actionScanning">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
    </property>
    <property name="text">
@@ -4742,7 +4851,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionModeling">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/play.png</normaloff>:/icons/play.png</iconset>
    </property>
    <property name="text">
@@ -4754,7 +4863,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionPrinting">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/fullscreen_on.png</normaloff>:/icons/fullscreen_on.png</iconset>
    </property>
    <property name="text">
@@ -4766,7 +4875,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionImportFile">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/arrow_double_right.png</normaloff>:/icons/arrow_double_right.png</iconset>
    </property>
    <property name="text">
@@ -4778,7 +4887,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionExit">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/arrow_double_left.png</normaloff>:/icons/arrow_double_left.png</iconset>
    </property>
    <property name="text">
@@ -4790,7 +4899,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionContact">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/thumbs.png</normaloff>:/icons/thumbs.png</iconset>
    </property>
    <property name="text">
@@ -4802,7 +4911,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionExit_2">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/arrow_double_left.png</normaloff>:/icons/arrow_double_left.png</iconset>
    </property>
    <property name="text">
@@ -4811,7 +4920,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="newProjectAction">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/slideshow_play.png</normaloff>:/icons/slideshow_play.png</iconset>
    </property>
    <property name="text">
@@ -4820,7 +4929,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="openAction">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/zoom_in.png</normaloff>:/icons/zoom_in.png</iconset>
    </property>
    <property name="text">
@@ -4829,7 +4938,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/thumbs.png</normaloff>:/icons/thumbs.png</iconset>
    </property>
    <property name="text">
@@ -4843,7 +4952,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="saveAction">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/thumbs.png</normaloff>:/icons/thumbs.png</iconset>
    </property>
    <property name="text">
@@ -4852,7 +4961,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="exitAction">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/arrow_double_left.png</normaloff>:/icons/arrow_double_left.png</iconset>
    </property>
    <property name="text">
@@ -4861,7 +4970,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="saveAsAction">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../../../socketmixer/pyqt5/icons.qrc">
      <normaloff>:/icons/fullscreen_on.png</normaloff>:/icons/fullscreen_on.png</iconset>
    </property>
    <property name="text">
@@ -4870,24 +4979,7 @@ p, li { white-space: pre-wrap; }
   </action>
  </widget>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="../../../socketmixer/pyqt5/icons.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>actionModeling</sender>
-   <signal>triggered()</signal>
-   <receiver>stackedWidget</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>115</x>
-     <y>234</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

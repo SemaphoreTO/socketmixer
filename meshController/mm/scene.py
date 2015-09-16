@@ -13,6 +13,11 @@ def save_mix(remote, path):
     cmd.AppendSceneCommand_ExportMixFile(path)
     remote.runCommand(cmd)
 
+def save_current(remote, path):
+    cmd = mmapi.StoredCommands()
+    cmd.AppendSceneCommand_ExportMeshFile_CurrentSelection(path)
+    remote.runCommand(cmd)
+
 
 def append_objects_from_file(remote, filename):
     """Read objects from a mesh file, append them to the scene, and return a list of new object IDs"""
